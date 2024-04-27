@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>胡拉图的后花园</title>
+  <icon>http://example.com/icon.png</icon>
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2024-04-27T05:14:33.759Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Hulatu</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我的四月小结</title>
+    <link href="http://example.com/posts/102bbc1e.html"/>
+    <id>http://example.com/posts/102bbc1e.html</id>
+    <published>2024-04-24T02:08:55.000Z</published>
+    <updated>2024-04-27T05:14:33.759Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;四月初是焦头烂额的。&lt;/p&gt;
+&lt;p&gt;四月中是自由支配的。&lt;/p&gt;
+&lt;p&gt;四月末是按耐不住的。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="小结" scheme="http://example.com/categories/%E5%B0%8F%E7%BB%93/"/>
+    
+    
+    <category term="2024" scheme="http://example.com/tags/2024/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>世界读书日，关于阅读的感想</title>
+    <link href="http://example.com/posts/a8e2e416.html"/>
+    <id>http://example.com/posts/a8e2e416.html</id>
+    <published>2024-04-23T08:38:46.000Z</published>
+    <updated>2024-04-27T05:14:33.751Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;01-我们为什么要热爱读书（全新视角）&quot;&gt;&lt;a href=&quot;#01-我们为什么要热爱读书（全新视角）&quot; class=&quot;headerlink&quot; title=&quot;01 我们为什么要热爱读书（全新视角）&quot;&gt;&lt;/a&gt;01 我们为什么要热爱读书（全新视角）&lt;/h3&gt;&lt;p&gt;在阐述我们为什么要热爱读书这个小主题前，我想要先讲述一个名词：&lt;strong&gt;「置信度」&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;什么叫置信度（也称置信区间）呢？&lt;a href=&quot;https://baike.baidu.com/item/%E5%8F%AF%E4%BF%A1%E5%BA%A6?fromModule=lemma_search-box&quot;&gt;百度百科&lt;/a&gt;上给出的定义如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;可信度，就是对人或事物可以信赖的程度。是根据经验对一个事物或一件事情为真的相信程度。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;用我自己的话来讲：我接触到的东西，有多少是可以相信的。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="阅读" scheme="http://example.com/tags/%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>考研初试全程</title>
+    <link href="http://example.com/posts/9a531b3b.html"/>
+    <id>http://example.com/posts/9a531b3b.html</id>
+    <published>2024-04-22T16:01:37.000Z</published>
+    <updated>2024-04-27T05:14:33.763Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;考研经历分享&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;01 先讲点心里话&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;纵使2024考研人数下降了近40万，但考研上岸的难度依旧没有下降——真正想要上岸的人，最有力的竞争者永远在那些和自己一样努力的人or比自己更加努力的人里面，而不在那些被许多小挫折轻易&lt;strong&gt;&lt;strong&gt;筛除&lt;/strong&gt;&lt;/strong&gt;掉的人里面。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="小结" scheme="http://example.com/tags/%E5%B0%8F%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>个人简介</title>
+    <link href="http://example.com/posts/35221811.html"/>
+    <id>http://example.com/posts/35221811.html</id>
+    <published>2024-04-22T16:00:49.000Z</published>
+    <updated>2024-04-27T05:14:33.754Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;01-爱好&quot;&gt;&lt;a href=&quot;#01-爱好&quot; class=&quot;headerlink&quot; title=&quot;01 爱好&quot;&gt;&lt;/a&gt;01 爱好&lt;/h3&gt;&lt;p&gt;喜欢电脑，尤其喜欢对着电脑漫无目的的点来点去，沉浸在这种漫游中。&lt;/p&gt;
+&lt;p&gt;喜欢跑步，是一种动态的冥想，能够让自己产生痛感的同时放空大脑。&lt;/p&gt;
+&lt;p&gt;喜欢篮球，很少有美女看男生跑步和打篮球，但看打篮球的还是多。&lt;/p&gt;
+&lt;p&gt;喜欢看书，不是因为深沉和安静，只是一种暂时性放空和主动逃避的方式。&lt;/p&gt;
+&lt;p&gt;喜欢写作，不是因为自己的逻辑和共情能力有多高深，只是写起来会让我很爽。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="随笔" scheme="http://example.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+</feed>
