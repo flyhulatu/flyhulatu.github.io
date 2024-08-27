@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>胡拉图的后花园</title>
+  <icon>http://example.com/icon.png</icon>
+  <subtitle>写作使我精确</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2024-08-26T11:03:46.000Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Hulatu</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第一次半马</title>
+    <link href="http://example.com/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%8D%8A%E9%A9%AC/"/>
+    <id>http://example.com/%E7%AC%AC%E4%B8%80%E6%AC%A1%E5%8D%8A%E9%A9%AC/</id>
+    <published>2024-08-26T11:03:46.000Z</published>
+    <updated>2024-08-26T11:03:46.000Z</updated>
+    
+    
+    <summary type="html">一直在路上。</summary>
+    
+    
+    
+    <category term="运动" scheme="http://example.com/categories/%E8%BF%90%E5%8A%A8/"/>
+    
+    
+    <category term="跑步" scheme="http://example.com/tags/%E8%B7%91%E6%AD%A5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>西安游记</title>
+    <link href="http://example.com/%E8%A5%BF%E5%AE%89%E6%B8%B8%E8%AE%B0/"/>
+    <id>http://example.com/%E8%A5%BF%E5%AE%89%E6%B8%B8%E8%AE%B0/</id>
+    <published>2024-08-24T04:00:59.000Z</published>
+    <updated>2024-08-24T04:00:59.000Z</updated>
+    
+    
+    <summary type="html">十三朝繁华，已成独享！</summary>
+    
+    
+    
+    <category term="旅游" scheme="http://example.com/categories/%E6%97%85%E6%B8%B8/"/>
+    
+    
+    <category term="旅游" scheme="http://example.com/tags/%E6%97%85%E6%B8%B8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>理想型男生</title>
+    <link href="http://example.com/%E7%90%86%E6%83%B3%E5%9E%8B%E7%94%B7%E7%94%9F/"/>
+    <id>http://example.com/%E7%90%86%E6%83%B3%E5%9E%8B%E7%94%B7%E7%94%9F/</id>
+    <published>2024-08-22T08:54:10.000Z</published>
+    <updated>2024-08-22T08:54:10.000Z</updated>
+    
+    
+    <summary type="html">温柔的人是清冽的,或者说，他是清醒的。</summary>
+    
+    
+    
+    <category term="随笔" scheme="http://example.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="男生" scheme="http://example.com/tags/%E7%94%B7%E7%94%9F/"/>
+    
+  </entry>
+  
+</feed>
