@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":{"valine":{"order":-1}},"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta name="description" content="变化，一直都在的！">
@@ -229,6 +229,20 @@
             </span>
 
           
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2025/04/04/%E8%AF%BB%E7%A0%94%E5%90%8E%E7%9A%84%E6%94%B9%E5%8F%98/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2025/04/04/%E8%AF%BB%E7%A0%94%E5%90%8E%E7%9A%84%E6%94%B9%E5%8F%98/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
             <div class="post-description">变化，一直都在的！</div>
 
         </div>
@@ -241,8 +255,6 @@
 
       
         <h2 id="01-对自己好"><a href="#01-对自己好" class="headerlink" title="01 对自己好"></a>01 对自己好</h2><p>读研后的人，大多数都会专心于自己领域内的事情，自然而然很难顾及到周围的人、也包括<strong>麻木</strong>的自己！很多时候自己都难以意识到——<strong>慢慢变得越来越难以兴奋，或者把不累、不用做重复性的工作、不被人监督和审视……这种可以喘一口气的时刻，当作畸形的喜悦</strong>。</p>
-<span id="more"></span>
-
 <p>大多数人读研的时候，其实是来到一个新环境、新地域、接触很多新的饮食文化、表达习惯等等，而研究生的生活很多时候不像本科生那么的自由、多彩！所以其实最后读研结束，很多人对于整个校园、校园周边、所在城市的了解，都没有那么熟悉，自然而然的，也没有那么多的归属感、安全感——<strong>我个人感知到的那种归属感，往往是对一个人、一个群体、一个新环境慢慢熟悉而建立起来的！愈发浓烈、不可阻挡。</strong></p>
 <p>这只是客观的、真实存在的一大方面！</p>
 <p>还有与人相关的一方面：</p>
@@ -449,6 +461,7 @@
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -613,6 +626,35 @@
   
 
   
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : '3qlPPf1EmU4UZpfkU2LJf107-MdYXbMMI',
+      appKey     : 'vDUnBQYRedalmmgZA76iQE42',
+      placeholder: "I Want To Say 。。。。。。",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
 
 </body>
 </html>
