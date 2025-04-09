@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/404.html</loc>
+    
+    <lastmod>2025-04-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/categories/index.html</loc>
     
     <lastmod>2025-04-09</lastmod>
@@ -12,15 +21,6 @@
   
   <url>
     <loc>http://example.com/tags/index.html</loc>
-    
-    <lastmod>2025-04-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/404.html</loc>
     
     <lastmod>2025-04-09</lastmod>
     
@@ -110,14 +110,14 @@
 
   
   <url>
-    <loc>http://example.com/tags/%E5%86%99%E4%BD%9C/</loc>
+    <loc>http://example.com/tags/%E6%84%9F%E6%83%B3/</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E6%84%9F%E6%83%B3/</loc>
+    <loc>http://example.com/tags/%E5%86%99%E4%BD%9C/</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -131,14 +131,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E8%B7%91%E6%AD%A5/</loc>
+    <loc>http://example.com/tags/%E6%97%85%E6%B8%B8/</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E6%97%85%E6%B8%B8/</loc>
+    <loc>http://example.com/tags/%E8%B7%91%E6%AD%A5/</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -161,14 +161,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/%E8%BF%90%E5%8A%A8/</loc>
+    <loc>http://example.com/categories/%E6%97%85%E6%B8%B8/</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/%E6%97%85%E6%B8%B8/</loc>
+    <loc>http://example.com/categories/%E8%BF%90%E5%8A%A8/</loc>
     <lastmod>2025-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
