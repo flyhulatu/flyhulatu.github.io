@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>运动 on 胡拉图的博客</title>
+    <link>http://localhost:1313/categories/%E8%BF%90%E5%8A%A8/</link>
+    <description>Recent content in 运动 on 胡拉图的博客</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 07 Dec 2025 16:03:14 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E8%BF%90%E5%8A%A8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>普通人与运动的关系</title>
+      <link>http://localhost:1313/posts/%E6%99%AE%E9%80%9A%E4%BA%BA%E4%B8%8E%E8%BF%90%E5%8A%A8%E7%9A%84%E5%85%B3%E7%B3%BB/</link>
+      <pubDate>Sun, 07 Dec 2025 16:03:14 +0000</pubDate>
+      <guid>http://localhost:1313/posts/%E6%99%AE%E9%80%9A%E4%BA%BA%E4%B8%8E%E8%BF%90%E5%8A%A8%E7%9A%84%E5%85%B3%E7%B3%BB/</guid>
+      <description>关于运动，我们应该怎样对待。</description>
+    </item>
+  </channel>
+</rss>

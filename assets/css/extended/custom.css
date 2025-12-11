@@ -1,0 +1,420 @@
+/* JetBrains Mono（代码用） */
+@import url("https://cdn.jsdelivr.net/npm/jetbrains-mono@latest/css/jetbrains-mono.min.css");
+
+/* 霞鹜文楷（全站中文） */
+@import url("https://fonts.googleapis.com/css2?family=LXGW+WenKai&display=swap");
+
+/* 正文、标题、导航、全部非代码文本 */
+body, 
+.post-content, 
+header, 
+nav, 
+footer, 
+h1, h2, h3, h4, h5, h6 {
+    font-family: "LXGW WenKai", "WenKai", "PingFang SC", "Microsoft Yahei", sans-serif;
+}
+
+/* 代码块、多行代码、高亮 */
+pre, code {
+    font-family: "JetBrains Mono", "Fira Code", monospace !important;
+}
+
+/* 代码块微调（让 JetBrains Mono 更好看） */
+pre {
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+:root {
+    /* macOS 核心参数 */
+    --radius: 18px; /* 大圆角 */
+    --content-width: 800px; /* 限制内容宽度，更聚拢 */
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    
+    /* 玻璃拟态参数 */
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.4);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    --glass-blur: blur(12px);
+}
+
+/* 深色模式适配 */
+.dark {
+    --glass-bg: rgba(30, 30, 30, 0.6);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+body {
+    /* macOS 风格动态渐变背景 */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-attachment: fixed;
+    /* 如果想要更像 macOS，可以换成一张抽象壁纸 URL */
+    /* background-image: url('你的macOS壁纸链接.jpg'); */
+    /* background-size: cover; */
+    font-family: var(--font-family);
+}
+
+.dark body {
+    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+}
+
+/* 移除默认的背景色，改为透明以便应用毛玻璃 */
+.header {
+    background: transparent !important;
+    margin-top: 20px; /* 顶部留白，制造悬浮感 */
+}
+
+:root {
+    /* 1. 定义一个标准内容宽度，例如 800px */
+    --main-width: 800px; 
+    --radius: 20px;
+}
+
+/* -------------------
+   导航栏 (Header) 修复
+   ------------------- */
+.header {
+    /* 让 header 容器居中，且宽度受到限制 */
+    margin: 20px auto 0 auto !important;
+    max-width: var(--main-width) !important;
+    padding: 0 !important; /* 去除外部填充，保证对其 */
+}
+
+.nav {
+    /* 强制 nav 填满 header 的宽度 */
+    width: 100% !important;
+    max-width: 100% !important;
+    
+    /* 保持之前的毛玻璃样式 */
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    
+    /* 内部布局 */
+    height: 60px;
+    padding: 0 24px; /* 内部文字离边框的距离 */
+    box-sizing: border-box; /* 确保 padding 不会撑大宽度 */
+}
+
+/* -------------------
+   主内容区 (Main) 修复
+   ------------------- */
+.main {
+    /* 核心：宽度必须和上面的 header 变量保持一致 */
+    max-width: var(--main-width) !important;
+    width: 100% !important; 
+    margin: 40px auto !important; /* 上下间距，左右自动居中 */
+    padding: 0 !important; /* PaperMod 默认有 padding，这里去掉以保证边缘对齐 */
+    box-sizing: border-box;
+}
+
+/* 修复文章列表卡片的宽度，确保它们填满 .main 容器 */
+.post-entry {
+    margin-bottom: 24px;
+    width: 100%; 
+    box-sizing: border-box;
+    /* 保持之前的卡片样式 */
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(12px);
+    border-radius: var(--radius);
+    padding: 30px; /* 卡片内部内容留白 */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Logo 样式微调 */
+.logo a {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* 菜单项 hover 效果 - 胶囊状背景 */
+.menu li a {
+    border-radius: 8px;
+    padding: 8px 12px;
+    transition: all 0.2s ease;
+}
+
+.menu li a:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--primary);
+}
+
+.dark .menu li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* 调整主容器宽度，保持居中 */
+.main {
+    max-width: var(--content-width);
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* 文章卡片化 */
+.post-entry {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: var(--glass-border);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    
+    margin-bottom: 25px;
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+/* 悬浮效果：上浮 + 阴影加深 */
+.post-entry:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+    background: rgba(255,255,255, 0.85); /* hover 时稍微不透明一点 */
+}
+.dark .post-entry:hover {
+    background: rgba(40,40,40, 0.8);
+}
+
+/* 移除默认的分割线 */
+.post-entry + .post-entry {
+    border-top: none; 
+}
+
+/* 首页个人信息卡片 */
+.first-entry {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border-radius: var(--radius);
+    border: var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    
+    padding: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    
+    /* 这种布局让头像和文字更好看 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 头像加圆角和光晕 */
+.first-entry img {
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    margin-bottom: 20px;
+    border: 4px solid rgba(255,255,255,0.5);
+}
+
+/* 社交按钮美化 */
+.social-icons a {
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: var(--primary);
+    color: white;
+    transform: scale(1.1);
+}
+
+/* 标签页优化 - 胶囊样式 */
+.terms-tags li a {
+    display: inline-block;
+    background: var(--glass-bg);
+    border: var(--glass-border);
+    padding: 8px 16px;
+    border-radius: 50px; /* 胶囊圆角 */
+    color: var(--primary);
+    font-weight: 500;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.terms-tags li a:hover {
+    background: var(--primary);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* 归档页 - 时间轴样式 */
+.archive-entry {
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+    margin-left: 10px;
+}
+
+.dark .archive-entry {
+    border-left: 2px solid rgba(255,255,255,0.1);
+}
+
+.archive-entry::before {
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    background: var(--primary);
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+/* 文章容器 */
+.post-single {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border-radius: var(--radius);
+    padding: 40px;
+    box-shadow: var(--glass-shadow);
+    border: var(--glass-border);
+}
+
+/* 目录 (ToC) - 仿 macOS 侧边栏 */
+.toc {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.dark .toc {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.toc summary {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* 在背景中添加模糊的光斑 (Pseudo-elements) */
+body::before, body::after {
+    content: '';
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #7f00ff, #e100ff);
+    filter: blur(80px);
+    opacity: 0.15;
+    z-index: -1;
+    animation: float 10s infinite ease-in-out;
+}
+
+body::before {
+    top: -50px;
+    left: -50px;
+}
+
+body::after {
+    bottom: -50px;
+    right: -50px;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    animation-delay: -5s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(30px, 30px); }
+}
+
+/* -------------------
+   首页个人信息 (Profile) 融合背景
+   ------------------- */
+/* 这里的 .first-entry 指的是首页置顶的那个个人介绍模块 */
+.first-entry {
+    /* 变成透明 */
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    
+    /* 调整一下文字排版，因为没有边框了，可能需要紧凑一点 */
+    margin-bottom: 20px !important;
+    padding: 20px 0 !important; /* 去掉左右内边距，因为没有边框了 */
+    
+    /* 文字颜色加深一点，确保在壁纸上看得清 */
+    text-align: center;
+}
+
+/* 针对深色模式的适配，防止文字看不清 */
+.dark .first-entry {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* 如果你想让标题更突出（因为没了背景卡片） */
+.first-entry h1 {
+    font-size: 2.5rem; /* 加大标题 */
+    font-weight: 800;
+    /* 给文字加一点点阴影，提升在复杂背景上的可读性 */
+    text-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+    margin-bottom: 10px;
+}
+
+/* 社交图标稍微加大间距 */
+.social-icons {
+    margin-top: 20px;
+    justify-content: center;
+}
+
+/* 代码块整体玻璃风格 */
+pre {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-radius: 16px;
+    padding: 18px 20px 20px;
+    margin: 24px 0;
+    position: relative;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    overflow-x: auto;
+}
+
+/* 顶部三色按钮容器 */
+pre::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    width: 44px;
+    height: 12px;
+    background:
+        radial-gradient(circle at 6px 6px, #ff5f57 0, #ff5f57 6px, transparent 7px),
+        radial-gradient(circle at 22px 6px, #ffbd2e 0, #ffbd2e 6px, transparent 7px),
+        radial-gradient(circle at 38px 6px, #28c840 0, #28c840 6px, transparent 7px);
+    pointer-events: none;
+}
+
+/* 代码内容区域下移，为三色按钮留空间 */
+pre code {
+    display: block;
+    padding-top: 18px;
+    font-family: "JetBrains Mono", monospace !important;
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+/* 行内代码轻微圆角 */
+code {
+    background: rgba(255,255,255,0.6);
+    padding: 2px 5px;
+    border-radius: 6px;
+    font-family: "JetBrains Mono", monospace !important;
+}

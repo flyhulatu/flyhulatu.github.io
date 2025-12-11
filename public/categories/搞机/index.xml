@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>搞机 on 胡拉图的博客</title>
+    <link>http://localhost:1313/categories/%E6%90%9E%E6%9C%BA/</link>
+    <description>Recent content in 搞机 on 胡拉图的博客</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 09 Dec 2025 23:01:15 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E6%90%9E%E6%9C%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我是个爱折腾的人</title>
+      <link>http://localhost:1313/posts/%E6%88%91%E6%98%AF%E4%B8%AA%E7%88%B1%E6%8A%98%E8%85%BE%E7%9A%84%E4%BA%BA/</link>
+      <pubDate>Tue, 09 Dec 2025 23:01:15 +0800</pubDate>
+      <guid>http://localhost:1313/posts/%E6%88%91%E6%98%AF%E4%B8%AA%E7%88%B1%E6%8A%98%E8%85%BE%E7%9A%84%E4%BA%BA/</guid>
+      <description>你认为我无所事事的状态，恰好是我真正逍遥自在的片刻。</description>
+    </item>
+  </channel>
+</rss>
