@@ -1,0 +1,86 @@
+baseURL: "https://hulatu.com/"
+languageCode: "zh-cn"
+title: "胡拉图的博客"
+theme: "PaperMod"
+
+# 生成 HTML 的同时生成 Search 索引文件（PaperMod 搜索功能需要）
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+params:
+  env: production # 生产环境
+  title: 我的博客
+  description: "这是我的博客描述"
+  keywords: [Blog, Tech, Hugo]
+  author: Me
+  
+  # 默认主题颜色 (auto, dark, light)
+  defaultTheme: auto
+  # 禁止用户切换主题
+  disableThemeToggle: false
+
+  # 是否在首页显示全文 (false 为只显示摘要)
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+
+  # 隐藏文章封面图的默认圆角（因为我们用CSS统一控制了）
+  cover:
+    responsiveImages: true
+    hidden: false
+    
+  # 确保资源加载正常
+  assets:
+    disableHLJS: false
+  
+  # 个人资料页 (首页左侧或中间的介绍)
+  homeInfoParams:
+    Title: "Welcome coming Hulatu's Blog"
+    Content: "Writing makes me exactly!"
+  socialIcons:
+    - name: github
+      url: "https://github.com/flyhulatu"
+    
+    - name: email
+      url: "mailto:2983685624@qq.com"
+    
+    # 小红书 (对应 assets/images/svg/xiaohongshu.svg)
+    # - name: xiaohongshu
+    #   url: "https://hulatu.com/images/xiaohongshu.png"
+    
+    # 微信公众号 (对应 assets/images/svg/wechat.svg)
+    - name: wechat
+      url: "https://hulatu.com/images/wechat.png"
+    # 知乎
+    - name: zhihu
+      url: "https://www.zhihu.com/people/hulatu"
+      
+    # QQ 邮箱/QQ (对应 assets/images/svg/qq.svg 如果你有的话)
+    # - name: qq
+    #   url: "https://hulatu.com/images/qq.png"
+
+# 菜单配置
+menu:
+  main:
+    - identifier: categories
+      name: 分类
+      url: /categories/
+      weight: 10
+    - identifier: tags
+      name: 标签
+      url: /tags/
+      weight: 20
+    - identifier: archives
+      name: 归档
+      url: /archives/
+      weight: 30
+    - identifier: search
+      name: 搜索
+      url: /search/
+      weight: 40
