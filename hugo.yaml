@@ -39,7 +39,7 @@ params:
   # 确保资源加载正常
   assets:
     disableHLJS: false
-    favicon: "/favicon.ico"                  # 主要 ICO
+    favicon: "/favicon.svg"                  # 主要 ICO
     favicon16x16: "/favicon-16x16.png"       # 16x16 PNG
     favicon32x32: "/favicon-32x32.png"       # 32x32 PNG
     apple_touch_icon: "/apple-touch-icon.png" # Apple 设备
