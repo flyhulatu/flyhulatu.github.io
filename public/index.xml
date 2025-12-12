@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>胡拉图的博客</title>
-    <link>https://hulatu.com/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on 胡拉图的博客</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 10 Dec 2025 22:55:46 +0800</lastBuildDate>
-    <atom:link href="https://hulatu.com/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关于我开始日更</title>
-      <link>https://hulatu.com/posts/%E5%85%B3%E4%BA%8E%E6%88%91%E5%BC%80%E5%A7%8B%E6%97%A5%E6%9B%B4/</link>
+      <link>http://localhost:1313/posts/%E5%85%B3%E4%BA%8E%E6%88%91%E5%BC%80%E5%A7%8B%E6%97%A5%E6%9B%B4/</link>
       <pubDate>Wed, 10 Dec 2025 22:55:46 +0800</pubDate>
-      <guid>https://hulatu.com/posts/%E5%85%B3%E4%BA%8E%E6%88%91%E5%BC%80%E5%A7%8B%E6%97%A5%E6%9B%B4/</guid>
+      <guid>http://localhost:1313/posts/%E5%85%B3%E4%BA%8E%E6%88%91%E5%BC%80%E5%A7%8B%E6%97%A5%E6%9B%B4/</guid>
       <description>&lt;h2 id=&#34;直接原因&#34;&gt;直接原因&lt;/h2&gt;
 &lt;p&gt;之所以有时间来写文章分享，毫无疑问，那肯定是因为有时间。&lt;/p&gt;
 &lt;p&gt;为什么有这么一段时间空出来呢？因为我上周在推胸的时候，由于重量太大，昨晚做最后一个卧推力竭后，我没有力气把杠铃回杠了，它就在我往上推的过程中「&lt;strong&gt;卸了力气&lt;/strong&gt;」，导致右肩部位有一些拉伤——就是连正常俯卧撑都能感觉到右侧身体明显有撕裂感，导致我做任何的上肢训练以及负重训练都容易有疼痛感，甚至是平躺睡觉我右肩都能明显的感受到不适，所以我选择「&lt;strong&gt;完全静养&lt;/strong&gt;」一段时间，听起来好像很长，但这几天我感觉快要恢复完全。&lt;/p&gt;
@@ -30,37 +30,37 @@
     </item>
     <item>
       <title>我是个爱折腾的人</title>
-      <link>https://hulatu.com/posts/%E6%88%91%E6%98%AF%E4%B8%AA%E7%88%B1%E6%8A%98%E8%85%BE%E7%9A%84%E4%BA%BA/</link>
+      <link>http://localhost:1313/posts/%E6%88%91%E6%98%AF%E4%B8%AA%E7%88%B1%E6%8A%98%E8%85%BE%E7%9A%84%E4%BA%BA/</link>
       <pubDate>Tue, 09 Dec 2025 23:01:15 +0800</pubDate>
-      <guid>https://hulatu.com/posts/%E6%88%91%E6%98%AF%E4%B8%AA%E7%88%B1%E6%8A%98%E8%85%BE%E7%9A%84%E4%BA%BA/</guid>
+      <guid>http://localhost:1313/posts/%E6%88%91%E6%98%AF%E4%B8%AA%E7%88%B1%E6%8A%98%E8%85%BE%E7%9A%84%E4%BA%BA/</guid>
       <description>你认为我无所事事的状态，恰好是我真正逍遥自在的片刻。</description>
     </item>
     <item>
       <title>多设备的文件同步和传输问题</title>
-      <link>https://hulatu.com/posts/%E5%A4%9A%E8%AE%BE%E5%A4%87%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5%E5%92%8C%E4%BC%A0%E8%BE%93%E9%97%AE%E9%A2%98/</link>
+      <link>http://localhost:1313/posts/%E5%A4%9A%E8%AE%BE%E5%A4%87%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5%E5%92%8C%E4%BC%A0%E8%BE%93%E9%97%AE%E9%A2%98/</link>
       <pubDate>Mon, 08 Dec 2025 17:14:50 +0000</pubDate>
-      <guid>https://hulatu.com/posts/%E5%A4%9A%E8%AE%BE%E5%A4%87%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5%E5%92%8C%E4%BC%A0%E8%BE%93%E9%97%AE%E9%A2%98/</guid>
+      <guid>http://localhost:1313/posts/%E5%A4%9A%E8%AE%BE%E5%A4%87%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5%E5%92%8C%E4%BC%A0%E8%BE%93%E9%97%AE%E9%A2%98/</guid>
       <description>粉产品力，而不要粉品牌。</description>
     </item>
     <item>
       <title>普通人与运动的关系</title>
-      <link>https://hulatu.com/posts/%E6%99%AE%E9%80%9A%E4%BA%BA%E4%B8%8E%E8%BF%90%E5%8A%A8%E7%9A%84%E5%85%B3%E7%B3%BB/</link>
+      <link>http://localhost:1313/posts/%E6%99%AE%E9%80%9A%E4%BA%BA%E4%B8%8E%E8%BF%90%E5%8A%A8%E7%9A%84%E5%85%B3%E7%B3%BB/</link>
       <pubDate>Sun, 07 Dec 2025 16:03:14 +0000</pubDate>
-      <guid>https://hulatu.com/posts/%E6%99%AE%E9%80%9A%E4%BA%BA%E4%B8%8E%E8%BF%90%E5%8A%A8%E7%9A%84%E5%85%B3%E7%B3%BB/</guid>
+      <guid>http://localhost:1313/posts/%E6%99%AE%E9%80%9A%E4%BA%BA%E4%B8%8E%E8%BF%90%E5%8A%A8%E7%9A%84%E5%85%B3%E7%B3%BB/</guid>
       <description>关于运动，我们应该怎样对待。</description>
     </item>
     <item>
       <title>跑步平价装备(实用篇)</title>
-      <link>https://hulatu.com/posts/%E8%B7%91%E6%AD%A5%E5%B9%B3%E4%BB%B7%E8%A3%85%E5%A4%87-%E5%AE%9E%E7%94%A8%E7%AF%87/</link>
+      <link>http://localhost:1313/posts/%E8%B7%91%E6%AD%A5%E5%B9%B3%E4%BB%B7%E8%A3%85%E5%A4%87-%E5%AE%9E%E7%94%A8%E7%AF%87/</link>
       <pubDate>Sat, 06 Dec 2025 14:12:10 +0000</pubDate>
-      <guid>https://hulatu.com/posts/%E8%B7%91%E6%AD%A5%E5%B9%B3%E4%BB%B7%E8%A3%85%E5%A4%87-%E5%AE%9E%E7%94%A8%E7%AF%87/</guid>
+      <guid>http://localhost:1313/posts/%E8%B7%91%E6%AD%A5%E5%B9%B3%E4%BB%B7%E8%A3%85%E5%A4%87-%E5%AE%9E%E7%94%A8%E7%AF%87/</guid>
       <description>有想法、简装备，就出发！</description>
     </item>
     <item>
       <title>关于我</title>
-      <link>https://hulatu.com/posts/%E5%85%B3%E4%BA%8E%E6%88%91/</link>
+      <link>http://localhost:1313/posts/%E5%85%B3%E4%BA%8E%E6%88%91/</link>
       <pubDate>Fri, 05 Dec 2025 21:40:01 +0000</pubDate>
-      <guid>https://hulatu.com/posts/%E5%85%B3%E4%BA%8E%E6%88%91/</guid>
+      <guid>http://localhost:1313/posts/%E5%85%B3%E4%BA%8E%E6%88%91/</guid>
       <description>关于我，关于胡拉图的一些了解。</description>
     </item>
   </channel>

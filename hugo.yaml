@@ -11,6 +11,7 @@ outputs:
     - JSON
 
 params:
+  comments: true  # 全局启用（或在文章中单独控制）
   env: production # 生产环境
   title: 我的博客
   description: "这是我的博客描述"
@@ -38,11 +39,16 @@ params:
   # 确保资源加载正常
   assets:
     disableHLJS: false
+    favicon: "/favicon.ico"                  # 主要 ICO
+    favicon16x16: "/favicon-16x16.png"       # 16x16 PNG
+    favicon32x32: "/favicon-32x32.png"       # 32x32 PNG
+    apple_touch_icon: "/apple-touch-icon.png" # Apple 设备
+    safari_pinned_tab: "/safari-pinned-tab.svg" # 可选 Safari
   
   # 个人资料页 (首页左侧或中间的介绍)
   homeInfoParams:
     Title: "Welcome coming Hulatu's Blog"
-    Content: "Writing makes me exactly!"
+    Content: "写作，使我精确！"
   socialIcons:
     - name: github
       url: "https://github.com/flyhulatu"

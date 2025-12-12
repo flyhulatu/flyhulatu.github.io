@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>跑步 on 胡拉图的博客</title>
-    <link>https://hulatu.com/categories/%E8%B7%91%E6%AD%A5/</link>
+    <link>http://localhost:1313/categories/%E8%B7%91%E6%AD%A5/</link>
     <description>Recent content in 跑步 on 胡拉图的博客</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 06 Dec 2025 14:12:10 +0000</lastBuildDate>
-    <atom:link href="https://hulatu.com/categories/%E8%B7%91%E6%AD%A5/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/%E8%B7%91%E6%AD%A5/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>跑步平价装备(实用篇)</title>
-      <link>https://hulatu.com/posts/%E8%B7%91%E6%AD%A5%E5%B9%B3%E4%BB%B7%E8%A3%85%E5%A4%87-%E5%AE%9E%E7%94%A8%E7%AF%87/</link>
+      <link>http://localhost:1313/posts/%E8%B7%91%E6%AD%A5%E5%B9%B3%E4%BB%B7%E8%A3%85%E5%A4%87-%E5%AE%9E%E7%94%A8%E7%AF%87/</link>
       <pubDate>Sat, 06 Dec 2025 14:12:10 +0000</pubDate>
-      <guid>https://hulatu.com/posts/%E8%B7%91%E6%AD%A5%E5%B9%B3%E4%BB%B7%E8%A3%85%E5%A4%87-%E5%AE%9E%E7%94%A8%E7%AF%87/</guid>
+      <guid>http://localhost:1313/posts/%E8%B7%91%E6%AD%A5%E5%B9%B3%E4%BB%B7%E8%A3%85%E5%A4%87-%E5%AE%9E%E7%94%A8%E7%AF%87/</guid>
       <description>有想法、简装备，就出发！</description>
     </item>
   </channel>

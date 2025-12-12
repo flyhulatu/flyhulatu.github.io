@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on 胡拉图的博客</title>
-    <link>https://hulatu.com/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on 胡拉图的博客</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 10 Dec 2025 22:55:46 +0800</lastBuildDate>
-    <atom:link href="https://hulatu.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>记录</title>
-      <link>https://hulatu.com/categories/%E8%AE%B0%E5%BD%95/</link>
+      <link>http://localhost:1313/categories/%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Wed, 10 Dec 2025 22:55:46 +0800</pubDate>
-      <guid>https://hulatu.com/categories/%E8%AE%B0%E5%BD%95/</guid>
+      <guid>http://localhost:1313/categories/%E8%AE%B0%E5%BD%95/</guid>
       <description></description>
     </item>
     <item>
       <title>搞机</title>
-      <link>https://hulatu.com/categories/%E6%90%9E%E6%9C%BA/</link>
+      <link>http://localhost:1313/categories/%E6%90%9E%E6%9C%BA/</link>
       <pubDate>Tue, 09 Dec 2025 23:01:15 +0800</pubDate>
-      <guid>https://hulatu.com/categories/%E6%90%9E%E6%9C%BA/</guid>
+      <guid>http://localhost:1313/categories/%E6%90%9E%E6%9C%BA/</guid>
       <description></description>
     </item>
     <item>
       <title>经验</title>
-      <link>https://hulatu.com/categories/%E7%BB%8F%E9%AA%8C/</link>
+      <link>http://localhost:1313/categories/%E7%BB%8F%E9%AA%8C/</link>
       <pubDate>Mon, 08 Dec 2025 17:14:50 +0000</pubDate>
-      <guid>https://hulatu.com/categories/%E7%BB%8F%E9%AA%8C/</guid>
+      <guid>http://localhost:1313/categories/%E7%BB%8F%E9%AA%8C/</guid>
       <description></description>
     </item>
     <item>
       <title>观念</title>
-      <link>https://hulatu.com/categories/%E8%A7%82%E5%BF%B5/</link>
+      <link>http://localhost:1313/categories/%E8%A7%82%E5%BF%B5/</link>
       <pubDate>Sun, 07 Dec 2025 16:03:14 +0000</pubDate>
-      <guid>https://hulatu.com/categories/%E8%A7%82%E5%BF%B5/</guid>
+      <guid>http://localhost:1313/categories/%E8%A7%82%E5%BF%B5/</guid>
       <description></description>
     </item>
     <item>
       <title>运动</title>
-      <link>https://hulatu.com/categories/%E8%BF%90%E5%8A%A8/</link>
+      <link>http://localhost:1313/categories/%E8%BF%90%E5%8A%A8/</link>
       <pubDate>Sun, 07 Dec 2025 16:03:14 +0000</pubDate>
-      <guid>https://hulatu.com/categories/%E8%BF%90%E5%8A%A8/</guid>
+      <guid>http://localhost:1313/categories/%E8%BF%90%E5%8A%A8/</guid>
       <description></description>
     </item>
     <item>
       <title>装备</title>
-      <link>https://hulatu.com/categories/%E8%A3%85%E5%A4%87/</link>
+      <link>http://localhost:1313/categories/%E8%A3%85%E5%A4%87/</link>
       <pubDate>Sat, 06 Dec 2025 14:12:10 +0000</pubDate>
-      <guid>https://hulatu.com/categories/%E8%A3%85%E5%A4%87/</guid>
+      <guid>http://localhost:1313/categories/%E8%A3%85%E5%A4%87/</guid>
       <description></description>
     </item>
     <item>
       <title>跑步</title>
-      <link>https://hulatu.com/categories/%E8%B7%91%E6%AD%A5/</link>
+      <link>http://localhost:1313/categories/%E8%B7%91%E6%AD%A5/</link>
       <pubDate>Sat, 06 Dec 2025 14:12:10 +0000</pubDate>
-      <guid>https://hulatu.com/categories/%E8%B7%91%E6%AD%A5/</guid>
+      <guid>http://localhost:1313/categories/%E8%B7%91%E6%AD%A5/</guid>
       <description></description>
     </item>
     <item>
       <title>分享</title>
-      <link>https://hulatu.com/categories/%E5%88%86%E4%BA%AB/</link>
+      <link>http://localhost:1313/categories/%E5%88%86%E4%BA%AB/</link>
       <pubDate>Fri, 05 Dec 2025 21:40:01 +0000</pubDate>
-      <guid>https://hulatu.com/categories/%E5%88%86%E4%BA%AB/</guid>
+      <guid>http://localhost:1313/categories/%E5%88%86%E4%BA%AB/</guid>
       <description></description>
     </item>
   </channel>

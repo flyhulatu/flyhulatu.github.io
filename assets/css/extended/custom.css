@@ -418,3 +418,48 @@ code {
     border-radius: 6px;
     font-family: "JetBrains Mono", monospace !important;
 }
+
+/* ==========================================================================
+   字体层级控制 (Hierarchy: Nav > Title > Body)
+   ========================================================================== */
+:root {
+    /* 定义字号变量，方便统一调整 */
+    --font-size-nav: 22px;    /* 导航栏：最大，强调入口 */
+    --font-size-title: 20px;  /* 文章标题：次之，保持优雅 */
+    --font-size-body: 16px;   /* 正文：标准，易读 */
+}
+
+/* 1. 导航栏 (Nav) - 视觉最大 */
+.logo a, .menu li a {
+    font-size: var(--font-size-nav) !important;
+    font-weight: 800 !important; /* 特粗，增加视觉比重 */
+    letter-spacing: -0.5px;      /* 紧凑一点，更像 Logo */
+}
+
+/* 2. 文章标题 (Title) - 视觉居中 */
+.post-title {
+    font-size: var(--font-size-title) !important;
+    font-weight: 700 !important;
+    line-height: 1.4;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+/* 详情页的大标题 */
+.post-single .post-title {
+    font-size: calc(var(--font-size-title) * 1.2) !important; /* 详情页稍微大一点点，但尽量克制 */
+}
+
+/* 3. 正文 (Body) - 视觉最轻 */
+.post-content {
+    font-size: var(--font-size-body) !important;
+    line-height: 1.75;           /* 增加行高，提升呼吸感 */
+    font-weight: 400;
+}
+
+/* 辅助信息（日期等）做得更小，以衬托层级 */
+.post-meta {
+    font-size: 13px !important;
+    opacity: 0.7;
+    font-family: var(--font-family-code) !important; /* 使用代码字体显示日期，更极客 */
+}
+
