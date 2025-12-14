@@ -50,25 +50,27 @@ params:
     Title: "Welcome coming Hulatu's Blog"
     Content: "写作，使我精确！"
   socialIcons:
+    - name: rss
+      url: "index.xml"
+
+    - name: email
+      url: "mailto:2983685624@qq.com"
+
     - name: github
       url: "https://github.com/flyhulatu"
     
-    - name: email
-      url: "mailto:2983685624@qq.com"
+    - name: wechat
+      url: "https://hulatu.com/images/wechat.png"
     
+    - name: zhihu
+      url: "https://www.zhihu.com/people/hulatu"
+
     # 小红书 (对应 assets/images/svg/xiaohongshu.svg)
     # - name: xiaohongshu
     #   url: "https://hulatu.com/images/xiaohongshu.png"
     
-    # 微信公众号 (对应 assets/images/svg/wechat.svg)
-    - name: wechat
-      url: "https://hulatu.com/images/wechat.png"
-    # 知乎
-    - name: zhihu
-      url: "https://www.zhihu.com/people/hulatu"
-
-    - name: "rss"
-      url: "index.xml"
+    
+    
       
     # QQ 邮箱/QQ (对应 assets/images/svg/qq.svg 如果你有的话)
     # - name: qq
