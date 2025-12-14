@@ -66,6 +66,9 @@ params:
     # 知乎
     - name: zhihu
       url: "https://www.zhihu.com/people/hulatu"
+
+    - name: "rss"
+      url: "index.xml"
       
     # QQ 邮箱/QQ (对应 assets/images/svg/qq.svg 如果你有的话)
     # - name: qq
