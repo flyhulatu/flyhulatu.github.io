@@ -86,32 +86,6 @@
 </script>
 <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont@1.7.0/lxgwwenkaiscreen.css" integrity="sha384-JSVn1znHuc8FVDp6lnwfdr+E/15Rtb/gBqsVMICU1fX4qsG81cPVTaneaJWFM8Ox" crossorigin="anonymous" media="print" onload="this.media='all'">
 
-<style>
-.typewriter {
-  display: inline-block;
-  overflow: hidden;  
-  border-right: .15em solid orange;  
-  white-space: nowrap;  
-  margin: 0 auto;
-  letter-spacing: .15em;
-  animation: 
-    typing 3.5s steps(30, end) infinite,  
-    blink-caret .5s step-end infinite;
-}
-
- 
-@keyframes typing {
-  0% { width: 0 }
-  50% { width: 100% }  
-  100% { width: 0 }
-}
-
- 
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange }
-}
-</style>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
       <script>
         var doNotTrack = false;
@@ -460,7 +434,39 @@
     </li>
 </ul>
 
-  </footer>
+  </footer><script src="https://giscus.app/client.js"
+        data-repo="flyhulatu/flyhulatu.github.io"
+        data-repo-id="R_kgDOQm2RDQ"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOQm2RDc4CzsVd"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light_protanopia"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<script>
+    
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const theme = document.body.className.includes("dark") ? 'light' : 'dark';
+        
+        
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (iframe) {
+            const message = { setConfig: { theme: theme === 'dark' ? 'dark' : 'light' } };
+            iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+
+        
+        
+    });
+</script>
 </article>
     </main>
     
