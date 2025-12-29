@@ -1,7 +1,8 @@
 baseURL: "https://hulatu.com/"
-languageCode: "zh-cn"
+languageCode: "zh"
 title: "胡拉图的博客"
 theme: "PaperMod"
+defaultContentLanguage: "zh"
 
 # 生成 HTML 的同时生成 Search 索引文件（PaperMod 搜索功能需要）
 outputs:
@@ -11,6 +12,10 @@ outputs:
     - JSON
 
 params:
+  UseHugoToc: true
+  showtoc: true
+  tocopen: true
+
   comments: true  # 全局启用（或在文章中单独控制）
   env: production # 生产环境
   title: 我的博客
@@ -30,11 +35,6 @@ params:
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
   ShowWordCount: true
-
-  # 隐藏文章封面图的默认圆角（因为我们用CSS统一控制了）
-  cover:
-    responsiveImages: true
-    hidden: false
     
   # 确保资源加载正常
   assets:
@@ -46,9 +46,14 @@ params:
     safari_pinned_tab: "/safari-pinned-tab.svg" # 可选 Safari
   
   # 个人资料页 (首页左侧或中间的介绍)
-  homeInfoParams:
-    Title: "Welcome coming Hulatu's Blog"
-    Content: "写作，使我精确！"
+  profileMode:
+    enabled: true
+    title: "Welcome coming Hulatu's Blog!" # optional default will be site title
+    subtitle: "写作，使我精确!"
+    imageUrl: "/images/avatar.png" # optional
+    imageTitle: "Little-Prince" # optional
+    imageWidth: 120 # custom size
+    imageHeight: 120 # custom size
   socialIcons:
     - name: rss
       url: "index.xml"
@@ -95,3 +100,7 @@ menu:
       name: 搜索
       url: /search/
       weight: 40
+
+services:
+    googleAnalytics:
+        id: "G-XXXXXXXXXX"
