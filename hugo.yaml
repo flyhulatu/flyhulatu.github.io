@@ -54,6 +54,14 @@ params:
     imageTitle: "Little-Prince" # optional
     imageWidth: 120 # custom size
     imageHeight: 120 # custom size
+    buttons: # 重点：在这里设置按钮
+      - name: 📝 文章
+        url: posts
+      - name: 🏷️ 标签
+        url: tags
+      - name: 🐙 GitHub
+        url: "https://github.com/yourusername"
+    
   socialIcons:
     - name: rss
       url: "index.xml"
