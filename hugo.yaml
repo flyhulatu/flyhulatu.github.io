@@ -48,8 +48,8 @@ params:
   # 个人资料页 (首页左侧或中间的介绍)
   profileMode:
     enabled: true
-    title: "欢迎来到,我的世界。" # optional default will be site title
-    subtitle: "写作，使我精确！"
+    title: "欢迎来到,我的世界" # optional default will be site title
+    subtitle: "写作，使我精确"
     imageUrl: "/images/avatar.png" # optional
     imageTitle: "Little-Prince" # optional
     imageWidth: 120 # custom size
