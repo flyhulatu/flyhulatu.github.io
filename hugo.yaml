@@ -2,6 +2,7 @@ baseURL: "https://hulatu.com/"
 languageCode: "zh"
 title: "胡拉图的博客"
 theme: "PaperMod"
+enableRobotsTXT: true
 defaultContentLanguage: "zh"
 
 # 生成 HTML 的同时生成 Search 索引文件（PaperMod 搜索功能需要）
@@ -18,10 +19,10 @@ params:
 
   comments: true  # 全局启用（或在文章中单独控制）
   env: production # 生产环境
-  title: 我的博客
-  description: "这是我的博客描述"
-  keywords: [Blog, Tech, Hugo]
-  author: Me
+  title: 胡拉图的后花园
+  description: "一位热爱运动、记录、分享的工科研究生"
+  keywords: [成长, 运动, 生活]
+  author: "图图"
   
   # 默认主题颜色 (auto, dark, light)
   defaultTheme: auto
