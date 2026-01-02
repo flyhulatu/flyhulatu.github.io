@@ -16,6 +16,7 @@ params:
   UseHugoToc: true
   showtoc: true
   tocopen: true
+  customHeadHTML: '<meta name="baidu-site-verification" content="codeva-6AyBRgtF7K" />'
 
   comments: true  # 全局启用（或在文章中单独控制）
   env: production # 生产环境
