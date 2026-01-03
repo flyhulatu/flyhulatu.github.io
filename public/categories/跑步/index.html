@@ -10,7 +10,7 @@
 <meta name="description" content="一位热爱运动、记录、分享的工科研究生">
 <meta name="author" content="图图">
 <link rel="canonical" href="http://localhost:1313/categories/%E8%B7%91%E6%AD%A5/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.023a9c5bc111c214cc0c6269abe1dda0d042030bf8b88df2a7203da6e1578296.css" integrity="sha256-AjqcW8ERwhTMDGJpq&#43;HdoNBCAwv4uI3ypyA9puFXgpY=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.d1e3ca2a5938edf815a719a3a84a47ece04f701c9d0359f3dde8514227bbbd42.css" integrity="sha256-0ePKKlk47fgVpxmjqEpH7OBPcBydA1nz3ehRQie7vUI=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.png">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon.png">
@@ -335,6 +335,69 @@ document.addEventListener('DOMContentLoaded', function() {
         本站访客数 <span id="busuanzi_value_site_uv"></span> 人
     </span>
 </div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
+        return;
+    }
+
+    
+    
+    const element = document.querySelector('.profile .profile-description') || document.querySelector('.profile .subtitle');
+
+    if (!element) {
+        console.log('打字机错误：未找到简介元素，请检查 HTML 类名');
+        return;
+    }
+
+    
+    const textToType = element.innerText.trim(); 
+    element.innerText = ''; 
+    element.classList.add('typing-cursor'); 
+
+    let index = 0;
+    const speed = 100; 
+
+    function typeWriter() {
+        if (index < textToType.length) {
+            
+            element.append(textToType.charAt(index));
+            index++;
+            setTimeout(typeWriter, speed);
+        } else {
+            
+            
+        }
+    }
+
+    
+    setTimeout(typeWriter, 500);
+});
+</script>
+
+<style>
+     
+    .typing-cursor::after {
+        content: '|';
+        display: inline-block;
+        margin-left: 5px;
+        color: var(--primary);  
+        animation: blink-cursor 1s step-end infinite;
+    }
+
+    @keyframes blink-cursor {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+    }
+    
+     
+    .profile .profile-description {
+        min-height: 1.5em; 
+    }
+</style>
 
 <script>
     let menu = document.getElementById('menu');

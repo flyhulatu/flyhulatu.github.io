@@ -1,0 +1,54 @@
+
+/* --- 阅读优化 --- */
+.post-content, .content { /* PaperMod 可能用 .content 作为文章主体类 */
+  line-height: 1.75;
+  font-size: 1.05rem; /* 稍大字号 */
+}
+
+.post-content p, .content p {
+  margin-bottom: 1.5em;
+  text-align: justify; /* 考虑两端对齐 */
+}
+
+/* 针对中文，可以稍微增加字间距 */
+body {
+  letter-spacing: 0.02em;
+}
+
+/* custom.css */
+html {
+    scroll-behavior: smooth; /* 启用平滑滚动 */
+}
+
+/* custom.css */
+
+/* 头像呼吸灯动画定义 */
+@keyframes breathing {
+    0% {
+        box-shadow: 0 0 0px rgba(255, 255, 255, 0.1);
+        transform: scale(1);
+    }
+    50% {
+        /* 这里的颜色可以改成你喜欢的主题色，比如小王子的金色 #f1c40f */
+        box-shadow: 0 0 15px rgba(241, 196, 15, 0.6); 
+        transform: scale(1.02);
+    }
+    100% {
+        box-shadow: 0 0 0px rgba(255, 255, 255, 0.1);
+        transform: scale(1);
+    }
+}
+
+/* 应用到 PaperMod 主页头像 */
+.profile img {
+    border-radius: 50%; /* 确保是圆形的 */
+    animation: breathing 4s ease-in-out infinite; /* 4秒循环一次 */
+    transition: all 0.5s; /* 鼠标悬停时的平滑过渡 */
+}
+
+/* 鼠标悬停时，加速呼吸或停止呼吸，并稍微放大，增加交互感 */
+.profile img:hover {
+    transform: scale(1.1) rotate(5deg); /* 放大并微微旋转 */
+    box-shadow: 0 0 25px rgba(241, 196, 15, 0.8);
+    animation-play-state: paused; /* 悬停时暂停呼吸动画，定格在当前状态 */
+}
