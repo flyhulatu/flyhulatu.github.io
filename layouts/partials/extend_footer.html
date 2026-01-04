@@ -119,3 +119,23 @@ document.addEventListener('DOMContentLoaded', function() {
     </span>
 </div>
 
+<!-- 引入 medium-zoom 库 -->
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+
+<script>
+  // 获取当前页面的所有文章内容图片
+  // .post-content img 是 PaperMod 文章正文图片的 CSS 选择器
+  const images = Array.from(document.querySelectorAll(".post-content img"));
+  
+  images.forEach(img => {
+    mediumZoom(img, {
+      margin: 10, /* 图片放大后距离边界的留白 */
+      background: '#1d1e20', /* 背景颜色，为了适配 PaperMod 的深色模式，建议用深灰色，或者纯黑 #000 */
+      scrollOffset: 40, /* 滚动多少像素自动关闭 */
+      container: null,
+      template: null,
+      lightbox: null
+    });
+  });
+</script>
+

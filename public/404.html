@@ -291,6 +291,26 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+
+<script>
+  
+  
+  const images = Array.from(document.querySelectorAll(".post-content img"));
+  
+  images.forEach(img => {
+    mediumZoom(img, {
+      margin: 10,  
+      background: '#1d1e20',  
+      scrollOffset: 40,  
+      container: null,
+      template: null,
+      lightbox: null
+    });
+  });
+</script>
+
+
 
 <script>
     let menu = document.getElementById('menu');

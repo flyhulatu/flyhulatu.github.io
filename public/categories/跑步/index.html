@@ -337,67 +337,26 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    
-    if (window.location.pathname !== '/' && window.location.pathname !== '/index.html') {
-        return;
-    }
-
-    
-    
-    const element = document.querySelector('.profile .profile-description') || document.querySelector('.profile .subtitle');
-
-    if (!element) {
-        console.log('打字机错误：未找到简介元素，请检查 HTML 类名');
-        return;
-    }
-
-    
-    const textToType = element.innerText.trim(); 
-    element.innerText = ''; 
-    element.classList.add('typing-cursor'); 
-
-    let index = 0;
-    const speed = 100; 
-
-    function typeWriter() {
-        if (index < textToType.length) {
-            
-            element.append(textToType.charAt(index));
-            index++;
-            setTimeout(typeWriter, speed);
-        } else {
-            
-            
-        }
-    }
-
-    
-    setTimeout(typeWriter, 500);
-});
+  
+  
+  const images = Array.from(document.querySelectorAll(".post-content img"));
+  
+  images.forEach(img => {
+    mediumZoom(img, {
+      margin: 10,  
+      background: '#1d1e20',  
+      scrollOffset: 40,  
+      container: null,
+      template: null,
+      lightbox: null
+    });
+  });
 </script>
 
-<style>
-     
-    .typing-cursor::after {
-        content: '|';
-        display: inline-block;
-        margin-left: 5px;
-        color: var(--primary);  
-        animation: blink-cursor 1s step-end infinite;
-    }
 
-    @keyframes blink-cursor {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0; }
-    }
-    
-     
-    .profile .profile-description {
-        min-height: 1.5em; 
-    }
-</style>
 
 <script>
     let menu = document.getElementById('menu');
