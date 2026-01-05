@@ -6,8 +6,22 @@
     <description>Recent content on 胡拉图的博客</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>zh</language>
-    <lastBuildDate>Sat, 03 Jan 2026 22:09:22 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 05 Jan 2026 21:07:47 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>三类财富杠杆</title>
+      <link>http://localhost:1313/posts/%E4%B8%89%E7%B1%BB%E8%B4%A2%E5%AF%8C%E6%9D%A0%E6%9D%86/</link>
+      <pubDate>Mon, 05 Jan 2026 21:07:47 +0800</pubDate>
+      <guid>http://localhost:1313/posts/%E4%B8%89%E7%B1%BB%E8%B4%A2%E5%AF%8C%E6%9D%A0%E6%9D%86/</guid>
+      <description>预祝大家，早日实现财务自由！</description>
+    </item>
+    <item>
+      <title>胡拉图的周刊 第三期</title>
+      <link>http://localhost:1313/posts/%E8%83%A1%E6%8B%89%E5%9B%BE%E7%9A%84%E5%91%A8%E5%88%8A-%E7%AC%AC%E4%B8%89%E6%9C%9F/</link>
+      <pubDate>Sun, 04 Jan 2026 16:16:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/%E8%83%A1%E6%8B%89%E5%9B%BE%E7%9A%84%E5%91%A8%E5%88%8A-%E7%AC%AC%E4%B8%89%E6%9C%9F/</guid>
+      <description>生活，总是有喜有悲，由人为强加给你的苦痛，在没有绝对实力时，只能受着。</description>
+    </item>
     <item>
       <title>如果你也想开始写作，这些写作工具推荐给大家</title>
       <link>http://localhost:1313/posts/%E5%A6%82%E6%9E%9C%E4%BD%A0%E4%B9%9F%E6%83%B3%E5%BC%80%E5%A7%8B%E5%86%99%E4%BD%9C%E8%BF%99%E4%BA%9B%E5%86%99%E4%BD%9C%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90%E7%BB%99%E5%A4%A7%E5%AE%B6/</link>
@@ -125,6 +139,66 @@
       <pubDate>Fri, 05 Dec 2025 21:40:01 +0000</pubDate>
       <guid>http://localhost:1313/posts/%E5%85%B3%E4%BA%8E%E6%88%91/</guid>
       <description>关于我，关于胡拉图的一些了解。</description>
+    </item>
+    <item>
+      <title>友链</title>
+      <link>http://localhost:1313/links/</link>
+      <pubDate>Sun, 05 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/links/</guid>
+      <description>&lt;p&gt;这里是我的朋友们，欢迎互换友链！&lt;/p&gt;
+
+&lt;div class=&#34;friend-links&#34;&gt;
+  
+  &lt;a class=&#34;friend-item&#34; href=&#34;https://github.com&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;
+    &lt;div class=&#34;friend-avatar&#34;&gt;
+      &lt;img src=&#34;https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png&#34; alt=&#34;GitHub&#34; loading=&#34;lazy&#34;&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;friend-info&#34;&gt;
+      &lt;div class=&#34;friend-name&#34;&gt;GitHub&lt;/div&gt;
+      &lt;div class=&#34;friend-desc&#34;&gt;全球最大的代码托管平台&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/a&gt;
+  
+  &lt;a class=&#34;friend-item&#34; href=&#34;https://gohugo.io&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;
+    &lt;div class=&#34;friend-avatar&#34;&gt;
+      &lt;img src=&#34;https://d33wubrfki0l68.cloudfront.net/c38c7334cc3f23585738e40334284fddcaf03d5e/2e17c/images/hugo-logo-wide.svg&#34; alt=&#34;Hugo&#34; loading=&#34;lazy&#34;&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;friend-info&#34;&gt;
+      &lt;div class=&#34;friend-name&#34;&gt;Hugo&lt;/div&gt;
+      &lt;div class=&#34;friend-desc&#34;&gt;世界上最快的网站构建框架&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/a&gt;
+  
+  &lt;a class=&#34;friend-item&#34; href=&#34;https://blogscn.fun/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;
+    &lt;div class=&#34;friend-avatar&#34;&gt;
+      &lt;img src=&#34;https://photo.xiangming.site/img/blogscnlogo.png&#34; alt=&#34;blogscn&#34; loading=&#34;lazy&#34;&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;friend-info&#34;&gt;
+      &lt;div class=&#34;friend-name&#34;&gt;blogscn&lt;/div&gt;
+      &lt;div class=&#34;friend-desc&#34;&gt;致敬还在写博客的我们&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/a&gt;
+  
+  &lt;a class=&#34;friend-item&#34; href=&#34;https://www.boyouquan.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreferrer&#34;&gt;
+    &lt;div class=&#34;friend-avatar&#34;&gt;
+      &lt;img src=&#34;https://www.boyouquan.com/&#34; alt=&#34;博友圈&#34; loading=&#34;lazy&#34;&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;friend-info&#34;&gt;
+      &lt;div class=&#34;friend-name&#34;&gt;博友圈&lt;/div&gt;
+      &lt;div class=&#34;friend-desc&#34;&gt;博友圈是博客人的专属朋友圈。我们的愿景是：将一个个散落在各处的孤岛连接成一片广袤无垠的新大陆！&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/a&gt;
+  
+&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;申请格式：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;名称：您的博客名称&lt;/li&gt;
+&lt;li&gt;地址：您的博客地址&lt;/li&gt;
+&lt;li&gt;图标：您的头像地址&lt;/li&gt;
+&lt;li&gt;描述：一句话介绍&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>

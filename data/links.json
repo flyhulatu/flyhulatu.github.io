@@ -1,0 +1,26 @@
+[
+  {
+    "name": "GitHub",
+    "url": "https://github.com",
+    "avatar": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+    "description": "全球最大的代码托管平台"
+  },
+  {
+    "name": "Hugo",
+    "url": "https://gohugo.io",
+    "avatar": "https://d33wubrfki0l68.cloudfront.net/c38c7334cc3f23585738e40334284fddcaf03d5e/2e17c/images/hugo-logo-wide.svg",
+    "description": "世界上最快的网站构建框架"
+  },
+  {
+    "name": "blogscn",
+    "url": "https://blogscn.fun/",
+    "avatar": "https://photo.xiangming.site/img/blogscnlogo.png",
+    "description": "致敬还在写博客的我们"
+  },
+  {
+    "name": "博友圈",
+    "url": "https://www.boyouquan.com/",
+    "avatar": "https://www.boyouquan.com/",
+    "description": "博友圈是博客人的专属朋友圈。我们的愿景是：将一个个散落在各处的孤岛连接成一片广袤无垠的新大陆！"
+  }
+]

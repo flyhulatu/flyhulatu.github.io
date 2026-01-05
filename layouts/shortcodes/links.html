@@ -1,0 +1,14 @@
+<!-- layouts/shortcodes/links.html -->
+<div class="friend-links">
+  {{ range $.Site.Data.links }}
+  <a class="friend-item" href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+    <div class="friend-avatar">
+      <img src="{{ .avatar }}" alt="{{ .name }}" loading="lazy">
+    </div>
+    <div class="friend-info">
+      <div class="friend-name">{{ .name }}</div>
+      <div class="friend-desc">{{ .description }}</div>
+    </div>
+  </a>
+  {{ end }}
+</div>
