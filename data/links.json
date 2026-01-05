@@ -22,5 +22,11 @@
     "url": "https://www.boyouquan.com/",
     "avatar": "https://www.boyouquan.com/assets/images/sites/logo/logo-small.svg",
     "description": "博友圈是博客人的专属朋友圈。我们的愿景是：将一个个散落在各处的孤岛连接成一片广袤无垠的新大陆！"
+  },
+  {
+    "name": "BlogFinder",
+    "url": "https://bf.zzxworld.com/",
+    "avatar": "https://bf.zzxworld.com/images/logo-v2.png",
+    "description": "每个博客都是一座宝藏"
   }
 ]
