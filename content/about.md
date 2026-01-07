@@ -28,23 +28,6 @@ disableHLJS: true
     </div>
 </div>
 
-### 🛠 Tech Stack
-
-<p align="left">
-  <img src="https://skillicons.dev/icons?i=git,hugo,md,vscode,bash,docker,python,js&theme=light" />
-</p>
-<!-- 
-参数说明：
-i=后面接你想展示的技术名，用逗号隔开
-theme=light 或 dark (PaperMod支持暗色，你可以写两行，利用CSS类控制显隐，或者直接选个通用的)
--->
-
-### 📊 GitHub Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=flyhulatu&show_icons=true&theme=gotham" alt="Stats" />
-</p>
-
 ### 🚀 经历
 
 - **2024 - 至今**: 河南郑州某非双一流大学读研
