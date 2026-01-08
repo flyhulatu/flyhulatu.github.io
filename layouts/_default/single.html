@@ -55,9 +55,6 @@
     {{- if (and site.Params.ShowShareButtons (ne .Params.disableShare true)) }}
     {{- partial "share_icons.html" . -}}
     {{- end }}
-    <span id="busuanzi_container_page_pv">
-    &nbsp;|&nbsp; 阅读量 <span id="busuanzi_value_page_pv"></span> 次
-    </span>
   </footer>
 
   {{- if (.Param "comments") }}

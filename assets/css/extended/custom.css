@@ -157,3 +157,31 @@ a:hover {
     color: var(--secondary);
     margin-top: 5px;
 }
+
+/* 1. 针对页脚统计的美化 */
+.busuanzi-footer {
+    font-size: 12px; /* 字体调小，不仅精致也更低调 */
+    color: var(--secondary); /* 使用主题自带的次级灰色，自动适配暗色模式 */
+    margin-top: 5px; /* 与上方版权信息拉开一点距离 */
+    display: flex;
+    justify-content: center; /* 居中 */
+    align-items: center;
+    gap: 10px; /* 两个数据之间的间距 */
+    opacity: 0.8; 
+}
+
+/* 2. 针对文章页阅读量的微调（如果需要） */
+#busuanzi_container_page_pv {
+    color: var(--secondary);
+}
+
+/* (可选) 如果你想加图标 */
+/* 这里使用 CSS 伪元素加 emoji 或者 SVG，比引入 FontAwesome 更轻量 */
+#busuanzi_container_site_pv::before {
+    content: "👁️"; /* 或者用 SVG */
+    margin-right: 4px;
+}
+#busuanzi_container_site_uv::before {
+    content: "👤"; /* 或者用 SVG */
+    margin-right: 4px;
+}
