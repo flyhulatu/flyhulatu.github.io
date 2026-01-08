@@ -52,3 +52,108 @@ html {
     box-shadow: 0 0 25px rgba(241, 196, 15, 0.8);
     animation-play-state: paused; /* 悬停时暂停呼吸动画，定格在当前状态 */
 }
+
+/* 代码块背景优化 */
+.post-content pre {
+    border-radius: 8px;
+    background-color: #282c34 !important; /* 深色背景 */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Mac 风格红黄绿圆点 */
+.post-content pre::before {
+    content: "";
+    display: block;
+    background: #fc625d;
+    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 10px 0 10px 5px; /* 调整位置 */
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+body {
+    cursor: url(https://cdn.jsdelivr.net/gh/fz6m/Private-web@1.5.0/image/cursor/normal.cur), auto;
+}
+a:hover {
+    cursor: url(https://cdn.jsdelivr.net/gh/fz6m/Private-web@1.5.0/image/cursor/link.cur), auto;
+}
+
+/* --- 归档页面时间轴美化 --- */
+
+/* 1. 隐藏归档页面默认的年份计数 (可选) */
+/* 例如: 2023 <sup> 5</sup> 中的数字 */
+.archive-year-header sup {
+    display: none;
+}
+
+/* 2. 调整年份标题样式 */
+.archive-year-header {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: var(--primary); /* 使用主题色 */
+    position: relative;
+    padding-left: 20px; /* 给左边留点位置 */
+}
+
+/* 3. 为整个文章列表容器画一条垂直线 */
+.archive-posts {
+    border-left: 2px solid var(--tertiary); /* 线条颜色，跟随深色模式变动 */
+    margin-left: 20px; /* 线条距离左边的距离 */
+    padding-left: 30px; /* 内容距离线条的距离 */
+    position: relative;
+}
+
+/* 4. 单篇文章卡片的样式 */
+.archive-entry {
+    position: relative;
+    margin-bottom: 25px; /* 文章之间的间距 */
+    padding: 15px;
+    background: var(--entry); /* 使用主题自带的卡片背景色 */
+    border-radius: 8px;
+    transition: all 0.3s; /* 添加过渡动画 */
+}
+
+/* 鼠标悬停时的效果：轻微上浮 + 阴影 */
+.archive-entry:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: var(--tertiary); /* 悬停时背景稍微变深 */
+}
+
+/* 5. 画时间轴上的小圆点 */
+.archive-entry::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary); /* 圆点颜色 */
+    border-radius: 50%;
+    /* 定位圆点 */
+    left: -36px; /* 根据 .archive-posts 的 padding-left 和 border 宽度调整 */
+    top: 25px;   /* 调整垂直位置，使其对齐标题 */
+    border: 3px solid var(--theme); /* 圆点外圈，颜色需与背景色一致以形成空隙感 */
+    z-index: 1;
+}
+
+/* 6. (进阶) 针对第一篇文章的圆点做特殊样式（可选） */
+/* 让最新的文章圆点变成空心或者呼吸灯效果 */
+.archive-posts .archive-entry:first-child::before {
+    background-color: var(--theme);
+    border: 3px solid var(--primary);
+    box-shadow: 0 0 0 3px var(--primary); /* 发光效果 */
+}
+
+/* 7. 调整日期元数据的样式 */
+.archive-meta {
+    font-size: 14px;
+    color: var(--secondary);
+    margin-top: 5px;
+}
