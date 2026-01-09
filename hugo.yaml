@@ -26,6 +26,10 @@ params:
   description: "一位热爱运动、记录、分享的工科研究生"
   keywords: [成长, 运动, 生活]
   author: "图图"
+  cover:
+    hidden: false # false = 显示封面
+    hiddenInList: false # false = 在列表页也显示
+    responsiveImages: true # 开启响应式图片
   
   # 默认主题颜色 (auto, dark, light)
   defaultTheme: auto

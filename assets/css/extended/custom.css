@@ -60,17 +60,7 @@ html {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Mac 风格红黄绿圆点 */
-.post-content pre::before {
-    content: "";
-    display: block;
-    background: #fc625d;
-    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin: 10px 0 10px 5px; /* 调整位置 */
-}
+
 
 ::-webkit-scrollbar {
     width: 0px;
@@ -277,4 +267,225 @@ a:hover {
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
+}
+
+/* custom.css */
+
+/* 使整个文章条目成为 Flexbox 容器 */
+.post-entry.tag-entry { /* .tag-entry 类请参考你网站现有的CSS类 */
+    display: flex;
+    align-items: center; /* 使图片和文本垂直居中对齐 */
+    gap: 20px; /* 图片和文本之间的间距 */
+    margin-bottom: 30px; /* 文章条目之间的间距 */
+}
+
+/* 图片容器的样式 */
+.entry-cover {
+    flex-basis: 200px; /* 设置图片的固定宽度 */
+    min-width: 200px; /* 指定最小宽度 */
+    /* 保持图片纵横比的设置等 */
+}
+
+.entry-cover img {
+    width: 100%;
+    height: auto; /* 或者固定高度并使用 object-fit: cover; */
+    border-radius: var(--radius); /* 保持 PaperMod 的设计风格 */
+}
+
+/* 文本内容容器的样式 */
+.entry-contents {
+    flex-grow: 1; /* 让文本内容占据剩余空间 */
+}
+
+/* 移动端适配（可选） */
+@media (max-width: 768px) {
+    .post-entry.tag-entry {
+        flex-direction: column; /* 在小屏幕上恢复为垂直堆叠布局 */
+    }
+    .entry-cover {
+        flex-basis: auto;
+        min-width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* 2. 按钮与卡片交互优化 */
+
+/* 首页社交图标 (Social Icons) 悬停动画 */
+.social-icons a {
+    transition: all 0.3s ease;
+}
+.social-icons a:hover {
+    transform: scale(1.2); /* 放大 1.2 倍 */
+    color: var(--primary); /* 变色 */
+}
+
+/* 首页及全站通用按钮 (Buttons) 美化 */
+.button {
+    border-radius: 8px; /* 圆角稍微大一点 */
+    transition: all 0.3s ease; /* 平滑过渡 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 默认微弱阴影 */
+}
+
+.button:hover {
+    transform: translateY(-3px); /* 向上浮动 */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* 悬浮时阴影加深 */
+    background-color: var(--primary); /* 确保背景色变化 */
+    color: white; /* 文字变白 */
+}
+
+/* 3. 归档页时间轴样式 */
+
+/* 隐藏原本年份的左边距，重新布局 */
+.archive-year {
+    position: relative;
+    margin-left: 20px;
+}
+
+/* 时间轴竖线 */
+.archive-posts {
+    border-left: 2px solid var(--tertiary); /* 左侧线条颜色 */
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+/* 每一篇文章的节点小圆点 */
+.archive-entry {
+    position: relative;
+    transition: all 0.3s;
+}
+
+/* 鼠标悬停文章时，整体向右微动 */
+.archive-entry:hover {
+    transform: translateX(10px);
+    background: var(--entry); /* 增加一点背景色突显 */
+    border-radius: 5px;
+}
+
+/* 时间轴上的小圆点 */
+.archive-entry::before {
+    content: "";
+    position: absolute;
+    left: -26px; /* 根据线的位置调整 */
+    top: 10px;   /* 垂直居中调整 */
+    width: 10px;
+    height: 10px;
+    background: var(--primary); /* 圆点颜色 */
+    border-radius: 50%;
+    border: 2px solid var(--theme); /* 圆点外圈，适配暗黑模式 */
+    z-index: 1;
+}
+
+/* 6. 友链卡片交互 */
+
+/* 这里假设你的友链外层容器类名，如果不生效请右键检查元素查看类名 */
+/* 这里的样式是让卡片浮起来 */
+.friend-item, .links-item { /* 请替换为你实际的友链卡片类名 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+}
+
+.friend-item:hover, .links-item:hover {
+    transform: translateY(-5px); /* 上浮 */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* 投影 */
+    z-index: 2;
+}
+
+/* 友链里的头像旋转特效 */
+.friend-item img:hover, .links-item img:hover {
+    transform: rotate(360deg);
+    transition: transform 0.6s ease-in-out;
+}
+
+/* --- 图片悬停放大特效 (Zoom Effect) --- */
+
+/* 1. 图片的容器（裁切框） */
+.img-zoom-container {
+    overflow: hidden; /* 关键：超出容器的部分隐藏 */
+    border-radius: 8px; /* 可选：给图片框加个圆角 */
+    margin: 1.5rem auto; /* 保持图片居中，上下留白 */
+    display: inline-block; /* 适应图片宽度 */
+    /* 解决部分浏览器图片底部有白边的问题 */
+    line-height: 0; 
+}
+
+/* 为了让容器在 PaperMod 中水平居中 */
+.post-content .img-zoom-container {
+    display: block; 
+    width: fit-content;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 2. 图片本身的样式 */
+.img-zoom-container img {
+    transition: transform 0.6s ease; /* 动画过渡时间：0.6秒，丝滑 */
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 3. 鼠标悬停时的动作 */
+.img-zoom-container:hover img {
+    transform: scale(1.1); /* 放大 1.1 倍 */
+    cursor: zoom-in; /* 鼠标变成放大镜图标 */
+}
+
+/* --- 列表页：左图右文布局 (Left-Image-Right-Text) --- */
+
+/* 仅在屏幕宽度大于 768px (电脑/平板) 时生效 */
+@media screen and (min-width: 768px) {
+    
+    /* 核心逻辑：只有当文章包含 .entry-cover (封面图) 时，才启用 Grid 布局 */
+    /* 使用 :has() 选择器，避免没有封面的文章排版错乱 */
+    .post-entry:has(.entry-cover) {
+        display: grid;
+        /* 定义两列：左边图片占 32%，右边内容占剩余空间 */
+        grid-template-columns: 32% 1fr; 
+        column-gap: 25px; /* 图片和文字的间距 */
+        /* 定义布局区域：图片占左边三行，右边分别是标题、摘要、底部信息 */
+        grid-template-areas:
+            "image header"
+            "image content"
+            "image footer";
+        align-items: start; /* 内容顶对齐 */
+    }
+
+    /* 1. 图片区域设置 */
+    .entry-cover {
+        grid-area: image; /* 放入 image 区域 */
+        margin-bottom: 0; /* 去掉默认的底部边距 */
+        height: 100%;     /* 高度撑满 */
+        min-height: 180px; /* 给一个最小高度，保证美观 */
+        overflow: hidden;
+        border-radius: var(--radius); /* 跟随主题圆角 */
+    }
+
+    /* 强制图片裁剪填充，保证大小一致，不会参差不齐 */
+    .entry-cover img {
+        width: 100%;
+        height: 100% !important;
+        object-fit: cover; /* 关键：裁切图片中间部分，不拉伸变形 */
+    }
+
+    /* 2. 文字区域设置 */
+    .entry-header {
+        grid-area: header;
+        margin-bottom: 10px; /* 标题和摘要稍微分开点 */
+    }
+
+    .entry-content {
+        grid-area: content;
+        /* 限制摘要行数，超过3行显示省略号，避免右侧太高 */
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+    }
+
+    .entry-footer {
+        grid-area: footer;
+        margin-top: auto; /* 把底部信息（日期/标签）推到最下面 */
+    }
 }
