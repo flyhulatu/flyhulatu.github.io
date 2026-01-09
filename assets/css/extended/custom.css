@@ -187,3 +187,94 @@ a:hover {
 .post-single .meta-views {
     display: inline;
 }
+
+/* --- 社交分享栏美化 --- */
+
+/* 1. 调整图标大小和间距 */
+.share-icon svg {
+    width: 30px;
+    height: 30px;
+    /* 增加图标间距 */
+    margin: 0 10px; 
+    transition: transform 0.2s;
+}
+
+/* 鼠标放上去图标稍微放大，动感一点 */
+.share-icon:hover svg {
+    transform: scale(1.1);
+    color: var(--primary);
+}
+
+/* 2. 微信分享按钮容器 */
+.share-wechat {
+    position: relative; /* 关键：为了定位里面的二维码 */
+    display: inline-block;
+}
+
+/* 3. 微信二维码弹窗 (默认隐藏) */
+.wechat-qrcode {
+    display: none; /* 平时看不见 */
+    position: absolute;
+    bottom: 45px; /* 显示在图标正上方 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 100;
+    text-align: center;
+    padding: 10px;
+}
+
+/* 4. 鼠标悬停时显示二维码 */
+.share-wechat:hover .wechat-qrcode {
+    display: block;
+    animation: fadeInUp 0.3s ease;
+}
+
+/* 5. 二维码图片样式 */
+.wechat-qrcode img {
+    width: 140px;
+    height: 140px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 6. "微信扫一扫分享" 文字 */
+.qrcode-title {
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* 7. 适配暗色模式 (防止二维码背景太亮刺眼，或文字看不清) */
+[data-theme="dark"] .wechat-qrcode {
+    background: #333;
+    border-color: #555;
+}
+[data-theme="dark"] .qrcode-title {
+    color: #eee;
+}
+
+/* 简单动画 */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translate(-50%, 10px); }
+    to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* --- 打字机光标特效 --- */
+#typewriter::after {
+    content: "|";      /* 光标形状 */
+    margin-left: 5px;  /* 光标和文字的距离 */
+    animation: blink 1s infinite; /* 闪烁动画 */
+    color: var(--primary); /* 光标颜色跟随主题 */
+}
+
+/* 定义闪烁动画 */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}

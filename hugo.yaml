@@ -39,6 +39,7 @@ params:
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
   ShowWordCount: true
+
     
   # 确保资源加载正常
   assets:
@@ -53,7 +54,7 @@ params:
   profileMode:
     enabled: true
     title: "欢迎来到,我的世界" # optional default will be site title
-    subtitle: "写作，使我精确"
+    subtitle: "🖊️"
     imageUrl: "/images/avatar.png" # optional
     imageTitle: "Little-Prince" # optional
     imageWidth: 120 # custom size

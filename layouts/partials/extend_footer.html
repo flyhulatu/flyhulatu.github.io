@@ -125,3 +125,59 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- 打字机特效脚本 -->
+<script>
+    (function() {
+        // ⬇️⬇️⬇️ 这里定义你要轮播的句子，可以写多句 ⬇️⬇️⬇️
+        const textArray = [
+            "写作，使我精确",
+        ];
+        
+        // ⬇️⬇️⬇️ 参数配置 ⬇️⬇️⬇️
+        const typeSpeed = 100;    // 打字速度 (毫秒)
+        const deleteSpeed = 50;   // 删除速度 (毫秒)
+        const waitTime = 2000;    // 打完一句话后的停留时间 (毫秒)
+
+        // 逻辑处理（不需要动）
+        const element = document.getElementById('typewriter');
+        if (!element) return; // 如果没找到容器就不执行
+
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentText = textArray[textIndex];
+            
+            if (isDeleting) {
+                // 删除模式
+                element.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                // 输入模式
+                element.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            // 动态控制速度
+            let delta = isDeleting ? deleteSpeed : typeSpeed;
+
+            if (!isDeleting && charIndex === currentText.length) {
+                // 打完了，暂停一会儿
+                delta = waitTime;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                // 删完了，切换下一句
+                isDeleting = false;
+                textIndex = (textIndex + 1) % textArray.length; // 循环切换
+                delta = 500; // 删完后稍微停顿一下再开始打
+            }
+
+            setTimeout(type, delta);
+        }
+
+        // 开始执行
+        document.addEventListener('DOMContentLoaded', type);
+    })();
+</script>
