@@ -31,7 +31,7 @@ params:
   disableThemeToggle: false
 
   # 是否在首页显示全文 (false 为只显示摘要)
-  ShowReadingTime: true
+  ShowReadingTime: false
   ShowShareButtons: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true

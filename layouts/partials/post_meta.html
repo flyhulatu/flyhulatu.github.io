@@ -1,31 +1,22 @@
-{{- $scratch := newScratch }}
-
+{{- /* 1. 创建日期 (Date) */ -}}
 {{- if not .Date.IsZero -}}
-{{- $scratch.Add "meta" (slice (printf "<span title='%s'>%s</span>" (.Date) (.Date | time.Format (default ":date_long" site.Params.DateFormat)))) }}
-{{- end }}
+    <span title="{{ .Date.Format "2006-01-02 15:04:05" }}">
+        {{- .Date | time.Format (default "2006-01-02" site.Params.DateFormat) -}}
+    </span>
+{{- end -}}
 
-{{- if (.Param "ShowReadingTime") -}}
-{{- $scratch.Add "meta" (slice (printf "<span>%s</span>" (i18n "read_time" .ReadingTime | default (printf "%d min" .ReadingTime)))) }}
-{{- end }}
+{{- /* 分隔符 */ -}}
+&nbsp;·&nbsp;
 
-<span id="busuanzi_container_page_pv" style="display: none;">
-    {{- if or .Params.ShowDate .Params.ShowWordCount .Params.ShowReadingTime -}}
-    &nbsp;·&nbsp;
-    {{- end -}}
-    <span id="busuanzi_value_page_pv"></span> 
-    <span>views</span>
+{{- /* 2. 字数统计 (Word Count) */ -}}
+<span>
+    {{- i18n "words" .WordCount | default (printf "%d 字" .WordCount) -}}
 </span>
 
-{{- if (.Param "ShowWordCount") -}}
-{{- $scratch.Add "meta" (slice (printf "<span>%s</span>" (i18n "words" .WordCount | default (printf "%d words" .WordCount)))) }}
-{{- end }}
+{{- /* 分隔符 */ -}}
+&nbsp;·&nbsp;
 
-{{- if not (.Param "hideAuthor") -}}
-{{- with (partial "author.html" .) }}
-{{- $scratch.Add "meta" (slice (printf "<span>%s</span>" .)) }}
-{{- end }}
-{{- end }}
-
-{{- with ($scratch.Get "meta") }}
-{{- delimit . "&nbsp;·&nbsp;" | safeHTML -}}
-{{- end -}}
+{{- /* 3. 浏览人数 (Busuanzi) */ -}}
+<span id="busuanzi_container_page_pv">
+    <span id="busuanzi_value_page_pv"></span> views
+</span>

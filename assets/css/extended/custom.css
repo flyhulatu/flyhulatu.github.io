@@ -175,13 +175,3 @@ a:hover {
     color: var(--secondary);
 }
 
-/* (可选) 如果你想加图标 */
-/* 这里使用 CSS 伪元素加 emoji 或者 SVG，比引入 FontAwesome 更轻量 */
-#busuanzi_container_site_pv::before {
-    content: "👁️"; /* 或者用 SVG */
-    margin-right: 4px;
-}
-#busuanzi_container_site_uv::before {
-    content: "👤"; /* 或者用 SVG */
-    margin-right: 4px;
-}
