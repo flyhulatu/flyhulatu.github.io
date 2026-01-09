@@ -432,60 +432,107 @@ a:hover {
     cursor: zoom-in; /* 鼠标变成放大镜图标 */
 }
 
-/* --- 列表页：左图右文布局 (Left-Image-Right-Text) --- */
+/* --- 列表页布局：最终完美修复版 --- */
 
-/* 仅在屏幕宽度大于 768px (电脑/平板) 时生效 */
+/* =========================================
+   1. 基础卡片样式 (默认状态：无图模式)
+   ========================================= */
+.post-entry {
+    /* 使用 flex，但去掉 !important，允许被后面的 grid 覆盖 */
+    display: flex; 
+    flex-direction: column;
+    
+    /* 强制内容左对齐 */
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    
+    /* 布局美化 */
+    padding: 24px;
+    margin-bottom: 24px;
+    background: var(--entry);
+    border-radius: var(--radius);
+    transition: transform 0.1s;
+}
+
+/* 确保图片容器默认是显示的 (防止被主题默认隐藏) */
+.entry-cover {
+    display: block !important; 
+    margin-bottom: 16px; /* 如果在竖排模式下有图，给个下边距 */
+    width: 100%;
+}
+.entry-cover img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+}
+
+/* =========================================
+   2. 锁定子元素 (强制左对齐)
+   ========================================= */
+.post-entry .entry-header {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.post-entry .entry-content {
+    width: 100%;
+    text-align: left;
+    margin: 0;
+    /* 限制行数 */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.post-entry .entry-footer {
+    width: 100%;
+    text-align: left;
+    margin-top: 12px;
+}
+
+/* =========================================
+   3. 电脑端左图右文 (仅针对有封面的文章)
+   ========================================= */
 @media screen and (min-width: 768px) {
     
-    /* 核心逻辑：只有当文章包含 .entry-cover (封面图) 时，才启用 Grid 布局 */
-    /* 使用 :has() 选择器，避免没有封面的文章排版错乱 */
+    /* 核心逻辑：检测到有 .entry-cover 时，切换为 Grid */
     .post-entry:has(.entry-cover) {
-        display: grid;
-        /* 定义两列：左边图片占 32%，右边内容占剩余空间 */
-        grid-template-columns: 32% 1fr; 
-        column-gap: 25px; /* 图片和文字的间距 */
-        /* 定义布局区域：图片占左边三行，右边分别是标题、摘要、底部信息 */
+        display: grid !important; /* 这里加 !important 确保覆盖上面的 flex */
+        grid-template-columns: 32% 1fr;
+        column-gap: 24px;
+        align-items: start;
+        
+        /* Grid 区域定义 */
         grid-template-areas:
             "image header"
             "image content"
             "image footer";
-        align-items: start; /* 内容顶对齐 */
+            
+        padding: 24px;
     }
 
-    /* 1. 图片区域设置 */
-    .entry-cover {
-        grid-area: image; /* 放入 image 区域 */
-        margin-bottom: 0; /* 去掉默认的底部边距 */
-        height: 100%;     /* 高度撑满 */
-        min-height: 180px; /* 给一个最小高度，保证美观 */
+    /* 图片区域 */
+    .post-entry:has(.entry-cover) .entry-cover {
+        grid-area: image;
+        margin: 0 !important; /* 去掉竖排时的边距 */
+        height: 100%;
+        min-height: 180px;
         overflow: hidden;
-        border-radius: var(--radius); /* 跟随主题圆角 */
     }
 
-    /* 强制图片裁剪填充，保证大小一致，不会参差不齐 */
-    .entry-cover img {
-        width: 100%;
+    .post-entry:has(.entry-cover) .entry-cover img {
         height: 100% !important;
-        object-fit: cover; /* 关键：裁切图片中间部分，不拉伸变形 */
+        object-fit: cover; /* 完美裁剪 */
     }
 
-    /* 2. 文字区域设置 */
-    .entry-header {
-        grid-area: header;
-        margin-bottom: 10px; /* 标题和摘要稍微分开点 */
-    }
-
-    .entry-content {
-        grid-area: content;
-        /* 限制摘要行数，超过3行显示省略号，避免右侧太高 */
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
-        overflow: hidden;
-    }
-
-    .entry-footer {
-        grid-area: footer;
-        margin-top: auto; /* 把底部信息（日期/标签）推到最下面 */
+    /* 文字区域定位 */
+    .post-entry:has(.entry-cover) .entry-header { grid-area: header; }
+    .post-entry:has(.entry-cover) .entry-content { grid-area: content; }
+    .post-entry:has(.entry-cover) .entry-footer { 
+        grid-area: footer; 
+        margin-top: auto; /* 底部对齐 */
     }
 }
