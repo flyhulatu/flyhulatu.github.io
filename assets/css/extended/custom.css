@@ -175,3 +175,15 @@ a:hover {
     color: var(--secondary);
 }
 
+/* --- 控制阅读量的显示位置 --- */
+
+/* 1. 在列表页（文章卡片）中隐藏阅读量 */
+.post-entry .meta-views {
+    display: none;
+}
+
+/* 2. (可选) 确保在文章详情页显示 */
+/* 其实默认就是显示的，但为了保险起见可以写上 */
+.post-single .meta-views {
+    display: inline;
+}

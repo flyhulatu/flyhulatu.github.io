@@ -15,8 +15,10 @@
 {{- /* 3. 浏览人数 (只在文章详情页显示，列表页隐藏) */ -}}
 <!-- ⬇️⬇️⬇️ 核心修改：加了 if .IsPage 判断 ⬇️⬇️⬇️ -->
 {{- if .IsPage }}
-    &nbsp;·&nbsp;
-    <span id="busuanzi_container_page_pv">
-        <span id="busuanzi_value_page_pv"></span> 浏览
+    <span class="meta-views">
+        &nbsp;·&nbsp;
+        <span id="busuanzi_container_page_pv">
+            <span id="busuanzi_value_page_pv"></span> 浏览
+        </span>
     </span>
 {{- end }}
