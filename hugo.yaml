@@ -4,6 +4,8 @@ title: "胡拉图的博客"
 theme: "PaperMod"
 enableRobotsTXT: true
 defaultContentLanguage: "zh"
+# 开启 CJK 语言支持，统计汉字字数
+hasCJKLanguage: true
 
 # 生成 HTML 的同时生成 Search 索引文件（PaperMod 搜索功能需要）
 outputs:
