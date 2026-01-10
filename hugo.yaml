@@ -130,10 +130,7 @@ menu:
       name: 相册
       url: /photos/
       weight: 3
-    # - identifier: douban  
-    #   name: 书影音
-    #   url: /douban/
-    #   weight: 4
+
 
 services:
     googleAnalytics:
