@@ -38,11 +38,12 @@ params:
 
   # 是否在首页显示全文 (false 为只显示摘要)
   ShowReadingTime: false
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
   ShowCodeCopyButtons: true
   ShowWordCount: true
+  
 
     
   # 确保资源加载正常
@@ -108,11 +109,11 @@ menu:
     - identifier: categories
       name: 分类
       url: /categories/
-      weight: 4
+      weight: 5
     - identifier: tags
       name: 标签
       url: /tags/
-      weight: 5
+      weight: 6
     - identifier: archives
       name: 归档
       url: /archives/
@@ -120,10 +121,14 @@ menu:
     - identifier: search
       name: 搜索
       url: /search/
-      weight: 6
+      weight: 7
     - identifier: links
       name: 友链
       url: /links/
+      weight: 4
+    - identifier: photos  
+      name: 相册
+      url: /photos/
       weight: 3
 
 services:

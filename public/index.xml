@@ -6,8 +6,85 @@
     <description>Recent content on 胡拉图的博客</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>zh</language>
-    <lastBuildDate>Fri, 09 Jan 2026 21:56:28 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 10 Jan 2026 13:05:40 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我的拍摄</title>
+      <link>http://localhost:1313/photos/</link>
+      <pubDate>Sat, 10 Jan 2026 13:05:40 +0800</pubDate>
+      <guid>http://localhost:1313/photos/</guid>
+      <description>&lt;p&gt;👏欢迎来到，我的相册👏&lt;/p&gt;
+&lt;div class=&#34;gallery-photos&#34;&gt;
+  
+  
+    
+    
+     
+
+    &lt;div class=&#34;gallery-photo&#34;&gt;
+      
+      &lt;a data-fancybox=&#34;gallery&#34; href=&#34;http://localhost:1313/photos/IMG_0001.jpeg&#34; data-caption=&#34;IMG_0001.jpeg&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/photos/IMG_0001_hu_b37e9f8180d05e41.jpeg&#34; width=&#34;800&#34; height=&#34;600&#34; alt=&#34;IMG_0001.jpeg&#34; loading=&#34;lazy&#34;&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  
+    
+    
+     
+
+    &lt;div class=&#34;gallery-photo&#34;&gt;
+      
+      &lt;a data-fancybox=&#34;gallery&#34; href=&#34;http://localhost:1313/photos/IMG_0004.jpeg&#34; data-caption=&#34;IMG_0004.jpeg&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/photos/IMG_0004_hu_5c9ae6a5efd8ec14.jpeg&#34; width=&#34;800&#34; height=&#34;600&#34; alt=&#34;IMG_0004.jpeg&#34; loading=&#34;lazy&#34;&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  
+    
+    
+     
+
+    &lt;div class=&#34;gallery-photo&#34;&gt;
+      
+      &lt;a data-fancybox=&#34;gallery&#34; href=&#34;http://localhost:1313/photos/IMG_0045.jpeg&#34; data-caption=&#34;IMG_0045.jpeg&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/photos/IMG_0045_hu_18014108a246b84e.jpeg&#34; width=&#34;800&#34; height=&#34;800&#34; alt=&#34;IMG_0045.jpeg&#34; loading=&#34;lazy&#34;&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  
+    
+    
+     
+
+    &lt;div class=&#34;gallery-photo&#34;&gt;
+      
+      &lt;a data-fancybox=&#34;gallery&#34; href=&#34;http://localhost:1313/photos/IMG_1062.livp.jpeg&#34; data-caption=&#34;IMG_1062.livp.jpeg&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/photos/IMG_1062.livp_hu_e3cbf2cd083d4323.jpeg&#34; width=&#34;800&#34; height=&#34;600&#34; alt=&#34;IMG_1062.livp.jpeg&#34; loading=&#34;lazy&#34;&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  
+    
+    
+     
+
+    &lt;div class=&#34;gallery-photo&#34;&gt;
+      
+      &lt;a data-fancybox=&#34;gallery&#34; href=&#34;http://localhost:1313/photos/IMG_3138.livp.jpeg&#34; data-caption=&#34;IMG_3138.livp.jpeg&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/photos/IMG_3138.livp_hu_cdc22141f11668d4.jpeg&#34; width=&#34;800&#34; height=&#34;600&#34; alt=&#34;IMG_3138.livp.jpeg&#34; loading=&#34;lazy&#34;&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  
+    
+    
+     
+
+    &lt;div class=&#34;gallery-photo&#34;&gt;
+      
+      &lt;a data-fancybox=&#34;gallery&#34; href=&#34;http://localhost:1313/photos/%E5%86%B0%E6%BF%80%E5%87%8C%E8%9B%8B%E7%B3%95.jpeg&#34; data-caption=&#34;冰激凌蛋糕.jpeg&#34;&gt;
+        &lt;img src=&#34;http://localhost:1313/photos/%E5%86%B0%E6%BF%80%E5%87%8C%E8%9B%8B%E7%B3%95_hu_f8562aff896e8279.jpeg&#34; width=&#34;800&#34; height=&#34;600&#34; alt=&#34;冰激凌蛋糕.jpeg&#34; loading=&#34;lazy&#34;&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+  
+&lt;/div&gt;</description>
+    </item>
     <item>
       <title>美化博客，看《小狗钱钱》</title>
       <link>http://localhost:1313/posts/%E7%BE%8E%E5%8C%96%E5%8D%9A%E5%AE%A2%E7%9C%8B%E5%B0%8F%E7%8B%97%E9%92%B1%E9%92%B1/</link>
