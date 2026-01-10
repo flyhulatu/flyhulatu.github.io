@@ -1,0 +1,40 @@
+{{ $type := .Get "type" }}
+{{ $limit := .Get "limit" | default 1000 }}
+{{ $dataFile := index .Site.Data.douban $type }}
+
+<div class="douban-container">
+    {{ if $dataFile }}
+        {{ range first $limit $dataFile }}
+        <div class="douban-item">
+            <a href="{{ .link }}" target="_blank" class="douban-link">
+                <div class="douban-cover-box">
+                    {{/* 
+                       修复图片显示的核心：
+                       1. 使用 wsrv.nl (更短更稳)
+                       2. 这里的 replace 是将 https:// 去掉，直接传域名给代理
+                    */}}
+                    <img src="https://wsrv.nl/?url={{ .cover | replace "https://" "" }}&w=400&h=600&fit=cover&a=top" 
+                         alt="{{ .title }}" 
+                         loading="lazy"
+                         referrerpolicy="no-referrer">
+                    
+                    {{/* 只有评分大于 0 才显示星星，否则什么都不显示（保持画面干净） */}}
+                    {{ if gt .rating 0 }}
+                    <div class="douban-rating">
+                        <span class="stars">★ {{ .rating }}</span>
+                    </div>
+                    {{ end }}
+                </div>
+                <div class="douban-info">
+                    <div class="douban-title">{{ .title }}</div>
+                    {{ if .comment }}
+                        <div class="douban-comment">{{ .comment }}</div>
+                    {{ end }}
+                </div>
+            </a>
+        </div>
+        {{ end }}
+    {{ else }}
+        <p>数据文件不存在或为空。</p>
+    {{ end }}
+</div>

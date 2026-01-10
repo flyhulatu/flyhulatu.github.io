@@ -121,15 +121,19 @@ menu:
     - identifier: search
       name: 搜索
       url: /search/
-      weight: 7
+      weight: 8
     - identifier: links
       name: 友链
       url: /links/
-      weight: 4
+      weight: 7
     - identifier: photos  
       name: 相册
       url: /photos/
       weight: 3
+    # - identifier: douban  
+    #   name: 书影音
+    #   url: /douban/
+    #   weight: 4
 
 services:
     googleAnalytics:
