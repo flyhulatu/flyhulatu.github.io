@@ -29,7 +29,7 @@ cover:
     relative: false # 是否使用相对路径
 
 # 这是一个非常重要的字段，特别是对中文标题
-slug: "" 
+slug: "vlog-share" 
 ---
 
 今天下午，我剪辑了一个自己的日常Vlog。
