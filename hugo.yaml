@@ -104,27 +104,27 @@ menu:
     - identifier: about
       name: 关于
       url: /about/
-      weight: 10
+      weight: 1 # 排序权重，数字越小越靠前
     - identifier: categories
       name: 分类
       url: /categories/
-      weight: 20
+      weight: 4
     - identifier: tags
       name: 标签
       url: /tags/
-      weight: 30
+      weight: 5
     - identifier: archives
       name: 归档
       url: /archives/
-      weight: 40
+      weight: 2
     - identifier: search
       name: 搜索
       url: /search/
-      weight: 50
+      weight: 6
     - identifier: links
       name: 友链
       url: /links/
-      weight: 60
+      weight: 3
 
 services:
     googleAnalytics:
