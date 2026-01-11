@@ -5,7 +5,14 @@
         <div class="toc">
             <details {{if (.Param "TocOpen" ) }} open{{ end }}>
                 <summary accesskey="c" title="(Alt + C)">
-                    <span class="details">{{- i18n "toc" | default "Table of Contents" }}</span>
+                    <div class="details-icon-wrapper">
+                        <!-- 这里是新的小箭头 SVG 图标 -->
+                        <svg class="toc-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                        <!-- 这里是原来的文字 -->
+                        <span class="details">{{- i18n "toc" | default "Table of Contents" }}</span>
+                    </div>
                 </summary>
 
                 <div class="inner">

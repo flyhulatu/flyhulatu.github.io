@@ -10,9 +10,9 @@
     <atom:link href="http://localhost:1313/tags/%E8%87%AA%E6%88%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>关于我</title>
-      <link>http://localhost:1313/posts/%E5%85%B3%E4%BA%8E%E6%88%91/</link>
+      <link>http://localhost:1313/posts/personal-profile/</link>
       <pubDate>Fri, 05 Dec 2025 21:40:01 +0000</pubDate>
-      <guid>http://localhost:1313/posts/%E5%85%B3%E4%BA%8E%E6%88%91/</guid>
+      <guid>http://localhost:1313/posts/personal-profile/</guid>
       <description>关于我，关于胡拉图的一些了解。</description>
     </item>
   </channel>

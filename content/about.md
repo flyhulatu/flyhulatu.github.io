@@ -14,7 +14,7 @@ disableShare: true
 disableHLJS: true
 ---
 
-### 👤 个人
+### 👤 我是谁？
 
 你好，我叫 **胡志朋** 👋
 
@@ -24,15 +24,22 @@ disableHLJS: true
 
 在这个博客记录我的学习和生活随想，希望大家喜欢。
 
-###  🚀 经历
+###  🚀 我的经历
 
 - **2024 - 至今**: 河南郑州某非双一流大学读研
 - **2020 - 2024**: 江西中医药大学/食品专业/工学学士
 - **2025**: 拥有第一个个人博客
 - **全平台同名**: 公众号/小红书/少数派
 
-### 📬 联系
+### 📬 联系我
 
-- 📧 Email: 2983685624@qq.com
-- 🐙 GitHub: flyhulatu
-- 💬 WeChat: Hulatu13807059658
+- 💬 {{< wechat img="http://blog-img-1395214243.cos.ap-nanjing.myqcloud.com/uPic/WeChat.jpeg" >}}
+
+- 🐙 [GitHub](https://github.com/flyhulatu)
+
+- 📧 E-Mail: 
+
+  - 2983685624@qq.com
+  - flyhulatu@gmail.com
+
+  

@@ -10,37 +10,37 @@
     <atom:link href="http://localhost:1313/categories/%E5%88%86%E4%BA%AB/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>美化博客，看《小狗钱钱》</title>
-      <link>http://localhost:1313/posts/%E7%BE%8E%E5%8C%96%E5%8D%9A%E5%AE%A2%E7%9C%8B%E5%B0%8F%E7%8B%97%E9%92%B1%E9%92%B1/</link>
+      <link>http://localhost:1313/posts/beauty-blog/</link>
       <pubDate>Fri, 09 Jan 2026 21:56:28 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E7%BE%8E%E5%8C%96%E5%8D%9A%E5%AE%A2%E7%9C%8B%E5%B0%8F%E7%8B%97%E9%92%B1%E9%92%B1/</guid>
+      <guid>http://localhost:1313/posts/beauty-blog/</guid>
       <description>美化博客，也是美化心情。</description>
     </item>
     <item>
       <title>有些东西，开始做，不需要知道为什么？</title>
-      <link>http://localhost:1313/posts/%E6%9C%89%E4%BA%9B%E4%B8%9C%E8%A5%BF%E5%BC%80%E5%A7%8B%E5%81%9A%E4%B8%8D%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E4%B8%BA%E4%BB%80%E4%B9%88/</link>
+      <link>http://localhost:1313/posts/do/</link>
       <pubDate>Thu, 08 Jan 2026 21:54:24 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E6%9C%89%E4%BA%9B%E4%B8%9C%E8%A5%BF%E5%BC%80%E5%A7%8B%E5%81%9A%E4%B8%8D%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E4%B8%BA%E4%BB%80%E4%B9%88/</guid>
+      <guid>http://localhost:1313/posts/do/</guid>
       <description>如果有效，做，就对了！</description>
     </item>
     <item>
       <title>如何拍好照片、视频（不区分设备）</title>
-      <link>http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E6%8B%8D%E5%A5%BD%E7%85%A7%E7%89%87%E8%A7%86%E9%A2%91%E4%B8%8D%E5%8C%BA%E5%88%86%E8%AE%BE%E5%A4%87/</link>
+      <link>http://localhost:1313/posts/photography/</link>
       <pubDate>Wed, 07 Jan 2026 19:38:38 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E6%8B%8D%E5%A5%BD%E7%85%A7%E7%89%87%E8%A7%86%E9%A2%91%E4%B8%8D%E5%8C%BA%E5%88%86%E8%AE%BE%E5%A4%87/</guid>
+      <guid>http://localhost:1313/posts/photography/</guid>
       <description>人为聚焦行为，可以弥补很多仪器、环境差异而产生的效果差异。</description>
     </item>
     <item>
       <title>分享10首好听的情歌</title>
-      <link>http://localhost:1313/posts/%E5%88%86%E4%BA%AB10%E9%A6%96%E5%A5%BD%E5%90%AC%E7%9A%84%E6%83%85%E6%AD%8C/</link>
+      <link>http://localhost:1313/posts/songs-hao-ting/</link>
       <pubDate>Tue, 06 Jan 2026 19:16:10 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E5%88%86%E4%BA%AB10%E9%A6%96%E5%A5%BD%E5%90%AC%E7%9A%84%E6%83%85%E6%AD%8C/</guid>
+      <guid>http://localhost:1313/posts/songs-hao-ting/</guid>
       <description>如果说音乐是情绪的语言，那么”好听”可能就是这门语言里最微妙的语法。——无敌</description>
     </item>
     <item>
       <title>关于我</title>
-      <link>http://localhost:1313/posts/%E5%85%B3%E4%BA%8E%E6%88%91/</link>
+      <link>http://localhost:1313/posts/personal-profile/</link>
       <pubDate>Fri, 05 Dec 2025 21:40:01 +0000</pubDate>
-      <guid>http://localhost:1313/posts/%E5%85%B3%E4%BA%8E%E6%88%91/</guid>
+      <guid>http://localhost:1313/posts/personal-profile/</guid>
       <description>关于我，关于胡拉图的一些了解。</description>
     </item>
   </channel>

@@ -6,162 +6,176 @@
     <description>Recent content in Posts on 胡拉图的博客</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>zh</language>
-    <lastBuildDate>Fri, 09 Jan 2026 21:56:28 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 11 Jan 2026 11:50:13 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>胡拉图的周刊 第四期</title>
+      <link>http://localhost:1313/posts/newsletter-zhou-kan/</link>
+      <pubDate>Sun, 11 Jan 2026 11:50:13 +0800</pubDate>
+      <guid>http://localhost:1313/posts/newsletter-zhou-kan/</guid>
+      <description>自己用心记录的东西，那用心记录的部分，就是我们分享的最大底气。</description>
+    </item>
+    <item>
+      <title>剪辑生活Vlog</title>
+      <link>http://localhost:1313/posts/vlog-share/</link>
+      <pubDate>Sat, 10 Jan 2026 22:07:55 +0800</pubDate>
+      <guid>http://localhost:1313/posts/vlog-share/</guid>
+      <description>用视频分享生活，是一个不那么轻松的过程。</description>
+    </item>
+    <item>
       <title>美化博客，看《小狗钱钱》</title>
-      <link>http://localhost:1313/posts/%E7%BE%8E%E5%8C%96%E5%8D%9A%E5%AE%A2%E7%9C%8B%E5%B0%8F%E7%8B%97%E9%92%B1%E9%92%B1/</link>
+      <link>http://localhost:1313/posts/beauty-blog/</link>
       <pubDate>Fri, 09 Jan 2026 21:56:28 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E7%BE%8E%E5%8C%96%E5%8D%9A%E5%AE%A2%E7%9C%8B%E5%B0%8F%E7%8B%97%E9%92%B1%E9%92%B1/</guid>
+      <guid>http://localhost:1313/posts/beauty-blog/</guid>
       <description>美化博客，也是美化心情。</description>
     </item>
     <item>
       <title>有些东西，开始做，不需要知道为什么？</title>
-      <link>http://localhost:1313/posts/%E6%9C%89%E4%BA%9B%E4%B8%9C%E8%A5%BF%E5%BC%80%E5%A7%8B%E5%81%9A%E4%B8%8D%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E4%B8%BA%E4%BB%80%E4%B9%88/</link>
+      <link>http://localhost:1313/posts/do/</link>
       <pubDate>Thu, 08 Jan 2026 21:54:24 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E6%9C%89%E4%BA%9B%E4%B8%9C%E8%A5%BF%E5%BC%80%E5%A7%8B%E5%81%9A%E4%B8%8D%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E4%B8%BA%E4%BB%80%E4%B9%88/</guid>
+      <guid>http://localhost:1313/posts/do/</guid>
       <description>如果有效，做，就对了！</description>
     </item>
     <item>
       <title>如何拍好照片、视频（不区分设备）</title>
-      <link>http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E6%8B%8D%E5%A5%BD%E7%85%A7%E7%89%87%E8%A7%86%E9%A2%91%E4%B8%8D%E5%8C%BA%E5%88%86%E8%AE%BE%E5%A4%87/</link>
+      <link>http://localhost:1313/posts/photography/</link>
       <pubDate>Wed, 07 Jan 2026 19:38:38 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E6%8B%8D%E5%A5%BD%E7%85%A7%E7%89%87%E8%A7%86%E9%A2%91%E4%B8%8D%E5%8C%BA%E5%88%86%E8%AE%BE%E5%A4%87/</guid>
+      <guid>http://localhost:1313/posts/photography/</guid>
       <description>人为聚焦行为，可以弥补很多仪器、环境差异而产生的效果差异。</description>
     </item>
     <item>
       <title>关于过早引用现象 一种学习过程中的常见现象</title>
-      <link>http://localhost:1313/posts/%E5%85%B3%E4%BA%8E%E8%BF%87%E6%97%A9%E5%BC%95%E7%94%A8%E7%8E%B0%E8%B1%A1-%E4%B8%80%E7%A7%8D%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%B8%B8%E8%A7%81%E7%8E%B0%E8%B1%A1/</link>
+      <link>http://localhost:1313/posts/study-tips/</link>
       <pubDate>Wed, 07 Jan 2026 17:19:13 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E5%85%B3%E4%BA%8E%E8%BF%87%E6%97%A9%E5%BC%95%E7%94%A8%E7%8E%B0%E8%B1%A1-%E4%B8%80%E7%A7%8D%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%B8%B8%E8%A7%81%E7%8E%B0%E8%B1%A1/</guid>
+      <guid>http://localhost:1313/posts/study-tips/</guid>
       <description>几乎很少有东西可以等我们准备好之后才可以开始，而是带着不确定和模糊开始，渐渐才会清晰。</description>
     </item>
     <item>
       <title>分享10首好听的情歌</title>
-      <link>http://localhost:1313/posts/%E5%88%86%E4%BA%AB10%E9%A6%96%E5%A5%BD%E5%90%AC%E7%9A%84%E6%83%85%E6%AD%8C/</link>
+      <link>http://localhost:1313/posts/songs-hao-ting/</link>
       <pubDate>Tue, 06 Jan 2026 19:16:10 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E5%88%86%E4%BA%AB10%E9%A6%96%E5%A5%BD%E5%90%AC%E7%9A%84%E6%83%85%E6%AD%8C/</guid>
+      <guid>http://localhost:1313/posts/songs-hao-ting/</guid>
       <description>如果说音乐是情绪的语言，那么”好听”可能就是这门语言里最微妙的语法。——无敌</description>
     </item>
     <item>
       <title>三类财富杠杆</title>
-      <link>http://localhost:1313/posts/%E4%B8%89%E7%B1%BB%E8%B4%A2%E5%AF%8C%E6%9D%A0%E6%9D%86/</link>
+      <link>http://localhost:1313/posts/money/</link>
       <pubDate>Mon, 05 Jan 2026 21:07:47 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E4%B8%89%E7%B1%BB%E8%B4%A2%E5%AF%8C%E6%9D%A0%E6%9D%86/</guid>
+      <guid>http://localhost:1313/posts/money/</guid>
       <description>预祝大家，早日实现财务自由！</description>
     </item>
     <item>
       <title>胡拉图的周刊 第三期</title>
-      <link>http://localhost:1313/posts/%E8%83%A1%E6%8B%89%E5%9B%BE%E7%9A%84%E5%91%A8%E5%88%8A-%E7%AC%AC%E4%B8%89%E6%9C%9F/</link>
+      <link>http://localhost:1313/posts/newsletter-weekly/</link>
       <pubDate>Sun, 04 Jan 2026 16:16:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E8%83%A1%E6%8B%89%E5%9B%BE%E7%9A%84%E5%91%A8%E5%88%8A-%E7%AC%AC%E4%B8%89%E6%9C%9F/</guid>
+      <guid>http://localhost:1313/posts/newsletter-weekly/</guid>
       <description>生活，总是有喜有悲，由人为强加给你的苦痛，在没有绝对实力时，只能受着。</description>
     </item>
     <item>
       <title>如果你也想开始写作，这些写作工具推荐给大家</title>
-      <link>http://localhost:1313/posts/%E5%A6%82%E6%9E%9C%E4%BD%A0%E4%B9%9F%E6%83%B3%E5%BC%80%E5%A7%8B%E5%86%99%E4%BD%9C%E8%BF%99%E4%BA%9B%E5%86%99%E4%BD%9C%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90%E7%BB%99%E5%A4%A7%E5%AE%B6/</link>
+      <link>http://localhost:1313/posts/writing-tools/</link>
       <pubDate>Sat, 03 Jan 2026 22:09:22 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E5%A6%82%E6%9E%9C%E4%BD%A0%E4%B9%9F%E6%83%B3%E5%BC%80%E5%A7%8B%E5%86%99%E4%BD%9C%E8%BF%99%E4%BA%9B%E5%86%99%E4%BD%9C%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90%E7%BB%99%E5%A4%A7%E5%AE%B6/</guid>
+      <guid>http://localhost:1313/posts/writing-tools/</guid>
       <description>事情应该力求简单，但不应过于简单！</description>
     </item>
     <item>
       <title>如果你也被英语单词困扰</title>
-      <link>http://localhost:1313/posts/%E5%A6%82%E6%9E%9C%E4%BD%A0%E4%B9%9F%E8%A2%AB%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D%E5%9B%B0%E6%89%B0/</link>
+      <link>http://localhost:1313/posts/english-vocabulary/</link>
       <pubDate>Fri, 02 Jan 2026 22:30:16 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E5%A6%82%E6%9E%9C%E4%BD%A0%E4%B9%9F%E8%A2%AB%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D%E5%9B%B0%E6%89%B0/</guid>
+      <guid>http://localhost:1313/posts/english-vocabulary/</guid>
       <description>学习，是个降低内阻力的过程。</description>
     </item>
     <item>
       <title>健身的一些优先级，新年第一天</title>
-      <link>http://localhost:1313/posts/%E5%81%A5%E8%BA%AB%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BC%98%E5%85%88%E7%BA%A7%E6%96%B0%E5%B9%B4%E7%AC%AC%E4%B8%80%E5%A4%A9/</link>
+      <link>http://localhost:1313/posts/sport-tips/</link>
       <pubDate>Thu, 01 Jan 2026 23:41:46 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E5%81%A5%E8%BA%AB%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BC%98%E5%85%88%E7%BA%A7%E6%96%B0%E5%B9%B4%E7%AC%AC%E4%B8%80%E5%A4%A9/</guid>
+      <guid>http://localhost:1313/posts/sport-tips/</guid>
       <description>慢慢来，比较快！</description>
     </item>
     <item>
       <title>2025年度总结</title>
-      <link>http://localhost:1313/posts/2025%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</link>
+      <link>http://localhost:1313/posts/summary-2025/</link>
       <pubDate>Wed, 31 Dec 2025 21:00:04 +0800</pubDate>
-      <guid>http://localhost:1313/posts/2025%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</guid>
+      <guid>http://localhost:1313/posts/summary-2025/</guid>
       <description>2025走了，2026还会远吗？</description>
     </item>
     <item>
       <title>胡拉图的周刊 第二期</title>
-      <link>http://localhost:1313/posts/%E8%83%A1%E6%8B%89%E5%9B%BE%E7%9A%84%E5%91%A8%E5%88%8A-%E7%AC%AC%E4%BA%8C%E6%9C%9F/</link>
+      <link>http://localhost:1313/posts/newsletter-weekly/</link>
       <pubDate>Sun, 28 Dec 2025 23:22:14 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E8%83%A1%E6%8B%89%E5%9B%BE%E7%9A%84%E5%91%A8%E5%88%8A-%E7%AC%AC%E4%BA%8C%E6%9C%9F/</guid>
+      <guid>http://localhost:1313/posts/newsletter-weekly/</guid>
       <description>做一个能给身边人带去积极影响的人，是有挑战的。</description>
     </item>
     <item>
       <title>胡拉图的周刊 第一期</title>
-      <link>http://localhost:1313/posts/%E8%83%A1%E6%8B%89%E5%9B%BE%E7%9A%84%E5%91%A8%E5%88%8A-%E7%AC%AC%E4%B8%80%E6%9C%9F/</link>
+      <link>http://localhost:1313/posts/newsletter-weekly/</link>
       <pubDate>Sun, 21 Dec 2025 14:19:03 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E8%83%A1%E6%8B%89%E5%9B%BE%E7%9A%84%E5%91%A8%E5%88%8A-%E7%AC%AC%E4%B8%80%E6%9C%9F/</guid>
+      <guid>http://localhost:1313/posts/newsletter-weekly/</guid>
       <description>胡拉图的周刊-第一期，关于我为何要开始写周刊。</description>
     </item>
     <item>
       <title>写给2025年12月考研的朋友</title>
-      <link>http://localhost:1313/posts/%E5%86%99%E7%BB%992025%E5%B9%B412%E6%9C%88%E8%80%83%E7%A0%94%E7%9A%84%E6%9C%8B%E5%8F%8B/</link>
+      <link>http://localhost:1313/posts/exam-test/</link>
       <pubDate>Fri, 19 Dec 2025 22:49:22 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E5%86%99%E7%BB%992025%E5%B9%B412%E6%9C%88%E8%80%83%E7%A0%94%E7%9A%84%E6%9C%8B%E5%8F%8B/</guid>
+      <guid>http://localhost:1313/posts/exam-test/</guid>
       <description>我想你们大多并非是对科研由热爱而产生的执着，反而是由于未知而幻想的魅惑。</description>
     </item>
     <item>
       <title>综述写作之——文献管理</title>
-      <link>http://localhost:1313/posts/%E7%BB%BC%E8%BF%B0%E5%86%99%E4%BD%9C%E4%B9%8B%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86/</link>
+      <link>http://localhost:1313/posts/literature-management/</link>
       <pubDate>Sun, 14 Dec 2025 23:37:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E7%BB%BC%E8%BF%B0%E5%86%99%E4%BD%9C%E4%B9%8B%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86/</guid>
+      <guid>http://localhost:1313/posts/literature-management/</guid>
       <description>文献管理，是一门艺术。</description>
     </item>
     <item>
       <title>综述写作之——确定主题</title>
-      <link>http://localhost:1313/posts/%E7%BB%BC%E8%BF%B0%E5%86%99%E4%BD%9C%E4%B9%8B%E7%A1%AE%E5%AE%9A%E4%B8%BB%E9%A2%98%E7%AF%87/</link>
+      <link>http://localhost:1313/posts/paper/</link>
       <pubDate>Sun, 14 Dec 2025 20:31:54 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E7%BB%BC%E8%BF%B0%E5%86%99%E4%BD%9C%E4%B9%8B%E7%A1%AE%E5%AE%9A%E4%B8%BB%E9%A2%98%E7%AF%87/</guid>
+      <guid>http://localhost:1313/posts/paper/</guid>
       <description>主题确定好了，综述写起来十分顺畅。</description>
     </item>
     <item>
       <title>关于我开始日更</title>
-      <link>http://localhost:1313/posts/%E5%85%B3%E4%BA%8E%E6%88%91%E5%BC%80%E5%A7%8B%E6%97%A5%E6%9B%B4/</link>
+      <link>http://localhost:1313/posts/daily-update/</link>
       <pubDate>Wed, 10 Dec 2025 22:55:46 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E5%85%B3%E4%BA%8E%E6%88%91%E5%BC%80%E5%A7%8B%E6%97%A5%E6%9B%B4/</guid>
+      <guid>http://localhost:1313/posts/daily-update/</guid>
       <description>&lt;h2 id=&#34;直接原因&#34;&gt;直接原因&lt;/h2&gt;
 &lt;p&gt;之所以有时间来写文章分享，毫无疑问，那肯定是因为有时间。&lt;/p&gt;
 &lt;p&gt;为什么有这么一段时间空出来呢？因为我上周在推胸的时候，由于重量太大，昨晚做最后一个卧推力竭后，我没有力气把杠铃回杠了，它就在我往上推的过程中「&lt;strong&gt;卸了力气&lt;/strong&gt;」，导致右肩部位有一些拉伤——就是连正常俯卧撑都能感觉到右侧身体明显有撕裂感，导致我做任何的上肢训练以及负重训练都容易有疼痛感，甚至是平躺睡觉我右肩都能明显的感受到不适，所以我选择「&lt;strong&gt;完全静养&lt;/strong&gt;」一段时间，听起来好像很长，但这几天我感觉快要恢复完全。&lt;/p&gt;</description>
     </item>
     <item>
       <title>我是个爱折腾的人</title>
-      <link>http://localhost:1313/posts/%E6%88%91%E6%98%AF%E4%B8%AA%E7%88%B1%E6%8A%98%E8%85%BE%E7%9A%84%E4%BA%BA/</link>
+      <link>http://localhost:1313/posts/personality-zhe-teng/</link>
       <pubDate>Tue, 09 Dec 2025 23:01:15 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E6%88%91%E6%98%AF%E4%B8%AA%E7%88%B1%E6%8A%98%E8%85%BE%E7%9A%84%E4%BA%BA/</guid>
+      <guid>http://localhost:1313/posts/personality-zhe-teng/</guid>
       <description>你认为我无所事事的状态，恰好是我真正逍遥自在的片刻。</description>
     </item>
     <item>
       <title>多设备的文件同步和传输问题</title>
-      <link>http://localhost:1313/posts/%E5%A4%9A%E8%AE%BE%E5%A4%87%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5%E5%92%8C%E4%BC%A0%E8%BE%93%E9%97%AE%E9%A2%98/</link>
+      <link>http://localhost:1313/posts/tong-bu-file/</link>
       <pubDate>Mon, 08 Dec 2025 17:14:50 +0000</pubDate>
-      <guid>http://localhost:1313/posts/%E5%A4%9A%E8%AE%BE%E5%A4%87%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5%E5%92%8C%E4%BC%A0%E8%BE%93%E9%97%AE%E9%A2%98/</guid>
+      <guid>http://localhost:1313/posts/tong-bu-file/</guid>
       <description>粉产品力，而不要粉品牌。</description>
     </item>
     <item>
       <title>普通人与运动的关系</title>
-      <link>http://localhost:1313/posts/%E6%99%AE%E9%80%9A%E4%BA%BA%E4%B8%8E%E8%BF%90%E5%8A%A8%E7%9A%84%E5%85%B3%E7%B3%BB/</link>
+      <link>http://localhost:1313/posts/sport-relative/</link>
       <pubDate>Sun, 07 Dec 2025 16:03:14 +0000</pubDate>
-      <guid>http://localhost:1313/posts/%E6%99%AE%E9%80%9A%E4%BA%BA%E4%B8%8E%E8%BF%90%E5%8A%A8%E7%9A%84%E5%85%B3%E7%B3%BB/</guid>
+      <guid>http://localhost:1313/posts/sport-relative/</guid>
       <description>关于运动，我们应该怎样对待。</description>
     </item>
     <item>
       <title>跑步平价装备(实用篇)</title>
-      <link>http://localhost:1313/posts/%E8%B7%91%E6%AD%A5%E5%B9%B3%E4%BB%B7%E8%A3%85%E5%A4%87-%E5%AE%9E%E7%94%A8%E7%AF%87/</link>
+      <link>http://localhost:1313/posts/running-gear/</link>
       <pubDate>Sat, 06 Dec 2025 14:12:10 +0000</pubDate>
-      <guid>http://localhost:1313/posts/%E8%B7%91%E6%AD%A5%E5%B9%B3%E4%BB%B7%E8%A3%85%E5%A4%87-%E5%AE%9E%E7%94%A8%E7%AF%87/</guid>
+      <guid>http://localhost:1313/posts/running-gear/</guid>
       <description>有想法、简装备，就出发！</description>
     </item>
     <item>
       <title>关于我</title>
-      <link>http://localhost:1313/posts/%E5%85%B3%E4%BA%8E%E6%88%91/</link>
+      <link>http://localhost:1313/posts/personal-profile/</link>
       <pubDate>Fri, 05 Dec 2025 21:40:01 +0000</pubDate>
-      <guid>http://localhost:1313/posts/%E5%85%B3%E4%BA%8E%E6%88%91/</guid>
+      <guid>http://localhost:1313/posts/personal-profile/</guid>
       <description>关于我，关于胡拉图的一些了解。</description>
     </item>
   </channel>

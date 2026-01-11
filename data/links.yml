@@ -1,0 +1,34 @@
+# data/links.yml
+
+- group: "组织"
+  description: "因为有你，温暖四季"
+  items:
+    - name: GitHub
+      url: https://github.com
+      avatar: https://github.com/fluidicon.png
+      desc: 全球最大的代码托管平台
+    - name: Hugo
+      url: https://gohugo.io
+      avatar: https://gohugo.io/images/hugo-logo-wide.svg
+      desc: 世界上最快的网站构建框架
+    - name: 博友圈
+      url: https://www.boyouquan.com
+      avatar: https://www.boyouquan.com/assets/images/sites/logo/logo-small.svg
+      desc: 博友圈是博客人的专属朋友圈  
+    - name: BlogFinder
+      url: https://bf.zzxworld.com/
+      avatar: https://bf.zzxworld.com/images/favicon.png
+      desc: 每个博客都是一座宝藏  
+    - name: blogscn
+      url: https://blogscn.fun/
+      avatar: https://photo.xiangming.site/img/blogscn_icon.png
+      desc: 致敬还在写博客的我们
+
+- group: "个人博客"
+  description: "有朋至此，不亦乐乎"
+  items:
+    # - name: 博客园
+    #   url: https://www.cnblogs.com
+    #   avatar: https://www.cnblogs.com/images/logo_small.gif
+    #   desc: 致敬还在写博客的我们
+    

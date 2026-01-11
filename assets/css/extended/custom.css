@@ -536,3 +536,172 @@ a:hover {
         margin-top: auto; /* 底部对齐 */
     }
 }
+
+/* 目录容器 */
+.toc-container {
+    border-left: 2px solid #eee; /* 左侧贯穿线 */
+    padding-left: 0;
+}
+
+/* 所有列表项去除默认样式 */
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 一级目录 (假设是 li > a) */
+.toc-item-h2 > a {
+    font-size: 16px;
+    font-weight: 600; /* 加粗 */
+    color: #333;
+    display: block;
+    padding: 8px 15px; /* 增加点击区域 */
+    margin-top: 5px;   /* 板块间距 */
+    transition: all 0.2s;
+}
+
+/* 二级目录 (假设是 li ul li > a) */
+.toc-item-h3 > a {
+    font-size: 14px;
+    font-weight: 400;
+    color: #888; /* 灰色 */
+    display: block;
+    padding: 4px 15px 4px 30px; /* 左侧缩进更大 */
+    position: relative;
+}
+
+/* 交互：鼠标悬停 */
+.toc-item a:hover {
+    color: #007bff; /* 比如变成蓝色 */
+    background-color: #f9f9f9; /* 浅底色 */
+    border-radius: 0 4px 4px 0;
+}
+
+/* 交互：当前激活状态 (通常需要JS配合添加 .active 类) */
+.toc-item a.active {
+    color: #007bff;
+    border-left: 3px solid #007bff; /* 左侧高亮条 */
+    margin-left: -2px; /* 修正边框位置 */
+    background: linear-gradient(to right, #e6f7ff, transparent); /* 渐变背景更高级 */
+}
+
+/* 针对整个目录列表 */
+.toc-list {
+    position: relative;
+    line-height: 1.8; /* 增加行高，不要挤在一起 */
+}
+
+/* 一级目录（大标题） */
+.toc-list > li > a {
+    font-weight: 700;       /* 加粗 */
+    color: #333;            /* 深色 */
+    font-size: 15px;
+    margin-top: 12px;       /* 大标题头上加空隙 */
+    display: block;
+}
+
+/* 二级/三级目录（子标题） */
+.toc-list ul li a {
+    font-weight: 400;       /* 正常粗细 */
+    color: #888;            /* 灰色，降低存在感 */
+    font-size: 13px;        /* 稍微小一点 */
+    padding-left: 15px;     /* 缩进 */
+    border-left: 2px solid #eee; /* 左侧加一条淡淡的灰线 */
+    transition: all 0.2s;   /* 动效过渡 */
+}
+
+/* 鼠标悬停效果 */
+.toc-list ul li a:hover {
+    color: #d9534f;         /* 悬停变色（比如你的博客主题色） */
+    border-left-color: #d9534f; /* 左侧线条也变色 */
+    background: #f9f9f9;    /* 微微的背景色 */
+}
+
+/* 文章内的链接样式 */
+.post-content a {
+    text-decoration: none; /* 去掉默认下划线 */
+    color: #333; /* 文字颜色 */
+    background: linear-gradient(to right, #3b82f6, #3b82f6); /* 线条颜色(蓝色) */
+    background-size: 0% 2px; /* 默认宽度为0，高度2px */
+    background-repeat: no-repeat;
+    background-position: left bottom; /* 放在左下角 */
+    transition: background-size 0.3s ease; /* 动画过渡 */
+}
+
+/* 鼠标悬停 */
+.post-content a:hover {
+    background-size: 100% 2px; /* 宽度变满 */
+    color: #3b82f6; /* 文字也变蓝 */
+}
+
+/* 1. 隐藏浏览器默认的黑色倒三角 */
+.toc details summary::-webkit-details-marker {
+    display: none;
+}
+.toc details summary {
+    list-style: none;
+}
+
+/* 2. 定义容器，让图标和文字横向对齐 */
+.details-icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500; /* 字体稍微加粗一点点更好看 */
+    color: #333;
+}
+
+/* 3. 设置新图标的样式（默认指向右） */
+.toc-icon {
+    margin-right: 6px;       /* 图标和文字的间距 */
+    transition: transform 0.2s ease; /* 旋转动画 */
+    color: #666;             /* 图标颜色浅一点 */
+}
+
+/* 4. 核心交互：当目录展开时，旋转图标 */
+/* PaperMod 展开时会在 details 标签上加 open 属性 */
+.toc details[open] summary .toc-icon {
+    transform: rotate(90deg); /* 旋转90度指向下方 */
+    color: #000;              /* 展开时图标变深 */
+}
+
+/* 5. 鼠标悬停时的微交互 */
+.details-icon-wrapper:hover .toc-icon {
+    color: var(--primary); /* 跟随主题色，或者写死 #007bff */
+}
+
+/* 归档页面折叠效果美化 */
+
+/* 1. 隐藏月份 summary 自带的黑色三角 */
+.archive-month > summary::-webkit-details-marker {
+    display: none;
+}
+.archive-month > summary {
+    list-style: none;
+    margin-bottom: 10px; /* 月份标题和文章列表的间距 */
+}
+
+/* 2. 增加一个自定义的指示图标 (可选：加号/减号 或 箭头) */
+/* 这里使用简单的 CSS 伪元素实现左侧小圆点指示 */
+.archive-month > summary h3 {
+    position: relative;
+    padding-left: 15px;
+}
+
+.archive-month > summary h3::before {
+    content: "›"; /* 默认收起是个箭头 */
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+    color: #999;
+    transform: rotate(0deg);
+    transition: transform 0.2s;
+}
+
+/* 3. 展开时箭头向下 */
+.archive-month[open] > summary h3::before {
+    transform: rotate(90deg);
+    color: var(--primary); /* 展开时高亮 */
+}
