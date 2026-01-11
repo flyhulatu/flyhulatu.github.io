@@ -210,6 +210,8 @@
   </url><url>
     <loc>http://localhost:1313/archives/</loc>
   </url><url>
+    <loc>http://localhost:1313/guestbook/</loc>
+  </url><url>
     <loc>http://localhost:1313/search/</loc>
   </url>
 </urlset>

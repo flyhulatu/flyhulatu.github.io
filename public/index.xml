@@ -998,5 +998,12 @@
       <guid>http://localhost:1313/about/</guid>
       <description>about</description>
     </item>
+    <item>
+      <title>留言板</title>
+      <link>http://localhost:1313/guestbook/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/guestbook/</guid>
+      <description>欢迎来到我的秘密基地，留下你的足迹吧~</description>
+    </item>
   </channel>
 </rss>
