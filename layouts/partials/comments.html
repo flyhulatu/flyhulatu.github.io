@@ -1,4 +1,4 @@
-<script src="https://giscus.app/client.js"
+<!-- <script src="https://giscus.app/client.js"
         data-repo="flyhulatu/flyhulatu.github.io"
         data-repo-id="R_kgDOQm2RDQ"
         data-category="Announcements"
@@ -30,4 +30,60 @@
         // 针对 Waline 的切换逻辑 (如果你选了Waline)
         // if (window.Waline) { Waline.update({ dark: theme === 'dark' }); }
     });
-</script>
+</script> -->
+
+{{- if .Param "comments" }}
+<div class="comments-box">
+  <!-- 引入 Waline CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+
+  <!-- 留言板容器 -->
+  <div id="waline"></div>
+
+  <!-- 引入 Waline JS -->
+  <script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+
+    init({
+      el: '#waline',
+      // 👇 这里换成你第一步在 Vercel 部署得到的服务地址
+      serverURL: 'https://你的-waline-地址.vercel.app',
+      
+      // 开启浏览量统计
+      pageview: true,
+      // 开启评论数统计
+      comment: true,
+      // 表情包设置
+      emoji: [
+        'https://unpkg.com/@waline/emojis@1.1.0/weibo',
+        'https://unpkg.com/@waline/emojis@1.1.0/bilibili',
+      ],
+      // 占位符提示
+      placeholder: '欢迎留言，留下你的足迹...',
+      // 不需要登录也能评论
+      login: 'enable', 
+    });
+  </script>
+</div>
+
+<!-- 稍微美化一下容器 -->
+<style>
+  .comments-box {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--border);
+  }
+  /* 调整夜间模式下的颜色适配 */
+  :root {
+    --waline-theme-color: var(--primary);
+    --waline-active-color: var(--primary);
+  }
+  body.dark {
+    /* 让评论框背景变暗，适应夜间模式 */
+    --waline-bgcolor: #1d1e20; 
+    --waline-bgcolor-light: #2e2e33;
+    --waline-border-color: #333;
+    --waline-text-color: #b0b0b0;
+  }
+</style>
+{{- end }}
