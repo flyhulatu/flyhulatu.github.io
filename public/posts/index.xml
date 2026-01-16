@@ -1,19 +1,221 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on 胡拉图的博客</title>
+    <title>文章列表 on 胡拉图的博客</title>
     <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on 胡拉图的博客</description>
+    <description>Recent content in 文章列表 on 胡拉图的博客</description>
     <generator>Hugo -- 0.154.5</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 16 Jan 2026 14:43:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 15 Jan 2026 23:02:50 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Hello World - 我的第一篇博客</title>
-      <link>http://localhost:1313/posts/hello-world/</link>
-      <pubDate>Fri, 16 Jan 2026 14:43:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/hello-world/</guid>
-      <description>开始我的博客之旅</description>
+      <title>适合普通人的饮食管理</title>
+      <link>http://localhost:1313/posts/diet-management-food/</link>
+      <pubDate>Thu, 15 Jan 2026 23:02:50 +0800</pubDate>
+      <guid>http://localhost:1313/posts/diet-management-food/</guid>
+      <description>好好的吃、吃得好好的。</description>
+    </item>
+    <item>
+      <title>一碗南昌炒粉，应该是什么样的</title>
+      <link>http://localhost:1313/posts/food-chao-fen/</link>
+      <pubDate>Wed, 14 Jan 2026 21:02:40 +0800</pubDate>
+      <guid>http://localhost:1313/posts/food-chao-fen/</guid>
+      <description>美食，也需要凑齐元素。</description>
+    </item>
+    <item>
+      <title>让自己养成读书习惯</title>
+      <link>http://localhost:1313/posts/reading/</link>
+      <pubDate>Tue, 13 Jan 2026 08:42:53 +0800</pubDate>
+      <guid>http://localhost:1313/posts/reading/</guid>
+      <description>畅销书作家，总愿意为了告诉我一句话，而写一本书。</description>
+    </item>
+    <item>
+      <title>早起的神奇，在于我们可以控制开始</title>
+      <link>http://localhost:1313/posts/early-rising-zao-qi/</link>
+      <pubDate>Mon, 12 Jan 2026 21:40:34 +0800</pubDate>
+      <guid>http://localhost:1313/posts/early-rising-zao-qi/</guid>
+      <description>从开始开始，就是最好的开始。</description>
+    </item>
+    <item>
+      <title>胡拉图的周刊 第四期</title>
+      <link>http://localhost:1313/posts/newsletter-zhou-kan/</link>
+      <pubDate>Sun, 11 Jan 2026 11:50:13 +0800</pubDate>
+      <guid>http://localhost:1313/posts/newsletter-zhou-kan/</guid>
+      <description>自己用心记录的东西，那用心记录的部分，就是我们分享的最大底气。</description>
+    </item>
+    <item>
+      <title>剪辑生活Vlog</title>
+      <link>http://localhost:1313/posts/vlog-share/</link>
+      <pubDate>Sat, 10 Jan 2026 22:07:55 +0800</pubDate>
+      <guid>http://localhost:1313/posts/vlog-share/</guid>
+      <description>用视频分享生活，是一个不那么轻松的过程。</description>
+    </item>
+    <item>
+      <title>美化博客，看《小狗钱钱》</title>
+      <link>http://localhost:1313/posts/beauty-blog/</link>
+      <pubDate>Fri, 09 Jan 2026 21:56:28 +0800</pubDate>
+      <guid>http://localhost:1313/posts/beauty-blog/</guid>
+      <description>美化博客，也是美化心情。</description>
+    </item>
+    <item>
+      <title>有些东西，开始做，不需要知道为什么？</title>
+      <link>http://localhost:1313/posts/do/</link>
+      <pubDate>Thu, 08 Jan 2026 21:54:24 +0800</pubDate>
+      <guid>http://localhost:1313/posts/do/</guid>
+      <description>如果有效，做，就对了！</description>
+    </item>
+    <item>
+      <title>如何拍好照片、视频（不区分设备）</title>
+      <link>http://localhost:1313/posts/photography/</link>
+      <pubDate>Wed, 07 Jan 2026 19:38:38 +0800</pubDate>
+      <guid>http://localhost:1313/posts/photography/</guid>
+      <description>人为聚焦行为，可以弥补很多仪器、环境差异而产生的效果差异。</description>
+    </item>
+    <item>
+      <title>关于过早引用现象 一种学习过程中的常见现象</title>
+      <link>http://localhost:1313/posts/study-tips/</link>
+      <pubDate>Wed, 07 Jan 2026 17:19:13 +0800</pubDate>
+      <guid>http://localhost:1313/posts/study-tips/</guid>
+      <description>几乎很少有东西可以等我们准备好之后才可以开始，而是带着不确定和模糊开始，渐渐才会清晰。</description>
+    </item>
+    <item>
+      <title>分享10首好听的情歌</title>
+      <link>http://localhost:1313/posts/songs-hao-ting/</link>
+      <pubDate>Tue, 06 Jan 2026 19:16:10 +0800</pubDate>
+      <guid>http://localhost:1313/posts/songs-hao-ting/</guid>
+      <description>如果说音乐是情绪的语言，那么”好听”可能就是这门语言里最微妙的语法。——无敌</description>
+    </item>
+    <item>
+      <title>三类财富杠杆</title>
+      <link>http://localhost:1313/posts/money/</link>
+      <pubDate>Mon, 05 Jan 2026 21:07:47 +0800</pubDate>
+      <guid>http://localhost:1313/posts/money/</guid>
+      <description>预祝大家，早日实现财务自由！</description>
+    </item>
+    <item>
+      <title>胡拉图的周刊 第三期</title>
+      <link>http://localhost:1313/posts/newsletter-weekly/</link>
+      <pubDate>Sun, 04 Jan 2026 16:16:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/newsletter-weekly/</guid>
+      <description>生活，总是有喜有悲，由人为强加给你的苦痛，在没有绝对实力时，只能受着。</description>
+    </item>
+    <item>
+      <title>如果你也想开始写作，这些写作工具推荐给大家</title>
+      <link>http://localhost:1313/posts/writing-tools/</link>
+      <pubDate>Sat, 03 Jan 2026 22:09:22 +0800</pubDate>
+      <guid>http://localhost:1313/posts/writing-tools/</guid>
+      <description>事情应该力求简单，但不应过于简单！</description>
+    </item>
+    <item>
+      <title>如果你也被英语单词困扰</title>
+      <link>http://localhost:1313/posts/english-vocabulary/</link>
+      <pubDate>Fri, 02 Jan 2026 22:30:16 +0800</pubDate>
+      <guid>http://localhost:1313/posts/english-vocabulary/</guid>
+      <description>学习，是个降低内阻力的过程。</description>
+    </item>
+    <item>
+      <title>健身的一些优先级，新年第一天</title>
+      <link>http://localhost:1313/posts/sport-tips/</link>
+      <pubDate>Thu, 01 Jan 2026 23:41:46 +0800</pubDate>
+      <guid>http://localhost:1313/posts/sport-tips/</guid>
+      <description>慢慢来，比较快！</description>
+    </item>
+    <item>
+      <title>2025年度总结</title>
+      <link>http://localhost:1313/posts/summary-2025/</link>
+      <pubDate>Wed, 31 Dec 2025 21:00:04 +0800</pubDate>
+      <guid>http://localhost:1313/posts/summary-2025/</guid>
+      <description>2025走了，2026还会远吗？</description>
+    </item>
+    <item>
+      <title>胡拉图的周刊 第二期</title>
+      <link>http://localhost:1313/posts/newsletter-weekly/</link>
+      <pubDate>Sun, 28 Dec 2025 23:22:14 +0800</pubDate>
+      <guid>http://localhost:1313/posts/newsletter-weekly/</guid>
+      <description>做一个能给身边人带去积极影响的人，是有挑战的。</description>
+    </item>
+    <item>
+      <title>胡拉图的周刊 第一期</title>
+      <link>http://localhost:1313/posts/newsletter-weekly/</link>
+      <pubDate>Sun, 21 Dec 2025 14:19:03 +0800</pubDate>
+      <guid>http://localhost:1313/posts/newsletter-weekly/</guid>
+      <description>胡拉图的周刊-第一期，关于我为何要开始写周刊。</description>
+    </item>
+    <item>
+      <title>写给2025年12月考研的朋友</title>
+      <link>http://localhost:1313/posts/exam-test/</link>
+      <pubDate>Fri, 19 Dec 2025 22:49:22 +0800</pubDate>
+      <guid>http://localhost:1313/posts/exam-test/</guid>
+      <description>我想你们大多并非是对科研由热爱而产生的执着，反而是由于未知而幻想的魅惑。</description>
+    </item>
+    <item>
+      <title>综述写作之——文献管理</title>
+      <link>http://localhost:1313/posts/literature-management/</link>
+      <pubDate>Sun, 14 Dec 2025 23:37:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/literature-management/</guid>
+      <description>文献管理，是一门艺术。</description>
+    </item>
+    <item>
+      <title>综述写作之——确定主题</title>
+      <link>http://localhost:1313/posts/paper/</link>
+      <pubDate>Sun, 14 Dec 2025 20:31:54 +0800</pubDate>
+      <guid>http://localhost:1313/posts/paper/</guid>
+      <description>主题确定好了，综述写起来十分顺畅。</description>
+    </item>
+    <item>
+      <title>关于我开始日更</title>
+      <link>http://localhost:1313/posts/daily-update/</link>
+      <pubDate>Wed, 10 Dec 2025 22:55:46 +0800</pubDate>
+      <guid>http://localhost:1313/posts/daily-update/</guid>
+      <description>&lt;h2 id=&#34;直接原因&#34;&gt;直接原因&lt;/h2&gt;
+&lt;p&gt;之所以有时间来写文章分享，毫无疑问，那肯定是因为有时间。&lt;/p&gt;
+&lt;p&gt;为什么有这么一段时间空出来呢？因为我上周在推胸的时候，由于重量太大，昨晚做最后一个卧推力竭后，我没有力气把杠铃回杠了，它就在我往上推的过程中「&lt;strong&gt;卸了力气&lt;/strong&gt;」，导致右肩部位有一些拉伤——就是连正常俯卧撑都能感觉到右侧身体明显有撕裂感，导致我做任何的上肢训练以及负重训练都容易有疼痛感，甚至是平躺睡觉我右肩都能明显的感受到不适，所以我选择「&lt;strong&gt;完全静养&lt;/strong&gt;」一段时间，听起来好像很长，但这几天我感觉快要恢复完全。&lt;/p&gt;
+&lt;p&gt;所以，请珍惜我日更的时光吧！啊？不喜欢我日更？好吧，那「&lt;strong&gt;珍惜我日更的时光&lt;/strong&gt;」我说给自己听。&lt;/p&gt;
+&lt;h2 id=&#34;间接原因&#34;&gt;间接原因&lt;/h2&gt;
+&lt;p&gt;为什么我有时间空出来，却不用来搞科研、写论文相关的内容呢？是个好问题，下次别问了。我一万个不愿意回答，但我还是回答一下吧！&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;要事优先，但也需要掺杂一些爱好。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;——胡拉图&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;因为这周末要考英语 6 级的缘故，我想着先尽力把这个考试通过，其余的东西我暂时放一放。毕竟，凡事讲究个轻重缓急，更何况我早已不是那个对英语有着「&lt;strong&gt;近乎仇恨般的抵触情绪&lt;/strong&gt;」的学生了。这不仅仅是我观念的一个转变，也是行为上的巨大进步。&lt;/p&gt;
+&lt;p&gt;加之导师最近督促我们写综述，但由于她管的学生太多，导致我们每个人的综述方向、框架以及检索文献数等等，都要自己去摸索钻研，非常容易陷入「&lt;strong&gt;写不下去&lt;/strong&gt;」的境地——好不容易想出来的方向，可能由于范围太大或太小、参考文献数太多或太少，一个个被客观现实毙掉。&lt;/p&gt;
+&lt;p&gt;好不容易结合文献调研和各种 AI 工具，确定了一个合适的方向、题目和框架，检索文献、下载文献、管理文献、阅读文献、总结文献又是一个费时费力费脑的活。所以，这活，挺不好干。把经历过的、看过的或者自己思考过的东西写出来、写清楚，对我来说不是什么难事，但把文献里提到的东西，综述出来，对于我来说，还真是一个比较陌生的过程，毕竟「&lt;strong&gt;科研文章&lt;/strong&gt;」相比于平日里写的文章，严谨性、格式和准备工作，都要「&lt;strong&gt;严肃&lt;/strong&gt;」的多。&lt;/p&gt;
+&lt;p&gt;但好在，在这个摸索的过程中，我已经打通了结合各种工具，高效书写一篇综述文章的全流程，忙完明天的组会和近期课题组的「&lt;strong&gt;大迁徙&lt;/strong&gt;」，我总结出来给大家分享。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>我是个爱折腾的人</title>
+      <link>http://localhost:1313/posts/personality-zhe-teng/</link>
+      <pubDate>Tue, 09 Dec 2025 23:01:15 +0800</pubDate>
+      <guid>http://localhost:1313/posts/personality-zhe-teng/</guid>
+      <description>你认为我无所事事的状态，恰好是我真正逍遥自在的片刻。</description>
+    </item>
+    <item>
+      <title>多设备的文件同步和传输问题</title>
+      <link>http://localhost:1313/posts/tong-bu-file/</link>
+      <pubDate>Mon, 08 Dec 2025 17:14:50 +0000</pubDate>
+      <guid>http://localhost:1313/posts/tong-bu-file/</guid>
+      <description>粉产品力，而不要粉品牌。</description>
+    </item>
+    <item>
+      <title>普通人与运动的关系</title>
+      <link>http://localhost:1313/posts/sport-relative/</link>
+      <pubDate>Sun, 07 Dec 2025 16:03:14 +0000</pubDate>
+      <guid>http://localhost:1313/posts/sport-relative/</guid>
+      <description>关于运动，我们应该怎样对待。</description>
+    </item>
+    <item>
+      <title>跑步平价装备(实用篇)</title>
+      <link>http://localhost:1313/posts/running-gear/</link>
+      <pubDate>Sat, 06 Dec 2025 14:12:10 +0000</pubDate>
+      <guid>http://localhost:1313/posts/running-gear/</guid>
+      <description>有想法、简装备，就出发！</description>
+    </item>
+    <item>
+      <title>关于我</title>
+      <link>http://localhost:1313/posts/personal-profile/</link>
+      <pubDate>Fri, 05 Dec 2025 21:40:01 +0000</pubDate>
+      <guid>http://localhost:1313/posts/personal-profile/</guid>
+      <description>关于我，关于胡拉图的一些了解。</description>
     </item>
   </channel>
 </rss>
