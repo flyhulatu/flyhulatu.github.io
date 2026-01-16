@@ -1,0 +1,91 @@
+baseURL: "https://hulatu.com/"
+title: "胡拉图的博客"
+languageCode: "zh-cn"
+theme: "PaperMod"
+pagination.pagerSize: 10
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production
+  title: "我的技术博客"
+  description: "记录学习与思考"
+  keywords: [Blog, Portfolio, PaperMod]
+  author: "你的名字"
+  
+  # 显示阅读时间
+  ShowReadingTime: true
+  # 显示分享按钮
+  ShowShareButtons: true
+  # 显示面包屑导航
+  ShowBreadCrumbs: true
+  # 显示代码复制按钮
+  ShowCodeCopyButtons: true
+  # 显示目录
+  ShowToc: true
+  # 目录自动折叠
+  TocOpen: false
+  # 显示文章更新时间
+  ShowPostNavLinks: true
+  
+  # 首页信息
+  homeInfoParams:
+    Title: "欢迎来到我的博客 👋"
+    Content: "记录技术、分享经验、探索世界"
+
+  # 社交链接
+  socialIcons:
+    - name: github
+      url: "https://github.com/你的用户名"
+    - name: email
+      url: "mailto:你的邮箱@example.com"
+
+  # 封面图片
+  cover:
+    linkFullImages: true
+    responsiveImages: true
+
+# 菜单配置
+menu:
+  main:
+    - identifier: home
+      name: 首页
+      url: /
+      weight: 10
+    - identifier: posts
+      name: 文章
+      url: /posts/
+      weight: 20
+    - identifier: archives
+      name: 归档
+      url: /archives/
+      weight: 30
+    - identifier: tags
+      name: 标签
+      url: /tags/
+      weight: 40
+    - identifier: search
+      name: 搜索
+      url: /search/
+      weight: 50
+
+# 输出格式
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+# 代码高亮
+markup:
+  highlight:
+    style: monokai
+    lineNos: true
+    noClasses: false
