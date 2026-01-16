@@ -1,0 +1,53 @@
+<!-- layouts/shortcodes/wechat.html -->
+{{- $img := .Get "img" | default "/images/wechat-qr.jpg" -}}
+{{- $text := .Get "text" | default "WeChat" -}}
+
+<span class="contact-btn" onclick="document.getElementById('wechat-modal').style.display='flex'">
+     {{ $text }}
+</span>
+
+<div id="wechat-modal" class="modal-overlay" onclick="this.style.display='none'">
+    <div class="modal-content" onclick="event.stopPropagation()"> <!-- 防止点击图片关闭 -->
+        <img src="{{ $img }}" alt="WeChat QR">
+        <p>扫一扫添加微信</p>
+    </div>
+</div>
+
+<style>
+    .contact-btn {
+        cursor: pointer;
+        color: #333;
+        border-bottom: 1px solid #999;
+        transition: color 0.2s;
+        display: inline-block; /* 修复可能的分行 */
+    }
+    .contact-btn:hover { color: #007bff; border-color: #007bff; }
+    .modal-overlay {
+        display: none;
+        position: fixed;
+        z-index: 99999; /* 确保层级最高 */
+        left: 0; top: 0;
+        width: 100vw; height: 100vh;
+        background-color: rgba(0,0,0,0.6);
+        align-items: center; justify-content: center;
+        backdrop-filter: blur(5px);
+    }
+    .modal-content {
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        animation: popUp 0.3s ease;
+    }
+    .modal-content img {
+        max-width: 280px;
+        height: auto;
+        display: block;
+        margin: 0 auto 10px;
+    }
+    @keyframes popUp {
+        from { transform: scale(0.9); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+</style>

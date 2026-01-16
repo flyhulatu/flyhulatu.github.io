@@ -1,0 +1,740 @@
+/* ==========================================================================
+   1. 全局基础设置 & 滚动条 & 鼠标样式
+   ========================================================================== */
+html {
+    scroll-behavior: smooth; /* 启用平滑滚动 */
+}
+
+body {
+    letter-spacing: 0.02em; /* 针对中文增加字间距 */
+    /* 自定义鼠标指针 */
+    cursor: url(https://cdn.jsdelivr.net/gh/fz6m/Private-web@1.5.0/image/cursor/normal.cur), auto;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+a:hover {
+    cursor: url(https://cdn.jsdelivr.net/gh/fz6m/Private-web@1.5.0/image/cursor/link.cur), auto;
+}
+
+/* 隐藏滚动条但保留滚动功能 */
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+/* 开启全站平滑视图过渡 */
+@view-transition {
+    navigation: auto;
+}
+::view-transition-old(root) {
+    animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out;
+}
+::view-transition-new(root) {
+    animation: 210ms cubic-bezier(0, 0, 0.2, 1) both fade-in;
+}
+
+
+/* 保持导航栏在切换页面时不闪烁 */
+.header {
+    view-transition-name: site-header;
+}
+
+
+
+
+
+/* ==========================================================================
+   4. 列表页布局 (List Layout) - 左图右文 [已修改：固定图片尺寸]
+   ========================================================================== */
+
+/* ... (前面的基础卡片样式 .post-entry 保持不变，只需替换 @media 部分) ... */
+
+/* 电脑端左图右文布局 (Grid实现) */
+@media screen and (min-width: 768px) {
+    /* 仅当存在封面图时应用 Grid */
+    .post-entry:has(.entry-cover) {
+        display: grid !important;
+        /* 【关键点1】第一列固定宽度 280px (你可以改成 300px 或其他)，第二列自动 */
+        grid-template-columns: 280px 1fr; 
+        column-gap: 25px; /* 图片和文字的间距 */
+        align-items: start; /* 顶部对齐 */
+        
+        /* Grid 区域定义 */
+        grid-template-areas:
+            "image header"
+            "image content"
+            "image footer";
+            
+        padding: 24px;
+        /* 强制卡片最小高度，防止文字太少时卡片比图片还矮 */
+        min-height: 230px; 
+    }
+
+    /* 图片区域容器 */
+    .post-entry:has(.entry-cover) .entry-cover {
+        grid-area: image;
+        margin: 0 !important;
+        
+        /* 【关键点2】强制固定图片容器的高度 */
+        height: 185px !important; 
+        
+        /* 确保宽度填满上面定义的 280px */
+        width: 100%; 
+        overflow: hidden;
+        border-radius: var(--radius); /* 保持圆角 */
+    }
+
+    /* 图片本体 */
+    .post-entry:has(.entry-cover) .entry-cover img {
+        /* 【关键点3】强制宽高 100% 填满容器 */
+        width: 100% !important;
+        height: 100% !important;
+        
+        /* 【关键点4】裁剪模式：确保图片填满且不变形（多余部分会被切掉） */
+        object-fit: cover; 
+        
+        /* 也可以加个 object-position: center top; 来指定以图片上部为重心裁剪 */
+    }
+
+    /* 文字区域定位 */
+    .post-entry:has(.entry-cover) .entry-header { grid-area: header; }
+    .post-entry:has(.entry-cover) .entry-content { grid-area: content; }
+    .post-entry:has(.entry-cover) .entry-footer { 
+        grid-area: footer; 
+        margin-top: auto; 
+    }
+}
+
+/* ==========================================================================
+   5. 文章详情页内容优化 (Content)
+   ========================================================================== */
+.post-content, .content {
+    line-height: 1.75;
+    font-size: 1.05rem;
+}
+
+.post-content p, .content p {
+    margin-bottom: 1.5em;
+    text-align: justify;
+}
+
+/* 代码块样式 */
+.post-content pre {
+    border-radius: 8px;
+    background-color: #282c34 !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* 文章内链接样式 (下划线动画) */
+.post-content a {
+    text-decoration: none;
+    color: #333;
+    background: linear-gradient(to right, #3b82f6, #3b82f6);
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size 0.3s ease;
+}
+.post-content a:hover {
+    background-size: 100% 2px;
+    color: #3b82f6;
+}
+
+
+
+/* 面包屑导航隐藏 */
+.breadcrumbs {
+    display: none !important;
+}
+
+/* ==========================================================================
+   6. 目录美化 (TOC)
+   ========================================================================== */
+.toc-container {
+    border-left: 2px solid #eee;
+    padding-left: 0;
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    line-height: 1.8;
+}
+
+/* 目录链接样式 */
+.toc-item a {
+    display: block;
+    transition: all 0.2s;
+}
+
+/* 一级目录 */
+.toc-list > li > a {
+    font-weight: 700;
+    color: #333;
+    font-size: 15px;
+    margin-top: 12px;
+    padding: 8px 15px;
+}
+
+/* 子目录 */
+.toc-list ul li a {
+    font-weight: 400;
+    color: #888;
+    font-size: 13px;
+    padding-left: 15px;
+    border-left: 2px solid #eee;
+}
+
+/* 悬停与激活 */
+.toc-item a:hover, 
+.toc-list ul li a:hover {
+    color: #d9534f; /* 主题色 */
+    background: #f9f9f9;
+}
+.toc-item a.active {
+    color: #007bff;
+    border-left: 3px solid #007bff;
+    background: linear-gradient(to right, #e6f7ff, transparent);
+}
+
+/* 隐藏默认倒三角，自定义旋转箭头 */
+.toc details summary::-webkit-details-marker { display: none; }
+.toc details summary { list-style: none; }
+
+.details-icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+    color: #333;
+}
+.toc-icon {
+    margin-right: 6px;
+    transition: transform 0.2s ease;
+    color: #666;
+}
+.toc details[open] summary .toc-icon {
+    transform: rotate(90deg);
+    color: #000;
+}
+
+
+
+
+/* ==========================================================================
+   8. 搜索页面美化 (Search) - MacOS 风格
+   ========================================================================== */
+/* 彻底隐藏默认标题 */
+.search-page .page-header {
+    display: none !important;
+}
+
+/* 搜索框容器位置 */
+#searchbox {
+    margin-top: 10vh;
+    margin-bottom: 50px;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 搜索输入框 */
+#searchInput {
+    height: 60px;
+    width: 100%;
+    border-radius: 30px;
+    border: 1px solid rgba(0,0,0,0.05);
+    
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+    
+    text-align: left;
+    padding-left: 60px !important;
+    font-size: 18px;
+    color: #333;
+    outline: none;
+    
+    /* 放大镜图标 */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>');
+    background-repeat: no-repeat;
+    background-position: 20px center;
+    
+    transition: all 0.3s ease;
+}
+
+#searchInput:focus {
+    transform: scale(1.02);
+    background-color: #fff;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary);
+}
+
+#searchInput::placeholder {
+    color: #aaa;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+/* 搜索结果列表 */
+#searchResults {
+    margin-top: 30px;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#searchResults li {
+    list-style: none;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    background: rgba(255,255,255, 0.5);
+    border: 1px solid transparent;
+    border-bottom: 1px dashed var(--border);
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+#searchResults li:hover {
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transform: translateX(5px);
+}
+
+mark {
+    background-color: rgba(255, 215, 0, 0.3);
+    color: inherit;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   9. 社交图标 & 按钮 & 友链 & 底部
+   ========================================================================== */
+/* 社交图标动画 */
+.social-icons a {
+    transition: all 0.3s ease;
+}
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+.share-icon svg {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    transition: transform 0.2s;
+}
+.share-icon:hover svg {
+    transform: scale(1.1);
+    color: var(--primary);
+}
+
+/* 特定颜色 */
+.social-icons a[href*="wechat"]:hover svg { color: #07c160; }
+.social-icons a[href*="zhihu"]:hover svg { color: #0084ff; }
+.social-icons a[href*="github"]:hover svg { color: #000000; }
+.social-icons a[href*="qq.com"]:hover svg { color: #fca311; }
+
+
+/* 按钮毛玻璃效果 */
+.button {
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    background-color: var(--primary);
+    color: white;
+}
+
+/* 友链卡片交互 */
+.friend-item, .links-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+}
+.friend-item:hover, .links-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+.friend-item img:hover, .links-item img:hover {
+    transform: rotate(360deg);
+    transition: transform 0.6s ease-in-out;
+}
+
+/* 底部 Busuanzi 统计 */
+.busuanzi-footer {
+    font-size: 12px;
+    color: var(--secondary);
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.8;
+}
+
+/* 书单网格 (Book Grid) */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); 
+    gap: 30px 20px;
+    margin: 20px 0 40px 0;
+}
+.book-card {
+    display: block;
+    text-decoration: none !important;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+.book-card:hover { transform: translateY(-8px); }
+.book-cover-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 3; 
+    border-radius: 4px;
+    perspective: 500px;
+}
+.book-cover-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px 4px 4px 2px;
+    box-shadow: 1px 1px 0 rgba(0,0,0,0.1), 5px 5px 15px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+.book-card:hover img {
+    box-shadow: 1px 1px 0 rgba(0,0,0,0.1), 8px 15px 25px rgba(0,0,0,0.2);
+}
+.book-title {
+    margin-top: 10px;
+    font-size: 13px;
+    text-align: center;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ==========================================================================
+   暴力修复：搜索图标 (适配所有情况)
+   ========================================================================== */
+
+/* 1. 选中所有包含 "search" 链接的菜单项 */
+#menu li a[href*="search"] {
+    /* 【核心】强制把“搜索”两个字变成透明/大小为0 */
+    font-size: 0 !important;
+    color: transparent !important;
+    
+    /* 强制重置盒子大小 */
+    width: 24px !important;
+    height: 24px !important;
+    padding: 0 !important;
+    
+    /* 确保它是块级元素，可以设置宽高 */
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    
+    /* 相对定位，为了让伪元素绝对定位 */
+    position: relative;
+    
+    /* 垂直对齐微调 */
+    vertical-align: middle;
+    margin-bottom: 2px;
+}
+
+/* 2. 在原位置画一个图标 */
+#menu li a[href*="search"]::after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    
+    /* 设置图标颜色：这里不能用 currentColor 了，因为文字透明了 */
+    /* 我们使用 var(--primary) 让它跟随主题色，或者用 var(--content) */
+    background-color: var(--content); 
+    
+    /* 加载放大镜 SVG */
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E") no-repeat center;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E") no-repeat center;
+    
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    
+    /* 绝对定位到正中间 */
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+}
+
+/* 3. 鼠标悬停变色 */
+#menu li a[href*="search"]:hover::after {
+    background-color: var(--primary); /* 悬停时变蓝/金 */
+    transform: translate(-50%, -50%) scale(1.1); /* 微微放大 */
+    transition: all 0.2s;
+}
+
+/* --- 首页打字机效果综合修复与美化 --- */
+
+#typewriter {
+    /* 1. 防抖动核心设置 */
+    min-height: 32px !important;
+    display: block !important;
+    line-height: 1.6 !important;
+
+    /* 2. 间距调整 (根据需要修改数值) */
+    margin-top: 15px; 
+    margin-bottom: 25px;
+
+    /* 3. 居中对齐 */
+    text-align: center;
+}
+
+/* 添加黄色闪烁光标 */
+#typewriter::after {
+    content: "🖊️";
+    /* color: #ffd700; 黄色代码 */
+    font-weight: bold;
+    margin-left: 5px;
+    animation: blink 0.5s step-start infinite;
+}
+
+/* 光标闪烁动画定义 */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* 1. 隐藏默认的三角符号 */
+.archive-year summary::-webkit-details-marker,
+.archive-month summary::-webkit-details-marker {
+    display: none;
+}
+
+.archive-year summary,
+.archive-month summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+}
+
+/* 2. 创建自定义圆环 */
+.archive-year summary::before,
+.archive-month summary::before {
+    content: "";
+    display: inline-block;
+    width: 14px;  /* 圆环大小 */
+    height: 14px;
+    margin-right: 12px;
+    border: 2.5px solid #3b82f6; /* 初始颜色（蓝色），可改为 var(--primary) 适配主题 */
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* 丝滑动效 */
+    box-sizing: border-box;
+}
+
+/* 3. 收起状态 (默认) - 圆环扩大 */
+details:not([open]) summary::before {
+    transform: scale(1.2);
+    border-color: #3b82f6; /* 收起时的颜色 */
+    background-color: transparent;
+}
+
+/* 4. 展开状态 - 圆环缩小并变色 */
+details[open] summary::before {
+    transform: scale(0.7); /* 缩小 */
+    border-color: #f8f2c2; /* 展开后的颜色（例如变成红色，或你喜欢的颜色） */
+    background-color: #f8f2c2; /* 展开时填充实心，如果只想留圆环，请删除此行 */
+    box-shadow: 0 0 8px rgb(255, 242, 0); /* 增加一点发光动效 */
+}
+
+/* 适配 PaperMod 暗黑模式 (可选) */
+.dark details:not([open]) summary::before {
+    border-color: #60a5fa;
+}
+
+/* 1. 隐藏归档和目录的默认箭头/图标 */
+.archive-year summary::-webkit-details-marker,
+.archive-month summary::-webkit-details-marker,
+.toc summary::-webkit-details-marker,
+.archive-year summary,
+.archive-month summary,
+.toc summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+}
+
+/* 专门针对 PaperMod 目录里自带的 SVG 箭头进行强制隐藏 */
+.toc summary svg {
+    display: none !important;
+}
+
+/* 2. 定义通用的圆环样式 (归档 + 目录) */
+.archive-year summary::before,
+.archive-month summary::before,
+.toc summary::before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 12px;
+    border: 2.5px solid #3b82f6; /* 初始蓝色 */
+    border-radius: 50%;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
+    flex-shrink: 0; /* 防止圆环被文字挤压变形 */
+}
+
+/* 3. 收起状态 (默认) - 圆环扩大 */
+details:not([open]) summary::before {
+    transform: scale(1.2);
+    border-color: #3b82f6;
+    background-color: transparent;
+}
+
+/* 4. 展开状态 - 圆环缩小并变色 */
+details[open] summary::before {
+    transform: scale(0.7); /* 缩小 */
+    border-color: #f8f2c2; /* 展开后的颜色：红色 */
+    background-color: #f8f2c2; /* 变实心，若想保持空心可删掉这行 */
+    box-shadow: 0 0 8px rgba(255, 242, 0, 0.5); /* 呼吸发光动效 */
+}
+
+/* 针对目录(TOC)的特殊位置微调 */
+.toc summary {
+    padding: 5px 0;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+/* 1. 全局字体优化 - 使用 Mac 原生字体栈，渲染最快最清晰 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased; /* 让字体在 Mac 上更细腻 */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 2. 顶部导航栏 - Apple 标志性的磨砂玻璃效果 */
+.nav {
+    background: rgba(var(--theme), 0.7) !important; /* 半透明背景 */
+    backdrop-filter: blur(20px) saturate(180%); /* 核心：高斯模糊 + 饱和度提升 */
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* 极细的分界线 */
+    position: sticky; /* 确保吸顶 */
+    top: 0;
+    z-index: 100;
+}
+
+/* 暗色模式下的适配 */
+.dark .nav {
+    background: rgba(29, 30, 32, 0.7) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 3. 文章卡片 - 大圆角与悬浮感 */
+.entry-content {
+    color: var(--secondary); /* 让正文文字稍微柔和一点，不要纯黑 */
+}
+
+.entry-header h2 {
+    font-weight: 700;
+    letter-spacing: -0.02em; /* 标题字间距微调，更紧凑 */
+}
+
+/* 图片圆角 */
+img {
+    border-radius: 12px; /* Apple 风格常用的圆角大小 */
+}
+
+/* 定义 Apple 风格的贝塞尔曲线 */
+:root {
+    --apple-ease: cubic-bezier(0.25, 0.1, 0.25, 1.0); /* 类似 iOS 的阻尼感 */
+}
+
+/* 1. 链接与按钮的微交互 */
+a, .button {
+    transition: all 0.3s var(--apple-ease);
+}
+
+/* 2. 文章列表卡片的悬停效果 */
+.post-entry {
+    transition: transform 0.3s var(--apple-ease), box-shadow 0.3s var(--apple-ease);
+    border-radius: 16px;
+    padding: 12px; /* 增加内边距给 hover 留空间 */
+    margin-bottom: 20px;
+}
+
+.post-entry:hover {
+    transform: scale(1.02); /* 极微妙的放大，不要太大 */
+    background: rgba(0,0,0,0.03); /* 极淡的背景高亮 */
+    /* 配合 PaperMod 的布局，这里可能需要根据实际调整 */
+}
+
+.dark .post-entry:hover {
+    background: rgba(255,255,255,0.03);
+}
+
+/* ============================================
+   首页间距暴力修正版
+   ============================================ */
+
+/* 1. 修正主容器的顶部间距 */
+/* PaperMod 默认给 main 容器加了很大的 padding，导致最上面的绿框很大 */
+main.main {
+    padding-top: 10px !important; /* 原来可能是 40px 或更多 */
+}
+
+/* 2. 修正简介区块 (Home Info) 的高度和间距 */
+/* 你的截图看起来是 Home Info 模式，类名通常是 .first-entry */
+.first-entry, .profile {
+    /* 核心：取消最小高度限制，不再强制垂直居中占位 */
+    min-height: auto !important; 
+    
+    /* 针对 上方绿框 */
+    margin-top: 20px !important; 
+    padding-top: 0 !important;
+
+    /* 针对 下方绿框 */
+    margin-bottom: 30px !important; 
+    
+    /* 取消 Flex 布局导致的强制拉伸 */
+    display: block !important; 
+}
+
+/* 3. 修正头像/标题区域内部间距 */
+.first-entry .entry-header, .profile .profile-header {
+    margin-bottom: 10px !important; /* 标题和描述之间的距离 */
+}
+
+.first-entry .entry-content, .profile .profile-description {
+    margin-top: 0 !important;
+}
+
+/* 4. 社交图标下方的间距 */
+.social-icons {
+    margin-bottom: 0 !important;
+}
+

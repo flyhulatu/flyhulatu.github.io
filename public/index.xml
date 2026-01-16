@@ -176,18 +176,7 @@
       <guid>http://localhost:1313/posts/daily-update/</guid>
       <description>&lt;h2 id=&#34;直接原因&#34;&gt;直接原因&lt;/h2&gt;
 &lt;p&gt;之所以有时间来写文章分享，毫无疑问，那肯定是因为有时间。&lt;/p&gt;
-&lt;p&gt;为什么有这么一段时间空出来呢？因为我上周在推胸的时候，由于重量太大，昨晚做最后一个卧推力竭后，我没有力气把杠铃回杠了，它就在我往上推的过程中「&lt;strong&gt;卸了力气&lt;/strong&gt;」，导致右肩部位有一些拉伤——就是连正常俯卧撑都能感觉到右侧身体明显有撕裂感，导致我做任何的上肢训练以及负重训练都容易有疼痛感，甚至是平躺睡觉我右肩都能明显的感受到不适，所以我选择「&lt;strong&gt;完全静养&lt;/strong&gt;」一段时间，听起来好像很长，但这几天我感觉快要恢复完全。&lt;/p&gt;
-&lt;p&gt;所以，请珍惜我日更的时光吧！啊？不喜欢我日更？好吧，那「&lt;strong&gt;珍惜我日更的时光&lt;/strong&gt;」我说给自己听。&lt;/p&gt;
-&lt;h2 id=&#34;间接原因&#34;&gt;间接原因&lt;/h2&gt;
-&lt;p&gt;为什么我有时间空出来，却不用来搞科研、写论文相关的内容呢？是个好问题，下次别问了。我一万个不愿意回答，但我还是回答一下吧！&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;要事优先，但也需要掺杂一些爱好。&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;——胡拉图&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;因为这周末要考英语 6 级的缘故，我想着先尽力把这个考试通过，其余的东西我暂时放一放。毕竟，凡事讲究个轻重缓急，更何况我早已不是那个对英语有着「&lt;strong&gt;近乎仇恨般的抵触情绪&lt;/strong&gt;」的学生了。这不仅仅是我观念的一个转变，也是行为上的巨大进步。&lt;/p&gt;
-&lt;p&gt;加之导师最近督促我们写综述，但由于她管的学生太多，导致我们每个人的综述方向、框架以及检索文献数等等，都要自己去摸索钻研，非常容易陷入「&lt;strong&gt;写不下去&lt;/strong&gt;」的境地——好不容易想出来的方向，可能由于范围太大或太小、参考文献数太多或太少，一个个被客观现实毙掉。&lt;/p&gt;
-&lt;p&gt;好不容易结合文献调研和各种 AI 工具，确定了一个合适的方向、题目和框架，检索文献、下载文献、管理文献、阅读文献、总结文献又是一个费时费力费脑的活。所以，这活，挺不好干。把经历过的、看过的或者自己思考过的东西写出来、写清楚，对我来说不是什么难事，但把文献里提到的东西，综述出来，对于我来说，还真是一个比较陌生的过程，毕竟「&lt;strong&gt;科研文章&lt;/strong&gt;」相比于平日里写的文章，严谨性、格式和准备工作，都要「&lt;strong&gt;严肃&lt;/strong&gt;」的多。&lt;/p&gt;
-&lt;p&gt;但好在，在这个摸索的过程中，我已经打通了结合各种工具，高效书写一篇综述文章的全流程，忙完明天的组会和近期课题组的「&lt;strong&gt;大迁徙&lt;/strong&gt;」，我总结出来给大家分享。&lt;/p&gt;</description>
+&lt;p&gt;为什么有这么一段时间空出来呢？因为我上周在推胸的时候，由于重量太大，昨晚做最后一个卧推力竭后，我没有力气把杠铃回杠了，它就在我往上推的过程中「&lt;strong&gt;卸了力气&lt;/strong&gt;」，导致右肩部位有一些拉伤——就是连正常俯卧撑都能感觉到右侧身体明显有撕裂感，导致我做任何的上肢训练以及负重训练都容易有疼痛感，甚至是平躺睡觉我右肩都能明显的感受到不适，所以我选择「&lt;strong&gt;完全静养&lt;/strong&gt;」一段时间，听起来好像很长，但这几天我感觉快要恢复完全。&lt;/p&gt;</description>
     </item>
     <item>
       <title>我是个爱折腾的人</title>
@@ -234,23 +223,20 @@
 &lt;p&gt;&lt;strong&gt;我的信息&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;站名&lt;/strong&gt;：胡拉图的博客&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;地址&lt;/strong&gt;：&lt;a href=&#34;https://www.hulatu.com&#34;&gt;https://www.hulatu.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;地址&lt;/strong&gt;：
+&lt;a href=&#34;https://www.hulatu.com&#34;
+   target=&#34;_blank&#34;&gt;
+ https://www.hulatu.com&lt;/a&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;简介&lt;/strong&gt;：一个记录生活的技术博客&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;头像&lt;/strong&gt;：&lt;a href=&#34;https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/avatar-200x200.jpg&#34;&gt;https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/avatar-200x200.jpg&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;头像&lt;/strong&gt;：
+&lt;a href=&#34;https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/avatar-200x200.jpg&#34;
+   target=&#34;_blank&#34;&gt;
+ https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/avatar-200x200.jpg&lt;/a&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;注意&#34;&gt;注意⚠️&lt;/h3&gt;
-&lt;p&gt;请确保你的网站里，绝大部分内容来自原创（&amp;gt;80），内容数 &amp;gt; 10，因为，我希望我们都别忘了，我们为什么而出发。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;从开始开始，你我的的相识，源于开始。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;～你可以按下面格式给我：&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>书目</title>
-      <link>http://localhost:1313/books/books/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/books/books/</guid>
-      <description>我读过的一些书</description>
+&lt;p&gt;请确保你的网站里，绝大部分内容来自原创（&amp;gt;80），内容数 &amp;gt; 10，因为，我希望我们都别忘了，我们为什么而出发。&lt;/p&gt;</description>
     </item>
     <item>
       <title>关于</title>
@@ -265,6 +251,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/guestbook/</guid>
       <description>欢迎来到我的秘密基地，留下你的足迹吧~</description>
+    </item>
+    <item>
+      <title>书目</title>
+      <link>http://localhost:1313/books/books/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/books/books/</guid>
+      <description>我读过的一些书</description>
     </item>
   </channel>
 </rss>

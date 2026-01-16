@@ -1,0 +1,101 @@
+{{- $links := site.Data.links -}}
+
+<div class="friend-links-container">
+  {{- range $links }}
+  <!-- 1. 渲染分组标题 -->
+  <h2 class="friend-group-title">
+    {{ .group }}
+    {{ if .description }}<span class="friend-group-desc">{{ .description }}</span>{{ end }}
+  </h2>
+
+  <!-- 2. 渲染该分组下的卡片列表 -->
+  <div class="friend-links-grid">
+    {{- range .items }}
+    <a class="friend-card" href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+      <div class="friend-left">
+        <img class="friend-avatar" src="{{ .avatar }}" alt="{{ .name }}" loading="lazy">
+      </div>
+      <div class="friend-right">
+        <div class="friend-name">{{ .name }}</div>
+        <div class="friend-desc" title="{{ .desc }}">{{ .desc }}</div>
+      </div>
+    </a>
+    {{- end }}
+  </div>
+  {{- end }}
+</div>
+
+<style>
+/* 容器样式 */
+.friend-group-title {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+.friend-group-desc {
+    font-size: 0.9rem;
+    color: #888;
+    margin-left: 10px;
+    font-weight: normal;
+}
+
+/* 网格布局：自动适应宽度，类似你的截图 */
+.friend-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* 最小宽280px，不够换行 */
+    gap: 20px;
+}
+
+/* 卡片样式 */
+.friend-card {
+    display: flex;
+    align-items: center;
+    background: var(--entry); /* PaperMod的主题背景色变量 */
+    border: 1px solid var(--border); /* PaperMod的边框变量 */
+    border-radius: 8px;
+    padding: 15px;
+    text-decoration: none !important;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.friend-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-color: var(--primary); /* 悬停变色 */
+}
+
+/* 左侧头像 */
+.friend-left {
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+.friend-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* 圆形头像 */
+    object-fit: cover;
+    background-color: #f5f5f5;
+}
+
+/* 右侧文字 */
+.friend-right {
+    flex-grow: 1;
+    overflow: hidden; /* 防止文字溢出 */
+}
+.friend-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 4px;
+}
+.friend-desc {
+    font-size: 0.85rem;
+    color: #666;
+    white-space: nowrap;      /* 强制一行显示 */
+    overflow: hidden;         /* 超出隐藏 */
+    text-overflow: ellipsis;  /* 超出显示省略号 */
+}
+
+</style>

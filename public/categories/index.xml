@@ -128,17 +128,17 @@
       <description></description>
     </item>
     <item>
-      <title>装备</title>
-      <link>http://localhost:1313/categories/%E8%A3%85%E5%A4%87/</link>
-      <pubDate>Sat, 06 Dec 2025 14:12:10 +0000</pubDate>
-      <guid>http://localhost:1313/categories/%E8%A3%85%E5%A4%87/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>跑步</title>
       <link>http://localhost:1313/categories/%E8%B7%91%E6%AD%A5/</link>
       <pubDate>Sat, 06 Dec 2025 14:12:10 +0000</pubDate>
       <guid>http://localhost:1313/categories/%E8%B7%91%E6%AD%A5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>装备</title>
+      <link>http://localhost:1313/categories/%E8%A3%85%E5%A4%87/</link>
+      <pubDate>Sat, 06 Dec 2025 14:12:10 +0000</pubDate>
+      <guid>http://localhost:1313/categories/%E8%A3%85%E5%A4%87/</guid>
       <description></description>
     </item>
   </channel>

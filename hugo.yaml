@@ -9,6 +9,11 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
+# 1. 告诉 Hugo 正文是中文，启用 CJK 字符统计逻辑 (解决字数统计错误)
+hasCJKLanguage: true
+# 2. 设置默认内容语言 (PaperMod 会根据这个去调取中文翻译包)
+defaultContentLanguage: "zh"
+
 minify:
   disableXML: true
   minifyOutput: true
@@ -16,7 +21,7 @@ minify:
 params:
   env: production
   title: "胡拉图"
-  description: "写作,使我精确."
+  description: ""
   keywords: [Blog, Portfolio, PaperMod, Mac, Hugo, Write]
   author: "hulatu"
   
@@ -34,11 +39,27 @@ params:
   TocOpen: false
   # 显示文章更新时间
   ShowPostNavLinks: true
+  # 开启日期格式化
+  dateFormat: "2006-01-02"
+
+  comments: true
+  image:
+    lazyLoading: true
+
+  # 确保资源加载正常
+  assets:
+    disableHLJS: false
+    favicon: "/favicon.png"                  # 主要 ICO
+    favicon16x16: "/favicon.png"       # 16x16 PNG
+    favicon32x32: "/favicon.png"       # 32x32 PNG
+    apple_touch_icon: "/apple-touch-icon.png" # Apple 设备
+    safari_pinned_tab: "/safari-pinned-tab.svg" # 可选 Safari
   
   # 首页信息
   homeInfoParams:
     Title: "欢迎来到我的博客"
     Content: "不谈专业,只聊生活的研究生."
+
 
   # 社交链接
   socialIcons:
@@ -46,6 +67,8 @@ params:
       url: "https://github.com/flyhulatu"
     - name: email
       url: "mailto:2983685624@qq.com"
+    - name: rss  
+      url: "index.xml"
 
   # 封面图片
   cover:
