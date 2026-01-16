@@ -17,6 +17,12 @@ defaultContentLanguage: "zh"
 minify:
   disableXML: true
   minifyOutput: true
+sitemap:
+  enable: true
+  filename: "sitemap.xml"
+  changefreq: "weekly"
+  priority: 0.7
+  expireAfter: "90d"
 
 params:
   env: production
@@ -36,7 +42,7 @@ params:
   # 显示目录
   ShowToc: true
   # 目录自动折叠
-  TocOpen: false
+  TocOpen: true
   # 显示文章更新时间
   ShowPostNavLinks: true
   # 开启日期格式化

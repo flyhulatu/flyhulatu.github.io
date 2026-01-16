@@ -6,8 +6,15 @@
     <description>Recent content on 胡拉图的博客</description>
     <generator>Hugo -- 0.154.5</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 15 Jan 2026 23:02:50 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 16 Jan 2026 19:43:04 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>我们为什么爱旅游</title>
+      <link>http://localhost:1313/posts/trip/</link>
+      <pubDate>Fri, 16 Jan 2026 19:43:04 +0800</pubDate>
+      <guid>http://localhost:1313/posts/trip/</guid>
+      <description>几乎所有的第一次，都那么刻骨铭心！</description>
+    </item>
     <item>
       <title>适合普通人的饮食管理</title>
       <link>http://localhost:1313/posts/diet-management-food/</link>
