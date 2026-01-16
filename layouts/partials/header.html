@@ -83,6 +83,12 @@
                 {{- end }}
             </div>
         </div>
+        <!-- 在 logo 和 menu 之间插入 -->
+        <div class="nav-search-container">
+            <form action="{{ "search" | absURL }}" method="get">
+                <input type="text" name="s" class="apple-search-bar" placeholder="搜索文章..." aria-label="search">
+            </form>
+        </div>
         {{- $currentPage := . }}
         <ul id="menu">
             {{- range site.Menus.main }}

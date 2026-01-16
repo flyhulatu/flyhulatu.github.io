@@ -108,18 +108,18 @@ menu:
       name: 留言
       url: /guestbook/
       weight: 50
-    - identifier: gallery
-      name: 相册
-      url: /gallery/
-      weight: 60
-    - identifier: books
-      name: 书目
-      url: /books/
-      weight: 70
-    - identifier: search
-      name: 搜索
-      url: /search/
-      weight: 100
+    # - identifier: gallery
+    #   name: 相册
+    #   url: /gallery/
+    #   weight: 60
+    # - identifier: books
+    #   name: 书目
+    #   url: /books/
+    #   weight: 70
+    # - identifier: search
+    #   name: 搜索
+    #   url: /search/
+    #   weight: 100
     - identifier: archives
       name: 归档
       url: /archives/

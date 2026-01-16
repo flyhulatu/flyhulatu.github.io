@@ -738,3 +738,78 @@ main.main {
     margin-bottom: 0 !important;
 }
 
+/* ============================================
+   搜索框居中效果
+   ============================================ */
+/* 1. 强制导航栏容器 */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* 为可能需要的微调做准备 */
+}
+
+/* 2. 让左侧 Logo 区域撑开空间 */
+.logo {
+    flex: 1; 
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* 3. 中间搜索框容器 - 真正居中 */
+.nav-search-container {
+    flex: 0 1 auto; /* 不主动撑开，由内容决定 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+/* 4. 让右侧菜单区域撑开同样的空间 */
+#menu {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* 菜单靠右对齐 */
+}
+
+/* 5. 苹果审美搜索框样式优化 */
+.apple-search-bar {
+    width: 200px; /* 稍微加宽一点默认宽度 */
+    height: 34px;
+    padding: 0 15px;
+    font-size: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* 针对深色模式加深边框 */
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05); /* 极简半透明 */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #fff;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+    text-align: center; /* 文字居中更像苹果风格 */
+}
+
+.apple-search-bar:focus {
+    width: 300px;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #007aff;
+    text-align: left; /* 输入时文字靠左 */
+    box-shadow: 0 0 15px rgba(0, 122, 255, 0.3);
+}
+
+/* 6. 响应式：当屏幕窄到一定程度时处理 */
+@media screen and (max-width: 900px) {
+    /* 菜单项太多时，可以缩小搜索框或者隐藏 */
+    .apple-search-bar {
+        width: 120px;
+    }
+    .apple-search-bar:focus {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-search-container {
+        display: none; /* 手机端建议隐藏，使用 PaperMod 自带的搜索图标 */
+    }
+}
