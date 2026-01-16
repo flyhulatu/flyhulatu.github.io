@@ -1,5 +1,5 @@
 baseURL: "https://hulatu.com/"
-title: "胡拉图的博客"
+title: "胡拉图"
 languageCode: "zh-cn"
 theme: "PaperMod"
 pagination.pagerSize: 10
@@ -63,7 +63,7 @@ params:
   
   # 首页信息
   homeInfoParams:
-    Title: "欢迎来到我的博客"
+    Title: "胡拉图的后花园"
     Content: "不谈专业,只聊生活的研究生."
 
 
@@ -88,6 +88,10 @@ menu:
       name: 文章
       url: /posts/
       weight: 10
+    - identifier: about
+      name: 关于
+      url: /about/
+      weight: 1
     - identifier: categories
       name: 分类
       url: /categories/
