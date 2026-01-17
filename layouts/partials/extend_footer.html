@@ -158,28 +158,165 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 
-<!-- Medium Zoom 图片灯箱 -->
-<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+<!-- 1. 引入 Medium Zoom -->
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
+
 <script>
-  const images = Array.from(document.querySelectorAll(".post-content img"));
-  images.forEach(img => {
-    mediumZoom(img, {
-      margin: 24,  /* 放大后的外边距 */
-      background: 'rgba(25, 25, 25, 0.9)', /* 背景颜色 */
-      scrollOffset: 40, /* 滚动多少距离自动关闭 */
+    document.addEventListener('DOMContentLoaded', function () {
+        // --- 核心修复：拦截并禁用图片外层的下载链接 ---
+        const postImages = document.querySelectorAll('.post-content img');
+        
+        postImages.forEach(img => {
+            // 检查图片是否被 <a> 标签包裹
+            const parentAnchor = img.closest('a');
+            if (parentAnchor) {
+                // 如果外层有链接，强制禁止其跳转和下载行为
+                parentAnchor.addEventListener('click', function(e) {
+                    e.preventDefault(); 
+                    return false;
+                });
+                // 移除可能存在的 download 属性
+                parentAnchor.removeAttribute('download');
+                // 修改样式，让鼠标看上去还是可以点击（放大）
+                parentAnchor.style.cursor = 'zoom-in';
+            }
+
+            // --- 2. 应用 Medium Zoom 放大 ---
+            mediumZoom(img, {
+                margin: 24,
+                background: getComputedStyle(document.body).getPropertyValue('--theme') === 'dark' 
+                            ? 'rgba(28, 28, 30, 0.9)' 
+                            : 'rgba(255, 255, 255, 0.85)',
+                scrollOffset: 40
+            });
+        });
     });
-  });
 </script>
 
-<!-- 阅读进度条 -->
-<div id="progress-container" style="position:fixed;top:0;left:0;width:100%;height:3px;z-index:1000;">
-    <div id="progress-bar" style="width:0%;height:100%;background:#49b1f5;transition:width 0.1s;"></div>
-</div>
+<style>
+    /* 适配 MacOS 风格：放大时的毛玻璃感 */
+    .medium-zoom-overlay {
+        z-index: 9999;
+        backdrop-filter: blur(10px) saturate(180%);
+        -webkit-backdrop-filter: blur(10px) saturate(180%);
+    }
+    .medium-zoom-image--opened {
+        z-index: 10000;
+        border-radius: 12px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
 <script>
-    window.onscroll = function() {
-        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        var scrolled = (winScroll / height) * 100;
-        document.getElementById("progress-bar").style.width = scrolled + "%";
-    };
+document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.getElementById('nav-search-input');
+    const searchDropdown = document.getElementById('nav-search-dropdown');
+    const searchBackdrop = document.getElementById('search-backdrop');
+    const quickLinks = document.getElementById('search-quick-links');
+    const resultsSection = document.getElementById('search-results-section');
+    const resultsList = document.getElementById('nav-search-results');
+    
+    let fuse;
+
+    // 初始化 Fuse.js
+    async function init() {
+        try {
+            const resp = await fetch('/index.json');
+            const data = await resp.json();
+            fuse = new Fuse(data, {
+                keys: ['title', 'content'],
+                threshold: 0.3
+            });
+        } catch (e) { console.log("搜索索引加载失败"); }
+    }
+    init();
+
+    // 状态控制：显示
+    searchInput.addEventListener('focus', () => {
+        searchBackdrop.style.display = 'block';
+        searchDropdown.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // 禁止背景滚动
+    });
+
+    // 状态控制：点击遮罩关闭
+    searchBackdrop.addEventListener('click', () => {
+        searchBackdrop.style.display = 'none';
+        searchDropdown.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        searchInput.value = '';
+    });
+
+    // 实时搜索逻辑
+    searchInput.addEventListener('input', (e) => {
+        const val = e.target.value;
+
+        if (val.length > 0) {
+            quickLinks.style.display = 'none';
+            resultsSection.style.display = 'block';
+            
+            const results = fuse.search(val).slice(0, 6);
+            renderResults(results);
+        } else {
+            quickLinks.style.display = 'block';
+            resultsSection.style.display = 'none';
+        }
+    });
+
+    function renderResults(results) {
+        if (results.length === 0) {
+            resultsList.innerHTML = '<li style="padding:15px; color:#888;">没有找到相关文章...</li>';
+            return;
+        }
+
+        resultsList.innerHTML = results.map(r => {
+            // 修复 Invalid Date：检查日期是否存在
+            let dateStr = "";
+            if (r.item.date) {
+                const dateObj = new Date(r.item.date);
+                dateStr = isNaN(dateObj) ? "" : dateObj.toLocaleDateString();
+            }
+
+            return `
+                <li>
+                    <a href="${r.item.permalink}">
+                        <div style="font-weight: 500;">${r.item.title}</div>
+                        <div style="font-size: 11px; opacity: 0.5; margin-top:4px;">${dateStr}</div>
+                    </a>
+                </li>
+            `;
+        }).join('');
+    }
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.getElementById('nav-search-input');
+    const backdrop = document.getElementById('search-backdrop');
+    const dropdown = document.getElementById('nav-search-dropdown');
+
+    // 显示搜索状态
+    searchInput.addEventListener('focus', () => {
+        document.body.classList.add('search-active'); // 给 body 加类名
+        backdrop.style.display = 'block';
+        dropdown.style.display = 'block';
+    });
+
+    // 隐藏搜索状态 (点击遮罩层)
+    backdrop.addEventListener('click', () => {
+        document.body.classList.remove('search-active'); // 移除类名，恢复清晰
+        backdrop.style.display = 'none';
+        dropdown.style.display = 'none';
+        searchInput.value = '';
+        searchInput.blur();
+    });
+
+    // 监听 ESC 键关闭
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            backdrop.click();
+        }
+    });
+});
 </script>

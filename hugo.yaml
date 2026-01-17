@@ -1,97 +1,115 @@
+# ========================================================
+# 1. 站点核心基础配置 (Global Settings)
+# ========================================================
 baseURL: "https://hulatu.com/"
 title: "胡拉图"
-languageCode: "zh-cn"
 theme: "PaperMod"
-pagination.pagerSize: 10
+pagination:
+  pagerSize: 10                # 每页显示的文章数量
 
-enableRobotsTXT: true
-buildDrafts: false
-buildFuture: false
-buildExpired: false
+# ========================================================
+# 2. 语言与搜索优化 (Language & SEO)
+# ========================================================
+languageCode: "zh-cn"
+defaultContentLanguage: "zh"   # 默认语言环境，影响翻译包调取
+hasCJKLanguage: true           # 开启中日韩文字统计逻辑，修正字数统计
 
-# 1. 告诉 Hugo 正文是中文，启用 CJK 字符统计逻辑 (解决字数统计错误)
-hasCJKLanguage: true
-# 2. 设置默认内容语言 (PaperMod 会根据这个去调取中文翻译包)
-defaultContentLanguage: "zh"
+enableRobotsTXT: true          # 启用 robots.txt 供搜索引擎抓取
+buildDrafts: false             # 不编译草稿文件
+buildFuture: false             # 不编译发布日期在未来的文章
+buildExpired: false            # 不编译已过期的文章
 
+# ========================================================
+# 3. 性能优化与站点地图 (Optimization)
+# ========================================================
 minify:
-  disableXML: true
-  minifyOutput: true
+  minifyOutput: true           # 开启 HTML/CSS/JS 压缩，提升加载速度
+  disableXML: true             # 不压缩 XML
+
 sitemap:
   enable: true
   filename: "sitemap.xml"
-  changefreq: "weekly"
-  priority: 0.7
-  expireAfter: "90d"
+  changefreq: "weekly"         # 更新频率
+  priority: 0.7                # 权重
+  expireAfter: "90d"           # 过期时间
 
+# ========================================================
+# 4. 主题全局参数 (Theme Params - UI & UX)
+# ========================================================
 params:
-  env: production
+  env: production              # 生产环境
   title: "胡拉图"
-  description: ""
-  keywords: [Blog, Portfolio, PaperMod, Mac, Hugo, Write]
   author: "hulatu"
-  
-  # 显示阅读时间
-  ShowReadingTime: true
-  # 显示分享按钮
-  ShowShareButtons: false
-  # 显示面包屑导航
-  ShowBreadCrumbs: false
-  # 显示代码复制按钮
-  ShowCodeCopyButtons: true
-  # 显示目录
-  ShowToc: true
-  # 目录自动折叠
-  TocOpen: true
-  # 显示文章更新时间
-  ShowPostNavLinks: true
-  # 开启日期格式化
-  dateFormat: "2006-01-02"
+  description: "胡拉图的后花园"
+  keywords: [Blog, Portfolio, PaperMod, Mac, Hugo, Write]
 
-  comments: true
+  # --- 文章内容显示控制 ---
+  ShowReadingTime: true        # 显示预计阅读时间
+  ShowShareButtons: false      # 隐藏分享按钮
+  ShowBreadCrumbs: false       # 隐藏面包屑导航
+  ShowCodeCopyButtons: true    # 开启代码块复制按钮
+  ShowPostNavLinks: true       # 开启文章页底部的前后篇导航
+  dateFormat: "2006-01-02"     # 标准日期格式
+
+  # --- 侧边栏/目录设置 (TOC) ---
+  ShowToc: true                # 显示文章目录
+  TocOpen: true                # 默认展开目录
+
+  # --- 其他功能 ---
+  comments: true               # 开启评论系统
   image:
-    lazyLoading: true
+    lazyLoading: true          # 图片懒加载
 
-  # 确保资源加载正常
+# ========================================================
+# 5. 静态资源与图标 (Assets & Favicons)
+# ========================================================
   assets:
-    disableHLJS: false
-    favicon: "/favicon.png"                  # 主要 ICO
-    favicon16x16: "/favicon.png"       # 16x16 PNG
-    favicon32x32: "/favicon.png"       # 32x32 PNG
-    apple_touch_icon: "/apple-touch-icon.png" # Apple 设备
-    safari_pinned_tab: "/safari-pinned-tab.svg" # 可选 Safari
-  
-  # 首页信息
+    disableHLJS: false         # 不禁用代码高亮
+    favicon: "/favicon.png"
+    favicon16x16: "/favicon.png"
+    favicon32x32: "/favicon.png"
+    apple_touch_icon: "/apple-touch-icon.png"
+    safari_pinned_tab: "/safari-pinned-tab.svg"
+
+# ========================================================
+# 6. 首页定制区 (Home Info & Social)
+# 这里配合你之前的 CSS 可以实现“左文字右头像”布局
+# ========================================================
   homeInfoParams:
     Title: "胡拉图的后花园"
-    Content: "不谈专业,只聊生活的研究生."
+    Content: "不谈专业, 只聊生活的研究生."
 
-
-  # 社交链接
   socialIcons:
     - name: github
       url: "https://github.com/flyhulatu"
     - name: email
       url: "mailto:2983685624@qq.com"
+    - name: wechat
+      url: "https://hulatu.com/images/wechat.png"
+    - name: zhihu
+      url: "https://www.zhihu.com/people/hulatu"
     - name: rss  
       url: "index.xml"
 
-  # 封面图片
+  # 文章封面图配置
   cover:
-    linkFullImages: true
-    responsiveImages: true
+    linkFullImages: false       # 关闭点击封面图查看原图
+    responsiveImages: true     # 开启响应式图片
 
-# 菜单配置
+# ========================================================
+# 7. 导航菜单配置 (Navigation Menu)
+# Weight 决定排列顺序，越小越靠左
+# ========================================================
 menu:
   main:
-    - identifier: posts
-      name: 文章
-      url: /posts/
-      weight: 10
     - identifier: about
       name: 关于
       url: /about/
       weight: 1
+    - identifier: posts
+      name: 文章
+      url: /posts/
+      weight: 10
     - identifier: categories
       name: 分类
       url: /categories/
@@ -108,6 +126,10 @@ menu:
       name: 留言
       url: /guestbook/
       weight: 50
+    - identifier: archives
+      name: 归档
+      url: /archives/
+      weight: 90
     # - identifier: gallery
     #   name: 相册
     #   url: /gallery/
@@ -120,22 +142,18 @@ menu:
     #   name: 搜索
     #   url: /search/
     #   weight: 100
-    - identifier: archives
-      name: 归档
-      url: /archives/
-      weight: 90
 
-
-# 输出格式
+# ========================================================
+# 8. 渲染引擎与代码高亮 (Markup Settings)
+# ========================================================
 outputs:
   home:
     - HTML
     - RSS
-    - JSON
+    - JSON                     # 必须保留 JSON 以支持本地搜索功能
 
-# 代码高亮
 markup:
   highlight:
-    style: monokai
-    lineNos: true
-    noClasses: false
+    style: monokai             # 代码高亮风格
+    lineNos: true              # 显示行号
+    noClasses: false           # 使用 class 样式
