@@ -6,13 +6,23 @@ title: "胡拉图"
 theme: "PaperMod"
 pagination:
   pagerSize: 10                # 每页显示的文章数量
+frontmatter:
+  lastmod: [lastmod, :git, date] # 修改时间：初始与发布时间一致
+
+outputs:
+  home:
+    - HTML
+    - RSS   # 生成 index.xml
+    - JSON  # 生成 index.json (搜索用)
 
 # ========================================================
 # 2. 语言与搜索优化 (Language & SEO)
 # ========================================================
+enableEmoji: true
 languageCode: "zh-cn"
 defaultContentLanguage: "zh"   # 默认语言环境，影响翻译包调取
 hasCJKLanguage: true           # 开启中日韩文字统计逻辑，修正字数统计
+
 
 enableRobotsTXT: true          # 启用 robots.txt 供搜索引擎抓取
 buildDrafts: false             # 不编译草稿文件
@@ -39,24 +49,30 @@ sitemap:
 params:
   env: production              # 生产环境
   title: "胡拉图"
-  author: "hulatu"
   description: "胡拉图的后花园"
   keywords: [Blog, Vlog, PaperMod, Mac, Hugo, Write]
+
+  label:
+    text: "胡拉图"
+    icon: "/images/logo.png" # 你的图标路径
+    iconHeight: 35        # 调整高度
 
   # --- 文章内容显示控制 ---
   ShowReadingTime: true        # 预计阅读时间
   ShowShareButtons: false      # 分享按钮
-  ShowBreadCrumbs: false       # 面包屑导航
+  ShowBreadCrumbs: true       # 面包屑导航
   ShowCodeCopyButtons: true    # 代码块复制按钮
   ShowPostNavLinks: true       # 文章页底部的前后篇导航
   dateFormat: "2006-01-02"     # 标准日期格式
+  ShowCover: true  # 确保封面图渲染开关为true
 
   # --- 侧边栏/目录设置 (TOC) ---
   ShowToc: true                # 显示文章目录
   TocOpen: true                # 默认展开目录
 
   # --- 其他功能 ---
-  comments: true               # 开启评论系统
+  hideMeta: false              # 列表显示作者
+  comments: true               # 评论系统
   image:
     lazyLoading: true          # 图片懒加载
 
@@ -73,6 +89,8 @@ params:
     apple_touch_icon: "/apple-touch-icon.png"
     safari_pinned_tab: "/safari-pinned-tab.svg"
 
+    disableFingerprinting: false   #配合 CSS 做毛玻璃
+
 
 # ========================================================
 # 6. 首页定制区 (Home Info & Social)
@@ -83,16 +101,23 @@ params:
     Content: "不谈专业, 只聊生活的研究生."
 
   socialIcons:
-    - name: github
-      url: "https://github.com/flyhulatu"
+    - name: rss  
+      url: "index.xml"
     - name: email
       url: "mailto:2983685624@qq.com"
     - name: wechat
       url: "https://hulatu.com/images/wechat.png"
-    # - name: zhihu
-    #   url: "https://www.zhihu.com/people/hulatu"
-    - name: rss  
-      url: "index.xml"
+    - name: github
+      url: "https://github.com/flyhulatu"
+    - name: zhihu
+      url: "https://www.zhihu.com/people/hulatu"
+    - name: bilibili
+      url: "https://space.bilibili.com/321809422"
+    - name: xiaohongshu
+      url: "https://www.xiaohongshu.com/user/profile/68a9d4e5000000001a00fcf9"
+    - name: x
+      url: "https://x.com/flyhulatu"
+    
 
   # 文章封面图配置
   cover:
@@ -153,10 +178,6 @@ menu:
 # ========================================================
 # 8. 渲染引擎与代码高亮 (Markup Settings)
 # ========================================================
-outputs:
-  home: [HTML, RSS, JSON] # 必须有JSON以支持实时搜索
-frontmatter:
-  lastmod: [lastmod, :git, date] # 修改时间：初始与发布时间一致
 
 markup:
   highlight:
