@@ -41,14 +41,14 @@ params:
   title: "胡拉图"
   author: "hulatu"
   description: "胡拉图的后花园"
-  keywords: [Blog, Portfolio, PaperMod, Mac, Hugo, Write]
+  keywords: [Blog, Vlog, PaperMod, Mac, Hugo, Write]
 
   # --- 文章内容显示控制 ---
-  ShowReadingTime: true        # 显示预计阅读时间
-  ShowShareButtons: false      # 隐藏分享按钮
-  ShowBreadCrumbs: false       # 隐藏面包屑导航
-  ShowCodeCopyButtons: true    # 开启代码块复制按钮
-  ShowPostNavLinks: true       # 开启文章页底部的前后篇导航
+  ShowReadingTime: true        # 预计阅读时间
+  ShowShareButtons: false      # 分享按钮
+  ShowBreadCrumbs: false       # 面包屑导航
+  ShowCodeCopyButtons: true    # 代码块复制按钮
+  ShowPostNavLinks: true       # 文章页底部的前后篇导航
   dateFormat: "2006-01-02"     # 标准日期格式
 
   # --- 侧边栏/目录设置 (TOC) ---
@@ -60,6 +60,8 @@ params:
   image:
     lazyLoading: true          # 图片懒加载
 
+  
+
 # ========================================================
 # 5. 静态资源与图标 (Assets & Favicons)
 # ========================================================
@@ -70,6 +72,7 @@ params:
     favicon32x32: "/favicon.png"
     apple_touch_icon: "/apple-touch-icon.png"
     safari_pinned_tab: "/safari-pinned-tab.svg"
+
 
 # ========================================================
 # 6. 首页定制区 (Home Info & Social)
@@ -86,15 +89,19 @@ params:
       url: "mailto:2983685624@qq.com"
     - name: wechat
       url: "https://hulatu.com/images/wechat.png"
-    - name: zhihu
-      url: "https://www.zhihu.com/people/hulatu"
+    # - name: zhihu
+    #   url: "https://www.zhihu.com/people/hulatu"
     - name: rss  
       url: "index.xml"
 
   # 文章封面图配置
   cover:
-    linkFullImages: false       # 关闭点击封面图查看原图
-    responsiveImages: true     # 开启响应式图片
+    hidden: true              # 全站封面
+    hiddenInList: false       # 列表封面
+    hiddenInSingle: true      # 详情页封面
+    linkFullImages: false     # 点击封面图查看原图
+    ShowSummary: false        # 列表摘要
+    responsiveImages: true
 
 # ========================================================
 # 7. 导航菜单配置 (Navigation Menu)
@@ -118,10 +125,10 @@ menu:
       name: 标签
       url: /tags/
       weight: 30
-    - identifier: links
-      name: 友链
-      url: /links/
-      weight: 40
+    # - identifier: links
+    #   name: 友链
+    #   url: /links/
+    #   weight: 40
     - identifier: guestbook
       name: 留言
       url: /guestbook/
@@ -147,10 +154,9 @@ menu:
 # 8. 渲染引擎与代码高亮 (Markup Settings)
 # ========================================================
 outputs:
-  home:
-    - HTML
-    - RSS
-    - JSON                     # 必须保留 JSON 以支持本地搜索功能
+  home: [HTML, RSS, JSON] # 必须有JSON以支持实时搜索
+frontmatter:
+  lastmod: [lastmod, :git, date] # 修改时间：初始与发布时间一致
 
 markup:
   highlight:

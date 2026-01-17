@@ -1,9 +1,10 @@
 /* ==========================================================================
-   I. 全局基础 & 视觉过渡 (Global & Transitions)
+   I. 全局基础 & 视觉变量 (Global & Variables)
    ========================================================================== */
 :root {
-    --apple-ease: cubic-bezier(0.25, 0.1, 0.25, 1.0);
-    --yellow-glow: rgba(255, 215, 0, 0.6);
+    --apple-ease: cubic-bezier(0.25, 0.1, 0.25, 1.0); /* 苹果风格缓动曲线 */
+    --yellow-glow: rgba(255, 215, 0, 0.6);            /* 呼吸灯光晕色 */
+    --radius: 12px;                                   /* 统一圆角变量 */
 }
 
 html {
@@ -16,392 +17,163 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
     letter-spacing: 0.02em;
     -webkit-font-smoothing: antialiased;
+    /* 自定义鼠标指针 */
     cursor: url(https://cdn.jsdelivr.net/gh/fz6m/Private-web@1.5.0/image/cursor/normal.cur), auto;
+    padding-right: 0px;
+    transition: padding-right 0.1s;
 }
 
-/* 视图切换动画 */
+/* 链接鼠标样式 */
+a:hover { 
+    cursor: url(https://cdn.jsdelivr.net/gh/fz6m/Private-web@1.5.0/image/cursor/link.cur), auto; 
+}
+
+/* 视图切换动画 (View Transitions) */
 @view-transition { navigation: auto; }
 ::view-transition-old(root) { animation: 90ms ease-out both fade-out; }
 ::view-transition-new(root) { animation: 210ms ease-in both fade-in; }
 
-/* 全局滚动条隐藏 */
+/* 隐藏全局滚动条 (Webkit) */
 ::-webkit-scrollbar { width: 0px; background: transparent; }
-
-/* 链接鼠标样式 */
-a:hover { cursor: url(https://cdn.jsdelivr.net/gh/fz6m/Private-web@1.5.0/image/cursor/link.cur), auto; }
 
 
 /* ==========================================================================
-   II. 导航系统 - MacOS 26 磨砂玻璃与胶囊菜单 (Navigation)
+   II. 导航系统 - MacOS 风格胶囊菜单 (Navigation)
    ========================================================================== */
 
-/* ============================================
-   搜索框居中效果
-   ============================================ */
-/* 1. 强制导航栏容器 */
+/* --- 1. 导航栏整体容器布局 --- */
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative; /* 为可能需要的微调做准备 */
+    position: relative;
     overflow: visible !important;
     padding-right: 10px; 
 }
-/* 2. 让左侧 Logo 区域撑开空间 */
+
 .logo {
     flex: 1; 
     display: flex;
     justify-content: flex-start;
 }
 
-/* 3. 中间搜索框容器 - 真正居中 */
+.header {
+    background: rgba(var(--theme), 0.7); /* 半透明背景 */
+    backdrop-filter: blur(10px);         /* 毛玻璃效果 */
+    position: sticky;
+    top: 0;
+    z-index: 100 !important;
+}
+
+/* --- 2. 中间搜索框容器 (Flex 居中) --- */
 .nav-search-container {
-    flex: 0 1 auto; /* 不主动撑开，由内容决定 */
+    flex: 0 1 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10;
+    z-index: 101; /* 高于 header 背景 */
+    position: relative;
 }
 
-/* 4. 让右侧菜单区域撑开同样的空间 */
-#menu {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end; /* 菜单靠右对齐 */
-}
-
-/* 5. 苹果审美搜索框样式优化 */
+/* 苹果风格搜索输入框 */
 .apple-search-bar {
-    width: 200px; /* 稍微加宽一点默认宽度 */
+    width: 200px;
     height: 34px;
     padding: 0 15px;
     font-size: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.2); /* 针对深色模式加深边框 */
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.05); /* 极简半透明 */
+    background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     color: #fff;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     outline: none;
-    text-align: center; /* 文字居中更像苹果风格 */
+    text-align: center;
 }
 
 .apple-search-bar:focus {
-    width: 300px;
+    width: 300px; /* 聚焦变宽 */
     background: rgba(255, 255, 255, 0.15);
     border-color: #007aff;
-    text-align: left; /* 输入时文字靠左 */
+    text-align: left;
     box-shadow: 0 0 15px rgba(0, 122, 255, 0.3);
-}
-
-/* 6. 响应式：当屏幕窄到一定程度时处理 */
-@media screen and (max-width: 900px) {
-    /* 菜单项太多时，可以缩小搜索框或者隐藏 */
-    .apple-search-bar {
-        width: 120px;
-    }
-    .apple-search-bar:focus {
-        width: 200px;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .nav-search-container {
-        display: none; /* 手机端建议隐藏，使用 PaperMod 自带的搜索图标 */
-    }
-}
-/* 搜索容器定位 */
-.nav-search-container {
-    position: relative; /* 结果列表相对于此容器定位 */
-}
-
-/* 结果下拉列表样式 */
-.nav-search-dropdown {
-    position: absolute;
-    top: 45px; /* 在搜索框下方 */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 350px;
-    max-height: 400px;
-    overflow-y: auto;
-    
-    background: rgba(var(--theme), 0.75); /* 磨砂玻璃 */
-    backdrop-filter: blur(15px) saturate(180%);
-    -webkit-backdrop-filter: blur(15px);
-    
-    border-radius: 18px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    list-style: none;
-    z-index: 999;
-}
-
-/* 列表项样式 */
-.nav-search-dropdown li {
-    padding: 10px 15px;
-    border-radius: 12px;
-    margin-bottom: 5px;
-    transition: all 0.2s;
-    cursor: pointer;
-}
-
-.nav-search-dropdown li:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: scale(1.02);
-}
-
-.nav-search-dropdown li a {
-    text-decoration: none !important;
-    color: var(--primary) !important;
-    font-size: 14px;
-    display: block;
-}
-
-/* 隐藏滚动条 */
-.nav-search-dropdown::-webkit-scrollbar { width: 0; }
-
-/* --- 1. 背景遮罩 (核心：Apple 模糊效果) --- */
-.search-backdrop {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    background: rgba(0, 0, 0, 0.2); /* 极淡的黑色透明 */
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    z-index: 90; /* 低于导航栏，高于页面内容 */
-    animation: fadeIn 0.3s ease;
-}
-
-/* --- 2. 下拉面板容器 --- */
-.nav-search-dropdown {
-    display: none;
-    position: absolute;
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 500px; /* 适当加宽 */
-    max-height: 80vh;
-    background: rgba(var(--theme), 0.85);
-    backdrop-filter: blur(25px);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-    padding: 24px;
-    z-index: 101; /* 确保在遮罩层之上 */
-    overflow-y: auto;
-}
-
-/* --- 3. 标题与列表排版 --- */
-.search-section-title {
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #888;
-    margin-bottom: 12px;
-    letter-spacing: 1px;
-}
-
-.quick-links-list, #nav-search-results {
-    list-style: none;
-    padding: 0; margin: 0;
-}
-
-.quick-links-list li, #nav-search-results li {
-    margin-bottom: 4px;
-}
-
-.quick-links-list li a, #nav-search-results li a {
-    display: block;
-    padding: 12px 16px;
-    border-radius: 12px;
-    text-decoration: none !important;
-    color: var(--primary);
-    transition: background 0.2s;
-}
-
-.quick-links-list li a:hover, #nav-search-results li a:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-/* --- 4. 搜索条活跃状态 --- */
-.apple-search-bar:focus {
     z-index: 102;
-    position: relative;
-    width: 400px; /* 聚焦时变长 */
 }
 
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-/* 1. 遮罩层基础样式：全屏、固定、初始隐藏 */
-.search-backdrop {
-    display: none; /* 初始隐藏 */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.3); /* 稍微深一点的底色，衬托黄色光晕 */
-    z-index: 80; /* 低于导航栏，高于内容 */
-    transition: opacity 0.3s ease;
-}
-
-/* 2. 【关键】当搜索激活时，让页面主体模糊 */
-/* 这里的 .main 是 PaperMod 文章内容的主容器 */
-body.search-active .main, 
-body.search-active .footer,
-body.search-active .first-entry {
-    filter: blur(15px) saturate(120%); /* 真正的 Apple 式背景模糊 */
-    transition: filter 0.3s ease;
-    pointer-events: none; /* 模糊时背景不可点击 */
-}
-
-/* 3. 确保导航栏和搜索结果在最上层，不受模糊影响 */
-.header {
-    z-index: 100 !important;
-}
-
-.nav-search-container {
-    z-index: 101 !important;
-}
-
-/* 4. 优化搜索结果框的玻璃质感 */
-.nav-search-dropdown {
-    background: rgba(255, 255, 255, 0.1) !important; /* 极薄的玻璃 */
-    backdrop-filter: blur(25px) saturate(150%) !important;
-    -webkit-backdrop-filter: blur(25px) saturate(150%) !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5) !important;
-}
-
-/* --- PaperMod 导航栏 MacOS 26 增强 --- */
-
-/* 1. 容器微调：增加间距 */
+/* --- 3. 右侧菜单 (MacOS 胶囊样式) --- */
 #menu {
+    flex: 1;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    /* 允许溢出显示，确保放大效果不被裁切 */
     overflow: visible !important; 
-    /* 增加右侧内边距，数值要大于放大产生的位移（大约 10px-15px） */
     padding-right: 10px !important; 
-    /*padding-left: 20px !important;*/
-    /* 确保容器不会因为放大而撑开滚动条 */
     max-width: 100%; 
 }
 
-/* 2. 基础项：胶囊形态 */
+/* 基础项：去除默认样式 */
+#menu li { border: none !important; }
 #menu li a {
     position: relative;
     padding: 5px 3px !important; 
     margin: 0 !important;
-    border-radius: 10px; /* 完美圆角 */
-    transition: all 0.4s cubic-bezier(0.25, 1, 0.33, 1); /* 苹果式弹性曲线 */
+    border-radius: 10px;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.33, 1);
     background: transparent;
-    border: 1px solid transparent;
+    border: 1px solid transparent !important;
     display: flex;
     align-items: center;
-    overflow: visible;
-    line-height: 1.4; /* 确保行高不会撑开高度 */
+    line-height: 1.4;
+    text-decoration: none !important;
+    outline: none !important;
 }
 
-/* 3. 悬浮状态：液态玻璃/毛玻璃效果 */
+/* 禁用主题可能自带的伪元素干扰 */
+#menu li a::before { display: none !important; content: none !important; }
+
+/* 悬浮状态：液态玻璃/放大效果 */
 #menu li a:hover {
-    /* 放大效果 */
     transform: translateY(-2px) scale(1.08);
-    /* 玻璃拟态效果 */
     background: rgba(255, 255, 255, 0.45) !important;
     backdrop-filter: blur(12px) saturate(180%);
     -webkit-backdrop-filter: blur(12px) saturate(180%);
-    
-    /* 极细边框增加精致感 */
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    
-    /* 柔和阴影 */
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
     color: var(--primary) !important;
 }
 
-/* 4. 下划线效果：精致的短横线下沉 */
+/* 下划线效果：精致的短横线下沉 */
 #menu li a::after {
-    content: "";
+    content: "" !important;
+    display: block !important;
     position: absolute;
-    bottom: 1px; /* 位于胶囊内部底部 */
+    bottom: 1px;
     left: 50%;
     width: 0;
     height: 1.5px;
-    background: currentColor; /* 随文字颜色变化 */
+    background: currentColor;
     border-radius: 4px;
     transition: width 0.3s ease, transform 0.3s ease;
     transform: translateX(-50%);
     opacity: 0.8;
 }
+#menu li a:hover::after { width: 10px; }
+#menu li a:active { transform: scale(0.92); transition: all 0.1s; }
 
-#menu li a:hover::after {
-    width: 10px; /* 悬浮时显示的短下划线，符合 MacOS 极简风格 */
-}
-
-/* 5. 深色模式适配 (PaperMod 使用 body.dark 控制) */
+/* 深色模式适配 */
 body.dark #menu li a:hover {
     background: rgba(255, 255, 255, 0.12) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
-
-/* 6. 点击时的液态压缩反馈 */
-#menu li a:active {
-    transform: scale(0.92);
-    transition: all 0.1s;
-}
-.header {
-    background: rgba(var(--theme), 0.7); /* 让导航栏背景也变半透明 */
-    backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-/* 1. 强制关闭所有可能的背景线、边框线和文字装饰 */
-#menu li a, 
-#menu li a:hover, 
-#menu li a:focus, 
-#menu li a.active,
-#menu li a span {
-    text-decoration: none !important;
-    border: none !important;
-    border-bottom: 0 !important;
-    background-image: none !important; /* 很多现代主题用背景渐变做下划线，必须关掉 */
-    box-shadow: none !important;
-    outline: none !important;
-}
-
-/* 2. 彻底禁用主题可能自带的伪元素线 */
-/* 我们自己用的是 ::after，所以我们要看看主题是不是用了 ::before */
-#menu li a::before {
-    display: none !important;
-    content: none !important;
-}
-
-/* 3. 针对 PaperMod 可能在列表项 li 上加的样式 */
-#menu li {
-    border: none !important;
-}
-
-/* 4. 确保我们自己的 ::after 短线依然正常显示 */
-/* 这一步是为了防止上面的 display: none 误伤 */
-#menu li a::after {
-    display: block !important;
-    content: "" !important;
-    /* 之前的样式保持不变... */
-}
-
-/* 深色模式下的选中态 */
 body.dark #menu li a.active {
     background: rgba(255, 255, 255, 0.08) !important;
 }
 
+
 /* ==========================================================================
-   III. 首页信息区 - 左右平衡布局 (Home Info)
+   III. 首页个人信息区 (Home Profile)
    ========================================================================== */
 
 main.main { padding-top: 10px !important; }
@@ -409,16 +181,24 @@ main.main { padding-top: 10px !important; }
 .first-entry {
     display: flex !important;
     flex-direction: row !important;
-    align-items: center !important; /* 确保文字头像垂直对齐 */
+    align-items: center !important;
     justify-content: space-between !important;
-    min-height: auto !important;
     padding: 50px 0 !important;
-    margin: 20px 0 30px 0 !important;
+    /* 核心修正：减小与下方文章列表的间距 */
+    margin: 20px 0 20px 0 !important; 
+    min-height: auto !important;
 }
 
+/* 修正文字区域 */
 .home-info-content {
-    flex: 1; display: flex; flex-direction: column; align-items: flex-start !important;
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start !important;
 }
+
+/* 修正标题上方间距 */
+.first-entry .entry-header { margin-top: 0 !important; }
 
 /* 头像：全天候黄色呼吸灯 */
 .avatar-container { flex-shrink: 0; margin-left: 40px; }
@@ -432,187 +212,266 @@ main.main { padding-top: 10px !important; }
 
 
 /* ==========================================================================
-   IV. 文章列表布局 (List Grid)
+   IV. 文章列表布局 (List Layout) - 紧凑型左图右文
    ========================================================================== */
 
 .post-entry {
     transition: transform 0.3s var(--apple-ease), box-shadow 0.3s var(--apple-ease);
-    border-radius: 16px; margin-bottom: 20px;
+    border-radius: 16px; 
+    margin-bottom: 20px;
 }
 .post-entry:hover { transform: scale(1.02); background: rgba(0,0,0,0.02); }
 
-/* 电脑端左图右文 */
+/* --- 电脑端核心布局 (min-width: 768px) --- */
 @media screen and (min-width: 768px) {
-    .post-entry:has(.entry-cover) {
-        display: grid !important;
-        grid-template-columns: 280px 1fr;
-        column-gap: 25px; padding: 24px; min-height: 230px;
-        grid-template-areas: "image header" "image content" "image footer";
+    .post-entry {
+        display: flex !important; /* 强制 Flex 布局 */
+        flex-direction: row;
+        align-items: center; 
+        padding: 0px !important; 
+        gap: 15px; /* 图片和文字的间距 */
+        margin-bottom: 10px !important; /* 列表项之间的间距 */
+        min-height: auto; /* 取消最小高度限制 */
     }
-    .post-entry:has(.entry-cover) .entry-cover {
-        grid-area: image; height: 185px !important; border-radius: 12px; overflow: hidden;
+
+    /* 图片区域 */
+    .post-entry .entry-cover {
+        flex-shrink: 0;
+        width: 220px;   /* 固定宽度 */
+        height: 140px;  /* 固定高度 */
+        margin-bottom: 0;
+        overflow: hidden;
+        border-radius: var(--radius);
     }
-    .post-entry:has(.entry-cover) .entry-cover img {
+
+    .post-entry .entry-cover img {
         width: 100% !important; height: 100% !important; object-fit: cover;
+    }
+
+    /* 文字区域 (垂直居中) */
+    .post-entry .entry-info {
+        flex: 1;                
+        min-width: 0;           
+        display: flex;          
+        flex-direction: column; /* 文字内部竖向排列 */
+        justify-content: center;
+    }
+
+    /* 标题微调 */
+    .entry-header { margin-bottom: 5px !important; }
+    .entry-header h2 {
+        font-size: 1.2rem !important;
+        line-height: 1.3;
+    }
+
+    /* 摘要微调 */
+    .entry-content {
+        margin-bottom: 6px !important;
+        font-size: 0.90em;
+        line-height: 1.5;
+    }
+    
+    /* 页脚日期微调 */
+    .entry-footer {
+        margin-top: 0 !important;
+        font-size: 0.80em;
+        color: var(--secondary);
     }
 }
 
 
 /* ==========================================================================
-   V. 文章详情与目录美化 (Article & TOC)
+   V. 文章详情、目录与归档 (Content & TOC)
    ========================================================================== */
 
 .post-content { line-height: 1.75; font-size: 1.05rem; }
 .post-content p { text-align: justify; margin-bottom: 1.5em; }
 
-/* 面包屑隐藏 */
+/* 隐藏面包屑 */
 .breadcrumbs { display: none !important; }
 
-/* 目录与归档共用的圆环图标 */
-/* 【显著标注：此处合并了归档页和 TOC 页完全重复的圆环代码】 */
-.archive-year summary::before, .archive-month summary::before, .toc summary::before {
-    content: ""; display: inline-block; width: 14px; height: 14px; margin-right: 12px;
-    border: 2.5px solid #3b82f6; border-radius: 50%; flex-shrink: 0;
+/* --- 1. 清除所有默认箭头与标记 --- */
+.toc summary::-webkit-details-marker,
+.archive-year summary::-webkit-details-marker,
+.archive-month summary::-webkit-details-marker,
+summary::-webkit-details-marker,
+.toc summary svg, 
+.archive-year summary svg, 
+.archive-month summary svg {
+    display: none !important;
+}
+
+.toc summary, .archive-year summary, .archive-month summary, summary {
+    list-style: none !important;
+    list-style-type: none !important;
+    outline: none;
+    cursor: pointer;
+}
+
+/* --- 2. 目录/归档 Flex 居中对齐 --- */
+.toc summary,
+.archive-year summary,
+.archive-month summary {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+}
+
+/* --- 3. 自定义圆环图标 (呼吸灯效果) --- */
+.archive-year summary::before, 
+.archive-month summary::before, 
+.toc summary::before {
+    content: "";
+    display: inline-block !important;
+    width: 14px; 
+    height: 14px; 
+    margin-right: 12px !important;
+    border: 2.5px solid #3b82f6; 
+    border-radius: 50%; 
+    flex-shrink: 0;
     transition: all 0.3s var(--apple-ease);
 }
+
+/* 未展开状态 */
 details:not([open]) summary::before { transform: scale(1.2); }
+
+/* 展开状态 (高亮) */
 details[open] summary::before {
-    transform: scale(0.7); border-color: #f8f2c2; background-color: #f8f2c2;
+    transform: scale(0.7); 
+    border-color: #f8f2c2; 
+    background-color: #f8f2c2;
     box-shadow: 0 0 8px rgba(255, 242, 0, 0.8);
 }
 
-.toc summary svg { display: none !important; } /* 隐藏默认箭头 */
+/* 目录标题微调 */
+.toc summary span, .toc summary {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+.toc summary span, .archive-year summary span { border: none !important; }
 
 
 /* ==========================================================================
-   VI. 搜索、社交与工具 (Special Pages & Elements)
+   VI. 搜索系统 (Search System)
    ========================================================================== */
 
-/* 搜索框 MacOS 风格 */
-#searchInput {
-    height: 60px; border-radius: 30px; backdrop-filter: blur(10px);
-    padding-left: 60px !important; font-size: 18px;
-    background-image: url('data:image/svg+xml;...搜索图标...');
-    background-repeat: no-repeat; background-position: 20px center;
-    transition: all 0.3s var(--apple-ease);
+/* 1. 背景遮罩 (主体模糊) */
+.search-backdrop {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 80;
+    transition: opacity 0.3s ease;
 }
 
-/* 按钮与社交图标 */
-.button {
-    border-radius: 8px; background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px); transition: all 0.3s var(--apple-ease);
+/* 2. 搜索结果下拉面板 */
+.nav-search-dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    
+    /* 玻璃拟态 */
+    background: rgba(var(--theme), 0.85);
+    backdrop-filter: blur(25px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(25px) saturate(150%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5) !important;
+    border-radius: 20px;
+    
+    padding: 24px;
+    z-index: 999;
 }
+.nav-search-dropdown::-webkit-scrollbar { width: 0; }
+
+/* 3. 搜索结果列表 */
+.search-section-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+.quick-links-list, #nav-search-results { list-style: none; padding: 0; margin: 0; }
+.quick-links-list li a, #nav-search-results li a {
+    display: block;
+    padding: 12px 16px;
+    border-radius: 12px;
+    text-decoration: none !important;
+    color: var(--primary) !important;
+    transition: background 0.2s;
+}
+.quick-links-list li a:hover, #nav-search-results li a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.02);
+}
+
+/* 4. 搜索激活时的 Body 状态 */
+body.search-active {
+    overflow: hidden !important; /* 禁止滚动 */
+    height: 100vh !important;
+    touch-action: none;          /* 禁用触摸 */
+    scrollbar-gutter: stable;    /* 防止滚动条消失导致页面抖动 */
+}
+
+/* 搜索激活时，让页面内容模糊 */
+body.search-active .main, 
+body.search-active .footer,
+body.search-active .first-entry {
+    filter: blur(15px) saturate(120%);
+    transition: filter 0.3s ease;
+    pointer-events: none;
+}
+
+
+/* ==========================================================================
+   VII. 动画库 & 社交图标 (Animations & Extras)
+   ========================================================================== */
+
+@keyframes avatar-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes avatar-breathe-yellow {
+    0%, 100% { box-shadow: 0 0 15px rgba(255, 215, 0, 0.2); border-color: rgba(255, 215, 0, 0.3); }
+    50% { box-shadow: 0 0 30px var(--yellow-glow), 0 0 15px rgba(255, 255, 255, 0.4); border-color: rgba(255, 215, 0, 0.8); }
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* 社交图标 */
 .social-icons a:hover { transform: scale(1.2); }
 .social-icons a[href*="wechat"]:hover svg { color: #07c160; }
 .social-icons a[href*="zhihu"]:hover svg { color: #0084ff; }
 
 
 /* ==========================================================================
-   VII. 动画库 (Animations)
+   VIII. 移动端响应式适配 (Mobile Responsiveness)
    ========================================================================== */
 
-@keyframes avatar-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-
-@keyframes avatar-breathe-yellow {
-    0%, 100% { box-shadow: 0 0 15px rgba(255, 215, 0, 0.2); border-color: rgba(255, 215, 0, 0.3); }
-    50% { box-shadow: 0 0 30px var(--yellow-glow), 0 0 15px rgba(255, 255, 255, 0.4); border-color: rgba(255, 215, 0, 0.8); }
+@media screen and (max-width: 900px) {
+    .apple-search-bar { width: 120px; }
+    .apple-search-bar:focus { width: 200px; }
 }
-
-
-/* ==========================================================================
-   VIII. 响应式适配合并 (Grouped Media Queries)
-   ========================================================================== */
 
 @media screen and (max-width: 768px) {
     /* 1. 首页改为上下排列 */
-    .first-entry { flex-direction: column-reverse !important; text-align: center !important; }
+    .first-entry { 
+        flex-direction: column-reverse !important; 
+        text-align: center !important; 
+    }
     .home-info-content { align-items: center !important; }
     .avatar-container { margin-left: 0; margin-bottom: 20px; }
     .social-icons { justify-content: center !important; }
     
-    /* 2. 隐藏导航栏搜索框 */
+    /* 2. 隐藏导航栏搜索框 (手机端用图标) */
     .nav-search-container { display: none; }
     
-    /* 3. 列表页恢复默认排列 */
+    /* 3. 列表页恢复默认块级排列 */
     .post-entry { display: block !important; padding: 15px; }
-}
-
-/* ==========================================================================
-   彻底清除目录 (TOC) 与归档 (Archives) 的所有三角符号
-   ========================================================================== */
-
-/* 1. 禁用浏览器默认的 details 三角 (Chrome, Safari, Firefox) */
-.toc summary::-webkit-details-marker,
-.archive-year summary::-webkit-details-marker,
-.archive-month summary::-webkit-details-marker,
-summary::-webkit-details-marker {
-    display: none !important;
-}
-
-/* 2. 禁用标准的 list-style (彻底移除所有自带箭头) */
-.toc summary,
-.archive-year summary,
-.archive-month summary,
-summary {
-    list-style: none !important;
-    list-style-type: none !important;
-}
-
-/* 3. 强制隐藏 PaperMod 默认插入的 SVG 箭头图标 */
-.toc summary svg,
-.archive-year summary svg,
-.archive-month summary svg {
-    display: none !important;
-}
-
-/* 4. 确保你的自定义圆环效果正常显示，不受影响 */
-/* 这里保持你之前的黄色呼吸灯/发光圆环逻辑 */
-.archive-year summary::before,
-.archive-month summary::before,
-.toc summary::before {
-    /* 之前的代码已经有了，这里确保它是 block 或 inline-block */
-    display: inline-block !important;
-    flex-shrink: 0;
-}
-
-/* 5. 针对某些版本的 PaperMod，还需要清理掉 summary 内部的 span 样式 */
-.toc summary span,
-.archive-year summary span {
-    border: none !important;
-}
-
-/* 让目录和归档的标题与圆点强制在一行并居中对齐 */
-.toc summary,
-.archive-year summary,
-.archive-month summary {
-    display: flex !important;      /* 开启弹性布局 */
-    flex-direction: row !important; /* 强制横向排列 */
-    align-items: center !important; /* 垂直方向居中对齐 */
-    cursor: pointer;
-    list-style: none !important;
-    outline: none;
-}
-
-/* 微调圆点和文字之间的间距 */
-.toc summary::before,
-.archive-year summary::before,
-.archive-month summary::before {
-    content: "";
-    display: inline-block !important; /* 确保是行内块 */
-    margin-right: 12px !important;    /* 圆点右侧留出间距 */
-    margin-bottom: 0 !important;      /* 清除可能存在的底部外边距 */
-    flex-shrink: 0;                   /* 防止圆点被挤压 */
     
-    /* 你之前的圆点样式（保持不变，仅供参考） */
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    /* ... 这里的 border 和动画保持你之前的设置 ... */
-}
-
-/* 针对目录(TOC)文字的微调 */
-.toc summary span, 
-.toc summary {
-    font-size: 1.2rem; /* 根据需要调整“目录”二字的大小 */
-    line-height: 1;    /* 清除行高导致的偏移 */
+    /* 4. 搜索下拉框适配 */
+    .nav-search-dropdown { width: 90%; top: 60px; }
 }

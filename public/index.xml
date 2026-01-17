@@ -6,15 +6,8 @@
     <description>Recent content on 胡拉图</description>
     <generator>Hugo -- 0.154.5</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 16 Jan 2026 10:00:00 -0800</lastBuildDate>
+    <lastBuildDate>Fri, 16 Jan 2026 19:43:04 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>相册</title>
-      <link>http://localhost:1313/gallery/</link>
-      <pubDate>Fri, 16 Jan 2026 10:00:00 -0800</pubDate>
-      <guid>http://localhost:1313/gallery/</guid>
-      <description>&lt;p&gt;这里是相册合集。&lt;/p&gt;</description>
-    </item>
     <item>
       <title>我们为什么爱旅游</title>
       <link>http://localhost:1313/posts/trip/</link>
@@ -63,13 +56,6 @@
       <pubDate>Sat, 10 Jan 2026 22:07:55 +0800</pubDate>
       <guid>http://localhost:1313/posts/vlog-share/</guid>
       <description>用视频分享生活，是一个不那么轻松的过程。</description>
-    </item>
-    <item>
-      <title>相册</title>
-      <link>http://localhost:1313/photos/</link>
-      <pubDate>Sat, 10 Jan 2026 13:05:40 +0800</pubDate>
-      <guid>http://localhost:1313/photos/</guid>
-      <description>&lt;p&gt;👏欢迎来到，我的相册👏&lt;/p&gt;</description>
     </item>
     <item>
       <title>美化博客，看《小狗钱钱》</title>
@@ -228,31 +214,6 @@
       <description>关于我，关于胡拉图的一些了解。</description>
     </item>
     <item>
-      <title>友链</title>
-      <link>http://localhost:1313/links/</link>
-      <pubDate>Sun, 05 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/links/</guid>
-      <description>&lt;p&gt;欢迎互换友链&lt;/p&gt;
-&lt;h2 id=&#34;欢迎交换友链你可以按下面格式给我&#34;&gt;欢迎交换友链～你可以按下面格式给我：&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;我的信息&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;站名&lt;/strong&gt;：胡拉图的博客&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;地址&lt;/strong&gt;：
-&lt;a href=&#34;https://www.hulatu.com&#34;
-   target=&#34;_blank&#34;&gt;
- https://www.hulatu.com&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;简介&lt;/strong&gt;：一个记录生活的技术博客&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;头像&lt;/strong&gt;：
-&lt;a href=&#34;https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/avatar-200x200.jpg&#34;
-   target=&#34;_blank&#34;&gt;
- https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/avatar-200x200.jpg&lt;/a&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;注意&#34;&gt;注意⚠️&lt;/h3&gt;
-&lt;p&gt;请确保你的网站里，绝大部分内容来自原创（&amp;gt;80），内容数 &amp;gt; 10，因为，我希望我们都别忘了，我们为什么而出发。&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>关于</title>
       <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -265,13 +226,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/guestbook/</guid>
       <description>欢迎来到我的秘密基地，留下你的足迹吧~</description>
-    </item>
-    <item>
-      <title>书目</title>
-      <link>http://localhost:1313/books/books/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/books/books/</guid>
-      <description>我读过的一些书</description>
     </item>
   </channel>
 </rss>

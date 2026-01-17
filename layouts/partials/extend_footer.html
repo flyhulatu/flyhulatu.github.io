@@ -320,3 +320,28 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const searchInput = document.getElementById('nav-search-input');
+    const backdrop = document.getElementById('search-backdrop');
+
+    // 1. 当搜索框获得焦点时：禁止滑动
+    searchInput.addEventListener('focus', () => {
+        document.body.classList.add('search-active');
+    });
+
+    // 2. 当点击遮罩层（关闭搜索）时：恢复滑动
+    backdrop.addEventListener('click', () => {
+        document.body.classList.remove('search-active');
+        searchInput.blur(); // 让输入框失去焦点
+    });
+
+    // 3. 监听 ESC 键：按下 ESC 时也恢复滑动
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && document.body.classList.contains('search-active')) {
+            document.body.classList.remove('search-active');
+            // ... 隐藏搜索框的其他逻辑 ...
+        }
+    });
+});
+</script>
