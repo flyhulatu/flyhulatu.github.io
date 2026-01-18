@@ -1,0 +1,20 @@
+# data/books.yml
+
+# 板块1：最近读的书
+recent:   
+  - title: "小狗钱钱"
+    cover: "/images/books/xgqq.jpg"
+    link: "https://book.douban.com/subject/3576486/"
+    rating: 1
+  - title: "指数基金投资指南"
+    cover: "/images/books/zsjjtzzn.jpg"
+    link: "https://book.douban.com/subject/27204860/"
+    rating: 2
+
+
+# 板块2：推荐好书
+recommend:
+  # - title: "厌女"
+  #   cover: "https://img1.doubanio.com/view/subject/l/public/s28709328.jpg"
+  #   link: "https://book.douban.com/subject/26363065/"
+  #   rating: 5

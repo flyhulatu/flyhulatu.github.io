@@ -16,10 +16,10 @@
 }
 
 html {
-    scroll-behavior: smooth;
-    max-width: 100%;
-    overflow-x: hidden;
-    scrollbar-gutter: stable; /* 防止滚动条出现导致页面跳动 */
+    scroll-behavior: smooth;               /* 平滑滚动 */
+    max-width: 100%;                        /* 防止页面超出视口 */
+    overflow-x: hidden;                     /* 禁止横向滚动 */
+    scrollbar-gutter: stable;               /* 防止滚动条出现导致页面跳动 */
 }
 
 body {
@@ -27,9 +27,9 @@ body {
     letter-spacing: 0.02em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    cursor: url(https://cdn.jsdelivr.net/gh/fz6m/Private-web@1.5.0/image/cursor/normal.cur), auto;
-    padding-right: 0px;
-    transition: padding-right 0.1s;
+    cursor: url(https://cdn.jsdelivr.net/gh/fz6m/Private-web@1.5.0/image/cursor/normal.cur), auto; /* 自定义鼠标指针 */
+    padding-right: 0px;                     /* 防止滚动条影响布局 */
+    transition: padding-right 0.1s;          /* 平滑过渡效果 */
 }
 
 /* 选中文字颜色 */
@@ -38,7 +38,7 @@ body {
     color: inherit;
 }
 
-/* 全局滚动条隐藏 (极简风格) */
+/* 全局滚动条样式 */
 ::-webkit-scrollbar { width: 6px; height: 6px; background: transparent; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: rgba(136, 136, 136, 0.3); border-radius: 3px; }
@@ -158,11 +158,12 @@ a:active, button:active, .button:active {
 .social-icons a[href*="github"]:hover svg { color: #000000; !important; filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.4)); }
 .social-icons a[href*="qq.com"]:hover svg { color: #FFFFFF; !important; filter: drop-shadow(0 0 8px rgba(251, 114, 153, 0.4)); }
 .social-icons a[href*="wechat"]:hover svg { color: #07c160; !important; filter: drop-shadow(0 0 8px rgba(251, 114, 153, 0.4)); }
+.social-icons a[href*="qq"]:hover svg { color: #FFFFFF; !important; filter: drop-shadow(0 0 8px rgba(251, 114, 153, 0.4)); }
 .social-icons a[href*="zhihu"]:hover svg { color: #0084ff; !important; filter: drop-shadow(0 0 8px rgba(251, 114, 153, 0.4)); }
 .social-icons a[href*="bilibili"]:hover svg { color: #fb7299 !important; filter: drop-shadow(0 0 8px rgba(251, 114, 153, 0.4)); }
 .social-icons a[href*="xiaohongshu"]:hover svg { color: #ff2442 !important; filter: drop-shadow(0 0 8px rgba(255, 36, 66, 0.4)); }
-.social-icons a[href*="x.com"]:hover svg { color: #ffffff !important; filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4)); }
-.social-icons a[href*="index.xml"]:hover svg, .social-icons a[href*="rss"]:hover svg { color: #ff9900 !important; filter: drop-shadow(0 0 8px rgba(255, 153, 0, 0.6)); }
+.social-icons a[href*="x.com"]:hover svg { color: #000000 !important; filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4)); }
+.social-icons a[href*="index.xml"]:hover svg { color: #ff9900 !important; filter: drop-shadow(0 0 8px rgba(255, 153, 0, 0.6)); }
 
 
 /* ==========================================================================
@@ -401,4 +402,21 @@ details[open] > summary::before {
 /* 文章页面底部的面包屑居右 */
 .post-footer > .breadcrumbs {
   justify-content: flex-end;
+}
+
+/* 文章内的链接样式 */
+.post-content a {
+    text-decoration: none; /* 去掉默认下划线 */
+    color: #333; /* 文字颜色 */
+    background: linear-gradient(to right, #3b82f6, #3b82f6); /* 线条颜色(蓝色) */
+    background-size: 0% 2px; /* 默认宽度为0，高度2px */
+    background-repeat: no-repeat;
+    background-position: left bottom; /* 放在左下角 */
+    transition: background-size 0.3s ease; /* 动画过渡 */
+}
+
+/* 鼠标悬停 */
+.post-content a:hover {
+    background-size: 100% 2px; /* 宽度变满 */
+    color: #3b82f6; /* 文字也变蓝 */
 }

@@ -15,8 +15,6 @@ disableShare: true
 disableHLJS: true
 ---
 
-
-
 ### 👤 我是谁
 
 你好，我叫 **胡志朋** 👋 笔名 **胡拉图** 欢迎称呼我朋朋、图图。
@@ -33,7 +31,7 @@ disableHLJS: true
 - **2020 - 2024**: 江西XX大学/食品专业/工学学士
 - **2024 - 2027**: 郑州某高校研究生在读
 - **2025**: 拥有第一个个人博客
-- **全平台同名**: 公众号/小红书/少数派/……
+- **全平台同名**: [公众号](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/gzh.webp)/[小红书](https://www.xiaohongshu.com/user/profile/68a9d4e5000000001a00fcf9)/[少数派](https://sspai.com/u/hulatu/updates)/……
 
 ### 📬 联系我
 
@@ -44,8 +42,8 @@ disableHLJS: true
 
 - 🛰️ WeChat:
   - tu13807059658
-  - [WeChat](/images/WeChat.jpeg)
+  - [WeChat](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/wechat.webp)
 
 - 🐧 QQ:
   - 2983685624
-  - [QQ](/images/qq.jpg)
+  - [QQ](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/qq.webp)

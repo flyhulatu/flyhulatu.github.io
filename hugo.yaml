@@ -109,7 +109,9 @@ params:
     - name: email
       url: "mailto:2983685624@qq.com"
     - name: wechat
-      url: "https://hulatu.com/images/wechat.png"
+      url: "https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/wechat.webp"
+    - name: qq
+      url: "https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/qq.webp"
     - name: github
       url: "https://github.com/flyhulatu"
     - name: zhihu
@@ -165,7 +167,7 @@ menu:
       name: 归档
       url: /archives/
       weight: 90
-    # - identifier: gallery
+    # - identifier: /photos/
     #   name: 相册
     #   url: /gallery/
     #   weight: 60
