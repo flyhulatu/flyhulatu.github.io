@@ -6,13 +6,62 @@
     <description>Recent content on 胡拉图</description>
     <generator>Hugo -- 0.154.5</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 18 Jan 2026 20:19:50 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 18 Jan 2026 22:08:48 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Typora&#43;upic图床验证失败的问题</title>
+      <link>http://localhost:1313/posts/typora-upic%E5%9B%BE%E5%BA%8A%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sun, 18 Jan 2026 22:08:48 +0800</pubDate>
+      <guid>http://localhost:1313/posts/typora-upic%E5%9B%BE%E5%BA%8A%E9%AA%8C%E8%AF%81%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>一个格式，解决图片上传图床失败问题。</description>
+      <content:encoded><![CDATA[<p>我经常用的写作工具是 Typora，我喜欢他的白背板、即时渲染。搭配上 uPic 图床工具，插进来的图片可以直接自动上传到 GitHub 图床，很丝滑。</p>
+<p>但是，我重装电脑后，Typora 和 uPic 的<strong>验证</strong>出问题了——总是验证失败。不是图床的问题，因为我的 uPic 单独上传图片，是成功的，那是什么问题？</p>
+<p>查了很多资料后，发现是我曾经建立过 Typora 和 uPic 的连接，所以再次验证上传的图片，其实在 GitHub 图床里已经存在了，那么再次上传一样的照片，因为 uPic 没有覆盖机制，就会显示<strong>验证失败</strong>。</p>
+<p>这个图片重复问题，并不是只出现在 Typora 的验证图片上传设置的时候，还有其他时候——如果我们上传一张过去传过的照片，就有极大的概率失败。</p>
+<p>找到问题就很好解决了：</p>
+<p>
+<div class="post-img-view">
+  <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/image-20260118204110354_XYkciA_1Kcicx.png">
+    <img src="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/image-20260118204110354_XYkciA_1Kcicx.png" 
+         alt="image-20260118204110354" 
+         loading="lazy" 
+          />
+  </a></div></p>
+<p>在我们的 uPic 偏好设置里，把<strong>保存路径</strong>的格式修改一下，加上{random}这个变量，这样哪怕我们传送同一张照片多次，因为文件名里一定有一个<strong>随机元素</strong>，所以他们的文件名不可能重复，也就不会出现文件名带来的错误。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">uPic/{filename}_{random}{.suffix}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>把我的这段路径名直接替换掉你原来的。</p>
+<p>用我这个方法操作后，再去 Typora 验证 uPic 图片上传选项，就一定能成功了。</p>
+<p>
+<div class="post-img-view">
+  <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/image-20260118204738912_YDQsok_jhnxpU.png">
+    <img src="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/image-20260118204738912_YDQsok_jhnxpU.png" 
+         alt="image-20260118204738912" 
+         loading="lazy" 
+          />
+  </a></div></p>
+<p>
+<div class="post-img-view">
+  <a data-fancybox="gallery" href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/image-20260118204758814_xwLekM_8tfHEa.png">
+    <img src="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/image-20260118204758814_xwLekM_8tfHEa.png" 
+         alt="image-20260118204758814" 
+         loading="lazy" 
+          />
+  </a></div></p>
+<p>希望对大家有帮助，谢谢！</p>
+]]></content:encoded>
+    </item>
+    <item>
       <title>胡拉图的周刊 第五期</title>
-      <link>http://localhost:1313/posts/newsletter-weekly/</link>
+      <link>http://localhost:1313/posts/%E8%83%A1%E6%8B%89%E5%9B%BE%E7%9A%84%E5%91%A8%E5%88%8A-%E7%AC%AC%E4%BA%94%E6%9C%9F/</link>
       <pubDate>Sun, 18 Jan 2026 20:19:50 +0800</pubDate>
-      <guid>http://localhost:1313/posts/newsletter-weekly/</guid>
+      <guid>http://localhost:1313/posts/%E8%83%A1%E6%8B%89%E5%9B%BE%E7%9A%84%E5%91%A8%E5%88%8A-%E7%AC%AC%E4%BA%94%E6%9C%9F/</guid>
       <description>星星和月亮一起闪耀，照亮了黑暗和寂寥。——梁博</description>
       <content:encoded><![CDATA[<h2 id="01-提升英语的一个尝试">01 提升英语的一个尝试</h2>
 <p>出处：老胡油管研究院</p>
@@ -245,9 +294,9 @@
     </item>
     <item>
       <title>想要的东西，如何不买，也祛魅</title>
-      <link>http://localhost:1313/posts/consumption/</link>
+      <link>http://localhost:1313/posts/%E6%83%B3%E8%A6%81%E7%9A%84%E4%B8%9C%E8%A5%BF%E5%A6%82%E4%BD%95%E4%B8%8D%E4%B9%B0%E4%B9%9F%E7%A5%9B%E9%AD%85/</link>
       <pubDate>Sat, 17 Jan 2026 23:05:55 +0800</pubDate>
-      <guid>http://localhost:1313/posts/consumption/</guid>
+      <guid>http://localhost:1313/posts/%E6%83%B3%E8%A6%81%E7%9A%84%E4%B8%9C%E8%A5%BF%E5%A6%82%E4%BD%95%E4%B8%8D%E4%B9%B0%E4%B9%9F%E7%A5%9B%E9%AD%85/</guid>
       <description>有的人脑子进水了，是因为荷包进钱了。</description>
       <content:encoded><![CDATA[<p>为什么越来越多的人察觉——<strong>消费主义貌似是个陷阱</strong>。</p>
 <p>但我想大多数人还不明白这句话的真正意义。它不单告诉我们应该节制消费，不买那么多「<strong>非刚需</strong>」用品、用好已有的物品，别去创造需求。它还表达了一个非常残酷的现实：有一类人的确通过「<strong>购买</strong>」来收获快乐，而且真真实实的收获了物件到手时的「<strong>满足感</strong>」，但后续会发现各种问题，导致没有刚开始那么开心和满足，甚至会发现很多东西用不上，浪费了时间、金钱和资源。</p>
@@ -310,9 +359,9 @@
     </item>
     <item>
       <title>我们为什么爱旅游</title>
-      <link>http://localhost:1313/posts/trip/</link>
+      <link>http://localhost:1313/posts/%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E7%88%B1%E6%97%85%E6%B8%B8/</link>
       <pubDate>Fri, 16 Jan 2026 19:43:04 +0800</pubDate>
-      <guid>http://localhost:1313/posts/trip/</guid>
+      <guid>http://localhost:1313/posts/%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E7%88%B1%E6%97%85%E6%B8%B8/</guid>
       <description>几乎所有的第一次，都那么刻骨铭心！</description>
       <content:encoded><![CDATA[<h1 id="为什么喜欢旅游">为什么喜欢旅游</h1>
 <p>旅游这个行为，有点像围城！「<strong>没有享受到旅游乐趣的人，总觉得旅游麻烦、劳累、没意思；而享受到旅游乐趣的人，总想着有时间的话，一定要去那儿、还有那儿……</strong>」，甚至大批旅游特种兵和徒步户外爱好者涌现。</p>
@@ -359,9 +408,9 @@
     </item>
     <item>
       <title>适合普通人的饮食管理</title>
-      <link>http://localhost:1313/posts/diet-management-food/</link>
+      <link>http://localhost:1313/posts/%E9%80%82%E5%90%88%E6%99%AE%E9%80%9A%E4%BA%BA%E7%9A%84%E9%A5%AE%E9%A3%9F%E7%AE%A1%E7%90%86/</link>
       <pubDate>Thu, 15 Jan 2026 23:02:50 +0800</pubDate>
-      <guid>http://localhost:1313/posts/diet-management-food/</guid>
+      <guid>http://localhost:1313/posts/%E9%80%82%E5%90%88%E6%99%AE%E9%80%9A%E4%BA%BA%E7%9A%84%E9%A5%AE%E9%A3%9F%E7%AE%A1%E7%90%86/</guid>
       <description>好好的吃、吃得好好的。</description>
       <content:encoded><![CDATA[<p>只要你在意身体健康，我们暂且抛开你运动 or 不运动，因为很多我们想达到的目的，通过管理饮食比努力运动要有效的多。</p>
 <h3 id="戒掉一些东西">戒掉一些东西</h3>
@@ -387,9 +436,9 @@
     </item>
     <item>
       <title>一碗南昌炒粉，应该是什么样的</title>
-      <link>http://localhost:1313/posts/food-chao-fen/</link>
+      <link>http://localhost:1313/posts/%E4%B8%80%E7%A2%97%E5%8D%97%E6%98%8C%E7%82%92%E7%B2%89%E5%BA%94%E8%AF%A5%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84/</link>
       <pubDate>Wed, 14 Jan 2026 21:02:40 +0800</pubDate>
-      <guid>http://localhost:1313/posts/food-chao-fen/</guid>
+      <guid>http://localhost:1313/posts/%E4%B8%80%E7%A2%97%E5%8D%97%E6%98%8C%E7%82%92%E7%B2%89%E5%BA%94%E8%AF%A5%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84/</guid>
       <description>美食，也需要凑齐元素。</description>
       <content:encoded><![CDATA[<p>疫情后的旅游热，加之视频内容的兴起，南昌这座英雄城，以不可思议的速度被越来越多人熟知，有很多人甚至一提起南昌，就会产生许多标签化的第一印象——<strong>能吃辣；只有冬夏；拌粉和瓦罐汤；水煮和炒菜；加密十级的南昌方言……</strong>，这些标签确实也是南昌的特点，但仅仅只是南昌这座迷人城市的神秘一角。</p>
 <p>我自己就是一位地道的南昌人，对于万千南昌美食，南昌炒粉绝对可以在我心目中排进前三名，尤其是我来到郑州上学后，那一口本地的南昌炒粉简直是我无数个日日夜夜里心心念念的东西。</p>
@@ -443,9 +492,9 @@
     </item>
     <item>
       <title>让自己养成读书习惯</title>
-      <link>http://localhost:1313/posts/reading/</link>
+      <link>http://localhost:1313/posts/%E8%AE%A9%E8%87%AA%E5%B7%B1%E5%85%BB%E6%88%90%E8%AF%BB%E4%B9%A6%E4%B9%A0%E6%83%AF/</link>
       <pubDate>Tue, 13 Jan 2026 08:42:53 +0800</pubDate>
-      <guid>http://localhost:1313/posts/reading/</guid>
+      <guid>http://localhost:1313/posts/%E8%AE%A9%E8%87%AA%E5%B7%B1%E5%85%BB%E6%88%90%E8%AF%BB%E4%B9%A6%E4%B9%A0%E6%83%AF/</guid>
       <description>畅销书作家，总愿意为了告诉我一句话，而写一本书。</description>
       <content:encoded><![CDATA[<p>阅读的好处，在这个视频扎堆<strong>偷走</strong>人们注意力的时代，已经不单单是吸取知识那么简单。它还可以让人更有自我、更独立、更冷静。</p>
 <p>怎样让自己真的开始拿起书呢？</p>
@@ -486,9 +535,9 @@
     </item>
     <item>
       <title>早起的神奇，在于我们可以控制开始</title>
-      <link>http://localhost:1313/posts/early-rising-zao-qi/</link>
+      <link>http://localhost:1313/posts/%E6%97%A9%E8%B5%B7%E7%9A%84%E7%A5%9E%E5%A5%87%E5%9C%A8%E4%BA%8E%E6%88%91%E4%BB%AC%E5%8F%AF%E4%BB%A5%E6%8E%A7%E5%88%B6%E5%BC%80%E5%A7%8B/</link>
       <pubDate>Mon, 12 Jan 2026 21:40:34 +0800</pubDate>
-      <guid>http://localhost:1313/posts/early-rising-zao-qi/</guid>
+      <guid>http://localhost:1313/posts/%E6%97%A9%E8%B5%B7%E7%9A%84%E7%A5%9E%E5%A5%87%E5%9C%A8%E4%BA%8E%E6%88%91%E4%BB%AC%E5%8F%AF%E4%BB%A5%E6%8E%A7%E5%88%B6%E5%BC%80%E5%A7%8B/</guid>
       <description>从开始开始，就是最好的开始。</description>
       <content:encoded><![CDATA[<h2 id="早起的魔力">早起的魔力</h2>
 <p>为什么很多人早起。因为可以让很多小习惯「<strong>有机会开始</strong>」。</p>
@@ -546,9 +595,9 @@
     </item>
     <item>
       <title>胡拉图的周刊 第四期</title>
-      <link>http://localhost:1313/posts/newsletter-zhou-kan/</link>
+      <link>http://localhost:1313/posts/%E8%83%A1%E6%8B%89%E5%9B%BE%E7%9A%84%E5%91%A8%E5%88%8A-%E7%AC%AC%E5%9B%9B%E6%9C%9F/</link>
       <pubDate>Sun, 11 Jan 2026 11:50:13 +0800</pubDate>
-      <guid>http://localhost:1313/posts/newsletter-zhou-kan/</guid>
+      <guid>http://localhost:1313/posts/%E8%83%A1%E6%8B%89%E5%9B%BE%E7%9A%84%E5%91%A8%E5%88%8A-%E7%AC%AC%E5%9B%9B%E6%9C%9F/</guid>
       <description>自己用心记录的东西，那用心记录的部分，就是我们分享的最大底气。</description>
       <content:encoded><![CDATA[<h2 id="收到远方朋友的邮件">收到远方朋友的邮件</h2>
 <p>今天早上，就在我写完善这篇周刊前，收到了一位来自远方朋友的来信，我真的好开心、好兴奋、好激动。像是学生时代收到一份用笔纸这样的传统工具写下的信件✉️，很久没有这种感觉了。</p>
@@ -825,9 +874,9 @@
     </item>
     <item>
       <title>剪辑生活Vlog</title>
-      <link>http://localhost:1313/posts/vlog-share/</link>
+      <link>http://localhost:1313/posts/%E5%89%AA%E8%BE%91%E7%94%9F%E6%B4%BBvlog/</link>
       <pubDate>Sat, 10 Jan 2026 22:07:55 +0800</pubDate>
-      <guid>http://localhost:1313/posts/vlog-share/</guid>
+      <guid>http://localhost:1313/posts/%E5%89%AA%E8%BE%91%E7%94%9F%E6%B4%BBvlog/</guid>
       <description>用视频分享生活，是一个不那么轻松的过程。</description>
       <content:encoded><![CDATA[<p>今天下午，我剪辑了一个自己的日常Vlog。</p>
 <p>用的是Mac的iMovie软件，说实话，剪辑出来的那一刻，成就感满满。因为那就是一个比较标准的日常Vlog了——有内容、有转场、有配乐、有字幕等等。</p>
@@ -839,9 +888,9 @@
     </item>
     <item>
       <title>美化博客，看《小狗钱钱》</title>
-      <link>http://localhost:1313/posts/beauty-blog/</link>
+      <link>http://localhost:1313/posts/%E7%BE%8E%E5%8C%96%E5%8D%9A%E5%AE%A2%E7%9C%8B%E5%B0%8F%E7%8B%97%E9%92%B1%E9%92%B1/</link>
       <pubDate>Fri, 09 Jan 2026 21:56:28 +0800</pubDate>
-      <guid>http://localhost:1313/posts/beauty-blog/</guid>
+      <guid>http://localhost:1313/posts/%E7%BE%8E%E5%8C%96%E5%8D%9A%E5%AE%A2%E7%9C%8B%E5%B0%8F%E7%8B%97%E9%92%B1%E9%92%B1/</guid>
       <description>美化博客，也是美化心情。</description>
       <content:encoded><![CDATA[<p>今天是周五，快放假了，下午没有去工位。趁着这个偷来的<strong>闲</strong>功夫，我对博客内容进行了一番美化，效果很是满意。</p>
 <h2 id="美化内容">美化内容</h2>
@@ -886,9 +935,9 @@
     </item>
     <item>
       <title>有些东西，开始做，不需要知道为什么？</title>
-      <link>http://localhost:1313/posts/do/</link>
+      <link>http://localhost:1313/posts/%E6%9C%89%E4%BA%9B%E4%B8%9C%E8%A5%BF%E5%BC%80%E5%A7%8B%E5%81%9A%E4%B8%8D%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E4%B8%BA%E4%BB%80%E4%B9%88/</link>
       <pubDate>Thu, 08 Jan 2026 21:54:24 +0800</pubDate>
-      <guid>http://localhost:1313/posts/do/</guid>
+      <guid>http://localhost:1313/posts/%E6%9C%89%E4%BA%9B%E4%B8%9C%E8%A5%BF%E5%BC%80%E5%A7%8B%E5%81%9A%E4%B8%8D%E9%9C%80%E8%A6%81%E7%9F%A5%E9%81%93%E4%B8%BA%E4%BB%80%E4%B9%88/</guid>
       <description>如果有效，做，就对了！</description>
       <content:encoded><![CDATA[<p>「知其然，也要知其所以然」，是不是学生时代经常听到的一句话？什么感受？是不是死去的回忆又开始攻击你！</p>
 <p>这句话对于学生，或许是管用的，也是实用的、必要的。因为在那个语境里，老师也是为了让我们能够更好的去<strong>理解学习中的内容</strong>，从而帮助我们记忆、运用。作为学生，这个身份下，学习一定是最重要的任务、且大部分时候是唯一重要的任务。</p>
@@ -906,9 +955,9 @@
     </item>
     <item>
       <title>如何拍好照片、视频（不区分设备）</title>
-      <link>http://localhost:1313/posts/photography/</link>
+      <link>http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E6%8B%8D%E5%A5%BD%E7%85%A7%E7%89%87%E8%A7%86%E9%A2%91%E4%B8%8D%E5%8C%BA%E5%88%86%E8%AE%BE%E5%A4%87/</link>
       <pubDate>Wed, 07 Jan 2026 19:38:38 +0800</pubDate>
-      <guid>http://localhost:1313/posts/photography/</guid>
+      <guid>http://localhost:1313/posts/%E5%A6%82%E4%BD%95%E6%8B%8D%E5%A5%BD%E7%85%A7%E7%89%87%E8%A7%86%E9%A2%91%E4%B8%8D%E5%8C%BA%E5%88%86%E8%AE%BE%E5%A4%87/</guid>
       <description>人为聚焦行为，可以弥补很多仪器、环境差异而产生的效果差异。</description>
       <content:encoded><![CDATA[<p>为什么用电子设备拍出来的视频、照片，与人眼看到的世界，总觉得存在着一层遮罩？一层滤镜？总觉得有时人眼看起来平平无奇的内容，在镜头里，变得极具特点、吸引眼球起来？</p>
 <p>一次拍照的过程中，我好像明白了点什么。</p>
@@ -955,9 +1004,9 @@
     </item>
     <item>
       <title>关于过早引用现象 一种学习过程中的常见现象</title>
-      <link>http://localhost:1313/posts/study-tips/</link>
+      <link>http://localhost:1313/posts/%E5%85%B3%E4%BA%8E%E8%BF%87%E6%97%A9%E5%BC%95%E7%94%A8%E7%8E%B0%E8%B1%A1-%E4%B8%80%E7%A7%8D%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%B8%B8%E8%A7%81%E7%8E%B0%E8%B1%A1/</link>
       <pubDate>Wed, 07 Jan 2026 17:19:13 +0800</pubDate>
-      <guid>http://localhost:1313/posts/study-tips/</guid>
+      <guid>http://localhost:1313/posts/%E5%85%B3%E4%BA%8E%E8%BF%87%E6%97%A9%E5%BC%95%E7%94%A8%E7%8E%B0%E8%B1%A1-%E4%B8%80%E7%A7%8D%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B%E4%B8%AD%E7%9A%84%E5%B8%B8%E8%A7%81%E7%8E%B0%E8%B1%A1/</guid>
       <description>几乎很少有东西可以等我们准备好之后才可以开始，而是带着不确定和模糊开始，渐渐才会清晰。</description>
       <content:encoded><![CDATA[<p>不知道大家有没有这样一种体验：学习有些东西的时候，比如拍照、视频、音乐、心理学、计算机科学等等知识，总会在某个地方接触到一些「<strong>前面的学习没有提到过的东西</strong>」，这个前面并没有接触到的东西，会导致我们感觉到陌生、不亲切，很容易产生一种错觉——我是不是前面掌握的不牢固、我是不是遗漏了什么东西……。</p>
 <p>以至于回看、重新学习的过程，前面的东西越来越熟悉，但是再回到这个不熟悉的地方，那些新引出的知识（术语、概念或模型）还是感觉陌生，导致往后看的话，心里非常没底——因为自己已经发现了自己不了解的东西、总感觉会对后面内容的理解和吸收产生阻碍。</p>
@@ -1010,9 +1059,9 @@
     </item>
     <item>
       <title>分享10首好听的情歌</title>
-      <link>http://localhost:1313/posts/songs-hao-ting/</link>
+      <link>http://localhost:1313/posts/%E5%88%86%E4%BA%AB10%E9%A6%96%E5%A5%BD%E5%90%AC%E7%9A%84%E6%83%85%E6%AD%8C/</link>
       <pubDate>Tue, 06 Jan 2026 19:16:10 +0800</pubDate>
-      <guid>http://localhost:1313/posts/songs-hao-ting/</guid>
+      <guid>http://localhost:1313/posts/%E5%88%86%E4%BA%AB10%E9%A6%96%E5%A5%BD%E5%90%AC%E7%9A%84%E6%83%85%E6%AD%8C/</guid>
       <description>如果说音乐是情绪的语言，那么”好听”可能就是这门语言里最微妙的语法。——无敌</description>
       <content:encoded><![CDATA[<p>昨天下午，看到了这篇文章
 <a href="https://blog.tangwudi.com/technology/innerlight13800/" target="_blank">精神食粮系列 一首歌为什么好听：三维理论解析唱歌的秘密</a>，加大了心中很长一段时间的疑惑——从声音质感、歌手对于声音的使用以及歌声里藏着的那个谁三个维度，告诉我为什么我会觉得有些歌好听、耐听？也列举了几个深受广大群众喜爱的歌手，分析了他们的三维层面上的差异化，让我对音乐的很多原本<strong>个性化</strong>的理解，找到了一些科学角度上的解释，很是受用，谢谢你！</p>
@@ -1056,9 +1105,9 @@
     </item>
     <item>
       <title>三类财富杠杆</title>
-      <link>http://localhost:1313/posts/money/</link>
+      <link>http://localhost:1313/posts/%E4%B8%89%E7%B1%BB%E8%B4%A2%E5%AF%8C%E6%9D%A0%E6%9D%86/</link>
       <pubDate>Mon, 05 Jan 2026 21:07:47 +0800</pubDate>
-      <guid>http://localhost:1313/posts/money/</guid>
+      <guid>http://localhost:1313/posts/%E4%B8%89%E7%B1%BB%E8%B4%A2%E5%AF%8C%E6%9D%A0%E6%9D%86/</guid>
       <description>预祝大家，早日实现财务自由！</description>
       <content:encoded><![CDATA[<p>大学校园里，一个无处不在、却又难以察觉的怪象越来越显现——<strong>许多人在嘴巴上“承认”读书有用，可从心底里认为读书无用</strong>！而少数人一次又一次的自我说服、自我麻痹——用行动彰显着对“读书有用论”的维护和坚守，但心底依旧难以真正认可读书的价值。</p>
 <p>归根结底，产生这种想法或者说是矛盾体的本质：现代大学教授不了我们——可以直接变现的生存技能，我们大多数时候甚至是全部时间，学习的都是理论知识，都说理论是实践的基础，可事实是——我们一直在理论的乌托邦大厦游走。</p>
@@ -1115,9 +1164,9 @@
     </item>
     <item>
       <title>胡拉图的周刊 第三期</title>
-      <link>http://localhost:1313/posts/newsletter-weekly/</link>
+      <link>http://localhost:1313/posts/%E8%83%A1%E6%8B%89%E5%9B%BE%E7%9A%84%E5%91%A8%E5%88%8A-%E7%AC%AC%E4%B8%89%E6%9C%9F/</link>
       <pubDate>Sun, 04 Jan 2026 16:16:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/newsletter-weekly/</guid>
+      <guid>http://localhost:1313/posts/%E8%83%A1%E6%8B%89%E5%9B%BE%E7%9A%84%E5%91%A8%E5%88%8A-%E7%AC%AC%E4%B8%89%E6%9C%9F/</guid>
       <description>生活，总是有喜有悲，由人为强加给你的苦痛，在没有绝对实力时，只能受着。</description>
       <content:encoded><![CDATA[<h2 id="01-护肤小建议">01 护肤小建议</h2>
 <p>过去一段时间，我感觉面部皮肤有点不尽如人意。我很清楚知道我的皮肤是中性皮肤，倒是不怎么油，正常情况下也不会太干，而且很多时候比较透亮红润。但只要一到冬天，尤其是前段将近0度的时间，我的皮肤会变得有些干，起皮的那种！</p>
@@ -1214,9 +1263,9 @@
     </item>
     <item>
       <title>如果你也想开始写作，这些写作工具推荐给大家</title>
-      <link>http://localhost:1313/posts/writing-tools/</link>
+      <link>http://localhost:1313/posts/%E5%A6%82%E6%9E%9C%E4%BD%A0%E4%B9%9F%E6%83%B3%E5%BC%80%E5%A7%8B%E5%86%99%E4%BD%9C%E8%BF%99%E4%BA%9B%E5%86%99%E4%BD%9C%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90%E7%BB%99%E5%A4%A7%E5%AE%B6/</link>
       <pubDate>Sat, 03 Jan 2026 22:09:22 +0800</pubDate>
-      <guid>http://localhost:1313/posts/writing-tools/</guid>
+      <guid>http://localhost:1313/posts/%E5%A6%82%E6%9E%9C%E4%BD%A0%E4%B9%9F%E6%83%B3%E5%BC%80%E5%A7%8B%E5%86%99%E4%BD%9C%E8%BF%99%E4%BA%9B%E5%86%99%E4%BD%9C%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90%E7%BB%99%E5%A4%A7%E5%AE%B6/</guid>
       <description>事情应该力求简单，但不应过于简单！</description>
       <content:encoded><![CDATA[<p>前面我们提到，如果我们想写一点东西，可以从写日记分享自己这样一件小事情做起，目的就是降低开始写作这个行为的阻力和难度，而后在这个过程中慢慢的去发现一些针对自己的问题，再慢慢去解决。</p>
 <p>今天的话题，应该是很多写作者都会遇到的问题——<strong>有哪些好用的写作工具</strong>！</p>
@@ -1314,9 +1363,9 @@
     </item>
     <item>
       <title>如果你也被英语单词困扰</title>
-      <link>http://localhost:1313/posts/english-vocabulary/</link>
+      <link>http://localhost:1313/posts/%E5%A6%82%E6%9E%9C%E4%BD%A0%E4%B9%9F%E8%A2%AB%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D%E5%9B%B0%E6%89%B0/</link>
       <pubDate>Fri, 02 Jan 2026 22:30:16 +0800</pubDate>
-      <guid>http://localhost:1313/posts/english-vocabulary/</guid>
+      <guid>http://localhost:1313/posts/%E5%A6%82%E6%9E%9C%E4%BD%A0%E4%B9%9F%E8%A2%AB%E8%8B%B1%E8%AF%AD%E5%8D%95%E8%AF%8D%E5%9B%B0%E6%89%B0/</guid>
       <description>学习，是个降低内阻力的过程。</description>
       <content:encoded><![CDATA[<h2 id="规律">规律</h2>
 <p>记忆、提炼分别对应两个词汇——<strong>输入</strong>和<strong>提取</strong>。</p>
@@ -1389,9 +1438,9 @@
     </item>
     <item>
       <title>健身的一些优先级，新年第一天</title>
-      <link>http://localhost:1313/posts/sport-tips/</link>
+      <link>http://localhost:1313/posts/%E5%81%A5%E8%BA%AB%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BC%98%E5%85%88%E7%BA%A7%E6%96%B0%E5%B9%B4%E7%AC%AC%E4%B8%80%E5%A4%A9/</link>
       <pubDate>Thu, 01 Jan 2026 23:41:46 +0800</pubDate>
-      <guid>http://localhost:1313/posts/sport-tips/</guid>
+      <guid>http://localhost:1313/posts/%E5%81%A5%E8%BA%AB%E7%9A%84%E4%B8%80%E4%BA%9B%E4%BC%98%E5%85%88%E7%BA%A7%E6%96%B0%E5%B9%B4%E7%AC%AC%E4%B8%80%E5%A4%A9/</guid>
       <description>慢慢来，比较快！</description>
       <content:encoded><![CDATA[<p>今天练背了，这个过程中产生了一些思考。</p>
 <p>如果你想接触力量训练，那么以下这些东西，是我认为你必须要「<strong>坚守的基础原则</strong>」，有点像数学公理——任何科学必须要遵守。</p>
@@ -1494,9 +1543,9 @@
     </item>
     <item>
       <title>2025年度总结</title>
-      <link>http://localhost:1313/posts/summary-2025/</link>
+      <link>http://localhost:1313/posts/2025%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</link>
       <pubDate>Wed, 31 Dec 2025 21:00:04 +0800</pubDate>
-      <guid>http://localhost:1313/posts/summary-2025/</guid>
+      <guid>http://localhost:1313/posts/2025%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/</guid>
       <description>2025走了，2026还会远吗？</description>
       <content:encoded><![CDATA[<p>去年的年终小结在这里：
 <a href="https://mp.weixin.qq.com/s/dHAQcoWmnvrFzvGTaTnIww" target="_blank">我的 2024 年度小结</a></p>
@@ -1876,9 +1925,9 @@
     </item>
     <item>
       <title>胡拉图的周刊 第二期</title>
-      <link>http://localhost:1313/posts/newsletter-weekly/</link>
+      <link>http://localhost:1313/posts/%E8%83%A1%E6%8B%89%E5%9B%BE%E7%9A%84%E5%91%A8%E5%88%8A-%E7%AC%AC%E4%BA%8C%E6%9C%9F/</link>
       <pubDate>Sun, 28 Dec 2025 23:22:14 +0800</pubDate>
-      <guid>http://localhost:1313/posts/newsletter-weekly/</guid>
+      <guid>http://localhost:1313/posts/%E8%83%A1%E6%8B%89%E5%9B%BE%E7%9A%84%E5%91%A8%E5%88%8A-%E7%AC%AC%E4%BA%8C%E6%9C%9F/</guid>
       <description>做一个能给身边人带去积极影响的人，是有挑战的。</description>
       <content:encoded><![CDATA[<h2 id="快乐时刻">快乐时刻</h2>
 <h3 id="收到朋友寄的食物">收到朋友寄的食物</h3>
@@ -1981,9 +2030,9 @@
     </item>
     <item>
       <title>胡拉图的周刊 第一期</title>
-      <link>http://localhost:1313/posts/newsletter-weekly/</link>
+      <link>http://localhost:1313/posts/%E8%83%A1%E6%8B%89%E5%9B%BE%E7%9A%84%E5%91%A8%E5%88%8A-%E7%AC%AC%E4%B8%80%E6%9C%9F/</link>
       <pubDate>Sun, 21 Dec 2025 14:19:03 +0800</pubDate>
-      <guid>http://localhost:1313/posts/newsletter-weekly/</guid>
+      <guid>http://localhost:1313/posts/%E8%83%A1%E6%8B%89%E5%9B%BE%E7%9A%84%E5%91%A8%E5%88%8A-%E7%AC%AC%E4%B8%80%E6%9C%9F/</guid>
       <description>胡拉图的周刊-第一期，关于我为何要开始写周刊。</description>
       <content:encoded><![CDATA[<h2 id="为何开始写周刊">为何开始写周刊</h2>
 <p>接着研究生考试的这个周末，我也使用一次《月光宝盒》技能——时间拨回到 2023 年的那个冬天。那时的自己，不说高数多自信，但也是对于各种积分、微分见招拆招；不说自己对生物化学专业课又多了解，但也是把三羧酸循环、脂肪的分解代谢、蛋白质的体内合成过程烂熟于心……，可如今，这些我曾经擅长、熟悉的东西已经不再拥有！</p>
@@ -2142,9 +2191,9 @@
     </item>
     <item>
       <title>写给2025年12月考研的朋友</title>
-      <link>http://localhost:1313/posts/exam-test/</link>
+      <link>http://localhost:1313/posts/%E5%86%99%E7%BB%992025%E5%B9%B412%E6%9C%88%E8%80%83%E7%A0%94%E7%9A%84%E6%9C%8B%E5%8F%8B/</link>
       <pubDate>Fri, 19 Dec 2025 22:49:22 +0800</pubDate>
-      <guid>http://localhost:1313/posts/exam-test/</guid>
+      <guid>http://localhost:1313/posts/%E5%86%99%E7%BB%992025%E5%B9%B412%E6%9C%88%E8%80%83%E7%A0%94%E7%9A%84%E6%9C%8B%E5%8F%8B/</guid>
       <description>我想你们大多并非是对科研由热爱而产生的执着，反而是由于未知而幻想的魅惑。</description>
       <content:encoded><![CDATA[<p>为何称呼你们为朋友，因为我曾经也是你们当中的一员，只不过跨越平行时空，我在 2023 年那一天，而你们，在即将到来的 2025 年那一刻。所以，请允许我亲切的称呼你们为一声朋友。</p>
 <p>另外，我想说：无论今晚、明晚的朋友们是怎样的状态，你们都应该放下一些、轻松的面对明后两天的考试。对于那些万分想读研的人群，甚至不惜二战、三站，<strong>我想你们大多并非是对科研由热爱而产生的执着，反而是由于未知而幻想的魅惑</strong>。换句话说，你所向往的、你所虚假短暂执着的东西，有时候并不是你想象的那样！起码，我从进入课题组开始，经常产生退学的念头，这个足以说明一些问题。但对你们，我想说：尽全力去认真对待考试，别附加太多的意义——那只是一场考试，并且注定会淘汰大部分人的一场考试。</p>
@@ -2155,9 +2204,9 @@
     </item>
     <item>
       <title>综述写作之——文献管理</title>
-      <link>http://localhost:1313/posts/literature-management/</link>
+      <link>http://localhost:1313/posts/%E7%BB%BC%E8%BF%B0%E5%86%99%E4%BD%9C%E4%B9%8B%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86/</link>
       <pubDate>Sun, 14 Dec 2025 23:37:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/literature-management/</guid>
+      <guid>http://localhost:1313/posts/%E7%BB%BC%E8%BF%B0%E5%86%99%E4%BD%9C%E4%B9%8B%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86/</guid>
       <description>文献管理，是一门艺术。</description>
       <content:encoded><![CDATA[<p>上一篇文章——《
 <a href="https://mp.weixin.qq.com/s/qcND6lht3nQRE1yH38xfJQ" target="_blank">综述写作之——选定主题</a>》，我们提到了如何确定一个适合自己综述主题，并且正确使用 AI 指令生成一份条理清晰、有侧重点的目录。搭配上我们前期的知识储备、后面的检索扫盲，基本上对自己要写的综述方向，大概也有了一些了解。</p>
@@ -2298,9 +2347,9 @@
     </item>
     <item>
       <title>综述写作之——确定主题</title>
-      <link>http://localhost:1313/posts/paper/</link>
+      <link>http://localhost:1313/posts/%E7%BB%BC%E8%BF%B0%E5%86%99%E4%BD%9C%E4%B9%8B%E7%A1%AE%E5%AE%9A%E4%B8%BB%E9%A2%98/</link>
       <pubDate>Sun, 14 Dec 2025 20:31:54 +0800</pubDate>
-      <guid>http://localhost:1313/posts/paper/</guid>
+      <guid>http://localhost:1313/posts/%E7%BB%BC%E8%BF%B0%E5%86%99%E4%BD%9C%E4%B9%8B%E7%A1%AE%E5%AE%9A%E4%B8%BB%E9%A2%98/</guid>
       <description>主题确定好了，综述写起来十分顺畅。</description>
       <content:encoded><![CDATA[<p>综述文章，对于研究生群体来说，应该是绕不过去的一环。即使不被要求写综述，你在做研究前也必须要阅读资料，了解所在领域的前沿发展和热点。而综述，无疑是兼顾实效性和权威性的科学资源。</p>
 <h2 id="我对综述的看法"><strong>我对综述的看法</strong></h2>
@@ -2357,9 +2406,9 @@
     </item>
     <item>
       <title>关于我开始日更</title>
-      <link>http://localhost:1313/posts/daily-update/</link>
+      <link>http://localhost:1313/posts/%E5%85%B3%E4%BA%8E%E6%88%91%E5%BC%80%E5%A7%8B%E6%97%A5%E6%9B%B4/</link>
       <pubDate>Wed, 10 Dec 2025 22:55:46 +0800</pubDate>
-      <guid>http://localhost:1313/posts/daily-update/</guid>
+      <guid>http://localhost:1313/posts/%E5%85%B3%E4%BA%8E%E6%88%91%E5%BC%80%E5%A7%8B%E6%97%A5%E6%9B%B4/</guid>
       <description>&lt;h2 id=&#34;直接原因&#34;&gt;直接原因&lt;/h2&gt;
 &lt;p&gt;之所以有时间来写文章分享，毫无疑问，那肯定是因为有时间。&lt;/p&gt;
 &lt;p&gt;为什么有这么一段时间空出来呢？因为我上周在推胸的时候，由于重量太大，昨晚做最后一个卧推力竭后，我没有力气把杠铃回杠了，它就在我往上推的过程中「&lt;strong&gt;卸了力气&lt;/strong&gt;」，导致右肩部位有一些拉伤——就是连正常俯卧撑都能感觉到右侧身体明显有撕裂感，导致我做任何的上肢训练以及负重训练都容易有疼痛感，甚至是平躺睡觉我右肩都能明显的感受到不适，所以我选择「&lt;strong&gt;完全静养&lt;/strong&gt;」一段时间，听起来好像很长，但这几天我感觉快要恢复完全。&lt;/p&gt;</description>
@@ -2381,9 +2430,9 @@
     </item>
     <item>
       <title>我是个爱折腾的人</title>
-      <link>http://localhost:1313/posts/personality-zhe-teng/</link>
+      <link>http://localhost:1313/posts/%E6%88%91%E6%98%AF%E4%B8%AA%E7%88%B1%E6%8A%98%E8%85%BE%E7%9A%84%E4%BA%BA/</link>
       <pubDate>Tue, 09 Dec 2025 23:01:15 +0800</pubDate>
-      <guid>http://localhost:1313/posts/personality-zhe-teng/</guid>
+      <guid>http://localhost:1313/posts/%E6%88%91%E6%98%AF%E4%B8%AA%E7%88%B1%E6%8A%98%E8%85%BE%E7%9A%84%E4%BA%BA/</guid>
       <description>你认为我无所事事的状态，恰好是我真正逍遥自在的片刻。</description>
       <content:encoded><![CDATA[<h2 id="不喜欢现成的东西">不喜欢现成的东西</h2>
 <p>前段时间，我在调试更新一台旧 Windows 电脑，给它加了内存条、固态硬盘、重装了系统，最后打开 Win10 操作系统界面的时候，那种成就感和满足感是没有这种动手能力的人难以体会的。</p>
@@ -2441,9 +2490,9 @@
     </item>
     <item>
       <title>多设备的文件同步和传输问题</title>
-      <link>http://localhost:1313/posts/tong-bu-file/</link>
+      <link>http://localhost:1313/posts/%E5%A4%9A%E8%AE%BE%E5%A4%87%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5%E5%92%8C%E4%BC%A0%E8%BE%93%E9%97%AE%E9%A2%98/</link>
       <pubDate>Mon, 08 Dec 2025 17:14:50 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tong-bu-file/</guid>
+      <guid>http://localhost:1313/posts/%E5%A4%9A%E8%AE%BE%E5%A4%87%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8C%E6%AD%A5%E5%92%8C%E4%BC%A0%E8%BE%93%E9%97%AE%E9%A2%98/</guid>
       <description>粉产品力，而不要粉品牌。</description>
       <content:encoded><![CDATA[<p>不是每个人都是某个电子品牌的死忠粉，也就意味着「<strong>全家桶</strong>」这个概念，并没有普及到每个人的生活学习和工作。</p>
 <p>我很赞成极客湾的云飞和笔吧的猪王在讨论 Mac 电脑使用体验时说的一句话：</p>
@@ -2505,9 +2554,9 @@
     </item>
     <item>
       <title>普通人与运动的关系</title>
-      <link>http://localhost:1313/posts/sport-relative/</link>
+      <link>http://localhost:1313/posts/%E6%99%AE%E9%80%9A%E4%BA%BA%E4%B8%8E%E8%BF%90%E5%8A%A8%E7%9A%84%E5%85%B3%E7%B3%BB/</link>
       <pubDate>Sun, 07 Dec 2025 16:03:14 +0000</pubDate>
-      <guid>http://localhost:1313/posts/sport-relative/</guid>
+      <guid>http://localhost:1313/posts/%E6%99%AE%E9%80%9A%E4%BA%BA%E4%B8%8E%E8%BF%90%E5%8A%A8%E7%9A%84%E5%85%B3%E7%B3%BB/</guid>
       <description>关于运动，我们应该怎样对待。</description>
       <content:encoded><![CDATA[<p>运动有益 or 运动伤身！这两个极端言论在网络上流传已久。与这样类似的讨论话题很多，比如「<strong>中医有效 or 中医不可证伪</strong>」、「<strong>牛奶补钙 or 牛奶伤身</strong>」……</p>
 <p>对于以上种种类似「<strong>二极管</strong>」性质的讨论，其实有非常有效的解决办法——<strong>不极端</strong>！！也就是我们老祖宗提到的中庸思维——凡事别太过——这个过不单单只是提示我们别太满，也警醒我们不要不接触。</p>
@@ -2534,9 +2583,9 @@
     </item>
     <item>
       <title>跑步平价装备(实用篇)</title>
-      <link>http://localhost:1313/posts/running-gear/</link>
+      <link>http://localhost:1313/posts/%E8%B7%91%E6%AD%A5%E5%B9%B3%E4%BB%B7%E8%A3%85%E5%A4%87%E5%AE%9E%E7%94%A8%E7%AF%87/</link>
       <pubDate>Sat, 06 Dec 2025 14:12:10 +0000</pubDate>
-      <guid>http://localhost:1313/posts/running-gear/</guid>
+      <guid>http://localhost:1313/posts/%E8%B7%91%E6%AD%A5%E5%B9%B3%E4%BB%B7%E8%A3%85%E5%A4%87%E5%AE%9E%E7%94%A8%E7%AF%87/</guid>
       <description>有想法、简装备，就出发！</description>
       <content:encoded><![CDATA[<h2 id="若不缺钱选心仪的时尚的">若不缺钱，选心仪的、时尚的</h2>
 <p>最新潮的跑鞋、最有科技感的运动服装、最准确昂贵的测试装备……，如果咱们不缺钱的话，买最好的、最心仪的就可以了。因为那样一种「<strong>我的装备是最新的、是最好看的</strong>」这样一种「<strong>心理暗示和情绪价值</strong>」，给我们带来的动力和潜在鼓舞是无法估量的。</p>
@@ -2694,9 +2743,9 @@
     </item>
     <item>
       <title>关于我</title>
-      <link>http://localhost:1313/posts/personal-profile/</link>
+      <link>http://localhost:1313/posts/%E5%85%B3%E4%BA%8E%E6%88%91/</link>
       <pubDate>Fri, 05 Dec 2025 21:40:01 +0000</pubDate>
-      <guid>http://localhost:1313/posts/personal-profile/</guid>
+      <guid>http://localhost:1313/posts/%E5%85%B3%E4%BA%8E%E6%88%91/</guid>
       <description>关于我，关于胡拉图的一些了解。</description>
       <content:encoded><![CDATA[<h2 id="你好">你好</h2>
 <div class="highlight"><div class="chroma">

@@ -10,9 +10,9 @@
     <atom:link href="http://localhost:1313/categories/%E7%94%9F%E6%B4%BB/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>想要的东西，如何不买，也祛魅</title>
-      <link>http://localhost:1313/posts/consumption/</link>
+      <link>http://localhost:1313/posts/%E6%83%B3%E8%A6%81%E7%9A%84%E4%B8%9C%E8%A5%BF%E5%A6%82%E4%BD%95%E4%B8%8D%E4%B9%B0%E4%B9%9F%E7%A5%9B%E9%AD%85/</link>
       <pubDate>Sat, 17 Jan 2026 23:05:55 +0800</pubDate>
-      <guid>http://localhost:1313/posts/consumption/</guid>
+      <guid>http://localhost:1313/posts/%E6%83%B3%E8%A6%81%E7%9A%84%E4%B8%9C%E8%A5%BF%E5%A6%82%E4%BD%95%E4%B8%8D%E4%B9%B0%E4%B9%9F%E7%A5%9B%E9%AD%85/</guid>
       <description>有的人脑子进水了，是因为荷包进钱了。</description>
       <content:encoded><![CDATA[<p>为什么越来越多的人察觉——<strong>消费主义貌似是个陷阱</strong>。</p>
 <p>但我想大多数人还不明白这句话的真正意义。它不单告诉我们应该节制消费，不买那么多「<strong>非刚需</strong>」用品、用好已有的物品，别去创造需求。它还表达了一个非常残酷的现实：有一类人的确通过「<strong>购买</strong>」来收获快乐，而且真真实实的收获了物件到手时的「<strong>满足感</strong>」，但后续会发现各种问题，导致没有刚开始那么开心和满足，甚至会发现很多东西用不上，浪费了时间、金钱和资源。</p>
@@ -75,9 +75,9 @@
     </item>
     <item>
       <title>我们为什么爱旅游</title>
-      <link>http://localhost:1313/posts/trip/</link>
+      <link>http://localhost:1313/posts/%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E7%88%B1%E6%97%85%E6%B8%B8/</link>
       <pubDate>Fri, 16 Jan 2026 19:43:04 +0800</pubDate>
-      <guid>http://localhost:1313/posts/trip/</guid>
+      <guid>http://localhost:1313/posts/%E6%88%91%E4%BB%AC%E4%B8%BA%E4%BB%80%E4%B9%88%E7%88%B1%E6%97%85%E6%B8%B8/</guid>
       <description>几乎所有的第一次，都那么刻骨铭心！</description>
       <content:encoded><![CDATA[<h1 id="为什么喜欢旅游">为什么喜欢旅游</h1>
 <p>旅游这个行为，有点像围城！「<strong>没有享受到旅游乐趣的人，总觉得旅游麻烦、劳累、没意思；而享受到旅游乐趣的人，总想着有时间的话，一定要去那儿、还有那儿……</strong>」，甚至大批旅游特种兵和徒步户外爱好者涌现。</p>
@@ -124,9 +124,9 @@
     </item>
     <item>
       <title>适合普通人的饮食管理</title>
-      <link>http://localhost:1313/posts/diet-management-food/</link>
+      <link>http://localhost:1313/posts/%E9%80%82%E5%90%88%E6%99%AE%E9%80%9A%E4%BA%BA%E7%9A%84%E9%A5%AE%E9%A3%9F%E7%AE%A1%E7%90%86/</link>
       <pubDate>Thu, 15 Jan 2026 23:02:50 +0800</pubDate>
-      <guid>http://localhost:1313/posts/diet-management-food/</guid>
+      <guid>http://localhost:1313/posts/%E9%80%82%E5%90%88%E6%99%AE%E9%80%9A%E4%BA%BA%E7%9A%84%E9%A5%AE%E9%A3%9F%E7%AE%A1%E7%90%86/</guid>
       <description>好好的吃、吃得好好的。</description>
       <content:encoded><![CDATA[<p>只要你在意身体健康，我们暂且抛开你运动 or 不运动，因为很多我们想达到的目的，通过管理饮食比努力运动要有效的多。</p>
 <h3 id="戒掉一些东西">戒掉一些东西</h3>

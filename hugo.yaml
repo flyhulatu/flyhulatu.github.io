@@ -9,6 +9,9 @@ pagination:
 frontmatter:
   lastmod: [lastmod, :git, date] # 修改时间：初始与发布时间一致
 
+permalinks:
+  posts: "/posts/:title/"
+
 outputs:
   home:
     - HTML
@@ -66,6 +69,7 @@ params:
   ShowPostNavLinks: true       # 文章页底部的前后篇导航
   dateFormat: "2006-01-02"     # 标准日期格式
   ShowCover: true              # 确保封面图渲染开关为true
+  
 
   # --- 侧边栏/目录设置 (TOC) ---
   ShowToc: true                # 显示文章目录
