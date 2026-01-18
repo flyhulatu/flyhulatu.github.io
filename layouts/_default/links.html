@@ -1,0 +1,34 @@
+{{- define "main" -}}
+<header class="page-header">
+    <h1>{{ .Title }}</h1>
+</header>
+
+<div class="post-content">
+    <!-- 1. 首先：读取并显示 links.yml 里的友链卡片 -->
+    {{- $data := .Site.Data.links -}}
+    
+    {{- range $data -}}
+    <h2 class="link-category-title">{{ .header }}</h2>
+    <p class="link-category-desc">{{ .description }}</p>
+    
+    <div class="link-grid">
+        {{- range .links -}}
+        <a href="{{ .url }}" target="_blank" rel="noopener" class="link-card">
+            <div class="link-card-avatar">
+                <img src="{{ .avatar | default "https://api.i-meto.com/fortuna/v1/1" }}" alt="{{ .name }}" loading="lazy">
+            </div>
+            <div class="link-card-info">
+                <div class="link-card-name">{{ .name }}</div>
+                <div class="link-card-bio">{{ .bio }}</div>
+            </div>
+        </a>
+        {{- end -}}
+    </div>
+    {{- end -}}
+
+    <!-- 2. 然后：显示 links.md 里的 Markdown 文字内容（如申请格式、说明等） -->
+    <div class="links-footer-content" style="margin-top: 50px;">
+        {{ .Content }}
+    </div>
+</div>
+{{- end -}}

@@ -392,3 +392,169 @@ details[open] > summary::before {
     opacity: 0;
     transform: translateY(-10px);
 }
+
+/* ==========================================================================
+   XII. 友链卡片美化 (Links Page)
+   ========================================================================== */
+
+/* 分类标题样式 */
+.link-category-title {
+    margin: 40px 0 10px !important;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(var(--primary), 0.1);
+}
+
+.link-category-desc {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    margin-bottom: 20px;
+}
+
+/* 网格布局：每行 2 个（电脑端），每行 1 个（手机端） */
+.link-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* 卡片基础样式 */
+.link-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: rgba(var(--entry), 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    text-decoration: none !important;
+    color: inherit !important;
+    transition: transform 0.2s var(--apple-ease), background 0.2s;
+}
+
+.link-card:hover {
+    transform: translateY(-3px);
+    background: rgba(var(--primary), 0.05);
+    border-color: rgba(var(--primary), 0.2);
+}
+
+/* 头像样式 */
+.link-card-avatar {
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.link-card-avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #eee;
+}
+
+/* 文字信息样式 */
+.link-card-info {
+    overflow: hidden;
+}
+
+.link-card-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.link-card-bio {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   XV. 分类与标签页美化 (Terms & Tags Cloud)
+   功能：胶囊样式、数字气泡、极简交互
+   ========================================================================== */
+
+/* 1. 容器布局：增加间距，防止拥挤 */
+.terms-tags {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important; /* 块与块之间的间距 */
+    padding: 20px 0 !important;
+    list-style: none !important;
+}
+
+/* 2. 标签/分类小块基础样式 */
+.terms-tags li a {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 8px 16px !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    color: inherit !important;
+    text-decoration: none !important;
+    
+    /* 背景：浅灰色半透明（苹果风格） */
+    background: rgba(var(--entry), 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 20px !important; /* 胶囊圆角 */
+    
+    transition: all 0.2s var(--apple-ease) !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* 3. 标签里的数字（sup 标签）美化 */
+.terms-tags li a sup {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    
+    /* 将数字变成独立的小圆点/小胶囊 */
+    margin-left: 8px !important;
+    padding: 2px 8px !important;
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    top: 0 !important; /* 重置原本 sup 的偏移 */
+    
+    background: rgba(var(--primary), 0.15) !important;
+    color: var(--primary) !important;
+    border-radius: 10px !important;
+    
+    transition: all 0.2s ease !important;
+}
+
+/* 4. 悬浮交互效果 */
+.terms-tags li a:hover {
+    background: var(--primary) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 15px rgba(var(--primary), 0.3) !important;
+    border-color: transparent !important;
+}
+
+/* 悬浮时数字的颜色变化 */
+.terms-tags li a:hover sup {
+    background: rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+}
+
+/* 5. 深色模式微调 */
+:root.dark .terms-tags li a {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* 6. 移动端适配：缩小字体和间距 */
+@media screen and (max-width: 768px) {
+    .terms-tags {
+        gap: 8px !important;
+    }
+    .terms-tags li a {
+        padding: 6px 12px !important;
+        font-size: 0.85rem !important;
+    }
+}

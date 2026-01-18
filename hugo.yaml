@@ -12,11 +12,17 @@ frontmatter:
 permalinks:
   posts: "/posts/:title/"
 
+outputFormats:
+  RSS:
+    baseName: "rss"
 outputs:
   home:
     - HTML
     - RSS   # 生成 index.xml
     - JSON  # 生成 index.json (搜索用)
+  section:
+    - HTML
+    - RSS   # 生成 index.xml
 
 # ========================================================
 # 2. 语言与搜索优化 (Language & SEO)
@@ -69,7 +75,7 @@ params:
   ShowPostNavLinks: true       # 文章页底部的前后篇导航
   dateFormat: "2006-01-02"     # 标准日期格式
   ShowCover: true              # 确保封面图渲染开关为true
-  
+
 
   # --- 侧边栏/目录设置 (TOC) ---
   ShowToc: true                # 显示文章目录
@@ -109,7 +115,7 @@ params:
 
   socialIcons:
     - name: rss  
-      url: "index.xml"
+      url: "rss.xml"
     - name: email
       url: "mailto:2983685624@qq.com"
     - name: wechat
@@ -159,10 +165,10 @@ menu:
       name: 标签
       url: /tags/
       weight: 30
-    # - identifier: links
-    #   name: 友链
-    #   url: /links/
-    #   weight: 40
+    - identifier: links
+      name: 友圈
+      url: /links/
+      weight: 40
     - identifier: guestbook
       name: 留言
       url: /guestbook/

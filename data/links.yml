@@ -1,37 +1,41 @@
-# data/friends.yml
+# data/links.yml
 
-- group: "组织"
+# 第一部分：组织与工具
+- class: "organizations"
+  header: "组织"
   description: "因为有你，温暖四季"
-  items:
+  links:
     - name: GitHub
       url: https://github.com
       avatar: https://github.com/fluidicon.png
-      desc: 全球最大的代码托管平台
+      bio: 全球最大的代码托管平台
     - name: Hugo
       url: https://gohugo.io
       avatar: https://cdn.jsdelivr.net/gh/flyhulatu/img@main/OpwtJd
-      desc: 世界上最快的网站构建框架
+      bio: 世界上最快的网站构建框架
     - name: 博友圈
       url: https://www.boyouquan.com
       avatar: https://www.boyouquan.com/assets/images/sites/logo/logo-small.svg
-      desc: 博友圈是博客人的专属朋友圈  
+      bio: 博友圈是博客人的专属朋友圈  
     - name: BlogFinder
       url: https://bf.zzxworld.com/
       avatar: https://bf.zzxworld.com/images/favicon.png
-      desc: 每个博客都是一座宝藏  
+      bio: 每个博客都是一座宝藏  
     - name: blogscn
       url: https://blogscn.fun/
       avatar: https://photo.xiangming.site/img/blogscn_icon.png
-      desc: 致敬还在写博客的我们
+      bio: 致敬还在写博客的我们
 
-- group: "友圈"
+# 第二部分：朋友的博客
+- class: "friends"
+  header: "友圈"
   description: "有朋至此，不亦乐乎"
-  items:
+  links:
     - name: Mello的赛博本子
       url: https://www.rua.ink/
       avatar: https://imglogo.rua.ink/logo.webp
-      desc: 在本子上写写画画
+      bio: 在本子上写写画画
     - name: 梁某银的博客
       url: https://liangmouyin.com/
       # avatar: https://imglogo.rua.ink/logo.webp
-      # desc: 在本子上写写画画hhhh
+      # bio: 在本子上写写画画hhhh
