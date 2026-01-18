@@ -84,33 +84,6 @@
             </div>
         </div>
 
-        <!-- 1. 全屏模糊背景遮罩 -->
-        <div id="search-backdrop" class="search-backdrop"></div>
-
-        <div class="nav-search-container">
-            <input id="nav-search-input" class="apple-search-bar" type="search" placeholder="搜索文章..." autocomplete="off">
-            
-            <!-- 2. 搜索下拉面板 -->
-            <div id="nav-search-dropdown" class="nav-search-dropdown">
-                <!-- 默认显示的快速链接 (未输入时) -->
-                <div id="search-quick-links">
-                    <h3 class="search-section-title">快速链接</h3>
-                    <ul class="quick-links-list">
-                        <li><a href="/posts/">📖 全部文章</a></li>
-                        <li><a href="/tags/">🏷️ 标签云集</a></li>
-                        <li><a href="/archives/">📃 归档记录</a></li>
-                        <li><a href="/about/">👨‍💻 有关于我</a></li>
-                    </ul>
-                </div>
-
-                <!-- 搜索结果区域 (输入后显示) -->
-                <div id="search-results-section" style="display: none;">
-                    <h3 class="search-section-title">搜索结果</h3>
-                    <ul id="nav-search-results"></ul>
-                </div>
-            </div>
-        </div>
-
         {{- $currentPage := . }}
         <ul id="menu">
             {{- range site.Menus.main }}

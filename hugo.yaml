@@ -58,23 +58,26 @@ params:
     iconHeight: 35        # 调整高度
 
   # --- 文章内容显示控制 ---
+  ShowFullTextinRSS: true      # RSS 输出全文
   ShowReadingTime: true        # 预计阅读时间
   ShowShareButtons: false      # 分享按钮
-  ShowBreadCrumbs: true       # 面包屑导航
+  ShowBreadCrumbs: true        # 面包屑导航
   ShowCodeCopyButtons: true    # 代码块复制按钮
   ShowPostNavLinks: true       # 文章页底部的前后篇导航
   dateFormat: "2006-01-02"     # 标准日期格式
-  ShowCover: true  # 确保封面图渲染开关为true
+  ShowCover: true              # 确保封面图渲染开关为true
 
   # --- 侧边栏/目录设置 (TOC) ---
   ShowToc: true                # 显示文章目录
   TocOpen: true                # 默认展开目录
+  UseHugoToc: true             # 文章目录放在侧边
 
   # --- 其他功能 ---
-  hideMeta: false              # 列表显示作者
-  comments: true               # 评论系统
+  googleAnalytics: "G-K7FNDKR96R"  # 谷歌分析
+  hideMeta: false                  # 列表显示作者
+  comments: true                   # 评论系统
   image:
-    lazyLoading: true          # 图片懒加载
+    lazyLoading: true              # 图片懒加载
 
   
 
@@ -121,9 +124,9 @@ params:
 
   # 文章封面图配置
   cover:
-    hidden: true              # 全站封面
+    hidden: false              # 全站封面
     hiddenInList: false       # 列表封面
-    hiddenInSingle: true      # 详情页封面
+    hiddenInSingle: false      # 详情页封面
     linkFullImages: false     # 点击封面图查看原图
     ShowSummary: false        # 列表摘要
     responsiveImages: true
@@ -170,10 +173,10 @@ menu:
     #   name: 书目
     #   url: /books/
     #   weight: 70
-    # - identifier: search
-    #   name: 搜索
-    #   url: /search/
-    #   weight: 100
+    - identifier: search
+      name: 搜索
+      url: /search/
+      weight: 100
 
 # ========================================================
 # 8. 渲染引擎与代码高亮 (Markup Settings)

@@ -214,8 +214,18 @@
 {{- partial "templates/schema_json.html" . }}
 {{- end -}}
 
-<!-- 新增：Google AdSense 全局验证代码（粘贴在此处，不要删除原有任何代码） -->
+<!-- 新增：Google AdSense 全局验证代码, 谷歌分析 -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2884841070961095"
      crossorigin="anonymous"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K7FNDKR96R"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-K7FNDKR96R');
+</script>
 
 </head>

@@ -1,48 +1,38 @@
-<!-- 下雪特效 Canvas -->
+<!-- =========================================================
+     1. 下雪特效 (Snow Effect)
+     ========================================================= -->
 <canvas id="snow-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;"></canvas>
-
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const canvas = document.getElementById('snow-canvas');
+    if (!canvas) return;
     const ctx = canvas.getContext('2d');
-    
     let width, height;
     let particles = [];
-    
-    // 粒子配置 (你可以修改这些数值)
-    const particleCount = 60; // 雪花数量，数值越大越密集
-    const speed = 0.5;        // 下落速度
-    const size = 2.5;         // 雪花最大尺寸
-    
-    // 调整画布大小
+    const particleCount = 60; 
+    const speed = 0.5;        
+    const size = 2.5;         
+
     function resize() {
         width = canvas.width = window.innerWidth;
         height = canvas.height = window.innerHeight;
     }
-    
-    // 初始化粒子
     function initParticles() {
         particles = [];
         for (let i = 0; i < particleCount; i++) {
             particles.push({
                 x: Math.random() * width,
                 y: Math.random() * height,
-                r: Math.random() * size, // 半径
-                d: Math.random() * particleCount, // 密度/视差因子
-                a: Math.random() * 0.5 + 0.1 // 透明度
+                r: Math.random() * size,
+                d: Math.random() * particleCount,
+                a: Math.random() * 0.5 + 0.1
             });
         }
     }
-    
-    // 绘制粒子
     function draw() {
         ctx.clearRect(0, 0, width, height);
-        
-        // 设置雪花颜色 - 自动适配暗色/亮色模式
-        // PaperMod 通常在 body 上使用 class="dark"
         const isDark = document.body.className.includes('dark');
         ctx.fillStyle = isDark ? 'rgba(255, 255, 255, 0.8)' : 'rgba(100, 100, 100, 0.5)';
-        
         ctx.beginPath();
         for (let i = 0; i < particleCount; i++) {
             const p = particles[i];
@@ -52,296 +42,81 @@ document.addEventListener('DOMContentLoaded', function() {
         ctx.fill();
         update();
     }
-    
-    // 更新位置
     function update() {
         for (let i = 0; i < particleCount; i++) {
             const p = particles[i];
-            
-            // 下落逻辑
             p.y += Math.cos(p.d) + 1 + p.r / 2 * speed;
             p.x += Math.sin(0) * 2;
-            
-            // 边界检查，如果超出底部则重置到顶部
             if (p.x > width + 5 || p.x < -5 || p.y > height) {
-                if (i % 3 > 0) { // 2/3 的雪花从顶部重新落下
-                    particles[i] = {
-                        x: Math.random() * width,
-                        y: -10,
-                        r: p.r,
-                        d: p.d,
-                        a: p.a
-                    };
+                if (i % 3 > 0) {
+                    particles[i] = { x: Math.random() * width, y: -10, r: p.r, d: p.d, a: p.a };
                 } else {
-                    // 如果是向右飘出，从左边回来
                     if (Math.sin(0) > 0) {
-                        particles[i] = {
-                            x: -5,
-                            y: Math.random() * height,
-                            r: p.r,
-                            d: p.d,
-                            a: p.a
-                        };
+                        particles[i] = { x: -5, y: Math.random() * height, r: p.r, d: p.d, a: p.a };
                     } else {
-                        particles[i] = {
-                            x: width + 5,
-                            y: Math.random() * height,
-                            r: p.r,
-                            d: p.d,
-                            a: p.a
-                        };
+                        particles[i] = { x: width + 5, y: Math.random() * height, r: p.r, d: p.d, a: p.a };
                     }
                 }
             }
         }
         requestAnimationFrame(draw);
     }
-    
-    // 监听窗口大小变化
     window.addEventListener('resize', resize);
-    
-    // 启动
-    resize();
-    initParticles();
-    draw();
+    resize(); initParticles(); draw();
 });
 </script>
 
-
+<!-- =========================================================
+     2. 滚动显现动画 (Scroll Reveal)
+     ========================================================= -->
 <style>
-    /* 初始状态：向下偏移且透明 */
     .reveal {
-        opacity: 0;
-        transform: translateY(30px); /* 30px 的位移感 */
-        transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1.0), 
-                    transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1.0);
-        will-change: opacity, transform; /* 性能优化：告诉 GPU 提前准备 */
+        opacity: 0; transform: translateY(30px);
+        transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1.0), transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1.0);
+        will-change: opacity, transform;
     }
-
-    /* 激活状态：回到原位 */
-    .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    .reveal.active { opacity: 1; transform: translateY(0); }
 </style>
-
 <script>
-    // 页面加载完成后执行
     document.addEventListener("DOMContentLoaded", function() {
-        // 1. 给主要的文章列表和标题添加 .reveal 类
-        // 这里根据 PaperMod 的 DOM 结构选择元素
         const targets = document.querySelectorAll(".post-entry, .main-header, .post-header, .post-content");
-        
-        targets.forEach(el => {
-            el.classList.add("reveal");
-        });
-
-        // 2. 创建观察器
+        targets.forEach(el => el.classList.add("reveal"));
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("active");
-                    // 动画完成后停止观察，节省性能
                     observer.unobserve(entry.target);
                 }
             });
-        }, {
-            threshold: 0.1, // 元素出现 10% 时触发
-            rootMargin: "0px 0px -50px 0px" //稍微提前一点触发
-        });
-
-        // 3. 开始观察
-        targets.forEach(target => {
-            observer.observe(target);
-        });
+        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+        targets.forEach(target => observer.observe(target));
     });
 </script>
 
-
-<!-- 1. 引入 Medium Zoom -->
+<!-- =========================================================
+     3. 图片灯箱 (Medium Zoom) - 修复版
+     ========================================================= -->
 <script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
-
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // --- 核心修复：拦截并禁用图片外层的下载链接 ---
         const postImages = document.querySelectorAll('.post-content img');
-        
         postImages.forEach(img => {
-            // 检查图片是否被 <a> 标签包裹
             const parentAnchor = img.closest('a');
             if (parentAnchor) {
-                // 如果外层有链接，强制禁止其跳转和下载行为
-                parentAnchor.addEventListener('click', function(e) {
-                    e.preventDefault(); 
-                    return false;
-                });
-                // 移除可能存在的 download 属性
+                parentAnchor.addEventListener('click', function(e) { e.preventDefault(); return false; });
                 parentAnchor.removeAttribute('download');
-                // 修改样式，让鼠标看上去还是可以点击（放大）
                 parentAnchor.style.cursor = 'zoom-in';
             }
-
-            // --- 2. 应用 Medium Zoom 放大 ---
             mediumZoom(img, {
                 margin: 24,
-                background: getComputedStyle(document.body).getPropertyValue('--theme') === 'dark' 
-                            ? 'rgba(28, 28, 30, 0.9)' 
-                            : 'rgba(255, 255, 255, 0.85)',
+                background: document.body.classList.contains('dark') ? 'rgba(28, 28, 30, 0.9)' : 'rgba(255, 255, 255, 0.85)',
                 scrollOffset: 40
             });
         });
     });
 </script>
-
 <style>
-    /* 适配 MacOS 风格：放大时的毛玻璃感 */
-    .medium-zoom-overlay {
-        z-index: 9999;
-        backdrop-filter: blur(10px) saturate(180%);
-        -webkit-backdrop-filter: blur(10px) saturate(180%);
-    }
-    .medium-zoom-image--opened {
-        z-index: 10000;
-        border-radius: 12px;
-        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-    }
+    .medium-zoom-overlay { z-index: 9999; backdrop-filter: blur(10px); }
+    .medium-zoom-image--opened { z-index: 10000; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
 </style>
 
-
-<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const searchInput = document.getElementById('nav-search-input');
-    const searchDropdown = document.getElementById('nav-search-dropdown');
-    const searchBackdrop = document.getElementById('search-backdrop');
-    const quickLinks = document.getElementById('search-quick-links');
-    const resultsSection = document.getElementById('search-results-section');
-    const resultsList = document.getElementById('nav-search-results');
-    
-    let fuse;
-
-    // 初始化 Fuse.js
-    async function init() {
-        try {
-            const resp = await fetch('/index.json');
-            const data = await resp.json();
-            fuse = new Fuse(data, {
-                keys: ['title', 'content'],
-                threshold: 0.3
-            });
-        } catch (e) { console.log("搜索索引加载失败"); }
-    }
-    init();
-
-    // 状态控制：显示
-    searchInput.addEventListener('focus', () => {
-        searchBackdrop.style.display = 'block';
-        searchDropdown.style.display = 'block';
-        document.body.style.overflow = 'hidden'; // 禁止背景滚动
-    });
-
-    // 状态控制：点击遮罩关闭
-    searchBackdrop.addEventListener('click', () => {
-        searchBackdrop.style.display = 'none';
-        searchDropdown.style.display = 'none';
-        document.body.style.overflow = 'auto';
-        searchInput.value = '';
-    });
-
-    // 实时搜索逻辑
-    searchInput.addEventListener('input', (e) => {
-        const val = e.target.value;
-
-        if (val.length > 0) {
-            quickLinks.style.display = 'none';
-            resultsSection.style.display = 'block';
-            
-            const results = fuse.search(val).slice(0, 6);
-            renderResults(results);
-        } else {
-            quickLinks.style.display = 'block';
-            resultsSection.style.display = 'none';
-        }
-    });
-
-    function renderResults(results) {
-        if (results.length === 0) {
-            resultsList.innerHTML = '<li style="padding:15px; color:#888;">没有找到相关文章...</li>';
-            return;
-        }
-
-        resultsList.innerHTML = results.map(r => {
-            // 修复 Invalid Date：检查日期是否存在
-            let dateStr = "";
-            if (r.item.date) {
-                const dateObj = new Date(r.item.date);
-                dateStr = isNaN(dateObj) ? "" : dateObj.toLocaleDateString();
-            }
-
-            return `
-                <li>
-                    <a href="${r.item.permalink}">
-                        <div style="font-weight: 500;">${r.item.title}</div>
-                        <div style="font-size: 11px; opacity: 0.5; margin-top:4px;">${dateStr}</div>
-                    </a>
-                </li>
-            `;
-        }).join('');
-    }
-});
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const searchInput = document.getElementById('nav-search-input');
-    const backdrop = document.getElementById('search-backdrop');
-    const dropdown = document.getElementById('nav-search-dropdown');
-
-    // 显示搜索状态
-    searchInput.addEventListener('focus', () => {
-        document.body.classList.add('search-active'); // 给 body 加类名
-        backdrop.style.display = 'block';
-        dropdown.style.display = 'block';
-    });
-
-    // 隐藏搜索状态 (点击遮罩层)
-    backdrop.addEventListener('click', () => {
-        document.body.classList.remove('search-active'); // 移除类名，恢复清晰
-        backdrop.style.display = 'none';
-        dropdown.style.display = 'none';
-        searchInput.value = '';
-        searchInput.blur();
-    });
-
-    // 监听 ESC 键关闭
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            backdrop.click();
-        }
-    });
-});
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const searchInput = document.getElementById('nav-search-input');
-    const backdrop = document.getElementById('search-backdrop');
-
-    // 1. 当搜索框获得焦点时：禁止滑动
-    searchInput.addEventListener('focus', () => {
-        document.body.classList.add('search-active');
-    });
-
-    // 2. 当点击遮罩层（关闭搜索）时：恢复滑动
-    backdrop.addEventListener('click', () => {
-        document.body.classList.remove('search-active');
-        searchInput.blur(); // 让输入框失去焦点
-    });
-
-    // 3. 监听 ESC 键：按下 ESC 时也恢复滑动
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && document.body.classList.contains('search-active')) {
-            document.body.classList.remove('search-active');
-            // ... 隐藏搜索框的其他逻辑 ...
-        }
-    });
-});
-</script>

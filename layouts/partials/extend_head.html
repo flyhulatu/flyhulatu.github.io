@@ -1,2 +1,24 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<!-- 进度条 HTML -->
+<div class="progress-bar"></div>
+
+<!-- 进度条 JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const progressBar = document.querySelector('.progress-bar');
+
+    // 计算滚动进度
+    const calculateScrollProgress = () => {
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight - windowHeight;
+        const scrollTop = window.scrollY;
+        const progress = (scrollTop / documentHeight) * 100;
+        progressBar.style.width = `${progress}%`;
+    };
+
+    // 监听滚动事件
+    window.addEventListener('scroll', calculateScrollProgress);
+
+    // 初始计算
+    calculateScrollProgress();
+});
+</script>
