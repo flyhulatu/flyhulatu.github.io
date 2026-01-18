@@ -120,3 +120,36 @@ document.addEventListener('DOMContentLoaded', function() {
     .medium-zoom-image--opened { z-index: 10000; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
 </style>
 
+<!-- 引入 Swup 核心库 -->
+<script src="https://unpkg.com/swup@4"></script>
+
+<script>
+  // 初始化 Swup
+  const swup = new Swup({
+    containers: ["#swup"], // 告诉 swup 哪个区域是需要刷新的内容
+    animationSelector: '[class*="swup-transition-"]' // 定义动画选择器
+  });
+
+  // 【重要】解决不刷新导致 JS 失效的问题
+  // 因为不刷新页面，所以原来的 JS 脚本（如代码高亮、TOC）不会重新执行
+  swup.hooks.on('page:view', () => {
+    console.log("页面内容已更新");
+    
+    // 1. 如果使用了代码高亮，重新运行代码高亮
+    if (typeof hljs !== 'undefined') {
+        document.querySelectorAll('pre > code').forEach((el) => {
+            hljs.highlightElement(el);
+        });
+    }
+
+    // 2. 如果开启了目录 (TOC)，可能需要重新初始化某些逻辑
+    // 3. 重新加载你的图片灯箱 (Fancybox)
+    if (typeof Fancybox !== 'undefined') {
+        Fancybox.bind("[data-fancybox]", {});
+    }
+
+    // 4. 重置滚动条位置到顶部
+    window.scrollTo(0, 0);
+  });
+</script>
+
