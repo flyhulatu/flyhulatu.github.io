@@ -66,6 +66,11 @@ a:active, button:active { transform: scale(0.96) !important; }
     padding: 0 !important;
 }
 
+.main {
+    margin: 0 auto !important;
+    padding: 0 !important;
+}
+
 .header {
     padding: 0 5px !important;
     width: 100% !important;
@@ -85,8 +90,8 @@ a:active, button:active { transform: scale(0.96) !important; }
     align-items: center !important;
     justify-content: space-between !important;
     min-height: auto !important;
-    padding: 10px 0 !important;
-    margin: 5px 0 15px 0 !important;
+    padding: 0px 0 !important;
+    margin: 0px 0 0px 0 !important;
     border-bottom: 1px solid rgba(128, 128, 128, 0.1);
 }
 
@@ -98,7 +103,6 @@ a:active, button:active { transform: scale(0.96) !important; }
 }
 
 .post-entry:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
     background: var(--entry) !important;
 }
 
@@ -113,6 +117,10 @@ a:active, button:active { transform: scale(0.96) !important; }
 /* 分页 */
 .pagination a { border-radius: var(--radius) !important; }
 
+.pagination .next , .pagination .prev {
+    background: rgb(214, 214, 214);
+}
+
 /* ==========================================================================
    五、文章内容页美化 (Post Content)
    ========================================================================== */
@@ -124,7 +132,6 @@ a:active, button:active { transform: scale(0.96) !important; }
     border-radius: 8px;
     background-color: #282c34 !important;
     padding: 1em;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 /* 正文内链接样式 */

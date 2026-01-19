@@ -5,7 +5,7 @@ theme: "hugo-PaperMod"
 enableRobotsTXT: true          # 启用 robots.txt 供搜索引擎抓取
 
 pagination:
-  pagerSize: 10                # 每页显示的文章数量
+  pagerSize: 5                 # 每页显示的文章数量
 
 permalinks:
   posts: "/posts/:slug/"
