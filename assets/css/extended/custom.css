@@ -1,217 +1,279 @@
-/* 个人信息缩紧 */
-.first-entry {
-    align-items: center !important;
-    justify-content: space-between !important;
-    min-height: auto !important;
-    padding: 10px 0 10px 0 !important;
-    margin-bottom: 5px !important;
-    margin-top: 5px !important;
-    animation: softScale 0.8s var(--apple-ease) forwards;
+/* ==========================================================================
+   一、全局变量与核心重置 (Global Variables & Reset)
+   ========================================================================== */
+:root {
+    /* 核心布局 */
+    --main-width: 660px;           /* 你的标准内容宽度 */
+    --radius: 10px;                /* 全局统一圆角 */
+    --gap-tight: 3px;              /* 胶囊间距 */
+    --gap-mid: 10px;               /* 列表/卡片间距 */
+    
+    /* 字体与颜色 */
+    --font-family: "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    --apple-ease: cubic-bezier(0.4, 0, 0.2, 1);
+    --transition: 0.35s var(--apple-ease);
 }
 
-/* 文章列表系统 (Post List) */
-
-/* 桌面端列表样式 */
-@media screen and (min-width: 768px) {
-    .post-entry {
-        padding: 10px !important; 
-        gap: 10px; 
-        margin-bottom: 3px !important;
-        border-radius: 10px;
-    }
-
-    /* 文章信息对齐 */
-    .post-entry .entry-info {
-        justify-content: center; min-width: 0;
-    }
-    .entry-header h2 { font-size: 1.2rem !important; line-height: 1.2; margin-bottom: 5px; }
-    .entry-content { font-size: 0.90em; line-height: 1.0; margin-bottom: 5px !important; }
-    .entry-footer { margin-top: 0 !important; font-size: 0.80em; opacity: 0.7; }
+/* 强制开启悬浮权限：解除父级溢出限制 */
+html, body, .main, .inner, .wrapper {
+    overflow: visible !important;
+    overflow-x: visible !important;
 }
 
-/* 让导航栏的内容容器与主内容区域宽度一致 */
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--font-family);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.8;
+    letter-spacing: 0.01em;
+    color: #333;
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+.dark { color: #ddd; }
+
+/* Mac 风格简约滚动条 */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+    background: rgba(128, 128, 128, 0.2);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(128, 128, 128, 0.5); }
+
+/* ==========================================================================
+   二、全局交互反馈 (Global Interaction)
+   ========================================================================== */
+a, button, .post-entry, .social-icons a, #theme-toggle, .pagination a {
+    transition: transform var(--transition), background var(--transition), box-shadow var(--transition), color var(--transition) !important;
+}
+
+/* 点击回弹反馈 */
+a:active, button:active { transform: scale(0.96) !important; }
+
+/* 黑暗模式切换图标 */
+#theme-toggle svg { transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55); }
+#theme-toggle:active svg { transform: scale(0.8) rotate(45deg); }
+
+/* ==========================================================================
+   三、导航栏与公共头部 (Header & Navigation)
+   ========================================================================== */
 .nav {
-    /* PaperMod 主内容区域默认宽度变量是 --main-width */
     max-width: var(--main-width) !important;
-    
-    /* 水平居中 */
-    margin-left: auto !important;
-    margin-right: auto !important;
-    
-    /* 移除导航栏两侧的默认内边距，使其与文章卡片的边缘完全对齐 */
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
 }
 
-/* 确保顶栏背景容器依然是全屏宽，但内部对齐 */
 .header {
-    padding-left: 5px !important;
-    padding-right: 5px !important;
+    padding: 0 5px !important;
     width: 100% !important;
 }
 
-/* 如果你觉得文章列表太宽或太窄，可以在这里统一修改这个变量 */
-:root {
-    /* PaperMod 默认通常是 800px 或 1000px，你可以按需微调 */
-    --main-width: 660px; 
+/* 隐藏所有页面冗余大标题（归档/标签/分类） */
+.page-header h1 { display: none !important; }
+.page-header { margin: 0 !important; padding: 0 !important; border: none !important; }
+
+/* ==========================================================================
+   四、文章列表系统 (Post List & Profile)
+   ========================================================================== */
+
+/* 首页个人信息区缩紧 */
+.first-entry {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    min-height: auto !important;
+    padding: 10px 0 !important;
+    margin: 5px 0 15px 0 !important;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
 }
 
-/* 下一页 */
-.pagination .next {
-    border-radius: 10px;
-}
-.pagination .prev {
-    border-radius: 10px;
-}
-
-/* 引入字体 */
-:root {
-    /* 重新定义主题的字体变量 */
-    --font-family: "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+/* 文章卡片通用样式 */
+.post-entry {
+    padding: 10px !important; 
+    margin-bottom: var(--gap-tight) !important;
+    border-radius: var(--radius) !important;
 }
 
-body {
-    /* 优化文字渲染 */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    
-    /* 提升阅读体验的黄金参数 */
-    line-height: 1.8; /* 增加行高，减少压迫感 */
-    letter-spacing: 0.01em; /* 微调字间距 */
-    color: #333; /* 稍微减淡纯黑，减少视觉疲劳 */
+.post-entry:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+    background: var(--entry) !important;
 }
 
-/* 针对夜间模式的颜色微调 */
-.dark {
-    color: #ddd;
+/* 卡片内文字间距 */
+.entry-header h2 { font-size: 1.2rem !important; line-height: 1.2; margin-bottom: 5px; }
+.entry-content { font-size: 0.9em; line-height: 1.4; margin-bottom: 5px !important; opacity: 0.8; }
+.entry-footer { font-size: 0.8em; opacity: 0.7; }
+
+/* 社交图标 */
+.social-icons a:hover { transform: scale(1.2); color: var(--primary) !important; }
+
+/* 分页 */
+.pagination a { border-radius: var(--radius) !important; }
+
+/* ==========================================================================
+   五、文章内容页美化 (Post Content)
+   ========================================================================== */
+.post-content, .content { line-height: 1.8; font-size: 1.05rem; }
+.post-content p { margin-bottom: 1.5em; text-align: justify; }
+
+/* 代码块 */
+.post-content pre {
+    border-radius: 8px;
+    background-color: #282c34 !important;
+    padding: 1em;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* 灯箱弹出时的背景模糊效果 */
-.medium-zoom-overlay {
-    z-index: 100;
-    backdrop-filter: blur(10px); /* 核心：苹果标志性的毛玻璃效果 */
-    -webkit-backdrop-filter: blur(10px);
+/* 正文内链接样式 */
+.post-content a {
+    text-decoration: none;
+    color: var(--primary);
+    background: linear-gradient(to right, #3b82f6, #3b82f6) no-repeat left bottom;
+    background-size: 0% 2px;
+    transition: background-size 0.3s ease;
+}
+.post-content a:hover { background-size: 100% 2px; }
+
+/* 目录 (TOC) 美化 */
+.toc summary { list-style: none; outline: none; }
+.toc summary::-webkit-details-marker { display: none; }
+.toc summary::before {
+    content: "";
+    display: inline-block;
+    width: 12px; height: 12px;
+    margin-right: 12px;
+    border: 2.5px solid var(--primary);
+    border-radius: 50%;
+    vertical-align: middle;
 }
 
-/* 放大后的图片层级 */
-.medium-zoom-image--opened {
-    z-index: 101;
-    border-radius: 8px !important; /* 放大后保留微小圆角 */
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* 增加悬浮阴影 */
+/* 灯箱效果 (Medium Zoom) */
+.medium-zoom-overlay { z-index: 100; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.medium-zoom-image--opened { z-index: 101; border-radius: 8px !important; box-shadow: 0 25px 50px rgba(0,0,0,0.2); }
+.post-content img { cursor: zoom-in; }
+
+/* ==========================================================================
+   六、胶囊组件规范 (Taxonomy Capsules - 合并优化)
+   ========================================================================== */
+/* 统一：标签页与归档侧边栏分类的通用结构 */
+.terms-tags, .side-categories-horizontal {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: var(--gap-tight) !important; /* 统一 3px 间距 */
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    list-style: none !important;
 }
 
-/* 鼠标悬停在可缩放图片上时显示放大手势 */
-.post-content img {
-    cursor: zoom-in;
-    transition: transform 0.3s ease;
+.terms-tags li a, .side-categories-horizontal li a {
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 5px 12px !important;
+    background: var(--code-bg) !important;
+    color: var(--primary) !important;
+    border-radius: var(--radius) !important; /* 统一 10px 圆角 */
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
 }
 
-.post-content img:hover {
-    opacity: 0.9; /* 悬停时轻微透明，增强反馈 */
+/* 数字对齐逻辑合并 */
+.terms-tags li a sup, .side-categories-horizontal li a sup {
+    position: static !important;
+    vertical-align: middle !important;
+    margin-left: 3px !important;
+    font-size: 12px !important;
+    color: var(--secondary) !important;
+    top: 0 !important;
+    font-weight: 400 !important;
 }
-/* 确保点击图片不会触发页面跳转（如果图片本身没有手动加链接） */
-.post-content a img {
-    pointer-events: none;
-}
-.post-content a.medium-zoom-image--opened img, 
-.post-content img.medium-zoom-image {
-    pointer-events: auto;
+
+.dark .terms-tags li a:hover, .dark .side-categories-horizontal li a:hover {
+    background: #3e3e40 !important;
 }
 
 /* ==========================================================================
-   XVI. Twikoo 评论系统美化 (Twikoo Styling)
-   功能：去灰色背景、圆角化、苹果色调适配
+   七、归档页面布局 (Archives Dual-Column Layout)
    ========================================================================== */
+.type-archives .main { max-width: 1100px !important; }
 
-/* 1. 评论区整体间距 */
-#tcomment {
-    margin-top: 40px;
-    padding: 0 10px;
+@media (min-width: 900px) {
+    .custom-archive-wrapper {
+        display: flex !important;
+        align-items: stretch !important; /* 维持 stretch 以保证悬浮跑道 */
+        gap: 3px !important;
+    }
+    .archives-left-side {
+        width: var(--main-width) !important;
+        flex: 0 0 var(--main-width) !important;
+    }
+    .archives-right-sidebar {
+        flex: 1 !important;
+        position: relative !important;
+        width: 100% !important;
+
+    }
 }
 
-/* 2. 输入框容器美化 (昵称、邮箱、网址) */
-.twikoo .tk-input {
+/* 侧边栏悬浮盒子 */
+.sidebar-sticky-box {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 180px !important; /* 根据导航栏高度调整 */
+    z-index: 100;
+    height: auto !important;
+    text-align: center !important;
+}
+
+/* 侧边栏标题：对齐左侧 2026 */
+.sidebar-header-style {
+    margin-bottom: 20px !important;
+    font-size: 1.2rem !important;
+    font-weight: 700;
+    line-height: 1.2 !important;
+    color: var(--primary);
+}
+
+/* ==========================================================================
+   八、评论系统美化 (Twikoo Styling)
+   ========================================================================== */
+#tcomment { margin-top: 40px; }
+
+/* 统一输入框与评论块圆角 */
+.twikoo .tk-input, .twikoo .el-textarea__inner, .twikoo .tk-comment, .twikoo .tk-send, .twikoo .el-button {
+    border-radius: var(--radius) !important;
+    background: transparent !important;
+}
+
+.twikoo .tk-input, .twikoo .el-textarea__inner {
     border: 1px solid rgba(128, 128, 128, 0.2) !important;
-    background: transparent !important;
-    border-radius: 10px !important;
 }
 
-.twikoo .tk-input:focus {
-    border-color: var(--primary) !important;
-    background: rgba(var(--primary), 0.02) !important;
-}
+.twikoo .tk-send { background: var(--primary) !important; color: #fff !important; }
 
-/* 移除输入框前面的灰色标签背景，改为极简文字 */
-.twikoo .tk-tag-label {
-    background: transparent !important;
-    color: inherit !important;
-    font-weight: 600 !important;
-    opacity: 0.7;
-    border-right: 1px solid rgba(128, 128, 128, 0.1) !important;
-}
-
-/* 3. 评论内容文本框 */
-.twikoo .el-textarea__inner {
-    background: transparent !important;
-    border: 1px solid rgba(128, 128, 128, 0.2) !important;
-    border-radius: 10px !important;
-    min-height: 120px !important;
-    padding: 12px !important;
-    font-size: 0.95rem !important;
-}
-
-.twikoo .el-textarea__inner:focus {
-    border-color: var(--primary) !important;
-}
-
-/* 4. 按钮美化 (发送、预览) */
-/* 发送按钮 */
-.twikoo .tk-send {
-    background: var(--primary) !important;
-    border-radius: 10px !important; /* 胶囊样式 */
-    padding: 8px 25px !important;
-    font-weight: 600 !important;
-}
-
-.twikoo .tk-send:hover {
-    box-shadow: 0 5px 15px rgba(var(--primary), 0.4) !important;
-}
-
-/* 预览按钮 */
-.twikoo .el-button:not(.tk-send) {
-    border-radius: 10px !important;
-    background: transparent !important;
-    border: 1px solid rgba(128, 128, 128, 0.3) !important;
-}
-
-.twikoo .el-button:not(.tk-send):hover {
-    color: var(--primary) !important;
-    border-color: var(--primary) !important;
-}
-
-/* 6. 评论列表条目美化 */
 .twikoo .tk-comment {
     margin-top: 10px !important;
-    padding: 20px !important;
-    border-radius: 10px !important;
-    border: 1px solid rgba(255, 255, 255, 0.03) !important;
+    padding: 15px !important;
+    border: 1px solid rgba(128, 128, 128, 0.1) !important;
 }
 
-/* 8. 底部微调：隐藏不必要的版权信息，仅保持低调 */
+/* 暗黑模式适配 */
+.dark .twikoo .tk-comment { background: rgba(255, 255, 255, 0.03) !important; }
+.dark .twikoo .tk-input, .dark .twikoo .el-textarea__inner { background: rgba(0,0,0,0.1) !important; }
+/* 隐藏版权信息 (极致纯净) */
 .twikoo .tk-footer {
-    opacity: 0.3;
-    font-size: 0.5rem !important;
-    margin-top: 5px !important;
+    display: none !important;
 }
-
-/* 9. 响应式适配 */
+/* ==========================================================================
+   九、响应式补充 (Mobile Adaptation)
+   ========================================================================== */
 @media screen and (max-width: 768px) {
-    .twikoo .tk-meta-input {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-    .twikoo .tk-input {
-        width: 100% !important;
-    }
+    .custom-archive-wrapper { flex-direction: column-reverse !important; }
+    .archives-right-sidebar { margin-bottom: 40px; }
+    .entry-header h2 { font-size: 1.1rem !important; }
 }

@@ -15,6 +15,10 @@ disableShare: true
 disableHLJS: true
 ---
 
+<style>
+    .post-header { display: none; }
+</style>
+
 ### 👤 我是谁
 
 泥嚎！欢迎来到、我的世界。

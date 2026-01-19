@@ -7,7 +7,7 @@ draft: false
 summary: "用视频分享生活，是一个不那么轻松的过程。" 
 
 # 分类与标签
-categories: [记录] 
+categories: [分享] 
 tags: [Vlog] 
 
 # 作者 (如果你想覆盖配置文件里的默认作者)

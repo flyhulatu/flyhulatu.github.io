@@ -10,7 +10,7 @@
 <meta name="description" content="写作,使我精确.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/404.html">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.9be2994b900e8144594f97a2fd72642da1179e69c58ee080efcccc1edebc48f0.css" integrity="sha256-m&#43;KZS5AOgURZT5ei/XJkLaEXnmnFjuCA78zMHt68SPA=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.fca563de7ef15be334eeaf2ffdebb91712eb42b7a73d1c85410ac2934454708d.css" integrity="sha256-/KVj3n7xW&#43;M07q8v/eu5FxLrQrenPRyFQQrCk0RUcI0=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.png">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon.png">
@@ -121,16 +121,6 @@
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/posts/" title="文">
-                    <span>文</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/categories/" title="类">
-                    <span>类</span>
-                </a>
-            </li>
-            <li>
                 <a href="http://localhost:1313/tags/" title="签">
                     <span>签</span>
                 </a>
@@ -166,115 +156,6 @@
         <path d="M12 6H0l6-6z" />
     </svg>
 </a>
-<canvas id="snow-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;"></canvas>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const canvas = document.getElementById('snow-canvas');
-    const ctx = canvas.getContext('2d');
-    
-    let width, height;
-    let particles = [];
-    
-    
-    const particleCount = 60; 
-    const speed = 0.5;        
-    const size = 2.5;         
-    
-    
-    function resize() {
-        width = canvas.width = window.innerWidth;
-        height = canvas.height = window.innerHeight;
-    }
-    
-    
-    function initParticles() {
-        particles = [];
-        for (let i = 0; i < particleCount; i++) {
-            particles.push({
-                x: Math.random() * width,
-                y: Math.random() * height,
-                r: Math.random() * size, 
-                d: Math.random() * particleCount, 
-                a: Math.random() * 0.5 + 0.1 
-            });
-        }
-    }
-    
-    
-    function draw() {
-        ctx.clearRect(0, 0, width, height);
-        
-        
-        
-        const isDark = document.body.className.includes('dark');
-        ctx.fillStyle = isDark ? 'rgba(255, 255, 255, 0.8)' : 'rgba(100, 100, 100, 0.5)';
-        
-        ctx.beginPath();
-        for (let i = 0; i < particleCount; i++) {
-            const p = particles[i];
-            ctx.moveTo(p.x, p.y);
-            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, true);
-        }
-        ctx.fill();
-        update();
-    }
-    
-    
-    function update() {
-        for (let i = 0; i < particleCount; i++) {
-            const p = particles[i];
-            
-            
-            p.y += Math.cos(p.d) + 1 + p.r / 2 * speed;
-            p.x += Math.sin(0) * 2;
-            
-            
-            if (p.x > width + 5 || p.x < -5 || p.y > height) {
-                if (i % 3 > 0) { 
-                    particles[i] = {
-                        x: Math.random() * width,
-                        y: -10,
-                        r: p.r,
-                        d: p.d,
-                        a: p.a
-                    };
-                } else {
-                    
-                    if (Math.sin(0) > 0) {
-                        particles[i] = {
-                            x: -5,
-                            y: Math.random() * height,
-                            r: p.r,
-                            d: p.d,
-                            a: p.a
-                        };
-                    } else {
-                        particles[i] = {
-                            x: width + 5,
-                            y: Math.random() * height,
-                            r: p.r,
-                            d: p.d,
-                            a: p.a
-                        };
-                    }
-                }
-            }
-        }
-        requestAnimationFrame(draw);
-    }
-    
-    
-    window.addEventListener('resize', resize);
-    
-    
-    resize();
-    initParticles();
-    draw();
-});
-</script>
-
-
 <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
 
 <script>
@@ -297,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 </script>
 
-
+<script src="https://instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipSQRXUXn4as58S/guKPS6q2DpuEtql7ELsf8PCCm50qB1R6S4o3n654"></script>
 
 
 <script>

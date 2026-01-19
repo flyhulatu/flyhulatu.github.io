@@ -10,6 +10,11 @@ pagination:
 permalinks:
   posts: "/posts/:slug/"
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
 outputFormats:
   RSS:
     baseName: "rss"
@@ -95,14 +100,14 @@ menu:
       name: 我
       url: /about/
       weight: 1
-    - identifier: posts
-      name: 文
-      url: /posts/
-      weight: 10
-    - identifier: categories
-      name: 类
-      url: /categories/
-      weight: 20
+    # - identifier: posts
+    #   name: 文
+    #   url: /posts/
+    #   weight: 10
+    # - identifier: categories
+    #   name: 类
+    #   url: /categories/
+    #   weight: 20
     - identifier: tags
       name: 签
       url: /tags/

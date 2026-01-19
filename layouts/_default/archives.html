@@ -1,0 +1,50 @@
+{{- define "main" -}}
+
+<header class="page-header">
+    <h1>{{ .Title }}</h1>
+</header>
+
+<div class="custom-archive-wrapper">
+    <!-- 左侧：归档列表 -->
+    <div class="archives-left-side">
+        {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+        {{- range $pages.GroupByDate "2006" }}
+        <div class="archive-year">
+            <h2 class="archive-year-header">{{ .Key }}<sup class="archive-count">&nbsp;&nbsp;{{ len .Pages }}</sup></h2>
+            {{- range .Pages.GroupByDate "January" }}
+            <div class="archive-month">
+                <h3 class="archive-month-header">{{ .Key }}</h3>
+                <div class="archive-posts">
+                    {{- range .Pages }}
+                    <div class="archive-entry">
+                        <h3 class="archive-entry-title">{{ .Title }}</h3>
+                        <div class="archive-meta">{{ .Date.Format "2006-01-02" }}</div>
+                        <a class="entry-link" href="{{ .Permalink }}"></a>
+                    </div>
+                    {{- end }}
+                </div>
+            </div>
+            {{- end }}
+        </div>
+        {{- end }}
+    </div>
+
+    <!-- 右侧：分类侧边栏 -->
+    <aside class="archives-right-sidebar">
+        <div class="sidebar-sticky-box">
+            <!-- 标题：样式将完全匹配左侧的 2026 -->
+            <h2 class="sidebar-header-style">分类</h2>
+            <ul class="side-categories-horizontal">
+                {{- range $name, $taxonomy := .Site.Taxonomies.categories -}}
+                <li>
+                    <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}/">
+                        {{ $name }} <sup>{{ $taxonomy.Count }}</sup>
+                    </a>
+                </li>
+                {{- end -}}
+            </ul>
+        </div>
+    </aside>
+</div>
+
+{{- end -}}
