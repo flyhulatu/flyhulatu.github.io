@@ -166,27 +166,40 @@ a:active, button:active { transform: scale(0.96) !important; }
    六、胶囊组件规范 (Taxonomy Capsules - 合并优化)
    ========================================================================== */
 /* 统一：标签页与归档侧边栏分类的通用结构 */
+.side-categories-horizontal {
+    flex-direction: row !important;
+    list-style: none !important;
+}
+
 .terms-tags, .side-categories-horizontal {
     display: flex !important;
-    flex-direction: row !important;
     flex-wrap: wrap !important;
     gap: var(--gap-tight) !important; /* 统一 3px 间距 */
     list-style: none !important;
     padding: 0 !important;
-    margin: 0 !important;
-    list-style: none !important;
+    margin: 20px 0 !important;
+}
+.terms-tags li a {
+    text-decoration: none !important;
+    border: 1px solid transparent !important;
+    justify-content: space-between !important;
+}
+.terms-tags li {
+    flex-grow: 1 !important;
+    display: flex !important;
+}
+.side-categories-horizontal li a {
+    white-space: nowrap !important;
 }
 
 .terms-tags li a, .side-categories-horizontal li a {
     display: inline-flex !important;
     align-items: center !important;
     padding: 5px 12px !important;
-    background: var(--code-bg) !important;
     color: var(--primary) !important;
     border-radius: var(--radius) !important; /* 统一 10px 圆角 */
     font-size: 16px !important;
     font-weight: 500 !important;
-    white-space: nowrap !important;
 }
 
 /* 数字对齐逻辑合并 */

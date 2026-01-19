@@ -44,7 +44,7 @@ params:
   description: "写作,使我精确."
   keywords: [Blog, Vlog, PaperMod, Mac, Hugo, Write]
   label:
-    text: "胡拉图"
+    text: "图图"
     icon: "/images/logo.png" # 你的图标路径
     iconHeight: 35        # 调整高度
 
