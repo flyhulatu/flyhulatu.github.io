@@ -8,7 +8,7 @@ pagination:
   pagerSize: 5                 # 每页显示的文章数量
 
 permalinks:
-  posts: "/posts/:slug/"
+  posts: "/posts/:year/:month/:day/:slug/"
 
 markup:
   goldmark:
