@@ -4,7 +4,7 @@ date: 2026-01-10T22:07:55+08:00
 lastmod: 2026-01-10T22:07:55+08:00
 draft: false
 # 描述：用于 SEO 和列表页显示的摘要，不填默认截取文章前几行
-description: "用视频分享生活，是一个不那么轻松的过程。" 
+summary: "用视频分享生活，是一个不那么轻松的过程。" 
 
 # 分类与标签
 categories: [记录] 
@@ -21,12 +21,7 @@ showToc: true
 # 是否开启评论 (如果你后续接了 Twikoo)
 comments: true
 
-# 封面图设置 (PaperMod 核心功能)
-cover:
-    image: "images/vlog.jpg" # 图片链接，本地图片建议放 static/images 下，填 images/xxx.png
-    alt: ""
-    caption: ""
-    relative: false # 是否使用相对路径
+
 
 # 这是一个非常重要的字段，特别是对中文标题
 slug: "vlog-share-1" 

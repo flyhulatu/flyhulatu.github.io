@@ -1,610 +1,121 @@
-/* ==========================================================================
-   I. 全局核心变量与基础重置 (Core Settings & Reset)
-   ========================================================================== */
-:root {
-    --apple-ease: cubic-bezier(0.25, 0.1, 0.25, 1.0); /* 苹果风格弹性曲线 */
-    --yellow-glow: rgba(255, 215, 0, 0.6);            /* 呼吸灯高亮色 */
-    --primary: 0, 122, 255;                           /* 品牌主色 */
-    --gap: 20px;
-}
-
-/* 深色模式变量适配 */
-:root.dark {
-    --theme: 30, 30, 30;     
-    --entry: 40, 40, 40;     
-    --primary: 10, 132, 255; 
-}
-
-html {
-    scroll-behavior: smooth;               /* 平滑滚动 */
-    max-width: 100%;                       /* 防止页面超出视口 */
-    overflow-x: hidden;                    /* 解决补丁：禁止横向溢出 */
-    overflow-y: auto;                      /* 解决补丁：显式声明 y 轴自动 */
-    height: auto !important;               /* 解决补丁：允许高度随内容伸缩 */
-    scrollbar-gutter: stable;              /* 防止滚动条出现导致页面跳动 */
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
-    letter-spacing: 0.02em;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    cursor: url(https://cdn.jsdelivr.net/gh/fz6m/Private-web@1.5.0/image/cursor/normal.cur), auto; /* 自定义鼠标指针 */
-    padding-right: 0px;                    /* 防止滚动条影响布局 */
-    transition: padding-right 0.1s;         /* 平滑过渡效果 */
-    overflow: visible !important;          /* 解决补丁：确保 body 不限制内容高度 */
-}
-
-/* 性能修复：禁用不稳定的视图过渡 API */
-@view-transition { navigation: none !important; }
-
-/* 选中文字颜色 */
-::selection {
-    background: rgba(var(--primary), 0.3);
-    color: inherit;
-}
-
-/* 全局滚动条样式 */
-::-webkit-scrollbar { width: 6px; height: 6px; background: transparent; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(136, 136, 136, 0.3); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(136, 136, 136, 0.6); }
-
-/* 链接与按钮点击反馈 */
-a:hover { cursor: url(https://cdn.jsdelivr.net/gh/fz6m/Private-web@1.5.0/image/cursor/link.cur), auto; }
-a:active, button:active, .button:active {
-    transform: scale(0.96);
-    transition: transform 0.1s ease-out;
-}
-
-
-/* ==========================================================================
-   II. 动画库 (Animation Library)
-   ========================================================================== */
-
-/* 上浮淡入 (用于文章列表) */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translate3d(0, 20px, 0); }
-    to { opacity: 1; transform: translate3d(0, 0, 0); }
-}
-
-/* 柔和缩放 (用于首页信息) */
-@keyframes softScale {
-    from { opacity: 0; transform: scale(0.96); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-/* 页面淡出 (iOS 风格) */
-@keyframes ios-fade-out {
-    from { opacity: 1; transform: scale(1); }
-    to { opacity: 0; transform: scale(1.01); filter: blur(2px); }
-}
-
-/* 头像旋转与呼吸灯动画 */
-@keyframes avatar-rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-@keyframes avatar-breathe-yellow {
-    0%, 100% { box-shadow: 0 0 15px rgba(255, 215, 0, 0.2); border-color: rgba(255, 215, 0, 0.3); }
-    50% { box-shadow: 0 0 30px var(--yellow-glow), 0 0 15px rgba(255, 255, 255, 0.4); border-color: rgba(255, 215, 0, 0.8); }
-}
-
-
-/* ==========================================================================
-   III. 导航系统 (Navigation)
-   ========================================================================== */
-.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky; 
-    top: 0;
-    z-index: 100;
-    padding-right: 10px;
-    border: none !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    box-shadow: none !important;
-}
-
-.logo { flex: 1; display: flex; justify-content: flex-start; }
-#menu { flex: 1; display: flex; justify-content: flex-end; overflow: visible !important; }
-
-
-/* ==========================================================================
-   IV. 首页信息区 (Home Info)
-   ========================================================================== */
+/* 个人信息缩紧 */
 .first-entry {
-    display: flex !important;
-    flex-direction: row !important; /* 横向排列 */
     align-items: center !important;
     justify-content: space-between !important;
     min-height: auto !important;
-    padding: 30px 0 30px 0 !important;
-    margin-bottom: 30px !important;
+    padding: 10px 0 10px 0 !important;
+    margin-bottom: 5px !important;
+    margin-top: 5px !important;
     animation: softScale 0.8s var(--apple-ease) forwards;
 }
 
-.home-info-content {
-    flex: 1; display: flex; flex-direction: column; 
-    align-items: flex-start !important; text-align: left;
-}
-
-/* 头像容器与动画 */
-.avatar-container { flex-shrink: 0; margin-left: 40px; }
-.avatar-container img {
-    width: 150px; height: 150px; border-radius: 50%; object-fit: cover; padding: 3px;
-    border: 2px solid rgba(255, 215, 0, 0.3);
-    transition: transform 0.5s var(--apple-ease);
-    animation: avatar-rotate 20s linear infinite, avatar-breathe-yellow 4s ease-in-out infinite !important;
-}
-.avatar-container:hover img { transform: scale(1.1); animation-play-state: paused, running; }
-
-/* 社交图标动画与颜色 */
-.social-icons a { transition: transform 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-.social-icons a:hover { transform: scale(1.2) translateY(-3px); background: transparent !important; }
-
-/* 品牌色图标滤镜 */
-.social-icons a[href*="github"]:hover svg { color: #000000 !important; filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.4)); }
-.social-icons a[href*="wechat"]:hover svg { color: #07c160 !important; filter: drop-shadow(0 0 8px rgba(7, 193, 96, 0.4)); }
-.social-icons a[href*="zhihu"]:hover svg { color: #0084ff !important; filter: drop-shadow(0 0 8px rgba(0, 132, 255, 0.4)); }
-.social-icons a[href*="bilibili"]:hover svg { color: #fb7299 !important; filter: drop-shadow(0 0 8px rgba(251, 114, 153, 0.4)); }
-.social-icons a[href*="xiaohongshu"]:hover svg { color: #ff2442 !important; filter: drop-shadow(0 0 8px rgba(255, 36, 66, 0.4)); }
-.social-icons a[href*="x.com"]:hover svg { color: #000000 !important; filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.4)); }
-.social-icons a[href*="index.xml"]:hover svg { color: #ff9900 !important; filter: drop-shadow(0 0 8px rgba(255, 153, 0, 0.6)); }
-
-
-/* ==========================================================================
-   V. 文章列表系统 (Post List)
-   ========================================================================== */
+/* 文章列表系统 (Post List) */
 
 /* 桌面端列表样式 */
 @media screen and (min-width: 768px) {
     .post-entry {
-        display: flex; flex-direction: row; align-items: center;
-        padding: 10px !important; gap: 20px; margin-bottom: 5px !important;
-        background: transparent;
-        border-radius: 12px;
-        transition: transform 0.3s var(--apple-ease), box-shadow 0.3s var(--apple-ease), background 0.3s;
-        opacity: 0; 
-        animation: fadeInUp 0.8s var(--apple-ease) forwards;
+        padding: 10px !important; 
+        gap: 10px; 
+        margin-bottom: 3px !important;
+        border-radius: 10px;
     }
-
-    /* 错峰延迟加载动画 */
-    .post-entry:nth-child(1) { animation-delay: 0.05s; }
-    .post-entry:nth-child(2) { animation-delay: 0.1s; }
-    .post-entry:nth-child(3) { animation-delay: 0.15s; }
-    .post-entry:nth-child(4) { animation-delay: 0.2s; }
-    .post-entry:nth-child(5) { animation-delay: 0.25s; }
-    .post-entry:nth-child(n+6) { animation-delay: 0.3s; }
-
-    /* 列表悬浮效果 */
-    .post-entry:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-        background: rgba(var(--entry), 0.4);
-    }
-    :root.dark .post-entry:hover {
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        background: rgba(255, 255, 255, 0.03);
-    }
-
-    /* 封面图处理 */
-    .post-entry .entry-cover {
-        flex-shrink: 0; width: 220px; height: 140px; margin-bottom: 0;
-        overflow: hidden; border-radius: 12px;
-    }
-    .post-entry .entry-cover img {
-        width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;
-    }
-    .post-entry:hover .entry-cover img { transform: scale(1.05); }
 
     /* 文章信息对齐 */
     .post-entry .entry-info {
-        flex: 1; display: flex; flex-direction: column; justify-content: center; min-width: 0;
+        justify-content: center; min-width: 0;
     }
-    .entry-header h2 { font-size: 1.3rem !important; line-height: 1.3; margin-bottom: 8px; }
-    .entry-content { font-size: 0.90em; line-height: 1.6; margin-bottom: 8px !important; }
-    .entry-footer { margin-top: 0 !important; font-size: 0.85em; opacity: 0.7; }
+    .entry-header h2 { font-size: 1.2rem !important; line-height: 1.2; margin-bottom: 5px; }
+    .entry-content { font-size: 0.90em; line-height: 1.0; margin-bottom: 5px !important; }
+    .entry-footer { margin-top: 0 !important; font-size: 0.80em; opacity: 0.7; }
 }
 
-
-/* ==========================================================================
-   VI. 文章内容美化与性能优化 (Content & Performance)
-   ========================================================================== */
-main.main { padding-top: 20px !important; }
-.breadcrumbs { display: none !important; }
-
-/* 解决补丁：强制显示长文章容器，防止被动画脚本误杀 */
-.post-single, .post-content {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-    will-change: auto !important; /* 性能补丁：移除多余显存占用 */
+/* 让导航栏的内容容器与主内容区域宽度一致 */
+.nav {
+    /* PaperMod 主内容区域默认宽度变量是 --main-width */
+    max-width: var(--main-width) !important;
+    
+    /* 水平居中 */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    
+    /* 移除导航栏两侧的默认内边距，使其与文章卡片的边缘完全对齐 */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
-.post-content { line-height: 1.8; font-size: 1.05rem; }
-.post-content p { text-align: justify; margin-bottom: 1.5em; }
+/* 确保顶栏背景容器依然是全屏宽，但内部对齐 */
+.header {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    width: 100% !important;
+}
 
-/* 解决补丁：优化图片加载，防止长文章图片过多导致崩溃 */
+/* 如果你觉得文章列表太宽或太窄，可以在这里统一修改这个变量 */
+:root {
+    /* PaperMod 默认通常是 800px 或 1000px，你可以按需微调 */
+    --main-width: 660px; 
+}
+
+/* 下一页 */
+.pagination .next {
+    border-radius: 10px;
+}
+.pagination .prev {
+    border-radius: 10px;
+}
+
+/* 引入字体 */
+:root {
+    /* 重新定义主题的字体变量 */
+    --font-family: "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+body {
+    /* 优化文字渲染 */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    /* 提升阅读体验的黄金参数 */
+    line-height: 1.8; /* 增加行高，减少压迫感 */
+    letter-spacing: 0.01em; /* 微调字间距 */
+    color: #333; /* 稍微减淡纯黑，减少视觉疲劳 */
+}
+
+/* 针对夜间模式的颜色微调 */
+.dark {
+    color: #ddd;
+}
+
+/* 灯箱弹出时的背景模糊效果 */
+.medium-zoom-overlay {
+    z-index: 100;
+    backdrop-filter: blur(10px); /* 核心：苹果标志性的毛玻璃效果 */
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* 放大后的图片层级 */
+.medium-zoom-image--opened {
+    z-index: 101;
+    border-radius: 8px !important; /* 放大后保留微小圆角 */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* 增加悬浮阴影 */
+}
+
+/* 鼠标悬停在可缩放图片上时显示放大手势 */
 .post-content img {
-    content-visibility: auto; /* 仅在接近视口时渲染 */
-    max-width: 100%;
-    height: auto;
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
 }
 
-/* Mac Terminal 风格代码块 */
-.post-content pre {
-    border-radius: 12px;
-    background-color: #1e1e1e !important;
-    border: 1px solid rgba(255,255,255,0.1);
-    position: relative; padding-top: 40px;
+.post-content img:hover {
+    opacity: 0.9; /* 悬停时轻微透明，增强反馈 */
 }
-.post-content pre::before {
-    content: ""; position: absolute; top: 15px; left: 15px;
-    width: 12px; height: 12px; border-radius: 50%;
-    background: #fc625d;
-    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+/* 确保点击图片不会触发页面跳转（如果图片本身没有手动加链接） */
+.post-content a img {
+    pointer-events: none;
 }
-.copy-code { top: 10px; right: 10px; border-radius: 6px; }
-
-/* 正文链接流体高光效果 */
-.post-content a {
-    position: relative; text-decoration: none; 
-    color: rgba(var(--primary), 1);
-    background: linear-gradient(to right, rgba(var(--primary), 0.2), rgba(var(--primary), 0.2)) no-repeat;
-    background-size: 0% 100%; background-position: 0% 100%;
-    transition: background-size 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.3s;
-    border-bottom: 1px solid rgba(var(--primary), 0.3); padding: 0 2px; border-radius: 4px;
-}
-.post-content a:hover {
-    color: rgba(var(--primary), 1); 
-    background-size: 100% 100%; border-bottom-color: transparent;
-}
-
-/* 标签与翻页按钮交互 */
-.post-tags a, .pagination a { transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important; }
-.post-tags a:hover, .pagination a:hover {
-    transform: translateY(-3px) scale(1.05);
-    background: rgba(var(--primary), 1) !important; color: white !important;
-    box-shadow: 0 5px 15px rgba(var(--primary), 0.3);
-}
-
-
-/* ==========================================================================
-   VII. 目录、归档与呼吸灯图标 (TOC & Archives)
-   ========================================================================== */
-
-/* 1. 呼吸灯圆环图标 (TOC与归档共用样式) */
-.toc summary::-webkit-details-marker, .toc summary svg,
-.archive-year summary::-webkit-details-marker, .archive-year summary svg,
-.archive-month summary::-webkit-details-marker, .archive-month summary svg { 
-    display: none !important; 
-}
-
-.toc summary, .archive-year summary, .archive-month summary {
-    list-style: none !important; outline: none; cursor: pointer;
-    display: flex !important; align-items: center !important; position: relative;
-}
-
-.toc summary::before, .archive-year summary::before, .archive-month summary::before {
-    content: ""; display: inline-block; width: 14px; height: 14px; margin-right: 12px;
-    border: 2.5px solid rgba(var(--primary), 1); border-radius: 50%; background: transparent; flex-shrink: 0;
-    transition: all 0.3s var(--apple-ease);
-}
-
-details[open] > summary::before {
-    transform: scale(0.8); border-color: #f8f2c2; background-color: #f8f2c2;
-    box-shadow: 0 0 8px rgba(255, 242, 0, 0.8);
-}
-
-/* ==========================================================================
-   XVII. 深度优化版 TOC (更小、更紧凑、更多容量)
-   ========================================================================== */
-
-@media screen and (min-width: 1280px) {
-    .toc {
-        position: fixed;
-        top: 170px; /* 距离顶部位置 */
-        
-        /* 定位逻辑：
-           50% 是屏幕中轴
-           - 400px 是文章主体宽度的一半
-           - 220px 是目录自身的宽度
-           - 10px 是目录与文章之间的极窄间距 (你可以根据需要调成 5px)
-        */
-        left: calc(50% - 400px - 280px - 10px); 
-        
-        width: 280px;            /* 进一步调窄，节省空间 */
-        max-height: 80vh;        /* 允许目录占据屏幕 82% 的高度 */
-        padding: 12px 10px;      /* 紧凑内边距 */
-        
-        font-size: 0.82rem;      /* 缩小字号，使其能容纳更多文字 */
-        line-height: 1.4;        /* 缩减行高，让条目更密集 */
-        
-        background: rgba(var(--entry), 0.7);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(128, 128, 128, 0.15);
-        border-radius: 10px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-        z-index: 99;
-        overscroll-behavior: contain;
-    }
-
-    /* 标题“目录”二字的美化 */
-    .toc summary {
-        font-size: 0.9rem;
-        font-weight: 700;
-        margin-bottom: 10px;
-        color: var(--primary);
-    }
-
-    /* 重点：移除黑点，大幅度缩小缩进 */
-    .toc ul {
-        list-style: none !important; /* 彻底去掉黑点，腾出横向空间 */
-        padding-left: 10px !important; /* 将层级缩进从默认的 20px+ 降至 10px */
-        margin: 0 !important;
-    }
-
-    .toc li {
-        margin-bottom: 6px !important; /* 缩减每个条目之间的上下间距 */
-    }
-
-    /* 链接文字美化 */
-    .toc a {
-        color: inherit;
-        opacity: 0.75;
-        display: block;
-        transition: all 0.2s ease;
-        word-break: break-all; /* 强制长标题换行，不溢出容器 */
-    }
-
-    .toc a:hover {
-        opacity: 1;
-        color: var(--primary);
-        transform: translateX(2px); /* 悬浮时轻微右移 */
-    }
-
-    /* 呼吸灯圆点缩小 */
-    .toc summary::before {
-        width: 10px !important;
-        height: 10px !important;
-        margin-right: 8px !important;
-        border-width: 2px !important;
-    }
-}
-
-/* 针对 1280px 以下屏幕，让目录回到文章上方 */
-@media screen and (max-width: 1279px) {
-    .toc {
-        position: relative;
-        width: 100%;
-        margin: 20px 0;
-        padding: 15px;
-        background: var(--entry);
-        border: 1px solid var(--border);
-        border-radius: 8px;
-    }
-}
-
-/* 3. 紧凑归档样式 */
-.archive-year { margin-top: 15px !important; }
-.archive-month { margin-top: 10px !important; }
-.archive-entry {
-    padding: 0px 20px !important; margin-bottom: 5px !important; min-height: auto !important;
-    opacity: 0; animation: fadeInUp 0.6s var(--apple-ease) forwards;
-}
-.archive-entry:nth-child(n+1) { animation-delay: 0.1s; }
-.archive-entry .entry-title { font-size: 15px !important; line-height: 1.4 !important; font-weight: 400 !important; }
-.archive-entry .entry-meta { font-size: 13px !important; white-space: nowrap; opacity: 0.6; }
-
-
-/* ==========================================================================
-   VIII. 其他美化组件 (Misc: Fancybox)
-   ========================================================================== */
-.f-backdrop {
-    background: rgba(0, 0, 0, 0.3) !important;
-    backdrop-filter: blur(10px) saturate(180%) !important;
-}
-.fancybox__content img { border-radius: 16px !important; box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4) !important; }
-.f-button.is-close-btn { top: 20px !important; right: 20px !important; background: rgba(255, 255, 255, 0.2) !important; border-radius: 50% !important; }
-
-
-/* ==========================================================================
-   IX. 响应式布局调整 (Mobile & Tablet)
-   ========================================================================== */
-@media screen and (max-width: 900px) {
-    .apple-search-bar { width: 140px; }
-    .apple-search-bar:focus { width: 200px; }
-}
-
-@media screen and (max-width: 768px) {
-    /* 首页信息适配 */
-    .first-entry { flex-direction: column-reverse !important; text-align: center !important; margin-top: 20px !important; }
-    .home-info-content { align-items: center !important; text-align: center; }
-    .home-info-content .social-icons { justify-content: center !important; margin-left: 0 !important; }
-    .avatar-container { margin-left: 0; margin-bottom: 20px; }
-    
-    /* 导航栏适配 */
-    .nav-search-container { display: none; }
-    #menu { padding-right: 0 !important; justify-content: center; }
-    
-    /* 文章列表适配 */
-    .post-entry { display: block !important; padding: 15px; }
-    .post-entry .entry-cover { width: 100%; height: auto; margin-bottom: 10px; }
-}
-
-/* 桌面端社交图标对齐修正 */
-@media screen and (min-width: 768px) {
-    .home-info-content .social-icons {
-        justify-content: flex-start !important;
-        margin-left: -12px !important; /* 抵消图标内部透明边距 */
-        width: 100%;
-    }
-}
-
-/* ==========================================================================
-   XII. 友链卡片美化 (Links Page)
-   ========================================================================== */
-
-/* 分类标题样式 */
-.link-category-title {
-    margin: 40px 0 10px !important;
-    padding-bottom: 10px;
-    border-bottom: 2px solid rgba(var(--primary), 0.1);
-}
-
-.link-category-desc {
-    font-size: 0.9rem;
-    opacity: 0.6;
-    margin-bottom: 20px;
-}
-
-/* 网格布局：每行 2 个（电脑端），每行 1 个（手机端） */
-.link-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-/* 卡片基础样式 */
-.link-card {
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    background: rgba(var(--entry), 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    text-decoration: none !important;
-    color: inherit !important;
-    transition: transform 0.2s var(--apple-ease), background 0.2s;
-}
-
-.link-card:hover {
-    transform: translateY(-3px);
-    background: rgba(var(--primary), 0.05);
-    border-color: rgba(var(--primary), 0.2);
-}
-
-/* 头像样式 */
-.link-card-avatar {
-    flex-shrink: 0;
-    margin-right: 15px;
-}
-
-.link-card-avatar img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    background: #eee;
-}
-
-/* 文字信息样式 */
-.link-card-info {
-    overflow: hidden;
-}
-
-.link-card-name {
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin-bottom: 4px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.link-card-bio {
-    font-size: 0.85rem;
-    opacity: 0.7;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-/* ==========================================================================
-   XV. 分类与标签页美化 (Terms & Tags Cloud)
-   功能：胶囊样式、数字气泡、极简交互
-   ========================================================================== */
-
-/* 1. 容器布局：增加间距，防止拥挤 */
-.terms-tags {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 12px !important; /* 块与块之间的间距 */
-    padding: 20px 0 !important;
-    list-style: none !important;
-}
-
-/* 2. 标签/分类小块基础样式 */
-.terms-tags li a {
-    display: inline-flex !important;
-    align-items: center !important;
-    padding: 8px 16px !important;
-    font-size: 0.95rem !important;
-    font-weight: 500 !important;
-    color: inherit !important;
-    text-decoration: none !important;
-    
-    /* 背景：浅灰色半透明（苹果风格） */
-    background: rgba(var(--entry), 0.6) !important;
-    border: 1px solid rgba(255, 255, 255, 0.05) !important;
-    border-radius: 20px !important; /* 胶囊圆角 */
-    
-    transition: all 0.2s var(--apple-ease) !important;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05) !important;
-}
-
-/* 3. 标签里的数字（sup 标签）美化 */
-.terms-tags li a sup {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    
-    /* 将数字变成独立的小圆点/小胶囊 */
-    margin-left: 8px !important;
-    padding: 2px 8px !important;
-    font-size: 0.75rem !important;
-    font-weight: 700 !important;
-    top: 0 !important; /* 重置原本 sup 的偏移 */
-    
-    background: rgba(var(--primary), 0.15) !important;
-    color: var(--primary) !important;
-    border-radius: 10px !important;
-    
-    transition: all 0.2s ease !important;
-}
-
-/* 4. 悬浮交互效果 */
-.terms-tags li a:hover {
-    background: var(--primary) !important;
-    color: #ffffff !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 5px 15px rgba(var(--primary), 0.3) !important;
-    border-color: transparent !important;
-}
-
-/* 悬浮时数字的颜色变化 */
-.terms-tags li a:hover sup {
-    background: rgba(255, 255, 255, 0.2) !important;
-    color: #ffffff !important;
-}
-
-/* 5. 深色模式微调 */
-:root.dark .terms-tags li a {
-    background: rgba(255, 255, 255, 0.05) !important;
-    border-color: rgba(255, 255, 255, 0.1) !important;
-}
-
-/* 6. 移动端适配：缩小字体和间距 */
-@media screen and (max-width: 768px) {
-    .terms-tags {
-        gap: 8px !important;
-    }
-    .terms-tags li a {
-        padding: 6px 12px !important;
-        font-size: 0.85rem !important;
-    }
+.post-content a.medium-zoom-image--opened img, 
+.post-content img.medium-zoom-image {
+    pointer-events: auto;
 }
 
 /* ==========================================================================
@@ -622,8 +133,7 @@ details[open] > summary::before {
 .twikoo .tk-input {
     border: 1px solid rgba(128, 128, 128, 0.2) !important;
     background: transparent !important;
-    border-radius: 12px !important;
-    transition: all 0.3s var(--apple-ease) !important;
+    border-radius: 10px !important;
 }
 
 .twikoo .tk-input:focus {
@@ -644,39 +154,34 @@ details[open] > summary::before {
 .twikoo .el-textarea__inner {
     background: transparent !important;
     border: 1px solid rgba(128, 128, 128, 0.2) !important;
-    border-radius: 12px !important;
+    border-radius: 10px !important;
     min-height: 120px !important;
     padding: 12px !important;
     font-size: 0.95rem !important;
-    transition: all 0.3s var(--apple-ease) !important;
 }
 
 .twikoo .el-textarea__inner:focus {
     border-color: var(--primary) !important;
-    box-shadow: 0 0 0 3px rgba(var(--primary), 0.1) !important;
 }
 
 /* 4. 按钮美化 (发送、预览) */
 /* 发送按钮 */
 .twikoo .tk-send {
     background: var(--primary) !important;
-    border-radius: 20px !important; /* 胶囊样式 */
+    border-radius: 10px !important; /* 胶囊样式 */
     padding: 8px 25px !important;
     font-weight: 600 !important;
-    transition: all 0.3s ease !important;
 }
 
 .twikoo .tk-send:hover {
-    transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(var(--primary), 0.4) !important;
 }
 
 /* 预览按钮 */
 .twikoo .el-button:not(.tk-send) {
-    border-radius: 20px !important;
+    border-radius: 10px !important;
     background: transparent !important;
     border: 1px solid rgba(128, 128, 128, 0.3) !important;
-    transition: all 0.2s ease !important;
 }
 
 .twikoo .el-button:not(.tk-send):hover {
@@ -684,49 +189,19 @@ details[open] > summary::before {
     border-color: var(--primary) !important;
 }
 
-/* 5. 头像美化 */
-.twikoo .tk-avatar img {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
-    border: 2px solid #fff;
-}
-
-:root.dark .twikoo .tk-avatar img {
-    border-color: #333;
-}
-
 /* 6. 评论列表条目美化 */
 .twikoo .tk-comment {
-    margin-top: 25px !important;
+    margin-top: 10px !important;
     padding: 20px !important;
-    background: rgba(var(--entry), 0.3) !important; /* 使用你之前的 entry 背景 */
-    border-radius: 16px !important;
+    border-radius: 10px !important;
     border: 1px solid rgba(255, 255, 255, 0.03) !important;
-    transition: all 0.3s ease !important;
-}
-
-.twikoo .tk-comment:hover {
-    background: rgba(var(--entry), 0.5) !important;
-}
-
-/* 7. 评论者昵称与徽章 */
-.twikoo .tk-nick {
-    color: var(--primary) !important;
-    font-weight: 700 !important;
-}
-
-/* 管理员/博主徽章 */
-.twikoo .tk-badge {
-    background: var(--primary) !important;
-    border-radius: 4px !important;
-    padding: 2px 6px !important;
-    font-size: 0.75rem !important;
 }
 
 /* 8. 底部微调：隐藏不必要的版权信息，仅保持低调 */
 .twikoo .tk-footer {
     opacity: 0.3;
-    font-size: 0.75rem !important;
-    margin-top: 30px !important;
+    font-size: 0.5rem !important;
+    margin-top: 5px !important;
 }
 
 /* 9. 响应式适配 */
@@ -740,4 +215,3 @@ details[open] > summary::before {
         width: 100% !important;
     }
 }
-

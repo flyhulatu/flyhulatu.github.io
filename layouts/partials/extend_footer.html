@@ -1,38 +1,48 @@
-<!-- =========================================================
-     1. 下雪特效 (Snow Effect)
-     ========================================================= -->
+<!-- 下雪特效 Canvas -->
 <canvas id="snow-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;"></canvas>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const canvas = document.getElementById('snow-canvas');
-    if (!canvas) return;
     const ctx = canvas.getContext('2d');
+    
     let width, height;
     let particles = [];
-    const particleCount = 60; 
-    const speed = 0.5;        
-    const size = 2.5;         
-
+    
+    // 粒子配置 (你可以修改这些数值)
+    const particleCount = 60; // 雪花数量，数值越大越密集
+    const speed = 0.5;        // 下落速度
+    const size = 2.5;         // 雪花最大尺寸
+    
+    // 调整画布大小
     function resize() {
         width = canvas.width = window.innerWidth;
         height = canvas.height = window.innerHeight;
     }
+    
+    // 初始化粒子
     function initParticles() {
         particles = [];
         for (let i = 0; i < particleCount; i++) {
             particles.push({
                 x: Math.random() * width,
                 y: Math.random() * height,
-                r: Math.random() * size,
-                d: Math.random() * particleCount,
-                a: Math.random() * 0.5 + 0.1
+                r: Math.random() * size, // 半径
+                d: Math.random() * particleCount, // 密度/视差因子
+                a: Math.random() * 0.5 + 0.1 // 透明度
             });
         }
     }
+    
+    // 绘制粒子
     function draw() {
         ctx.clearRect(0, 0, width, height);
+        
+        // 设置雪花颜色 - 自动适配暗色/亮色模式
+        // PaperMod 通常在 body 上使用 class="dark"
         const isDark = document.body.className.includes('dark');
         ctx.fillStyle = isDark ? 'rgba(255, 255, 255, 0.8)' : 'rgba(100, 100, 100, 0.5)';
+        
         ctx.beginPath();
         for (let i = 0; i < particleCount; i++) {
             const p = particles[i];
@@ -42,80 +52,82 @@ document.addEventListener('DOMContentLoaded', function() {
         ctx.fill();
         update();
     }
+    
+    // 更新位置
     function update() {
         for (let i = 0; i < particleCount; i++) {
             const p = particles[i];
+            
+            // 下落逻辑
             p.y += Math.cos(p.d) + 1 + p.r / 2 * speed;
             p.x += Math.sin(0) * 2;
+            
+            // 边界检查，如果超出底部则重置到顶部
             if (p.x > width + 5 || p.x < -5 || p.y > height) {
-                if (i % 3 > 0) {
-                    particles[i] = { x: Math.random() * width, y: -10, r: p.r, d: p.d, a: p.a };
+                if (i % 3 > 0) { // 2/3 的雪花从顶部重新落下
+                    particles[i] = {
+                        x: Math.random() * width,
+                        y: -10,
+                        r: p.r,
+                        d: p.d,
+                        a: p.a
+                    };
                 } else {
+                    // 如果是向右飘出，从左边回来
                     if (Math.sin(0) > 0) {
-                        particles[i] = { x: -5, y: Math.random() * height, r: p.r, d: p.d, a: p.a };
+                        particles[i] = {
+                            x: -5,
+                            y: Math.random() * height,
+                            r: p.r,
+                            d: p.d,
+                            a: p.a
+                        };
                     } else {
-                        particles[i] = { x: width + 5, y: Math.random() * height, r: p.r, d: p.d, a: p.a };
+                        particles[i] = {
+                            x: width + 5,
+                            y: Math.random() * height,
+                            r: p.r,
+                            d: p.d,
+                            a: p.a
+                        };
                     }
                 }
             }
         }
         requestAnimationFrame(draw);
     }
+    
+    // 监听窗口大小变化
     window.addEventListener('resize', resize);
-    resize(); initParticles(); draw();
+    
+    // 启动
+    resize();
+    initParticles();
+    draw();
 });
 </script>
 
-<!-- =========================================================
-     2. 滚动显现动画 (Scroll Reveal)
-     ========================================================= -->
-<style>
-    .reveal {
-        opacity: 0; transform: translateY(30px);
-        transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1.0), transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1.0);
-        will-change: opacity, transform;
-    }
-    .reveal.active { opacity: 1; transform: translateY(0); }
-</style>
+<!-- 引入 medium-zoom JS -->
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const targets = document.querySelectorAll(".post-entry, .main-header, .post-header, .post-content");
-        targets.forEach(el => el.classList.add("reveal"));
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("active");
-                    observer.unobserve(entry.target);
-                }
+    document.addEventListener('DOMContentLoaded', () => {
+        const zoom = mediumZoom('.post-content img', {
+            margin: 24,       // 放大后距离屏幕边缘的距离
+            background: '',   // 背景色我们用 CSS 控制（支持毛玻璃）
+            scrollOffset: 0,  // 滚动多少距离就自动收回
+        });
+
+        // 适配 PaperMod 的暗黑模式切换
+        const target = document.querySelector('body');
+        const observer = new MutationObserver(() => {
+            const isDark = target.classList.contains('dark');
+            zoom.update({
+                background: isDark ? 'rgba(28, 28, 30, 0.9)' : 'rgba(255, 255, 255, 0.9)'
             });
-        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-        targets.forEach(target => observer.observe(target));
+        });
+        observer.observe(target, { attributes: true, attributeFilter: ['class'] });
     });
 </script>
 
-<!-- =========================================================
-     3. 图片灯箱 (Medium Zoom) - 修复版
-     ========================================================= -->
-<script src="https://cdn.jsdelivr.net/npm/medium-zoom@latest/dist/medium-zoom.min.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const postImages = document.querySelectorAll('.post-content img');
-        postImages.forEach(img => {
-            const parentAnchor = img.closest('a');
-            if (parentAnchor) {
-                parentAnchor.addEventListener('click', function(e) { e.preventDefault(); return false; });
-                parentAnchor.removeAttribute('download');
-                parentAnchor.style.cursor = 'zoom-in';
-            }
-            mediumZoom(img, {
-                margin: 24,
-                background: document.body.classList.contains('dark') ? 'rgba(28, 28, 30, 0.9)' : 'rgba(255, 255, 255, 0.85)',
-                scrollOffset: 40
-            });
-        });
-    });
-</script>
-<style>
-    .medium-zoom-overlay { z-index: 9999; backdrop-filter: blur(10px); }
-    .medium-zoom-image--opened { z-index: 10000; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
-</style>
+
