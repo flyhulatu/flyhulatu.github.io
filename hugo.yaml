@@ -97,9 +97,9 @@ params:
 menu:
   main:
     - identifier: about
-      name: 我
+      name: 👤
       url: /about/
-      weight: 1
+      weight: 10
     # - identifier: posts
     #   name: 文
     #   url: /posts/
@@ -109,14 +109,14 @@ menu:
     #   url: /categories/
     #   weight: 20
     - identifier: tags
-      name: 签
+      name: 🏷️
       url: /tags/
-      weight: 30
+      weight: 1
     - identifier: archives
-      name: 档
+      name: 🗂️
       url: /archives/
-      weight: 40
+      weight: 2
     - identifier: guestbook
-      name: 言
+      name: 💬
       url: /guestbook/
-      weight: 50
+      weight: 3
