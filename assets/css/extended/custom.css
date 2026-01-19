@@ -263,7 +263,7 @@ a:active, button:active { transform: scale(0.96) !important; }
     .custom-archive-wrapper {
         display: flex !important;
         align-items: stretch !important; /* 维持 stretch 以保证悬浮跑道 */
-        gap: 3px !important;
+        gap: 100px !important;
     }
     .archives-left-side {
         width: var(--main-width) !important;

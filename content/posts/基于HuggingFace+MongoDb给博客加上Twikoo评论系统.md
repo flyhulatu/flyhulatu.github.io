@@ -32,3 +32,38 @@ disableShare: false
 
 第一步，这两个网站的账号，你得先注册，有一个自己的账号。
 
+
+
+
+
+https://huggingface.co/spaces/imaegoo/twikoo?duplicate=true
+
+把刚才复制的那一串密钥，复制进来
+
+
+
+
+
+在把刚才复制的链接，放在以下这段代码里。
+
+在你的博客根目录下找到 layouts/partials/ 文件夹（如果没有就新建一个），创建一个文件叫 comments.html。填入以下代码：
+
+```html
+<div id="tcomment"></div>
+<script src="https://registry.npmmirror.com/twikoo/1.6.44/files/dist/twikoo.min.js"></script>
+<script>
+twikoo.init({
+  envId: '你的后端URL',         // 在单引号里填入获取的链接
+  el: '#tcomment',
+})
+</script>
+```
+
+最后，找到主题中显示文章内容的模板（通常在 themes/你的主题/layouts/\_default/single.html）。不要直接改主题文件，建议将其**复制**到根目录下的 layouts/\_default/single.html 中。
+在合适的位置（通常是 {{ .Content }} 之后）添加：
+
+```html
+{{ partial "comments.html" . }}
+```
+
+然后去预览一下你的博客，开启了评论的文章，都可以显示评论系统了。
