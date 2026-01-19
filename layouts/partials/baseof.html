@@ -23,10 +23,7 @@
 {{- end }}
     {{ partialCached "header.html" . .Page -}}
     <main class="main">
-        <div id="swup" class="swup-transition-fade">
-            <!-- 这里的内容是原来的 main 区域 -->
             {{- block "main" . }}{{ end }}
-        </div>
     </main>
     {{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
 </body>

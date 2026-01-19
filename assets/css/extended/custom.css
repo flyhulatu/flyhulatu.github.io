@@ -442,29 +442,6 @@ details[open] > summary::before {
 }
 
 /* ==========================================================================
-   XI. 页面不刷新跳转动画 (Swup Transitions)
-   ========================================================================== */
-
-/* 定义内容淡入淡出的过程 */
-.swup-transition-fade {
-    transition: opacity 0.4s var(--apple-ease), transform 0.4s var(--apple-ease);
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* 页面离开时的状态 */
-.html-is-leaving .swup-transition-fade {
-    opacity: 0;
-    transform: translateY(10px); /* 微微下沉，符合 iOS 效果 */
-}
-
-/* 页面进入后的状态 */
-.html-is-rendering .swup-transition-fade {
-    opacity: 0;
-    transform: translateY(-10px);
-}
-
-/* ==========================================================================
    XII. 友链卡片美化 (Links Page)
    ========================================================================== */
 
@@ -763,3 +740,4 @@ details[open] > summary::before {
         width: 100% !important;
     }
 }
+

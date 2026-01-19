@@ -13,7 +13,7 @@
     
     <div class="link-grid">
         {{- range .links -}}
-        <a href="{{ .url }}" target="_blank" rel="noopener" class="link-card">
+        <a href="{{ .url }}" target="_blank" rel="noopener" class="link-card" >
             <div class="link-card-avatar">
                 <img src="{{ .avatar | default "https://api.i-meto.com/fortuna/v1/1" }}" alt="{{ .name }}" loading="lazy">
             </div>
