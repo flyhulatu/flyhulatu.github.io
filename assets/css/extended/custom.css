@@ -3,7 +3,7 @@
    ========================================================================== */
 :root {
     /* 核心布局 */
-    --main-width: 660px;           /* 你的标准内容宽度 */
+    --main-width: 600px;           /* 你的标准内容宽度 */
     --radius: 10px;                /* 全局统一圆角 */
     --gap-tight: 3px;              /* 胶囊间距 */
     --gap-mid: 10px;               /* 列表/卡片间距 */
@@ -70,8 +70,33 @@ a:active, button:active { transform: scale(0.96) !important; }
     font-size: 20px;
 }
 .main {
-    margin: 0 auto !important;
-    padding: 0 !important;
+    margin: 3 auto !important;
+}
+
+/* 个人信息区 (Hero Section) */
+.main .first-entry {
+    padding: 20px 0 20px 0 !important; /* 增加上下间距，让名字“沉”下来 */
+    margin-bottom: 20px !important;   /* 与下方第一篇文章拉开距离 */
+    text-align: center !important;     /* 居中更有正式感 */
+    display: block !important;         /* 强制块级布局 */
+}
+
+.main .first-entry .entry-header h1 {
+    font-size: 32px !important;
+    font-weight: 800 !important;       /* 加重字重 */
+    letter-spacing: -0.5px;            /* 略微缩窄字间距，更有 Mac 设计感 */
+    margin-bottom: 10px;
+}
+
+.main .first-entry .entry-footer {
+    font-size: 16px !important;
+    opacity: 0.6;                      /* 调淡副标题，形成层级 */
+    line-height: 1.6;
+}
+
+
+.main .entry-footer {
+    margin: 10px 0;
 }
 
 .header {
@@ -119,9 +144,19 @@ a:active, button:active { transform: scale(0.96) !important; }
 /* 分页 */
 .pagination a { border-radius: var(--radius) !important; }
 
-.pagination .next , .pagination .prev {
-    background: rgb(214, 214, 214);
+
+.pagination .next, .pagination .prev {
+    background: rgba(128, 128, 128, 0.1) !important;
+    padding: 3px 16px;
+    border: 1px solid rgba(128, 128, 128, 0.1);
+    color: var(--primary) !important;
+    font-size: 14px;
 }
+.pagination a:hover {
+    background: var(--primary) !important;
+    color: #fff !important;
+}
+
 
 /* ==========================================================================
    五、文章内容页美化 (Post Content)
@@ -261,32 +296,7 @@ a:active, button:active { transform: scale(0.96) !important; }
     color: var(--primary);
 }
 
-/* ==========================================================================
-   八、评论系统美化 (Twikoo Styling)
-   ========================================================================== */
-#tcomment { margin-top: 40px; }
 
-/* 统一输入框与评论块圆角 */
-.twikoo .tk-input, .twikoo .el-textarea__inner, .twikoo .tk-comment, .twikoo .tk-send, .twikoo .el-button {
-    border-radius: var(--radius) !important;
-    background: transparent !important;
-}
-
-.twikoo .tk-input, .twikoo .el-textarea__inner {
-    border: 1px solid rgba(128, 128, 128, 0.2) !important;
-}
-
-.twikoo .tk-send { background: var(--primary) !important; color: #fff !important; }
-
-.twikoo .tk-comment {
-    margin-top: 10px !important;
-    padding: 15px !important;
-    border: 1px solid rgba(128, 128, 128, 0.1) !important;
-}
-
-/* 暗黑模式适配 */
-.dark .twikoo .tk-comment { background: rgba(255, 255, 255, 0.03) !important; }
-.dark .twikoo .tk-input, .dark .twikoo .el-textarea__inner { background: rgba(0,0,0,0.1) !important; }
 /* 隐藏版权信息 (极致纯净) */
 .twikoo .tk-footer {
     display: none !important;
@@ -299,3 +309,101 @@ a:active, button:active { transform: scale(0.96) !important; }
     .archives-right-sidebar { margin-bottom: 40px; }
     .entry-header h2 { font-size: 1.1rem !important; }
 }
+
+/* ==========================================================================
+   关于页面深度美化 (About Page Design)
+   ========================================================================== */
+
+/* 1. 顶部标题增强 */
+.about-hero {
+    padding: 10px 0 10px 0;
+    text-align: left;
+}
+.about-hero h1 {
+    font-size: 1.5rem !important;
+    font-weight: 800 !important;
+    margin-bottom: 10px !important;
+}
+.about-hero small {
+    font-size: 1rem;
+    color: var(--secondary);
+    font-weight: 400;
+}
+.about-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+/* 2. 栏目标题样式 */
+.about-label {
+    font-size: 15px !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary);
+    opacity: 0.6;
+    margin-bottom: 10px !important;
+    border-bottom: 1px solid rgba(128,128,128,0.1);
+    padding-bottom: 8px;
+}
+
+/* 3. 联系方式胶囊网格 */
+.contact-grid {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+.contact-item {
+    padding: 8px 10px !important;
+    background: var(--code-bg) !important;
+    border-radius: 10px !important; /* 统一 10px 圆角 */
+    font-size: 15px !important;
+    font-weight: 500;
+    text-decoration: none !important;
+}
+.contact-item:hover {
+    background: var(--tertiary) !important;
+    transform: translateY(-2px);
+}
+
+/* 4. 时间轴样式 */
+.timeline {
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid rgba(128,128,128,0.1);
+    margin: 20px 0 40px 10px;
+}
+.timeline-item {
+    position: relative;
+    margin-bottom: 25px;
+}
+/* 时间轴的小圆点 */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -27px;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    background: var(--primary);
+    border-radius: 50%;
+    border: 3px solid var(--theme); /* 底色圆环 */
+}
+.timeline-item .time {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 4px;
+}
+.timeline-item .desc {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* 5. 响应式微调 */
+@media screen and (max-width: 768px) {
+    .about-hero h1 { font-size: 1.8rem !important; }
+    .contact-grid { gap: 8px; }
+}
+
+
