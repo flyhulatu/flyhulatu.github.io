@@ -5,7 +5,7 @@
 title: "Typora+upic图床验证失败的问题" # 标题：默认取文件名并美化
 date: 2026-01-18T22:08:48+08:00                            # 发布时间：创建时自动生成
 author: "图图"                                # 作者：覆盖全局默认值
-slug: "Image-Hosting-Service-image"                                     # 永久链接：建议填英文/数字
+slug: "Image-Hosting-Service-Blog"                                     # 永久链接：建议填英文/数字
 draft: false                                 # 是否为草稿：false 即可直接发布
 
 # ============================================================

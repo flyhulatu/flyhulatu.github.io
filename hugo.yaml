@@ -10,7 +10,7 @@ frontmatter:
   lastmod: [lastmod, :git, date] # 修改时间：初始与发布时间一致
 
 permalinks:
-  posts: "/posts/:title/"
+  posts: "/posts/:slug/"
 
 outputFormats:
   RSS:
