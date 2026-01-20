@@ -96,18 +96,6 @@ params:
 
 menu:
   main:
-    - identifier: about
-      name: 👤
-      url: /about/
-      weight: 10
-    # - identifier: posts
-    #   name: 文
-    #   url: /posts/
-    #   weight: 10
-    # - identifier: categories
-    #   name: 类
-    #   url: /categories/
-    #   weight: 20
     - identifier: tags
       name: 🏷️
       url: /tags/
@@ -120,3 +108,22 @@ menu:
       name: 💬
       url: /guestbook/
       weight: 3
+    - identifier: links
+      name: 📡
+      url: /links/
+      weight: 4
+    - identifier: about
+      name: 👤
+      url: /about/
+      weight: 10
+
+    # - identifier: posts
+    #   name: 文
+    #   url: /posts/
+    #   weight: 10
+    # - identifier: categories
+    #   name: 类
+    #   url: /categories/
+    #   weight: 20
+    
+    

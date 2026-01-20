@@ -12,7 +12,8 @@ tags:
 draft: false
 showToc: true                                
 TocOpen: true                                
-hidemeta: false                              comments: true                              
+hidemeta: false                              
+comments: true                              
 disableShare: false                          
 # canonicalURL: ""                           
 ---

@@ -3,12 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2026-01-19T21:53:35+08:00</lastmod>
+    <lastmod>2026-01-20T08:30:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2026-01-19T21:53:35+08:00</lastmod>
+    <lastmod>2026-01-20T08:30:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2026-01-20T08:30:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E7%BE%8E%E9%A3%9F/</loc>
+    <lastmod>2026-01-20T08:30:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url><url>
+    <loc>http://localhost:1313/categories/%E6%97%A5%E5%B8%B8/</loc>
+    <lastmod>2026-01-20T08:30:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2026-01-20T08:30:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/2026/01/20/spicy-soup-breakfast/</loc>
+    <lastmod>2026-01-20T08:30:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
@@ -17,17 +42,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2026-01-19T21:53:35+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url><url>
-    <loc>http://localhost:1313/posts/confidence-1/</loc>
-    <lastmod>2026-01-19T21:53:35+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>http://localhost:1313/posts/2026/01/19/confidence/</loc>
     <lastmod>2026-01-19T21:53:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -37,12 +52,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/%E5%9F%BA%E4%BA%8Ehuggingface-mongodb%E7%BB%99%E5%8D%9A%E5%AE%A2%E5%8A%A0%E4%B8%8Atwikoo%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>http://localhost:1313/posts/2026/01/19/%E5%9F%BA%E4%BA%8Ehuggingface-mongodb%E7%BB%99%E5%8D%9A%E5%AE%A2%E5%8A%A0%E4%B8%8Atwikoo%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2026-01-19T21:19:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/image-hosting-service-blog/</loc>
+    <loc>http://localhost:1313/posts/2026/01/18/image-hosting-service-blog/</loc>
     <lastmod>2026-01-18T22:08:48+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -62,7 +77,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/newsletter-weekly-5/</loc>
+    <loc>http://localhost:1313/posts/2026/01/18/newsletter-weekly/</loc>
     <lastmod>2026-01-18T20:19:50+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -87,12 +102,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/categories/%E6%97%A5%E5%B8%B8/</loc>
-    <lastmod>2026-01-17T23:05:55+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url><url>
-    <loc>http://localhost:1313/posts/consumption-1/</loc>
+    <loc>http://localhost:1313/posts/2026/01/17/consumption/</loc>
     <lastmod>2026-01-17T23:05:55+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -107,27 +117,22 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/trip-1/</loc>
+    <loc>http://localhost:1313/posts/2026/01/16/trip/</loc>
     <lastmod>2026-01-16T19:43:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/diet-management-food/</loc>
+    <loc>http://localhost:1313/posts/2026/01/15/diet-management-food/</loc>
     <lastmod>2026-01-15T23:02:50+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/%E7%BE%8E%E9%A3%9F/</loc>
+    <loc>http://localhost:1313/posts/2026/01/14/food-rice-noodles/</loc>
     <lastmod>2026-01-14T21:02:40+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/food-rice-noodles/</loc>
-    <lastmod>2026-01-14T21:02:40+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url><url>
-    <loc>http://localhost:1313/posts/reading-habit/</loc>
+    <loc>http://localhost:1313/posts/2026/01/13/reading-habit/</loc>
     <lastmod>2026-01-13T08:42:53+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -147,7 +152,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/early-rising-habit/</loc>
+    <loc>http://localhost:1313/posts/2026/01/12/early-rising-habit/</loc>
     <lastmod>2026-01-12T21:40:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -157,7 +162,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/newsletter-weekly-4/</loc>
+    <loc>http://localhost:1313/posts/2026/01/11/newsletter-weekly/</loc>
     <lastmod>2026-01-11T11:50:13+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -167,7 +172,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/vlog-share-1/</loc>
+    <loc>http://localhost:1313/posts/2026/01/10/vlog-share/</loc>
     <lastmod>2026-01-10T22:07:55+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -177,7 +182,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/beauty-blog-1/</loc>
+    <loc>http://localhost:1313/posts/2026/01/09/beauty-blog/</loc>
     <lastmod>2026-01-09T21:56:28+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -187,7 +192,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/start-doing-things/</loc>
+    <loc>http://localhost:1313/posts/2026/01/08/start-doing-things/</loc>
     <lastmod>2026-01-08T21:54:24+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -197,12 +202,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/shooting-photography/</loc>
+    <loc>http://localhost:1313/posts/2026/01/07/shooting-photography/</loc>
     <lastmod>2026-01-07T19:38:38+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/study-tips-1/</loc>
+    <loc>http://localhost:1313/posts/2026/01/07/study-tips/</loc>
     <lastmod>2026-01-07T17:19:13+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -217,7 +222,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/music-sharing-1/</loc>
+    <loc>http://localhost:1313/posts/2026/01/06/music-sharing/</loc>
     <lastmod>2026-01-06T19:16:10+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -237,12 +242,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/money-1/</loc>
+    <loc>http://localhost:1313/posts/2026/01/05/wealth-leverage/</loc>
     <lastmod>2026-01-05T21:07:47+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/newsletter-weekly-3/</loc>
+    <loc>http://localhost:1313/posts/2026/01/04/newsletter-weekly/</loc>
     <lastmod>2026-01-04T16:16:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -252,7 +257,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/writing-tools-1/</loc>
+    <loc>http://localhost:1313/posts/2026/01/03/writing-tools/</loc>
     <lastmod>2026-01-03T22:09:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -262,7 +267,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/english-vocabulary-enhance/</loc>
+    <loc>http://localhost:1313/posts/2026/01/02/english-vocabulary-enhance/</loc>
     <lastmod>2026-01-02T22:30:16+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -272,7 +277,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/sport-tips-1/</loc>
+    <loc>http://localhost:1313/posts/2026/01/01/sport-tips/</loc>
     <lastmod>2026-01-01T23:41:46+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -282,7 +287,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/summary-2025/</loc>
+    <loc>http://localhost:1313/posts/2025/12/31/summary-2025/</loc>
     <lastmod>2025-12-31T21:00:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -297,7 +302,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/newsletter-weekly-2/</loc>
+    <loc>http://localhost:1313/posts/2025/12/28/newsletter-weekly/</loc>
     <lastmod>2025-12-28T23:22:14+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -307,7 +312,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/newsletter-weekly-1/</loc>
+    <loc>http://localhost:1313/posts/2025/12/21/newsletter-weekly/</loc>
     <lastmod>2025-12-21T14:19:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -317,7 +322,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/exam-test-letter/</loc>
+    <loc>http://localhost:1313/posts/2025/12/19/exam-test-letter/</loc>
     <lastmod>2025-12-19T22:49:22+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -332,22 +337,22 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/paper-management-2/</loc>
+    <loc>http://localhost:1313/posts/2025/12/14/paper-management/</loc>
     <lastmod>2025-12-14T23:37:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/paper-management-1/</loc>
+    <loc>http://localhost:1313/posts/2025/12/14/paper-management/</loc>
     <lastmod>2025-12-14T20:31:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/daily-update-blog/</loc>
+    <loc>http://localhost:1313/posts/2025/12/10/daily-update-blog/</loc>
     <lastmod>2025-12-10T22:55:46+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/personality-zhe-teng/</loc>
+    <loc>http://localhost:1313/posts/2025/12/09/personality-zhe-teng/</loc>
     <lastmod>2025-12-09T23:01:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -357,7 +362,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/file-synchronization-file-management/</loc>
+    <loc>http://localhost:1313/posts/2025/12/08/file-synchronization-file-management/</loc>
     <lastmod>2025-12-08T17:14:50+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -367,7 +372,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/sport-relative/</loc>
+    <loc>http://localhost:1313/posts/2025/12/07/sport-relative/</loc>
     <lastmod>2025-12-07T16:03:14+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -377,13 +382,18 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/running-gear-1/</loc>
+    <loc>http://localhost:1313/posts/2025/12/06/running-gear/</loc>
     <lastmod>2025-12-06T14:12:10+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/personal-profile-1/</loc>
+    <loc>http://localhost:1313/posts/2025/12/05/personal-profile/</loc>
     <lastmod>2025-12-05T21:40:01+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url><url>
+    <loc>http://localhost:1313/friend-links/</loc>
+    <lastmod>2025-01-05T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url><url>
