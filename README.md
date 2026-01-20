@@ -1,6 +1,6 @@
-<style>
-    .post-header { display: none; }
-</style>
+# 胡拉图的后花园
+
+欢迎大家来到我的个人博客。
 <!-- 1. 顶部：个人简介卡片 -->
 
 <div class="about-hero">
