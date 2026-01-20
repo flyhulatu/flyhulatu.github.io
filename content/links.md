@@ -14,19 +14,19 @@ draft: false
 {{< links >}}
 ---
 
-## 欢迎交换友链
+## 欢迎交换友链，评论区留言（格式如下）！
 
 **我的信息**
 
 - **名称**：胡拉图的博客
 - **地址**：[https://www.hulatu.com](https://www.hulatu.com)
 - **简介**：不谈专业，只聊生活的工科研究生。
-- **我的头像**：[https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/avatar-200x200.jpg](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/avatar-200x200.jpg)
+- **我的头像**：[https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/apple-touch-icon_c6LEkZ.png](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/apple-touch-icon_c6LEkZ.png)
 ---
 
 ## 注意⚠️
 
-请确保你的网站，绝大部分内容原创（>80）、内容数 > 10。\
+请确保你的网站，绝大部分内容原创（>80）、内容数 > 10。
 
 因为，我希望我们都别忘了，我们为什么而出发。
 

@@ -4,8 +4,12 @@ title: "胡拉图的后花园"
 theme: "hugo-PaperMod"
 enableRobotsTXT: true          # 启用 robots.txt 供搜索引擎抓取
 
+minify:
+  disableXML: false
+  minifyOutput: true # 开启 HTML 压缩
+
 pagination:
-  pagerSize: 5                 # 每页显示的文章数量
+  pagerSize: 10                 # 每页显示的文章数量
 
 permalinks:
   posts: "/posts/:year/:month/:day/:slug/"
@@ -15,18 +19,60 @@ markup:
     renderer:
       unsafe: true
 
-outputFormats:
-  RSS:
-    baseName: "rss"
+# 1. 必须先定义媒体类型，否则 Hugo 不认识这些格式
+mediaTypes:
+  application/atom+xml:
+    suffixes:
+      - xml
+  application/rdf+xml:
+    suffixes:
+      - xml
+  application/rss+xml:
+    suffixes:
+      - xml
 
+# 2. 定义输出格式
+outputFormats:
+  # RSS 2.0 (系统自带，我们只改名字)
+  RSS:
+    mediaType: "application/rss+xml"
+    baseName: "rss"
+  # 我们自定义的 FEED 格式
+  FEED:
+    mediaType: "application/rss+xml"
+    baseName: "feed"
+  # ATOM 格式（使用上面定义好的媒体类型）
+  ATOM:
+    mediaType: "application/atom+xml"
+    baseName: "atom"
+    rel: "alternate"
+  # RSS 1.0 格式（使用上面定义好的媒体类型）
+  RSS1:
+    mediaType: "application/rdf+xml"
+    baseName: "rss1"
+    rel: "alternate"
+
+# 3. 告诉 Hugo 首页要生成这些文件
 outputs:
   home:
     - HTML
-    - RSS   # 生成 index.xml
-    - JSON  # 生成 index.json (搜索用)
-  section:
-    - HTML
-    - RSS   # 生成 index.xml
+    - RSS
+    - FEED
+    - ATOM
+    - RSS1
+
+# outputFormats:
+#   RSS:
+#     baseName: "rss"
+
+# outputs:
+#   home:
+#     - HTML
+#     - RSS   # 生成 index.xml
+#     - JSON  # 生成 index.json (搜索用)
+#   section:
+#     - HTML
+#     - RSS   # 生成 index.xml
 
 defaultContentLanguage: "zh"   # 默认语言环境，影响翻译包调取
 hasCJKLanguage: true           # 开启中日韩文字统计逻辑，修正字数统计
@@ -47,6 +93,15 @@ params:
     text: "图图"
     icon: "/images/logo.png" # 你的图标路径
     iconHeight: 35        # 调整高度
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 100
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
 
   ShowFullTextinRSS: true      # RSS 输出全文
   ShowBreadCrumbs: false        # 面包屑导航
@@ -72,7 +127,7 @@ params:
 
   socialIcons:
     - name: rss  
-      url: "rss.xml"
+      url: "/feed"
     - name: email
       url: "mailto:2983685624@qq.com"
     - name: wechat
@@ -96,26 +151,31 @@ params:
 
 menu:
   main:
+    - identifier: search
+      name: 🔍
+      url: "/search/"
+      weight: 31
     - identifier: tags
       name: 🏷️
       url: /tags/
-      weight: 1
+      weight: 20
     - identifier: archives
       name: 🗂️
       url: /archives/
-      weight: 2
+      weight: 30
     - identifier: guestbook
       name: 💬
       url: /guestbook/
-      weight: 3
+      weight: 40
     - identifier: links
       name: 📡
       url: /links/
-      weight: 4
+      weight: 50
     - identifier: about
       name: 👤
       url: /about/
-      weight: 10
+      weight: 60
+    
 
     # - identifier: posts
     #   name: 文

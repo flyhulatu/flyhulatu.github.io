@@ -1,0 +1,17 @@
+{{- $pages := .Site.RegularPages -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ .Site.Title }}</title>
+  <id>{{ .Permalink }}</id>
+  <updated>{{ now.Format "2006-01-02T15:04:05Z" | safeHTML }}</updated>
+  <link rel="self" href="{{ .Permalink }}atom.xml" />
+  {{ range first 15 $pages }}
+  <entry>
+    <title>{{ .Title }}</title>
+    <link href="{{ .Permalink }}" />
+    <id>{{ .Permalink }}</id>
+    <updated>{{ .Date.Format "2006-01-02T15:04:05Z" | safeHTML }}</updated>
+    <summary>{{ .Summary | html }}</summary>
+  </entry>
+  {{ end }}
+</feed>

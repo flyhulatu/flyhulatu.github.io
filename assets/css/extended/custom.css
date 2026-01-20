@@ -405,4 +405,118 @@ a:active, button:active { transform: scale(0.96) !important; }
     .contact-grid { gap: 8px; }
 }
 
+/* ==========================================================================
+   搜索页 Spotlight 风格美化
+   ========================================================================== */
+#search-input {
+    border-radius: var(--radius);
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    border: 1px solid var(--border);
+    background: var(--code-bg);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* 悬浮阴影 */
+    transition: all 0.3s ease;
+}
+
+#search-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    background: var(--entry);
+}
+
+/* 搜索结果卡片 */
+.post-entry.search-result {
+    background: var(--entry) !important;
+    border: 1px solid transparent;
+    margin-bottom: 8px !important;
+    padding: 15px !important;
+}
+
+.post-entry.search-result:hover {
+    border-color: var(--primary);
+}
+
+/* 快捷键提示样式 (Mac 风格) */
+.search-placeholder::after {
+    content: "⌘ K";
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--tertiary);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    opacity: 0.6;
+}
+
+
+/* ==========================================================================
+   404 页面深度美化
+   ========================================================================== */
+.not-found-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.error-code {
+    font-size: 100px;
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--primary), #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.error-msg {
+    font-size: 1.2rem;
+    color: var(--secondary);
+    margin-bottom: 40px;
+}
+
+/* 返回按钮：Mac 风格胶囊按钮 */
+.back-home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: var(--primary);
+    color: #fff !important;
+    border-radius: 30px; /* 胶囊型 */
+    font-weight: 600;
+    text-decoration: none !important;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.back-home-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.recent-posts-hint {
+    margin-top: 60px;
+    font-size: 0.9rem;
+    opacity: 0.5;
+}
+
+.recent-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.recent-list li { margin: 8px 0; }
+.recent-list a {
+    color: var(--primary);
+    font-size: 0.95rem;
+}
+
+
 
