@@ -42,7 +42,7 @@ disableShare: false                          # 是否禁用分享按钮
 
 找到问题就很好解决了：
 
-![image-20260118204110354](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/image-20260118204110354_XYkciA_1Kcicx.png)
+![修改保存路径](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/image-20260118204110354_XYkciA_1Kcicx.png)
 
 在我们的 uPic 偏好设置里，把**保存路径**的格式修改一下，加上{random}这个变量，这样哪怕我们传送同一张照片多次，因为文件名里一定有一个**随机元素**，所以他们的文件名不可能重复，也就不会出现文件名带来的错误。
 
@@ -52,10 +52,14 @@ uPic/{filename}_{random}{.suffix}
 
 把我的这段路径名直接替换掉你原来的。
 
+最后，这个开关一定选择关闭，不然也容易上传图片失败。
+
+![输出格式编码，选择关闭](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/image-20260120091231876_Q02gqg.png)
+
 用我这个方法操作后，再去 Typora 验证 uPic 图片上传选项，就一定能成功了。
 
-![image-20260118204738912](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/image-20260118204738912_YDQsok_jhnxpU.png)
+![推荐设置+验证图片上传](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/image-20260118204738912_YDQsok_jhnxpU.png)
 
-![image-20260118204758814](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/image-20260118204758814_xwLekM_8tfHEa.png)
+![成功](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/image-20260118204758814_xwLekM_8tfHEa.png)
 
 希望对大家有帮助，谢谢！
