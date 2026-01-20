@@ -1,5 +1,6 @@
 ---
 title: "友圈"
+url: "/links/"
 date: 2025-01-05
 slug: “friend-links"
 layout: "links"  
