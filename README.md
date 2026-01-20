@@ -1,0 +1,67 @@
+<style>
+    .post-header { display: none; }
+</style>
+<!-- 1. 顶部：个人简介卡片 -->
+
+<div class="about-hero">
+    <h1>胡志朋 👋 <small>(笔名：胡拉图)</small></h1>
+    <p class="about-subtitle">一名不谈专业、只聊生活、热爱折腾的工科研究生</p>
+</div>
+
+<!-- 2. 联系方式：使用精致的小胶囊 -->
+
+<div class="about-section">
+    <h3 class="about-label">📍 联系我</h3>
+    <div class="contact-grid">
+        <a class="contact-item" href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/qq.webp"><span>QQ</span></a>
+        <a class="contact-item" href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/wechat.webp"><span>WeChat</span></a>
+        <a class="contact-item" href="mailto:flyhulatu@gmail.com"><span>G-Mail</span></a>
+        <a class="contact-item" href="mailto:2983685624@qq.com"><span>Q-Mail</span></a>
+    </div>
+</div>
+
+### 订阅本站 (Subscribe)
+
+欢迎订阅我的博客，你可以根据你的阅读器习惯选择以下格式：
+
+<div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px;">
+    <a href="/feed" style="background: #f26522; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">RSS FEED</a>
+    <a href="/atom.xml" style="background: #2b5797; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">ATOM</a>
+    <a href="/rss1.xml" style="background: #666; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">RSS 1.0</a>
+</div>
+<!-- 3. 自我介绍：正文部分 -->
+
+<div class="about-section">
+    <h3 class="about-label">👤 我是谁</h3>
+    <div class="about-text">
+        <p>泥嚎！欢迎来到我的世界。</p>
+        <p>目前在<strong>郑州</strong>上学。平时喜欢搞鼓 <strong>Mac、GitHub、写作</strong> 和各类生产力工具。</p>
+        <p>在这个博客记录我的学习和生活随想，希望大家喜欢！</p>
+      	<p>所在平台：</p>
+      	<a class="contact-item" href="https://sspai.com/u/hulatu/updates"><span>少数派</span></a>
+        <a class="contact-item" href="https://www.xiaohongshu.com/user/profile/68a9d4e5000000001a00fcf9"><span>小红书</span></a>
+        <a class="contact-item" href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/gzh.webp"><span>公众号</span></a>
+    </div>
+</div>
+
+<!-- 4. 见过往：精致时间轴 -->
+
+<div class="about-section">
+    <h3 class="about-label">🚀 见过往</h3>
+    <div class="timeline">
+      	<div class="timeline-item">
+            <div class="time">2025 - 21xx</div>
+            <div class="desc">博客运行至……</div>
+        </div>
+        <div class="timeline-item">
+            <div class="time">2024 - 2027</div>
+            <div class="desc">郑州某高校 · 研究生在读</div>
+        </div>
+        <div class="timeline-item">
+            <div class="time">2020 - 2024</div>
+            <div class="desc">江西XX大学 · 食品专业 / 工学学士</div>
+        </div>
+    </div>
+</div>
+
+
