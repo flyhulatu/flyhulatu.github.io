@@ -79,8 +79,8 @@ params:
       url: "https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/wechat.webp"
     - name: qq
       url: "https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/qq.webp"
-    # - name: xiaohongshu
-    #   url: "https://www.xiaohongshu.com/user/profile/68a9d4e5000000001a00fcf9"
+    - name: xiaohongshu
+      url: "https://www.xiaohongshu.com/user/profile/68a9d4e5000000001a00fcf9"
     - name: x
       url: "https://x.com/flyhulatu"
     - name: github
