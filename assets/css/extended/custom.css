@@ -343,7 +343,7 @@ a:active, button:active { transform: scale(0.96) !important; }
     opacity: 0.6;
     margin-bottom: 10px !important;
     border-bottom: 1px solid rgba(128,128,128,0.1);
-    padding-bottom: 8px;
+    padding-bottom: 10px;
 }
 
 /* 3. 联系方式胶囊网格 */
@@ -354,7 +354,7 @@ a:active, button:active { transform: scale(0.96) !important; }
     margin-bottom: 10px;
 }
 .contact-item {
-    padding: 8px 10px !important;
+    padding: 5px 5px !important;
     background: var(--code-bg) !important;
     border-radius: 10px !important; /* 统一 10px 圆角 */
     font-size: 15px !important;
@@ -363,7 +363,6 @@ a:active, button:active { transform: scale(0.96) !important; }
 }
 .contact-item:hover {
     background: var(--tertiary) !important;
-    transform: translateY(-2px);
 }
 
 /* 4. 时间轴样式 */

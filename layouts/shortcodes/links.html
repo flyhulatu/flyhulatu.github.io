@@ -11,7 +11,7 @@
     <a href="{{ .url }}" target="_blank" rel="noopener" class="friend-card">
       <div class="friend-avatar">
         <!-- 如果没有头像，使用一个默认占位图 -->
-        <img src="{{ .avatar | default "https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/assets/photo.png" }}" alt="{{ .name }}" loading="lazy">
+        <img src="{{ .avatar | default "https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/web-app-manifest-192x192_MMwP3I.png" }}" alt="{{ .name }}" loading="lazy">
       </div>
       <div class="friend-info">
         <div class="friend-name">{{ .name }}</div>
@@ -43,28 +43,20 @@
 .friend-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* 稍微加宽一点，适合显示描述 */
-  gap: 16px;
+  gap: 15px;
 }
 
 /* 卡片样式 */
 .friend-card {
   display: flex;
   align-items: center;
-  padding: 12px;
-  border-radius: 12px;
+  padding: 10px;
+  border-radius: 10px;
   background: var(--entry);
   border: 1px solid var(--border);
-  transition: all 0.3s ease;
   text-decoration: none !important;
   color: var(--primary) !important;
   box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-}
-
-.friend-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  background: var(--tertiary);
-  border-color: var(--secondary);
 }
 
 /* 头像样式 */
@@ -78,10 +70,6 @@
   border-radius: 50%;
   object-fit: cover;
   margin: 0 !important; /* 覆盖PaperMod默认的margin */
-  transition: transform 0.5s ease;
-}
-.friend-card:hover .friend-avatar img {
-  transform: rotate(360deg); /* 鼠标悬停头像旋转，可选 */
 }
 
 /* 信息样式 */
