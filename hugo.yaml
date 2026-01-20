@@ -87,8 +87,8 @@ params:
       url: "https://github.com/flyhulatu"
 
   cover:
-    hidden: false              # 全站封面
-    hiddenInList: false       # 列表封面
+    hidden: true              # 全站封面
+    hiddenInList: true       # 列表封面
     hiddenInSingle: false      # 详情页封面
     linkFullImages: false     # 点击封面图查看原图
     ShowSummary: false        # 列表摘要
@@ -108,11 +108,11 @@ menu:
       name: 💬
       url: /guestbook/
       weight: 3
-    - identifier: links
-      name: 📡
-      url: /links/
-      weight: 4
-    - identifier: about
+    # - identifier: links
+    #   name: 📡
+    #   url: /links/
+    #   weight: 4
+    # - identifier: about
       name: 👤
       url: /about/
       weight: 10
