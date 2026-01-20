@@ -2,10 +2,11 @@
 title: "友圈"
 date: 2025-01-05
 slug: “friend-links"
-layout: "links"  # 强制使用我们刚才写的 links 模板
+layout: "links"  
 showToc: false
 comments: true
 hidemeta: true
+draft: false
 ---
 这里是我经常访问的组织和好友们的平台：
 
