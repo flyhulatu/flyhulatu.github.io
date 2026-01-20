@@ -51,14 +51,18 @@
   display: flex;
   align-items: center;
   padding: 12px;
-  border-radius: 10px;
+  border-radius: 12px;
   background: var(--entry);
   border: 1px solid var(--border);
+  transition: all 0.3s ease;
   text-decoration: none !important;
   color: var(--primary) !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 
 .friend-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   background: var(--tertiary);
   border-color: var(--secondary);
 }
@@ -73,7 +77,11 @@
   height: 54px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 0 !important; 
+  margin: 0 !important; /* 覆盖PaperMod默认的margin */
+  transition: transform 0.5s ease;
+}
+.friend-card:hover .friend-avatar img {
+  transform: rotate(360deg); /* 鼠标悬停头像旋转，可选 */
 }
 
 /* 信息样式 */
