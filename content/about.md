@@ -95,7 +95,7 @@ disableHLJS: true
 
   <h2>订阅</h2>
   <p class="links">
-    <a href="/feed">RSS</a><span class="dot">·</span>
+    <a href="/feed">Feed</a><span class="dot">·</span>
     <a href="/atom.xml">Atom</a><span class="dot">·</span>
     <a href="/rss.xml">RSS 2.0</a><span class="dot">·</span>
     <a href="/rss1.xml">RSS 1.0</a>
