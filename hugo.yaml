@@ -127,7 +127,7 @@ params:
 
   socialIcons:
     - name: rss  
-      url: "/feed"
+      url: "rss.xml"
     - name: email
       url: "mailto:2983685624@qq.com"
     - name: wechat
