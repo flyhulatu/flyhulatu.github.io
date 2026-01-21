@@ -60,19 +60,7 @@ outputs:
     - FEED
     - ATOM
     - RSS1
-
-# outputFormats:
-#   RSS:
-#     baseName: "rss"
-
-# outputs:
-#   home:
-#     - HTML
-#     - RSS   # 生成 index.xml
-#     - JSON  # 生成 index.json (搜索用)
-#   section:
-#     - HTML
-#     - RSS   # 生成 index.xml
+    - JSON
 
 defaultContentLanguage: "zh"   # 默认语言环境，影响翻译包调取
 hasCJKLanguage: true           # 开启中日韩文字统计逻辑，修正字数统计
