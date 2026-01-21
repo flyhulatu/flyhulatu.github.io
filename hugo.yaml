@@ -1,15 +1,17 @@
 baseURL: "https://hulatu.com/"
 languageCode: "zh-cn"
+defaultContentLanguage: "zh"
+hasCJKLanguage: true
 title: "胡拉图的后花园"
 theme: "hugo-PaperMod"
-enableRobotsTXT: true          # 启用 robots.txt 供搜索引擎抓取
+enableRobotsTXT: true
 
 minify:
+  minifyOutput: true
   disableXML: false
-  minifyOutput: true # 开启 HTML 压缩
 
 pagination:
-  pagerSize: 10                # 每页显示的文章数量
+  pagerSize: 10
 
 permalinks:
   posts: "/posts/:year/:month/:day/:slug/"
@@ -19,95 +21,80 @@ markup:
     renderer:
       unsafe: true
 
-# 1. 必须先定义媒体类型，否则 Hugo 不认识这些格式
+sitemap:
+  enable: true
+  filename: "sitemap.xml"
+  changefreq: "weekly"
+  priority: 0.7
+  expireAfter: "90d"
+
+# -------------------------
+# Feeds / Outputs
+# -------------------------
 mediaTypes:
   application/atom+xml:
-    suffixes:
-      - xml
+    suffixes: ["xml"]
   application/rdf+xml:
-    suffixes:
-      - xml
+    suffixes: ["xml"]
   application/rss+xml:
-    suffixes:
-      - xml
+    suffixes: ["xml"]
 
-# 2. 定义输出格式
 outputFormats:
-  # RSS 2.0 (系统自带，我们只改名字)
   RSS:
     mediaType: "application/rss+xml"
     baseName: "rss"
-  # 我们自定义的 FEED 格式
   FEED:
     mediaType: "application/rss+xml"
     baseName: "feed"
-  # ATOM 格式（使用上面定义好的媒体类型）
   ATOM:
     mediaType: "application/atom+xml"
     baseName: "atom"
     rel: "alternate"
-  # RSS 1.0 格式（使用上面定义好的媒体类型）
   RSS1:
     mediaType: "application/rdf+xml"
     baseName: "rss1"
     rel: "alternate"
 
-# 3. 告诉 Hugo 首页要生成这些文件
 outputs:
-  home:
-    - HTML
-    - RSS
-    - FEED
-    - ATOM
-    - RSS1
-    - JSON
+  home: ["HTML", "RSS", "FEED", "ATOM", "RSS1"]
 
-defaultContentLanguage: "zh"   # 默认语言环境，影响翻译包调取
-hasCJKLanguage: true           # 开启中日韩文字统计逻辑，修正字数统计
-
-sitemap:
-  enable: true
-  filename: "sitemap.xml"
-  changefreq: "weekly"         # 更新频率
-  priority: 0.7                # 权重
-  expireAfter: "90d"           # 过期时间
-
+# -------------------------
+# PaperMod params
+# -------------------------
 params:
-  env: production              # 生产环境
+  env: "production"
   title: "胡拉图的后花园"
   description: "写作,使我精确."
-  keywords: [Blog, Vlog, PaperMod, Mac, Hugo, Write]
-  label:
-    text: " "
-    icon: "/images/logo.png" # 你的图标路径
-    iconHeight: 35        # 调整高度
-  
-
-  fuseOpts:
-    isCaseSensitive: false
-    shouldSort: true
-    location: 0
-    distance: 100
-    threshold: 0.4
-    minMatchCharLength: 0
-    keys: ["title", "permalink", "summary", "content"]
+  keywords: ["Blog", "Vlog", "PaperMod", "Mac", "Hugo", "Write"]
 
   defaultTheme: "auto"
   disableThemeToggle: true
+
+  # 内容结构
+  mainSections: ["posts"]
   disableSpecial1stPost: true
-  mainSections: "posts"
+  dateFormat: "2006-01-02"
 
+  # 页面组件开关
   ShowReadingTime: false
-  ShowFullTextinRSS: true      # RSS 输出全文
-  ShowBreadCrumbs: false        # 面包屑导航
+  ShowFullTextinRSS: true
+  ShowBreadCrumbs: false
   showShareButtons: false
-  ShowCodeCopyButtons: false    # 代码块复制按钮
-  ShowPostNavLinks: false       # 文章页底部的前后篇导航
-  dateFormat: "2006-01-02"     # 标准日期格式
-  ShowToc: false                # 显示文章目录
-  comments: false
+  ShowCodeCopyButtons: false
+  ShowPostNavLinks: false
+  ShowToc: false
+  comments: true
 
-  googleAnalytics: "G-K7FNDKR96R"  # 谷歌分析
+  # Logo
+  label:
+    text: " "
+    icon: "/images/logo.png"
+    iconHeight: 35
+
+  # 统计
+  googleAnalytics: "G-K7FNDKR96R"
+
+  # 站点图标
   assets:
     favicon: "/favicon.png"
     favicon16x16: "/favicon.png"
@@ -115,81 +102,46 @@ params:
     apple_touch_icon: "/apple-touch-icon.png"
     safari_pinned_tab: "/safari-pinned-tab.svg"
 
-  homeInfoParams:
-    Title: "胡拉图的后花园"
-    Content: "不谈专业, 只聊生活的研究生."
-
-  socialIcons:
-    - name: rss  
-      url: "/feed"
-    - name: email
-      url: "mailto:2983685624@qq.com"
-    - name: wechat
-      url: "https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/wechat.webp"
-    - name: qq
-      url: "https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/qq.webp"
-    - name: xiaohongshu
-      url: "https://www.xiaohongshu.com/user/profile/68a9d4e5000000001a00fcf9"
-    - name: x
-      url: "https://x.com/flyhulatu"
-    - name: github
-      url: "https://github.com/flyhulatu"
-
+  # 封面控制
   cover:
-    hidden: true              # 全站封面
-    hiddenInList: true       # 列表封面
-    hiddenInSingle: false      # 详情页封面
-    linkFullImages: false     # 点击封面图查看原图
-    ShowSummary: false        # 列表摘要
+    hidden: true
+    hiddenInList: true
+    hiddenInSingle: false
+    linkFullImages: false
+    ShowSummary: false
     responsiveImages: true
 
+# -------------------------
+# Menu
+# -------------------------
 menu:
   main:
-    # - identifier: search
-    #   name: 🔍
-    #   url: "/search/"
-    #   weight: 31
-    # - identifier: tags
-    #   name: Tags
-    #   url: /tags/
-    #   weight: 20
-    - identifier: Home
+    - identifier: home
       name: "Home"
       url: "/"
       weight: 1
-    - identifier: Daily
+
+    - identifier: daily
       name: "Daily"
-      url: "daily"
+      url: "/daily/"
       weight: 2
+
     - identifier: archives
-      name: Article
-      url: /archives/
+      name: "Article"
+      url: "/archives/"
       weight: 30
-    # - identifier: guestbook
-    #   name: 💬
-    #   url: /guestbook/
-    #   weight: 40
-    # - identifier: links
-    #   name: 📡
-    #   url: /links/
-    #   weight: 50
+
     - identifier: about
-      name: About
-      url: /about/
+      name: "About"
+      url: "/about/"
       weight: 40
-    - identifier: RSS
+
+    - identifier: guestbook
+      name: "Talk"
+      url: "/guestbook/"
+      weight: 50
+
+    - identifier: rss
       name: "RSS"
       url: "/feed"
       weight: 100
-    
-
-    # - identifier: posts
-    #   name: 文
-    #   url: /posts/
-    #   weight: 10
-    # - identifier: categories
-    #   name: 类
-    #   url: /categories/
-    #   weight: 20
-    
-    

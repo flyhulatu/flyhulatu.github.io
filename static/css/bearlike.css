@@ -431,4 +431,191 @@ ul.pagination a[aria-disabled="true"],
   pointer-events: none !important;
 }
 
+/* =========================
+   Twikoo — Bearblog Minimal Skin
+   (uses your working selectors)
+   ========================= */
 
+/* 0) 容器：像正文一样，不要卡片感 */
+#tcomment{
+  margin-top: 32px;
+  padding: 0; /* Bear 不需要左右 padding，跟正文容器一致 */
+}
+
+/* 1) 输入区整体：去“面板/卡片/圆角” */
+.twikoo .tk-submit,
+.twikoo .tk-meta,
+.twikoo .tk-input,
+.twikoo .tk-textarea,
+.twikoo .tk-preview-container{
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* 2) “昵称/邮箱/网址”这一排的每个输入组：用下划线而不是框 */
+.twikoo .tk-input{
+  border: 0 !important;
+  border-bottom: 1px solid var(--faint) !important;
+  border-radius: 0 !important;
+  padding: 6px 0 !important;
+  transition: none !important;
+}
+
+/* 3) 去掉左侧灰底标签块：只留文字（更 Bear） */
+.twikoo .tk-tag-label{
+  background: transparent !important;
+  border: 0 !important;
+  border-right: 0 !important;
+  color: var(--muted) !important;
+  font-weight: 600 !important;
+  opacity: 1 !important;
+  padding-left: 0 !important;
+}
+
+/* 4) 输入框本体（Element UI）：透明 + 下划线风 */
+.twikoo .el-input__inner{
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: var(--text) !important;
+  padding-left: 6px !important;
+  padding-right: 0 !important;
+}
+
+/* 5) 评论正文输入框：下划线+轻微间距（不要大边框大圆角） */
+.twikoo .el-textarea__inner{
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--faint) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  min-height: 120px !important;
+  padding: 10px 0 !important;
+  font-size: 1rem !important;
+  line-height: 1.65 !important;
+  transition: none !important;
+}
+
+/* focus：不要蓝色 glow，只稍微加深下划线 */
+.twikoo .tk-input:focus,
+.twikoo .el-textarea__inner:focus{
+  border-bottom-color: var(--muted) !important;
+  box-shadow: none !important;
+}
+
+/* 6) 工具栏：弱化成文本感（可选隐藏） */
+.twikoo .tk-toolbar{
+  opacity: .55;
+}
+.twikoo .tk-toolbar:hover{
+  opacity: .9;
+}
+/* 更极简：隐藏表情/图片/markdown 工具（取消注释） */
+/* .twikoo .tk-toolbar{ display:none !important; } */
+
+/* 7) 按钮：全部变成“文字链接”，不要胶囊/填充色 */
+.twikoo .tk-send,
+.twikoo .el-button,
+.twikoo .el-button:not(.tk-send){
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  padding: 0 !important;
+  height: auto !important;
+  line-height: 1.6 !important;
+
+  color: var(--text) !important;
+  font-weight: 600 !important;
+
+  text-decoration: underline !important;
+  text-underline-offset: 3px !important;
+  text-decoration-color: var(--faint) !important;
+  transition: none !important;
+}
+
+/* hover：下划线变深 */
+.twikoo .tk-send:hover,
+.twikoo .el-button:hover{
+  transform: none !important;
+  box-shadow: none !important;
+  text-decoration-color: var(--text) !important;
+}
+
+/* 让“预览/发送”之间有点呼吸 */
+.twikoo .tk-submit-action{
+  gap: 16px !important;
+}
+
+/* 8) 头像：Bear 更偏文字，建议隐藏（如果你想保留就删掉这段） */
+.twikoo .tk-avatar{
+  display: none !important;
+}
+
+/* 9) 评论列表：不要卡片背景/圆角；用极淡分隔线 */
+.twikoo .tk-comment{
+  margin-top: 0 !important;
+  padding: 14px 0 !important;
+
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  transition: none !important;
+}
+
+/* 相邻评论之间加分隔线（Bear 风） */
+.twikoo .tk-comment + .tk-comment{
+  border-top: 1px solid var(--faint) !important;
+}
+
+/* hover 不要变背景 */
+.twikoo .tk-comment:hover{
+  background: transparent !important;
+}
+
+/* 10) 昵称/时间：弱化为文本信息，不要高亮主色 */
+.twikoo .tk-nick{
+  color: var(--text) !important;
+  font-weight: 700 !important;
+}
+
+.twikoo .tk-time,
+.twikoo .tk-meta{
+  color: var(--muted) !important;
+}
+
+/* 11) 徽章：改成“淡边框小标签”，不要大色块 */
+.twikoo .tk-badge{
+  background: transparent !important;
+  color: var(--muted) !important;
+  border: 1px solid var(--faint) !important;
+  border-radius: 0 !important;
+  padding: 1px 6px !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+}
+
+/* 12) UA 信息（Windows/Chrome 那行）更不 Bear：建议隐藏 */
+.twikoo .tk-extras{
+  display: none !important;
+}
+
+/* 极简到极致：隐藏 footer（取消注释） */
+.twikoo .tk-footer{ display:none !important; }
+
+/* 14) 移动端：输入项纵向堆叠 */
+@media screen and (max-width: 768px){
+  .twikoo .tk-meta-input{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .twikoo .tk-input{
+    width: 100% !important;
+  }
+}
