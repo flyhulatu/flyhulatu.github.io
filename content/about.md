@@ -42,10 +42,16 @@ disableHLJS: true
 欢迎订阅我的博客，你可以根据你的阅读器习惯选择以下格式：
 
 <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px;">
+    <!-- 通用 Feed -->
     <a href="/feed" style="background: #f26522; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">RSS FEED</a>
+    <!-- 新增：标准 RSS 2.0 (rss.xml) -->
+    <a href="/rss.xml" style="background: #ea8c1c; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">RSS 2.0</a>
+    <!-- Atom -->
     <a href="/atom.xml" style="background: #2b5797; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">ATOM</a>
+    <!-- RSS 1.0 -->
     <a href="/rss1.xml" style="background: #666; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">RSS 1.0</a>
 </div>
+
 <!-- 3. 自我介绍：正文部分 -->
 
 <div class="about-section">
