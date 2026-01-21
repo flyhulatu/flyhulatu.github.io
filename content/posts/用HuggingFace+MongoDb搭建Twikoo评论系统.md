@@ -1,5 +1,5 @@
 ---
-title: "基于HuggingFace+MongoDb给博客加上Twikoo评论系统" 
+title: 用HuggingFace+MongoDb搭建Twikoo评论系统
 date: 2026-01-19T21:19:41+08:00 
                            
 slug: ""                                                                  

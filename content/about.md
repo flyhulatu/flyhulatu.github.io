@@ -9,82 +9,102 @@ showToc: false
 hidemeta: true
 # 禁用评论（可选，通常 About 页不需要评论）
 comments: false
-# 禁用分享按钮
 disableShare: true
 # 如果你想让这个页面不出现在首页列表中
 disableHLJS: true
 ---
-
 <style>
-    .post-header { display: none; }
+  /* About 页局部：更像 Bear（纯文本、无组件感） */
+  .post-header { display: none; }
+
+  .about{
+    max-width: var(--measure);
+    margin: 0 auto;
+  }
+  .about h1{
+    font-size: 1.9rem;
+    line-height: 1.15;
+    margin: 0.2rem 0 1rem;
+  }
+  .about p{
+    margin: 0.85rem 0;
+  }
+  .about .muted{
+    color: var(--muted);
+  }
+
+  /* 让链接像“正文的一部分” */
+  .about a{
+    color: var(--text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--faint);
+  }
+  .about a:hover{
+    text-decoration-color: var(--text);
+  }
+
+  /* 行内链接列表（QQ · WeChat · ...） */
+  .about .links{
+    margin: 0.6rem 0 1.1rem;
+    display: inline;
+  }
+  .about .links a{
+    font-weight: 600;
+  }
+  .about .dot{
+    color: var(--muted);
+    padding: 0 0.45rem;
+  }
+
+  /* 小标题更克制 */
+  .about h2{
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 1.6rem 0 0.45rem;
+  }
+
+  /* 小分隔（可删） */
+  .about hr{
+    border: 0;
+    border-top: 1px solid var(--faint);
+    margin: 1.4rem 0;
+  }
 </style>
-<!-- 1. 顶部：个人简介卡片 -->
 
-<div class="about-hero">
-    <h1>胡志朋 👋 <small>(笔名：胡拉图)</small></h1>
-    <p class="about-subtitle">一名不谈专业、只聊生活、热爱折腾的工科研究生</p>
+<div class="about">
+  <h1>胡志朋 <span class="muted">（笔名：胡拉图）</span></h1>
+
+  <p class="muted">一名不谈专业、只聊生活、热爱折腾的研究生。</p>
+
+  <hr>
+  
+  <h2>关于</h2>
+  <p>泥嚎！欢迎来到我的世界。</p>
+  <p>目前在<strong>郑州</strong>上学。平时喜欢搞鼓 <strong>Mac、GitHub、写作</strong> 和各类生产力工具。</p>
+  <p>这个博客用来记录学习和生活随想，希望你喜欢。</p>
+
+
+  <h2>联系</h2>
+  <p class="links">
+    <a href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/qq.webp">QQ</a><span class="dot">·</span>
+    <a href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/wechat.webp">WeChat</a><span class="dot">·</span>
+    <a href="mailto:flyhulatu@gmail.com">Gmail</a><span class="dot">·</span>
+    <a href="mailto:2983685624@qq.com">QQ Mail</a>
+  </p>
+
+  <h2>订阅</h2>
+  <p class="links">
+    <a href="/feed">RSS</a><span class="dot">·</span>
+    <a href="/atom.xml">Atom</a><span class="dot">·</span>
+    <a href="/rss.xml">RSS 2.0</a><span class="dot">·</span>
+    <a href="/rss1.xml">RSS 1.0</a>
+  </p>
+
+  <h2>平台</h2>
+  <p class="links">
+    <a href="https://sspai.com/u/hulatu/updates">少数派</a><span class="dot">·</span>
+    <a href="https://www.xiaohongshu.com/user/profile/68a9d4e5000000001a00fcf9">小红书</a><span class="dot">·</span>
+    <a href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/gzh.webp">公众号</a>
+  </p>
 </div>
-
-<!-- 2. 联系方式：使用精致的小胶囊 -->
-
-<div class="about-section">
-    <h3 class="about-label">📍 联系我</h3>
-    <div class="contact-grid">
-        <a class="contact-item" href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/qq.webp"><span>QQ</span></a>
-        <a class="contact-item" href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/wechat.webp"><span>WeChat</span></a>
-        <a class="contact-item" href="mailto:flyhulatu@gmail.com"><span>G-Mail</span></a>
-        <a class="contact-item" href="mailto:2983685624@qq.com"><span>Q-Mail</span></a>
-    </div>
-</div>
-
-### 订阅本站 (Subscribe)
-
-欢迎订阅我的博客，你可以根据你的阅读器习惯选择以下格式：
-
-<div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px;">
-    <!-- 通用 Feed -->
-    <a href="/feed" style="background: #f26522; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">RSS FEED</a>
-    <!-- 新增：标准 RSS 2.0 (rss.xml) -->
-    <a href="/rss.xml" style="background: #ea8c1c; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">RSS 2.0</a>
-    <!-- Atom -->
-    <a href="/atom.xml" style="background: #2b5797; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">ATOM</a>
-    <!-- RSS 1.0 -->
-    <a href="/rss1.xml" style="background: #666; color: white; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold;">RSS 1.0</a>
-</div>
-
-<!-- 3. 自我介绍：正文部分 -->
-
-<div class="about-section">
-    <h3 class="about-label">👤 我是谁</h3>
-    <div class="about-text">
-        <p>泥嚎！欢迎来到我的世界。</p>
-        <p>目前在<strong>郑州</strong>上学。平时喜欢搞鼓 <strong>Mac、GitHub、写作</strong> 和各类生产力工具。</p>
-        <p>在这个博客记录我的学习和生活随想，希望大家喜欢！</p>
-      	<p>所在平台：</p>
-      	<a class="contact-item" href="https://sspai.com/u/hulatu/updates"><span>少数派</span></a>
-        <a class="contact-item" href="https://www.xiaohongshu.com/user/profile/68a9d4e5000000001a00fcf9"><span>小红书</span></a>
-        <a class="contact-item" href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/gzh.webp"><span>公众号</span></a>
-    </div>
-</div>
-
-<!-- 4. 见过往：精致时间轴 -->
-
-<div class="about-section">
-    <h3 class="about-label">🚀 见过往</h3>
-    <div class="timeline">
-      	<div class="timeline-item">
-            <div class="time">2025 - 21xx</div>
-            <div class="desc">博客运行至……</div>
-        </div>
-        <div class="timeline-item">
-            <div class="time">2024 - 2027</div>
-            <div class="desc">郑州某高校 · 研究生在读</div>
-        </div>
-        <div class="timeline-item">
-            <div class="time">2020 - 2024</div>
-            <div class="desc">江西XX大学 · 食品专业 / 工学学士</div>
-        </div>
-    </div>
-</div>
-
-

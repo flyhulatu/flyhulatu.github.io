@@ -1,12 +1,11 @@
 {{- define "main" -}}
 <main class="main">
   <div class="bear-archive-head">
-    <span class="bear-archive-tag">长文</span>
+    <span class="bear-archive-tag">日记</span>
   </div>
 
   <ul class="bear-archive-list">
-    {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections -}}
-    {{- range ($pages.ByDate.Reverse) -}}
+    {{- range .Pages.ByDate.Reverse -}}
       <li class="bear-archive-item">
         <time class="bear-archive-date" datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}</time>
         <a class="bear-archive-title" href="{{ .RelPermalink }}">{{ .Title }}</a>

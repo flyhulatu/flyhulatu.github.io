@@ -9,7 +9,7 @@ minify:
   minifyOutput: true # 开启 HTML 压缩
 
 pagination:
-  pagerSize: 10                 # 每页显示的文章数量
+  pagerSize: 10                # 每页显示的文章数量
 
 permalinks:
   posts: "/posts/:year/:month/:day/:slug/"
@@ -78,9 +78,10 @@ params:
   description: "写作,使我精确."
   keywords: [Blog, Vlog, PaperMod, Mac, Hugo, Write]
   label:
-    text: "图图"
+    text: " "
     icon: "/images/logo.png" # 你的图标路径
     iconHeight: 35        # 调整高度
+  
 
   fuseOpts:
     isCaseSensitive: false
@@ -91,15 +92,20 @@ params:
     minMatchCharLength: 0
     keys: ["title", "permalink", "summary", "content"]
 
+  defaultTheme: "auto"
+  disableThemeToggle: true
+  disableSpecial1stPost: true
+  mainSections: "posts"
+
+  ShowReadingTime: false
   ShowFullTextinRSS: true      # RSS 输出全文
   ShowBreadCrumbs: false        # 面包屑导航
   showShareButtons: false
-  ShowCodeCopyButtons: true    # 代码块复制按钮
-  ShowPostNavLinks: true       # 文章页底部的前后篇导航
+  ShowCodeCopyButtons: false    # 代码块复制按钮
+  ShowPostNavLinks: false       # 文章页底部的前后篇导航
   dateFormat: "2006-01-02"     # 标准日期格式
-  ShowToc: true                # 显示文章目录
-  TocOpen: true                # 默认展开目录
-  comments: true
+  ShowToc: false                # 显示文章目录
+  comments: false
 
   googleAnalytics: "G-K7FNDKR96R"  # 谷歌分析
   assets:
@@ -139,30 +145,42 @@ params:
 
 menu:
   main:
-    - identifier: search
-      name: 🔍
-      url: "/search/"
-      weight: 31
-    - identifier: tags
-      name: 🏷️
-      url: /tags/
-      weight: 20
+    # - identifier: search
+    #   name: 🔍
+    #   url: "/search/"
+    #   weight: 31
+    # - identifier: tags
+    #   name: Tags
+    #   url: /tags/
+    #   weight: 20
+    - identifier: Home
+      name: "Home"
+      url: "/"
+      weight: 1
+    - identifier: Daily
+      name: "Daily"
+      url: "daily"
+      weight: 2
     - identifier: archives
-      name: 🗂️
+      name: Article
       url: /archives/
       weight: 30
-    - identifier: guestbook
-      name: 💬
-      url: /guestbook/
-      weight: 40
-    - identifier: links
-      name: 📡
-      url: /links/
-      weight: 50
+    # - identifier: guestbook
+    #   name: 💬
+    #   url: /guestbook/
+    #   weight: 40
+    # - identifier: links
+    #   name: 📡
+    #   url: /links/
+    #   weight: 50
     - identifier: about
-      name: 👤
+      name: About
       url: /about/
-      weight: 60
+      weight: 40
+    - identifier: RSS
+      name: "RSS"
+      url: "/feed"
+      weight: 100
     
 
     # - identifier: posts
