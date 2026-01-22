@@ -20,4 +20,4 @@ breadcrumbs: false
     .post-header { display: none; }
 </style>
 
-欢迎来到 **图图** 的留言板
+**欢迎留言**

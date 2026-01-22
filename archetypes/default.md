@@ -9,11 +9,8 @@ categories:
 tags:                                        
   - 
 
-draft: false
-showToc: true                                
-TocOpen: true                                
+draft: false                              
 hidemeta: false                              
-comments: true                              
-disableShare: false                          
+comments: true                                                        
 # canonicalURL: ""                           
 ---

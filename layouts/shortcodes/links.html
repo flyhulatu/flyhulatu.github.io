@@ -23,51 +23,36 @@
 {{ end }}
 
 <style>
-/* 分类标题样式 */
 .link-group-header {
   margin-top: 2.5rem;
   margin-bottom: 1rem;
-  border-bottom: 1px solid var(--faint); /* 使用较浅的颜色作为分隔线 */
 }
 .link-group-header h3 {
   margin: 0;
   font-size: 1.4rem;
   font-weight: 600;
-  color: var(--text); /* 使用主文本色 */
+  color: var(--text);
 }
 .link-group-desc {
   margin: 5px 0 15px;
   font-size: 0.9rem;
-  color: var(--muted); /* 使用次要文本色 */
+  color: var(--muted);
 }
-
-/* 列表网格布局 */
 .friend-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* 使用自适应的网格布局 */
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 15px;
 }
-
-/* 卡片样式 */
 .friend-card {
   display: flex;
   align-items: center;
   padding: 12px;
-  border-radius: 8px; /* 使用更圆的角度 */
-  background: var(--bg); /* 使用背景色 */
-  border: 1px solid var(--faint); /* 使用较浅的边框颜色 */
+  border-radius: 8px;
+  background: var(--bg);
+  border: 1px solid var(--faint);
   text-decoration: none !important;
   color: var(--text) !important;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* 较轻的阴影效果 */
-  transition: background 0.3s ease, box-shadow 0.3s ease; /* 添加过渡效果 */
 }
-
-.friend-card:hover {
-  background: var(--faint); /* 鼠标悬停时改变背景 */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* 增强阴影 */
-}
-
-/* 头像样式 */
 .friend-avatar {
   flex-shrink: 0;
   margin-right: 14px;
@@ -79,26 +64,24 @@
   object-fit: cover;
   margin: 0 !important;
 }
-
-/* 信息样式 */
 .friend-info {
   flex-grow: 1;
   overflow: hidden;
 }
 .friend-name {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.1rem;
   margin-bottom: 4px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: var(--text); /* 使用主文本色 */
+  color: var(--text);
 }
 .friend-bio {
   font-size: 0.9rem;
-  color: var(--muted); /* 使用次要文本色 */
+  color: var(--muted);
   display: -webkit-box;
-  -webkit-line-clamp: 1; /* 只显示一行描述 */
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   line-height: 1.4;
