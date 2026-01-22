@@ -92,3 +92,17 @@ pre { border: 1px solid var(--faint) !important; border-radius: 0 !important; }
   .twikoo .tk-meta-input{ display: flex; flex-direction: column; gap: 10px;}
   .twikoo .tk-input{ width: 100% !important;}
 }
+/* 确保图片描述文字显示且居中 */
+.post-content figure {
+  margin: 1.5rem auto !important;
+  text-align: center;
+}
+
+.post-content figcaption {
+  display: block !important; /* 强制显示 */
+  font-size: 0.9rem;
+  color: var(--text) !important; /* 这里改成 --text 确保在深色模式下清晰可见 */
+  opacity: 0.7; /* 稍微透明一点，显得高级 */
+  margin-top: 10px;
+  text-align: center;
+}
