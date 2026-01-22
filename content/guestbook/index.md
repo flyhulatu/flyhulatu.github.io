@@ -20,6 +20,4 @@ breadcrumbs: false
     .post-header { display: none; }
 </style>
 
-热烈欢迎👏这里是 **图图** 的留言板📒
-
-有任何想说的、想问的，或只想打个招呼，都可以在下面留言哦👇
+欢迎来到 **图图** 的留言板
