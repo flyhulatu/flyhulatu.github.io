@@ -2,12 +2,12 @@
 title: "{{ replace .Name "-" " " | title }}" 
 date: {{ .Date }} 
                            
-slug: ""                                                                  
-summary: ""                              
+slug:                                                                   
+summary:                              
 categories:                                  
-  - ""
+  - 
 tags:                                        
-  - ""
+  - 
 
 draft: false
 showToc: true                                

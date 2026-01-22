@@ -1,54 +1,32 @@
-/* =========================================================
-   Bear-like skin for Hugo PaperMod (FINAL CLEAN VERSION)
-   - macOS system font
-   - narrow measure
-   - minimal UI, text-first
-   - archive & daily list like reference screenshot
-   ========================================================= */
-
-/* -------------------------
-   0) Tokens
-------------------------- */
 :root{
   --bg: #ffffff;
   --text: rgba(0,0,0,.86);
   --muted: rgba(0,0,0,.60);
   --faint: rgba(0,0,0,.12);
-
   --link: #0b57d0;
   --link-visited: #5b3fd6;
-
   --measure: 38em;
   --pad: 18px;
-
   --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
           "Liberation Mono", "Courier New", monospace;
-
   --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
           "Helvetica Neue", Arial,
           "PingFang SC","Hiragino Sans GB","Microsoft YaHei",
           sans-serif;
 }
-
 @media (prefers-color-scheme: dark){
   :root{
     --bg: #0b0c0f;
     --text: rgba(255,255,255,.88);
     --muted: rgba(255,255,255,.62);
     --faint: rgba(255,255,255,.14);
-
     --link: #7ab7ff;
     --link-visited: #b6a6ff;
   }
 }
-
-/* -------------------------
-   1) Base
-------------------------- */
 html, body{
   background: var(--bg) !important;
 }
-
 body{
   font-family: var(--sans) !important;
   color: var(--text) !important;
@@ -57,173 +35,128 @@ body{
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-
-/* narrow measure for core containers */
 .main, .page, .post, .first-entry, .home-info, .profile, .footer {
   max-width: var(--measure) !important;
   margin-left: auto !important;
   margin-right: auto !important;
   box-shadow: none !important;
 }
-
-/* page padding */
 .main{
   padding-left: var(--pad) !important;
   padding-right: var(--pad) !important;
 }
-
-/* -------------------------
-   2) Header / Nav
-------------------------- */
-.header{
-  box-shadow: none !important;
-  border-bottom: 1px solid var(--faint) !important;
+.header, .nav {
+    border-bottom: none !important;
 }
-
-.nav{
-  max-width: var(--measure) !important;
-  margin: 0 auto !important;
-  padding: 10px var(--pad) !important; /* 更像参考图那种“薄导航” */
+.nav {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: var(--measure) !important; 
 }
-
+.nav::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background: var(--border);
+    left: var(--pad);
+    right: var(--pad);
+}
 .logo a{
   font-weight: 600 !important;
   letter-spacing: 0 !important;
 }
-
 #menu{
   gap: 14px !important;
 }
-
 #menu a{
   font-size: 0.95rem !important;
   color: var(--muted) !important;
   text-decoration: none !important;
 }
-
 #menu a:hover{
   color: var(--text) !important;
   text-decoration: underline !important;
   text-underline-offset: 3px;
 }
-
-/* -------------------------
-   3) Titles
-------------------------- */
-/* 首页标题更克制 */
 .page-header h1{
   font-size: 1.7rem !important;
   font-weight: 700 !important;
   margin-bottom: 14px !important;
 }
-
-/* 文章标题 */
 .post-title{
   font-size: 1.8rem !important;
   font-weight: 700 !important;
   line-height: 1.15 !important;
   margin-bottom: 0.6rem !important;
 }
-
-/* -------------------------
-   5) Post page
-------------------------- */
-/* 去目录灰盒 */
 .toc, details.toc, .post-toc{ display: none !important; }
-
-/* 元信息淡化 */
 .post-meta, .entry-meta, .breadcrumbs, .post-description{
   color: var(--muted) !important;
   font-size: 0.85rem !important;
   font-variant-numeric: tabular-nums;
 }
-
-/* 正文 */
 .post-content{
   font-size: 1.05rem;
 }
-
 .post-content p{
   margin: 0.95rem 0 !important;
 }
-
 .post-content a{
   color: var(--link) !important;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
-
 .post-content a:visited{
   color: var(--link-visited) !important;
 }
-
-/* 嵌入/图片像“贴在纸上”：无圆角无阴影 */
 .post-content img, .post-content video, .post-content iframe{
   border-radius: 0 !important;
   box-shadow: none !important;
   max-width: 100% !important;
 }
-
 .post-content figure,
 .post-content p:has(img){
   margin: 1rem 0 !important;
 }
-
-/* 避免双标题（正文首个 H1 隐藏） */
 .post-content > h1:first-child{
   display: none !important;
 }
-
-/* 分隔线、引用、代码块轻量化 */
 hr{
   border: 0;
   border-top: 1px solid var(--faint);
   margin: 1.6rem 0;
 }
-
 blockquote{
   border-left: 3px solid var(--faint) !important;
   margin-left: 0 !important;
   padding-left: 14px !important;
   color: var(--muted) !important;
 }
-
 pre, code{
   font-family: var(--mono) !important;
 }
-
 pre{
   border: 1px solid var(--faint) !important;
   border-radius: 0 !important;
 }
-
-
-
-/* -------------------------
-   7) Reference-style Archive / Daily list (you wanted)
-   - no "归档" title
-   - no separators
-   - right-top tag text ("长文" / "Daily")
-------------------------- */
 .bear-archive-head{
   display: flex;
   justify-content: flex-end;
   margin: 6px 0 18px;
 }
-
 .bear-archive-tag{
   color: var(--muted);
   font-size: 0.95rem;
   letter-spacing: 0.02em;
 }
-
-/* list */
 .bear-archive-list{
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .bear-archive-item{
   display: grid;
   grid-template-columns: 140px 1fr;
@@ -231,16 +164,12 @@ pre{
   align-items: baseline;
   padding: 12px 0;
 }
-
-/* date */
 .bear-archive-date{
   color: var(--text);
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
-
-/* title */
 .bear-archive-title{
   color: var(--text);
   text-decoration: none;
@@ -248,13 +177,10 @@ pre{
   word-break: break-word;
   overflow-wrap: anywhere;
 }
-
 .bear-archive-title:hover{
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-
-/* mobile */
 @media (max-width: 560px){
   .bear-archive-item{
     grid-template-columns: 1fr;
@@ -266,46 +192,31 @@ pre{
     color: var(--muted);
   }
 }
-
-/* -------------------------
-   8) Footer
-------------------------- */
 .footer{ display: none !important; }
-
-/* -------------------------
-   9) Small screens
-------------------------- */
 @media (max-width: 520px){
   :root{ --pad: 14px; }
   .post-title{ font-size: 1.65rem !important; }
   .post-content{ font-size: 1.02rem; }
 }
-
-/* ===== Fix: bear-list (home/list template outputs <ul class="bear-list">) ===== */
 .bear-list{
   list-style: none !important;
   padding: 0 !important;
   margin: 0 !important;
 }
-
 .bear-list li{
   list-style: none !important;
   display: grid;
-  grid-template-columns: 140px 1fr; /* 左日期固定宽度 */
+  grid-template-columns: 140px 1fr;
   gap: 22px;
   align-items: baseline;
   padding: 12px 0;
 }
-
-/* 日期 */
 .bear-list .date{
   color: var(--text);
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
-
-/* 标题链接 */
 .bear-list a{
   color: var(--text);
   text-decoration: none;
@@ -313,12 +224,10 @@ pre{
   word-break: break-word;
   overflow-wrap: anywhere;
 }
-
 .bear-list a:hover{
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-
 @media (max-width: 560px){
   .bear-list li{
     grid-template-columns: 1fr;
@@ -330,71 +239,53 @@ pre{
     color: var(--muted);
   }
 }
-
-/* ===== Fix: pagination structure (covers <ul class="pagination"> and .pagination ul) ===== */
-
-/* 你的分页可能本身就是 ul.pagination：必须把它当 ul 处理 */
 ul.pagination{
   list-style: none !important;
   padding: 0 !important;
   margin: 22px auto 0 !important;
   max-width: var(--measure) !important;
-
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
   flex-wrap: wrap !important;
-
   gap: 16px !important;
   row-gap: 10px !important;
-
   border: 0 !important;
   box-shadow: none !important;
 }
-
-/* 也兼容 nav.pagination > ul 的情况 */
 .pagination ul{
   list-style: none !important;
   padding: 0 !important;
   margin: 0 !important;
-
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
   flex-wrap: wrap !important;
-
   gap: 16px !important;
   row-gap: 10px !important;
 }
-
-/* li 一律无圆点 */
 ul.pagination > li,
 .pagination li{
   list-style: none !important;
   margin: 0 !important;
   padding: 0 !important;
 }
-
-/* 链接外观（保持你原来的 Bear 风） */
 ul.pagination a, ul.pagination span,
 .pagination a, .pagination span{
   background: transparent !important;
   border: 0 !important;
   border-radius: 0 !important;
-
   padding: 2px 10px !important;
   color: var(--muted) !important;
   text-decoration: none !important;
   font-size: 0.98rem !important;
   line-height: 1.4 !important;
 }
-
 ul.pagination a:hover, .pagination a:hover{
   color: var(--text) !important;
   text-decoration: underline !important;
   text-underline-offset: 3px !important;
 }
-
 ul.pagination span[aria-current="page"],
 .pagination span[aria-current="page"],
 .pagination .active a,
@@ -404,45 +295,31 @@ ul.pagination span[aria-current="page"],
   text-decoration: underline !important;
   text-underline-offset: 4px !important;
 }
-
-/* First/Last：仍按你的 DOM 替换（命中 <span aria-hidden="true">»»</span>） */
 ul.pagination a[aria-label="First"] span[aria-hidden="true"],
 ul.pagination a[aria-label="Last"]  span[aria-hidden="true"],
 .pagination a[aria-label="First"] span[aria-hidden="true"],
 .pagination a[aria-label="Last"]  span[aria-hidden="true"]{
   font-size: 0 !important;
 }
-
 ul.pagination a[aria-label="First"] span[aria-hidden="true"]::after,
 .pagination a[aria-label="First"] span[aria-hidden="true"]::after{
   content: "First" !important;
   font-size: 0.98rem !important;
 }
-
 ul.pagination a[aria-label="Last"] span[aria-hidden="true"]::after,
 .pagination a[aria-label="Last"] span[aria-hidden="true"]::after{
   content: "Last" !important;
   font-size: 0.98rem !important;
 }
-
 ul.pagination a[aria-disabled="true"],
 .pagination a[aria-disabled="true"]{
   opacity: .35 !important;
   pointer-events: none !important;
 }
-
-/* =========================
-   Twikoo — Bearblog Minimal Skin
-   (uses your working selectors)
-   ========================= */
-
-/* 0) 容器：像正文一样，不要卡片感 */
 #tcomment{
-  margin-top: 32px;
-  padding: 0; /* Bear 不需要左右 padding，跟正文容器一致 */
+  margin-top: 30px;
+  padding: 0;
 }
-
-/* 1) 输入区整体：去“面板/卡片/圆角” */
 .twikoo .tk-submit,
 .twikoo .tk-meta,
 .twikoo .tk-input,
@@ -453,8 +330,6 @@ ul.pagination a[aria-disabled="true"],
   border-radius: 0 !important;
   box-shadow: none !important;
 }
-
-/* 2) “昵称/邮箱/网址”这一排的每个输入组：用下划线而不是框 */
 .twikoo .tk-input{
   border: 0 !important;
   border-bottom: 1px solid var(--faint) !important;
@@ -462,8 +337,6 @@ ul.pagination a[aria-disabled="true"],
   padding: 6px 0 !important;
   transition: none !important;
 }
-
-/* 3) 去掉左侧灰底标签块：只留文字（更 Bear） */
 .twikoo .tk-tag-label{
   background: transparent !important;
   border: 0 !important;
@@ -473,8 +346,6 @@ ul.pagination a[aria-disabled="true"],
   opacity: 1 !important;
   padding-left: 0 !important;
 }
-
-/* 4) 输入框本体（Element UI）：透明 + 下划线风 */
 .twikoo .el-input__inner{
   background: transparent !important;
   border: 0 !important;
@@ -484,40 +355,29 @@ ul.pagination a[aria-disabled="true"],
   padding-left: 6px !important;
   padding-right: 0 !important;
 }
-
-/* 5) 评论正文输入框：下划线+轻微间距（不要大边框大圆角） */
 .twikoo .el-textarea__inner{
   background: transparent !important;
   border: 0 !important;
   border-bottom: 1px solid var(--faint) !important;
   border-radius: 0 !important;
   box-shadow: none !important;
-
   min-height: 120px !important;
   padding: 10px 0 !important;
   font-size: 1rem !important;
   line-height: 1.65 !important;
   transition: none !important;
 }
-
-/* focus：不要蓝色 glow，只稍微加深下划线 */
 .twikoo .tk-input:focus,
 .twikoo .el-textarea__inner:focus{
   border-bottom-color: var(--muted) !important;
   box-shadow: none !important;
 }
-
-/* 6) 工具栏：弱化成文本感（可选隐藏） */
 .twikoo .tk-toolbar{
   opacity: .55;
 }
 .twikoo .tk-toolbar:hover{
   opacity: .9;
 }
-/* 更极简：隐藏表情/图片/markdown 工具（取消注释） */
-/* .twikoo .tk-toolbar{ display:none !important; } */
-
-/* 7) 按钮：全部变成“文字链接”，不要胶囊/填充色 */
 .twikoo .tk-send,
 .twikoo .el-button,
 .twikoo .el-button:not(.tk-send){
@@ -525,71 +385,50 @@ ul.pagination a[aria-disabled="true"],
   border: 0 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
-
   padding: 0 !important;
   height: auto !important;
   line-height: 1.6 !important;
-
   color: var(--text) !important;
   font-weight: 600 !important;
-
   text-decoration: underline !important;
   text-underline-offset: 3px !important;
   text-decoration-color: var(--faint) !important;
   transition: none !important;
 }
-
-/* hover：下划线变深 */
 .twikoo .tk-send:hover,
 .twikoo .el-button:hover{
   transform: none !important;
   box-shadow: none !important;
   text-decoration-color: var(--text) !important;
 }
-
-/* 让“预览/发送”之间有点呼吸 */
 .twikoo .tk-submit-action{
   gap: 16px !important;
 }
-
-/* 8) 头像：Bear 更偏文字，建议隐藏（如果你想保留就删掉这段） */
 .twikoo .tk-avatar{
   display: none !important;
 }
-
-/* 9) 评论列表：不要卡片背景/圆角；用极淡分隔线 */
 .twikoo .tk-comment{
   margin-top: 0 !important;
   padding: 14px 0 !important;
-
   background: transparent !important;
   border: 0 !important;
   border-radius: 0 !important;
   transition: none !important;
 }
-
-/* 相邻评论之间加分隔线（Bear 风） */
 .twikoo .tk-comment + .tk-comment{
   border-top: 1px solid var(--faint) !important;
 }
-
-/* hover 不要变背景 */
 .twikoo .tk-comment:hover{
   background: transparent !important;
 }
-
-/* 10) 昵称/时间：弱化为文本信息，不要高亮主色 */
 .twikoo .tk-nick{
   color: var(--text) !important;
   font-weight: 700 !important;
 }
-
 .twikoo .tk-time,
 .twikoo .tk-meta{
   color: var(--muted) !important;
 }
-
-/* 11) 徽章：改成“淡边框小标签”，不要大色块 */
 .twikoo .tk-badge{
   background: transparent !important;
   color: var(--muted) !important;
@@ -599,16 +438,7 @@ ul.pagination a[aria-disabled="true"],
   font-size: 0.75rem !important;
   font-weight: 600 !important;
 }
-
-/* 12) UA 信息（Windows/Chrome 那行）更不 Bear：建议隐藏 */
-.twikoo .tk-extras{
-  display: none !important;
-}
-
-/* 极简到极致：隐藏 footer（取消注释） */
 .twikoo .tk-footer{ display:none !important; }
-
-/* 14) 移动端：输入项纵向堆叠 */
 @media screen and (max-width: 768px){
   .twikoo .tk-meta-input{
     display: flex;

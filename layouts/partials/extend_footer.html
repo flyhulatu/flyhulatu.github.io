@@ -1,0 +1,31 @@
+<!-- medium-zoom.js for Bearblog style image zooming -->
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
+
+<script>
+  // 等待页面加载完成
+  document.addEventListener("DOMContentLoaded", function () {
+    // 初始化 medium-zoom
+    const zoom = mediumZoom('.post-content img', {
+      margin: 24, // 图片放大后距离屏幕边缘的距离 (px)
+      background: 'rgba(0, 0, 0, 0.8)', // 背景色，直接使用 PaperMod 的 CSS 变量
+      scrollOffset: 0, // 滚动多少像素关闭，0 表示一滚动就关闭
+    });
+
+    // 监听 PaperMod 的暗色模式切换 (可选，为了保证背景色实时切换)
+    // PaperMod 切换主题时会修改 body 的 class 或 localStorage
+    // 由于我们用了 var(--entry) 作为背景，CSS 变量会自动处理颜色，无需额外 JS 监听
+  });
+</script>
+
+<!-- 添加一点 CSS 让鼠标悬停时显示放大镜图标 -->
+<style>
+  .post-content img {
+    cursor: zoom-in; /* 鼠标移动到图片上显示放大图标 */
+  }
+  .medium-zoom-overlay {
+    z-index: 9998; /* 保证遮罩层在最上面 */
+  }
+  .medium-zoom-image--opened {
+    z-index: 9999; /* 保证放大的图片在遮罩层上面 */
+  }
+</style>

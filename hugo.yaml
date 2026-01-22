@@ -141,6 +141,11 @@ menu:
       url: "/guestbook/"
       weight: 50
 
+    - identifier: links
+      name: "Links"
+      url: "/links/"
+      weight: 50
+
     - identifier: rss
       name: "RSS"
       url: "/feed"
