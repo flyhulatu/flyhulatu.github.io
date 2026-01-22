@@ -3,7 +3,6 @@
   <div class="bear-archive-head">
     <span class="bear-archive-tag">长文</span>
   </div>
-
   <ul class="bear-archive-list">
     {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections -}}
     {{- range ($pages.ByDate.Reverse) -}}

@@ -1,16 +1,12 @@
 ---
 title: "关于"
-layout: "about"
+layout: "page"
 url: "/about/"
 summary: about
-slug: "about"
-showToc: false
-# 隐藏页面元数据（发布日期、作者、阅读时间等），这对于 About 页很重要
-hidemeta: true
-# 禁用评论（可选，通常 About 页不需要评论）
+slug: about
+hidden: true
 comments: false
 disableShare: true
-# 如果你想让这个页面不出现在首页列表中
 disableHLJS: true
 ---
 <style>
@@ -74,17 +70,20 @@ disableHLJS: true
 
 <div class="about">
   <h1>胡志朋 <span class="muted">（笔名：胡拉图）</span></h1>
-
   <p class="muted">一名不谈专业、只聊生活、热爱折腾的研究生。</p>
-
   <hr>
-  
   <h2>关于</h2>
   <p>泥嚎！欢迎来到我的世界。</p>
   <p>目前在<strong>郑州</strong>上学。平时喜欢搞鼓 <strong>Mac、GitHub、写作</strong> 和各类生产力工具。</p>
   <p>这个博客用来记录学习和生活随想，希望你喜欢。</p>
 
-
+  <h2>平台</h2>
+  <p class="links">
+    <a href="https://sspai.com/u/hulatu/updates">少数派</a><span class="dot">·</span>
+    <a href="https://www.xiaohongshu.com/user/profile/68a9d4e5000000001a00fcf9">小红书</a><span class="dot">·</span>
+    <a href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/gzh.webp">公众号</a>
+  </p>
+  
   <h2>联系</h2>
   <p class="links">
     <a href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/qq.webp">QQ</a><span class="dot">·</span>
@@ -99,12 +98,5 @@ disableHLJS: true
     <a href="/atom.xml">Atom</a><span class="dot">·</span>
     <a href="/rss.xml">RSS 2.0</a><span class="dot">·</span>
     <a href="/rss1.xml">RSS 1.0</a>
-  </p>
-
-  <h2>平台</h2>
-  <p class="links">
-    <a href="https://sspai.com/u/hulatu/updates">少数派</a><span class="dot">·</span>
-    <a href="https://www.xiaohongshu.com/user/profile/68a9d4e5000000001a00fcf9">小红书</a><span class="dot">·</span>
-    <a href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/gzh.webp">公众号</a>
   </p>
 </div>

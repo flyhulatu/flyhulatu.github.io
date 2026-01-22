@@ -2,10 +2,9 @@
 title: "归档"
 layout: "archives"
 url: "/archives/"
-summary: "按时间归档"
-showToc: false
+summary: archives
+slug: archives
+hidden: true
 comments: false
-hidemeta: true
-disableHLJS: true
 ---
 

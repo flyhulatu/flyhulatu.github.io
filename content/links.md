@@ -1,13 +1,14 @@
 ---
 title: "友圈"
 url: "/links/"
-date: 2025-01-05
+layout: "page"
 slug: “friend-links"
-layout: "links"  
-showToc: false
 comments: true
-hidemeta: true
 draft: false
+hidden: true
+summary: links
+disableShare: true
+disableHLJS: true
 ---
 <style>
     .post-header { display: none; }

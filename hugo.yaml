@@ -11,7 +11,7 @@ minify:
   disableXML: false
 
 pagination:
-  pagerSize: 10
+  pagerSize: 10000000000
 
 permalinks:
   posts: "/posts/:year/:month/:day/:slug/"
@@ -71,7 +71,9 @@ params:
   disableThemeToggle: true
 
   # 内容结构
-  mainSections: ["posts"]
+  mainSections: 
+    - "posts"
+    - "daily"
   disableSpecial1stPost: true
   dateFormat: "2006-01-02"
 
