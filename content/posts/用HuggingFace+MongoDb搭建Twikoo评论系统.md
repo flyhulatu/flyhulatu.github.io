@@ -1,21 +1,16 @@
 ---
 title: 用HuggingFace+MongoDb搭建Twikoo评论系统
-date: 2026-01-19T21:19:41+08:00 
-                           
+date: 2026-01-19T21:19:41+08:00                         
 slug: ""                                                                  
 summary: ""                              
 categories:                                  
   - ""
 tags:                                        
   - ""
-
-draft: true
-showToc: true                                
-TocOpen: true                                
+draft: true                   
 hidemeta: false                              
 comments: true                              
 disableShare: false                          
-# canonicalURL: ""                           
 ---
 
 如果你想有一个个人网站，市面上有很多搭建教程，我就先不写了，基于 **Hexo、Hugo、WordPress、VuePress……**这些平台都可以，挑选一款喜欢的主题，比如我的主题是 PaperMod，就可以开始搭建了，把网站放在 GitHub 的仓库里。
@@ -32,17 +27,42 @@ disableShare: false
 
 第一步，这两个网站的账号，你得先注册，有一个自己的账号。
 
+![新建](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/SIRfV5.png)
 
+![任意填一个名称](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/YLgggx.png)
 
+![下一步](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/Ci9ypb.png)
 
+![新建](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/u37BWm.png)
+
+![必须要和我选择一样](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/r9T5OZ.png)
+
+![调整ip](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/EovxB1.png)
+
+![必须出现0.0.0.0/0](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/716if0.png)
+
+![等状态称为 Active](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/07LZHu.png)
+
+![点 connect](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/kDV9Tg.png)
+
+![点 drivers](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/G0PSLh.png)
+
+![复制密钥](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/2g6ttJ.png)
+
+记得把方框框起来的部分，换成你
+
+获取这串密钥，打开下面的链接：
 
 https://huggingface.co/spaces/imaegoo/twikoo?duplicate=true
 
-把刚才复制的那一串密钥，复制进来
+![粘贴密钥](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/ygNW6U.png)
+
+把刚才复制的那一串密钥，粘贴进来，进行下一步。
+
+![点击这里](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/ileofb.png)
 
 
-
-
+![复制这串地址](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/968KMk.png)
 
 在把刚才复制的链接，放在以下这段代码里。
 
@@ -53,11 +73,13 @@ https://huggingface.co/spaces/imaegoo/twikoo?duplicate=true
 <script src="https://registry.npmmirror.com/twikoo/1.6.44/files/dist/twikoo.min.js"></script>
 <script>
 twikoo.init({
-  envId: '你的后端URL',         // 在单引号里填入获取的链接
+  envId: '你的后端URL',    // 在单引号里填入获取的链接
   el: '#tcomment',
 })
 </script>
 ```
+
+在 envId: 后填入我们刚复制的那个地址，那就是你的后端 URL。
 
 最后，找到主题中显示文章内容的模板（通常在 themes/你的主题/layouts/\_default/single.html）。不要直接改主题文件，建议将其**复制**到根目录下的 layouts/\_default/single.html 中。
 在合适的位置（通常是 {{ .Content }} 之后）添加：
