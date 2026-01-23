@@ -64,7 +64,7 @@ outputs:
 params:
   env: "production"
   title: "胡拉图的后花园"
-  description: "写作,使我精确."
+  description: "一名不谈专业、只聊生活、热爱折腾的研究生."
   keywords: ["Blog", "Vlog", "PaperMod", "Mac", "Hugo", "Write"]
 
   defaultTheme: "auto"
