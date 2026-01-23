@@ -8,8 +8,7 @@
   --measure: 38em;
   --pad: 18px;
   --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, "PingFang SC","Hiragino Sans GB","Microsoft YaHei", sans-serif;
-}
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, "PingFang SC","Hiragino Sans GB","Microsoft YaHei", sans-serif;}
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #0b0c0f;
@@ -17,9 +16,7 @@
     --muted: rgba(255,255,255,.62);
     --faint: rgba(255,255,255,.14);
     --link: #7ab7ff;
-    --link-visited: #b6a6ff;
-  }
-}
+    --link-visited: #b6a6ff;}}
 html, body { background: var(--bg) !important; }
 body {
   font-family: var(--sans) !important;
@@ -27,20 +24,18 @@ body {
   line-height: 1.65;
   letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
+  text-rendering: optimizeLegibility;}
 .main, .page, .post, .first-entry, .home-info, .profile, .footer {
   max-width: var(--measure) !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  box-shadow: none !important;
-}
+  box-shadow: none !important;}
 .main { padding-left: var(--pad) !important; padding-right: var(--pad) !important; }
 .header, .nav { border-bottom: none !important; }
 .nav { position: relative; margin: 0 auto; width: 100%; max-width: var(--measure) !important; }
 .nav::after { content: ""; display: block; position: absolute; bottom: 0; height: 2px; background: var(--border); left: var(--pad); right: var(--pad); }
 .logo a { font-weight: 600 !important; letter-spacing: 0 !important; }
-#menu { gap: 14px !important; }
+#menu { gap: 14px !important; margin-right: var(--pad)!important;}
 #menu a { font-size: 0.95rem !important; color: var(--muted) !important; text-decoration: none !important; }
 #menu a:hover { color: var(--text) !important; text-decoration: underline !important; text-underline-offset: 3px; }
 .page-header h1 { font-size: 1.7rem !important; font-weight: 700 !important; margin-bottom: 14px !important; }
@@ -67,14 +62,12 @@ pre { border: 1px solid var(--faint) !important; border-radius: 0 !important; }
 .bear-archive-title:hover { text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 560px) {
   .bear-archive-item { grid-template-columns: 1fr; gap: 6px; padding: 10px 0; }
-  .bear-archive-date { font-weight: 600; color: var(--muted); }
-}
+  .bear-archive-date { font-weight: 600; color: var(--muted); }}
 .footer { display: none !important; }
 @media (max-width: 520px) {
   :root { --pad: 14px; }
   .post-title { font-size: 1.65rem !important; }
-  .post-content { font-size: 1.02rem; }
-}
+  .post-content { font-size: 1.02rem; }}
 .bear-list { list-style: none !important; padding: 0 !important; margin: 0 !important; }
 .bear-list li { list-style: none !important; display: grid; grid-template-columns: 140px 1fr; gap: 22px; align-items: baseline; padding: 12px 0; }
 .bear-list .date { color: var(--text); font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
@@ -82,23 +75,14 @@ pre { border: 1px solid var(--faint) !important; border-radius: 0 !important; }
 .bear-list a:hover { text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 560px) {
   .bear-list li { grid-template-columns: 1fr; gap: 6px; padding: 10px 0; }
-  .bear-list .date { font-weight: 600; color: var(--muted); }
-}
+  .bear-list .date { font-weight: 600; color: var(--muted); }}
 #tcomment{ margin-top: 30px; padding: 0;}
 .twikoo .tk-comments-no { display: none !important;}
 .twikoo .tk-avatar, .tk-footer, .tk-comments-title { display: none !important;}
 .twikoo .tk-row.actions { margin-left: 0;}
 @media screen and (max-width: 768px){
   .twikoo .tk-meta-input{ display: flex; flex-direction: column; gap: 10px;}
-  .twikoo .tk-input{ width: 100% !important;}
-}
-/* 确保图片描述文字显示且居中 */
+  .twikoo .tk-input{ width: 100% !important;}}
 .post-content figure { margin: 1.5rem auto !important; text-align: center;}
-.post-content figcaption {
-  display: block !important; /* 强制显示 */
-  font-size: 0.9rem;
-  color: var(--text) !important; /* 这里改成 --text 确保在深色模式下清晰可见 */
-  opacity: 0.7; /* 稍微透明一点，显得高级 */
-  margin-top: 10px;
-  text-align: center;
-}
+.post-content figcaption { display: block !important; font-size: 0.9rem; color: var(--text) !important; opacity: 0.7; margin-top: 10px; text-align: center;}
+.main .main { margin: 0 !important; padding: 0 !important;} 
