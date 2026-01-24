@@ -1,3 +1,9 @@
+@font-face { font-family: 'iAWriterDuo';
+    src: url('/fonts/iAWriterDuoS-Regular.woff2') format('woff2');
+    font-weight: normal; font-style: normal;}
+@font-face { font-family: 'iAWriterDuo';
+    src: url('/fonts/iAWriterDuoS-Bold.woff2') format('woff2');
+    font-weight: bold; font-style: normal; }
 :root {
   --bg: #ffffff;
   --text: rgba(0,0,0,.86);
@@ -7,7 +13,9 @@
   --link-visited: #5b3fd6;
   --measure: 38em;
   --pad: 18px;
-  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --line-height: 1.8; 
+  --entry-content: var(--text);
+  --mono: "JetBrains Mono", "iA Writer Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;  
   --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, "PingFang SC","Hiragino Sans GB","Microsoft YaHei", sans-serif;}
 @media (prefers-color-scheme: dark) {
   :root {
@@ -21,10 +29,12 @@ html, body { background: var(--bg) !important; }
 body {
   font-family: var(--sans) !important;
   color: var(--text) !important;
-  line-height: 1.65;
+  line-height: var(--line-height);
   letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;}
+  text-rendering: optimizeLegibility;
+  font-family: 'iAWriterDuo', "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; }
+code, kbd, pre, samp { font-family: var(--mono) !important; }
 .main, .page, .post, .first-entry, .home-info, .profile, .footer {
   max-width: var(--measure) !important;
   margin-left: auto !important;
@@ -42,7 +52,7 @@ body {
 .post-title { font-size: 1.8rem !important; font-weight: 700 !important; line-height: 1.15 !important; margin-bottom: 0.6rem !important; }
 .toc, details.toc, .post-toc { display: none !important; }
 .post-meta, .entry-meta, .breadcrumbs, .post-description { color: var(--muted) !important; font-size: 0.85rem !important; font-variant-numeric: tabular-nums; }
-.post-content { font-size: 1.05rem; }
+.post-content { font-size: 18px; line-height: 1.8; letter-spacing: 0.01em;}
 .post-content p { margin: 0.95rem 0 !important; }
 .post-content a { color: var(--link) !important; text-decoration: underline; text-underline-offset: 2px; }
 .post-content a:visited { color: var(--link-visited) !important; }
@@ -51,7 +61,6 @@ body {
 .post-content > h1:first-child { display: none !important; }
 hr { border: 0; border-top: 1px solid var(--faint); margin: 1.6rem 0; }
 blockquote { border-left: 3px solid var(--faint) !important; margin-left: 0 !important; padding-left: 14px !important; color: var(--muted) !important; }
-pre, code { font-family: var(--mono) !important; }
 pre { border: 1px solid var(--faint) !important; border-radius: 0 !important; }
 .bear-archive-head { display: flex; justify-content: flex-end; margin: 6px 0 18px; }
 .bear-archive-tag { color: var(--muted); font-size: 0.95rem; letter-spacing: 0.02em; }
