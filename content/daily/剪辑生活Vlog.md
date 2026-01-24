@@ -3,30 +3,13 @@ title: "剪辑生活Vlog"
 date: 2026-01-10T22:07:55+08:00
 lastmod: 2026-01-10T22:07:55+08:00
 draft: false
-# 描述：用于 SEO 和列表页显示的摘要，不填默认截取文章前几行
 summary: "用视频分享生活，是一个不那么轻松的过程。" 
-
-# 分类与标签
 categories: [分享] 
 tags: [Vlog] 
-
-# 作者 (如果你想覆盖配置文件里的默认作者)
-author: "图图"
-
-# PaperMod 主题特定配置
-# 是否在首页隐藏元数据（日期、作者等）
 hidemeta: false
-# 是否开启目录
-showToc: true
-# 是否开启评论 (如果你后续接了 Twikoo)
 comments: true
-
-
-
-# 这是一个非常重要的字段，特别是对中文标题
 slug: "vlog-share" 
 ---
-
 今天下午，我剪辑了一个自己的日常Vlog。
 
 用的是Mac的iMovie软件，说实话，剪辑出来的那一刻，成就感满满。因为那就是一个比较标准的日常Vlog了——有内容、有转场、有配乐、有字幕等等。
