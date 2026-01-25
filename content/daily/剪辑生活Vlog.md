@@ -4,9 +4,6 @@ date: 2026-01-10T22:07:55+08:00
 lastmod: 2026-01-10T22:07:55+08:00
 draft: false
 summary: "用视频分享生活，是一个不那么轻松的过程。" 
-categories: [分享] 
-tags: [Vlog] 
-hidemeta: false
 comments: true
 slug: "vlog-share" 
 ---
