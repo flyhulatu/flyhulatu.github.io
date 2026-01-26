@@ -21,7 +21,7 @@ summary: links
 
 - **名称**：胡拉图的后花园
 - **地址**：[https://www.hulatu.com](https://www.hulatu.com)
-- **简介**：不谈专业，只聊生活的工科研究生。
+- **简介**：不谈专业，只聊生活，热爱折腾的工科研究生。
 - **头像**：[https://cdn.jsdelivr.net/gh/flyhulatu/img@main/avatar.png](https://cdn.jsdelivr.net/gh/flyhulatu/img@main/avatar.png)
 ---
 

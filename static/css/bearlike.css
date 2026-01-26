@@ -87,7 +87,7 @@ pre { border: 1px solid var(--faint) !important; border-radius: 0 !important; }
   .bear-list .date { font-weight: 600; color: var(--muted); }}
 #tcomment{ margin-top: 30px; padding: 0;}
 .twikoo .tk-comments-no { display: none !important;}
-.twikoo .tk-avatar, .tk-footer, .tk-comments-title { display: none !important;}
+.twikoo .tk-avatar, .tk-footer { display: none !important;}
 .twikoo .tk-row.actions { margin-left: 0;}
 @media screen and (max-width: 768px){
   .twikoo .tk-meta-input{ display: flex; flex-direction: column; gap: 10px;}
