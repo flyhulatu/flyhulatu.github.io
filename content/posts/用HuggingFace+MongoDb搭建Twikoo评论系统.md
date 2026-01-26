@@ -88,7 +88,7 @@ twikoo.init({
 大家有什么问题，欢迎评论区讨论交流。
 
 [1]:	https://cloud.mongodb.com/
-[2]:	https://cloud.mongodb.com/
+[2]:	https://huggingface.co
 
 [image-1]:	https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/SIRfV5.png
 [image-2]:	https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/YLgggx.png
