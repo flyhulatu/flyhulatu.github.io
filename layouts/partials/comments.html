@@ -1,26 +1,18 @@
-{{- if .Site.Params.comments -}}
-<div class="comments">
-    <script src="https://giscus.app/client.js"
-        data-repo="flyhulatu/giscus"
-        data-repo-id="R_kgDOQ4xvrA"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOQ4xvrM4C05Av"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="zh-CN"
-        crossorigin="anonymous"
-        async>
-    </script>
-</div>
-
+{{- if .Param "comments" -}}
+<div id="tcomment"></div>
+<script src="https://cdn.staticfile.org/twikoo/1.6.39/twikoo.all.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        twikoo.init({
+            envId: 'https://hulatu-hugotwikooend.hf.space',
+            el: '#tcomment',
+        });
+    });
+</script>
 <style>
-    .comments {
-        margin-top: 20px;
-        width: 100%;
+    /* 针对 PaperMod 的深色模式微调 Twikoo 样式 */
+    .dark #tcomment {
+        --tw-content-color: #dfdfe0; /* 这里的颜色根据你的主题色自行调整 */
     }
 </style>
 {{- end -}}
