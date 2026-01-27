@@ -1,11 +1,33 @@
-<section class="comments" id="comments">
-  <div id="tcomment">Comment</div>
-</section>
-<script src="https://registry.npmmirror.com/twikoo/1.6.44/files/dist/twikoo.min.js"></script>
-<script>
-  twikoo.init({
-    envId: "https://hulatu-twikoo.hf.space",
-    el: "#tcomment",
-    path: location.pathname
-  })
-</script>
+{{- if .Site.Params.comments -}}
+<div class="comments">
+    <script>
+      let giscusTheme = localStorage.getItem("pref-theme") === "dark" ? "dark" : "light";
+      let giscusAttributes = {
+          "src": "https://giscus.app/client.js",
+          "data-repo": "flyhulatu/giscus",
+          "data-repo-id": "R_kgDOQ4xvrA",
+          "data-category": "Announcements",
+          "data-category-id": "DIC_kwDOQ4xvrM4C05Av",
+          "data-mapping": "pathname",
+          "data-reactions-enabled": "1",
+          "data-emit-metadata": "0",
+          "data-input-position": "top",
+          "data-theme": giscusTheme,
+          "data-lang": "zh-CN",
+          "crossorigin": "anonymous",
+          "async": ""
+      };
+
+      let giscusScript = document.createElement("script");
+      Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+      document.querySelector('.comments').appendChild(giscusScript);
+  </script>
+</div>
+
+<style>
+    .comments {
+        margin-top: 20px;
+        width: 100%;
+    }
+</style>
+{{- end -}}
