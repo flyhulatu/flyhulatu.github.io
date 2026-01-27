@@ -1,9 +1,4 @@
-@font-face { font-family: 'iAWriterDuo';
-    src: url('/fonts/iAWriterDuoS-Regular.woff2') format('woff2');
-    font-weight: normal; font-style: normal;}
-@font-face { font-family: 'iAWriterDuo';
-    src: url('/fonts/iAWriterDuoS-Bold.woff2') format('woff2');
-    font-weight: bold; font-style: normal; }
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 :root {
   --bg: #ffffff;
   --text: rgba(0,0,0,.86);
@@ -15,8 +10,8 @@
   --pad: 18px;
   --line-height: 1.8; 
   --entry-content: var(--text);
-  --mono: "JetBrains Mono", "iA Writer Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;  
-  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, "PingFang SC","Hiragino Sans GB","Microsoft YaHei", sans-serif;}
+  --serif: 'Bree Serif', serif;
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;  
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #0b0c0f;
@@ -27,13 +22,12 @@
     --link-visited: #b6a6ff;}}
 html, body { background: var(--bg) !important; }
 body {
-  font-family: var(--sans) !important;
+  font-family: var(--serif) !important;
   color: var(--text) !important;
   line-height: var(--line-height);
   letter-spacing: 0.01em;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  font-family: 'iAWriterDuo', "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; }
+  text-rendering: optimizeLegibility;}
 code, kbd, pre, samp { font-family: var(--mono) !important; }
 .main, .page, .post, .first-entry, .home-info, .profile, .footer {
   max-width: var(--measure) !important;
@@ -87,4 +81,4 @@ pre { border: 1px solid var(--faint) !important; border-radius: 0 !important; }
   .bear-list .date { font-weight: 600; color: var(--muted); }}
 .post-content figure { margin: 1.5rem auto !important; text-align: center;}
 .post-content figcaption { display: block !important; font-size: 0.9rem; color: var(--text) !important; opacity: 0.7; margin-top: 10px; text-align: center;}
-.main .main { margin: 0 !important; padding: 0 !important;} 
+.main .main { margin: 0 !important; padding: 0 !important;}
