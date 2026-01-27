@@ -76,18 +76,18 @@ disableHLJS: true
   <p>泥嚎！欢迎来到我的世界。</p>
   <p>目前在<strong>郑州</strong>上学。平时喜欢搞鼓 <strong>Mac、GitHub、写作</strong> 和各类生产力工具。</p>
   <p>这个博客用来记录学习和生活随想，希望你喜欢。</p>
-
   <h2>平台</h2>
   <p class="links">
     <a href="https://sspai.com/u/hulatu/updates">少数派</a><span class="dot">·</span>
     <a href="https://www.xiaohongshu.com/user/profile/68a9d4e5000000001a00fcf9">小红书</a><span class="dot">·</span>
-    <a href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/gzh.webp">公众号</a>
+    <a href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/m1g8nr.webp">公众号</a>
   </p>
-  
+
+
   <h2>联系</h2>
   <p class="links">
-    <a href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/qq.webp">QQ</a><span class="dot">·</span>
-    <a href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/wechat.webp">WeChat</a><span class="dot">·</span>
+    <a href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/46bLCd.webp">QQ</a><span class="dot">·</span>
+    <a href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/XbfMd9.webp">WeChat</a><span class="dot">·</span>
     <a href="mailto:flyhulatu@gmail.com">Gmail</a><span class="dot">·</span>
     <a href="mailto:2983685624@qq.com">QQ Mail</a>
   </p>
