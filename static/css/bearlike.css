@@ -44,7 +44,7 @@ code, kbd, pre, samp { font-family: var(--mono) !important; }
 .logo a { font-weight: 600 !important; letter-spacing: 0 !important; }
 #menu { gap: 14px !important; margin-right: var(--pad)!important;}
 #menu a { font-size: 0.95rem !important; color: var(--muted) !important; text-decoration: none !important; }
-#menu a:hover { color: var(--text) !important; text-decoration: underline !important; text-underline-offset: 1px; }
+#menu a:hover { color: var(--text) !important; text-underline-offset: 1px; }
 .page-header h1 { font-size: 1.7rem !important; font-weight: 700 !important; margin-bottom: 14px !important; }
 .post-title { font-size: 1.8rem !important; font-weight: 700 !important; line-height: 1.15 !important; margin-bottom: 0.6rem !important; }
 .toc, details.toc, .post-toc { display: none !important; }
