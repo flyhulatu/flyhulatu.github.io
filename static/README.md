@@ -35,23 +35,3 @@
     </div>
 </div>
 
-<!-- 4. 见过往：精致时间轴 -->
-
-<div class="about-section">
-    <h3 class="about-label">🚀 见过往</h3>
-    <div class="timeline">
-      	<div class="timeline-item">
-            <div class="time">2025 - 21xx</div>
-            <div class="desc">博客运行至……</div>
-        </div>
-        <div class="timeline-item">
-            <div class="time">2024 - 2027</div>
-            <div class="desc">郑州某高校 · 研究生在读</div>
-        </div>
-        <div class="timeline-item">
-            <div class="time">2020 - 2024</div>
-            <div class="desc">江西XX大学 · 食品专业 / 工学学士</div>
-        </div>
-    </div>
-</div>
-
