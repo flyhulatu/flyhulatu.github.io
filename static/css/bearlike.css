@@ -41,14 +41,14 @@ code, kbd, pre, samp { font-family: var(--mono) !important; }
 .logo a { font-weight: 600 !important; letter-spacing: 0 !important; }
 #menu { gap: 14px !important; margin-right: var(--pad)!important;}
 #menu a { font-size: 0.95rem !important; color: var(--muted) !important; text-decoration: none !important; }
-#menu a:hover { color: var(--text) !important; text-decoration: underline !important; text-underline-offset: 3px; }
+#menu a:hover { color: var(--text) !important; text-decoration: underline !important; text-underline-offset: 1px; }
 .page-header h1 { font-size: 1.7rem !important; font-weight: 700 !important; margin-bottom: 14px !important; }
 .post-title { font-size: 1.8rem !important; font-weight: 700 !important; line-height: 1.15 !important; margin-bottom: 0.6rem !important; }
 .toc, details.toc, .post-toc { display: none !important; }
 .post-meta, .entry-meta, .breadcrumbs, .post-description { color: var(--muted) !important; font-size: 0.85rem !important; font-variant-numeric: tabular-nums; }
 .post-content { font-size: 18px; line-height: 1.8; letter-spacing: 0.01em;}
 .post-content p { margin: 0.95rem 0 !important; }
-.post-content a { color: var(--link) !important; text-decoration: underline; text-underline-offset: 2px; }
+.post-content a { color: var(--link) !important; }
 .post-content a:visited { color: var(--link-visited) !important; }
 .post-content img, .post-content video, .post-content iframe { border-radius: 0 !important; box-shadow: none !important; max-width: 100% !important; }
 .post-content figure, .post-content p:has(img) { margin: 1rem 0 !important; }
