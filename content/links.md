@@ -5,8 +5,7 @@ layout: "page"
 slug: “friend-links"
 comments: true
 draft: false
-hidden: true
-summary: links
+summary: 有朋至此，不亦乐乎。
 ---
 <style>
     .post-header { display: none; }
@@ -15,7 +14,7 @@ summary: links
 {{< links >}}
 ---
 
-### 欢迎交换友链，可评论区留言（格式如下）！
+### 欢迎交换友链，可评论区留言！
 
 **我的信息**：
 
@@ -27,9 +26,9 @@ summary: links
 
 ### 注意⚠️：
 
-请确保你的网站，绝大部分内容原创（>80）、内容数 > 10。
+请确保您的网站：内容数 > 10，原创内容（>80%）。
 
-因为，我希望我们都别忘了，我们为什么而出发。
+希望我们都别忘了，我们为什么而出发。
 
 > 从开始开始，你我的的相识，源于开始。——胡拉图
 

@@ -10,7 +10,6 @@ disableShare: true
 disableHLJS: true
 ---
 <style>
-  /* About 页局部：更像 Bear（纯文本、无组件感） */
   .post-header { display: none; }
 
   .about{
@@ -69,13 +68,13 @@ disableHLJS: true
 </style>
 
 <div class="about">
-  <h1>胡志朋 <span class="muted">（笔名：胡拉图）</span></h1>
+  <h1>朋朋 <span class="muted">（笔名：胡拉图）</span></h1>
   <p class="muted">一名不谈专业、只聊生活、热爱折腾的研究生。</p>
   <hr>
   <h2>关于</h2>
   <p>泥嚎！欢迎来到我的世界。</p>
-  <p>目前在<strong>郑州</strong>上学。平时喜欢搞鼓 <strong>Mac、GitHub、写作</strong> 和各类生产力工具。</p>
-  <p>这个博客用来记录学习和生活随想，希望你喜欢。</p>
+  <p>目前在<strong>郑州</strong>上学。平时喜欢搞鼓 <strong>Mac、写作</strong> 和各类生产力工具。</p>
+  <p>这个博客用来记录学习和生活，希望你喜欢。</p>
   <h2>平台</h2>
   <p class="links">
     <a href="https://sspai.com/u/hulatu/updates">少数派</a><span class="dot">·</span>
@@ -84,7 +83,7 @@ disableHLJS: true
   </p>
 
 
-  <h2>联系</h2>
+  <h2>交流</h2>
   <p class="links">
     <a href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/46bLCd.webp">QQ</a><span class="dot">·</span>
     <a href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/XbfMd9.webp">WeChat</a><span class="dot">·</span>

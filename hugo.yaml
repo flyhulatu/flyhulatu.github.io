@@ -58,9 +58,6 @@ outputFormats:
 outputs:
   home: ["HTML", "RSS", "FEED", "ATOM", "RSS1"]
 
-# -------------------------
-# PaperMod params
-# -------------------------
 params:
   env: "production"
   title: "胡拉图的后花园"
@@ -70,10 +67,10 @@ params:
   defaultTheme: "auto"
   disableThemeToggle: true
 
-  # 内容结构
   mainSections: 
     - "posts"
     - "daily"
+    # - "weekly"
   disableSpecial1stPost: true
   dateFormat: "2006-01-02"
 
@@ -104,7 +101,6 @@ params:
     apple_touch_icon: "/apple-touch-icon.png"
     safari_pinned_tab: "/safari-pinned-tab.svg"
 
-  # 封面控制
   cover:
     hidden: true
     hiddenInList: true
@@ -113,16 +109,8 @@ params:
     ShowSummary: false
     responsiveImages: true
 
-# -------------------------
-# Menu
-# -------------------------
 menu:
   main:
-    - identifier: home
-      name: "Home"
-      url: "/"
-      weight: 1
-
     - identifier: daily
       name: "Daily"
       url: "/daily/"
@@ -136,7 +124,7 @@ menu:
     - identifier: about
       name: "About"
       url: "/about/"
-      weight: 40
+      weight: 1
 
     - identifier: guestbook
       name: "Talk"

@@ -9,10 +9,6 @@
   <div class="friend-list">
     {{ range .links }}
     <a href="{{ .url }}" target="_blank" rel="noopener" class="friend-card">
-      <div class="friend-avatar">
-        <!-- 如果没有头像，使用一个默认占位图 -->
-        <img src="{{ .avatar | default "https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/web-app-manifest-192x192_MMwP3I.png" }}" alt="{{ .name }}" loading="lazy">
-      </div>
       <div class="friend-info">
         <div class="friend-name">{{ .name }}</div>
         <div class="friend-bio" title="{{ .bio }}">{{ .bio | default "这个博主很懒，什么都没留下" }}</div>
@@ -44,46 +40,36 @@
   gap: 15px;
 }
 .friend-card {
-  display: flex;
-  align-items: center;
+  display: block; /* 让每个链接块变成块级元素，取消 flex 布局 */
   padding: 12px;
   border-radius: 8px;
   background: var(--bg);
   border: 1px solid var(--faint);
   text-decoration: none !important;
   color: var(--text) !important;
+  transition: background 0.3s ease; /* 添加过渡效果 */
 }
-.friend-avatar {
-  flex-shrink: 0;
-  margin-right: 14px;
-}
-.friend-avatar img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 0 !important;
+.friend-card:hover {
+  background: var(--highlight); /* 鼠标悬停时背景高亮 */
 }
 .friend-info {
-  flex-grow: 1;
-  overflow: hidden;
+  padding-left: 0; /* 无需头像，信息部分无左边距 */
 }
 .friend-name {
   font-weight: 600;
   font-size: 1.1rem;
   margin-bottom: 4px;
+  color: var(--text);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: var(--text);
 }
 .friend-bio {
   font-size: 0.9rem;
   color: var(--muted);
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
   line-height: 1.4;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; /* 防止过长的描述内容溢出 */
 }
 </style>
