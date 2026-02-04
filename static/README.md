@@ -26,7 +26,7 @@
     <h3 class="about-label">👤 我是谁</h3>
     <div class="about-text">
         <p>泥嚎！欢迎来到我的世界。</p>
-        <p>目前在<strong>郑州</strong>上学。平时喜欢搞鼓 <strong>Mac、GitHub、写作</strong> 和各类生产力工具。</p>
+        <p>目前在郑州上学。平时喜欢搞鼓 Mac、GitHub、写作和各类生产力工具。</p>
         <p>在这个博客记录我的学习和生活随想，希望大家喜欢！</p>
       	<p>所在平台：</p>
       	<a class="contact-item" href="https://sspai.com/u/hulatu/updates"><span>少数派</span></a>

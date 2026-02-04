@@ -75,7 +75,7 @@ params:
   ShowPostNavLinks: false
   ShowToc: false
   comments: true
-
+  
   # Logo
   label:
     text: " "
