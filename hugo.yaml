@@ -34,29 +34,21 @@ sitemap:
 mediaTypes:
   application/atom+xml:
     suffixes: ["xml"]
-  application/rdf+xml:
-    suffixes: ["xml"]
   application/rss+xml:
     suffixes: ["xml"]
 
 outputFormats:
   RSS:
     mediaType: "application/rss+xml"
-    baseName: "rss"
-  FEED:
-    mediaType: "application/rss+xml"
     baseName: "feed"
+    rel: "alternate"
   ATOM:
     mediaType: "application/atom+xml"
     baseName: "atom"
     rel: "alternate"
-  RSS1:
-    mediaType: "application/rdf+xml"
-    baseName: "rss1"
-    rel: "alternate"
 
 outputs:
-  home: ["HTML", "RSS", "FEED", "ATOM", "RSS1"]
+  home: ["HTML", "RSS", "ATOM"]
 
 params:
   env: "production"
@@ -138,5 +130,5 @@ menu:
 
     - identifier: rss
       name: "RSS"
-      url: "/feed"
+      url: "/feed.xml"
       weight: 100

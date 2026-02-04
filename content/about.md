@@ -73,13 +73,26 @@ disableHLJS: true
   <hr>
   <h2>关于</h2>
   <p>泥嚎！欢迎来到我的世界。</p>
-  <p>目前在<strong>郑州</strong>上学。平时喜欢搞鼓 <strong>Mac、写作</strong> 和各类生产力工具。</p>
+  <p>目前在郑州上学。平时喜欢搞鼓 Mac、写作和各类生产力工具。</p>
   <p>这个博客用来记录学习和生活，希望你喜欢。</p>
+  <p>
+  博客搭建基于 Hugo 框架、PaperMod 主题；
+  
+  参考 [Solazy](https://blog.solazy.me/) 的博客，简化成了 BearBlog 风格。
+  </p>
+
+  
+  <h2>订阅</h2>
+  <p class="links">
+    <a href="/atom.xml">Atom</a><span class="dot">·</span>
+    <a href="/rss.xml">RSS</a><span class="dot">·</span>
+  </p>
+  
   <h2>平台</h2>
   <p class="links">
     <a href="https://sspai.com/u/hulatu/updates">少数派</a><span class="dot">·</span>
     <a href="https://www.xiaohongshu.com/user/profile/68a9d4e5000000001a00fcf9">小红书</a><span class="dot">·</span>
-    <a href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/m1g8nr.webp">公众号</a>
+    <a href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/m1g8nr.webp">公众号</a><span class="dot">·</span>
   </p>
 
 
@@ -88,14 +101,6 @@ disableHLJS: true
     <a href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/46bLCd.webp">QQ</a><span class="dot">·</span>
     <a href="https://cdn.jsdelivr.net/gh/flyhulatu/img@main/uPic/XbfMd9.webp">WeChat</a><span class="dot">·</span>
     <a href="mailto:flyhulatu@gmail.com">Gmail</a><span class="dot">·</span>
-    <a href="mailto:2983685624@qq.com">QQ Mail</a>
-  </p>
-
-  <h2>订阅</h2>
-  <p class="links">
-    <a href="/feed">Feed</a><span class="dot">·</span>
-    <a href="/atom.xml">Atom</a><span class="dot">·</span>
-    <a href="/rss.xml">RSS 2.0</a><span class="dot">·</span>
-    <a href="/rss1.xml">RSS 1.0</a>
+    <a href="mailto:2983685624@qq.com">QQ Mail</a><span class="dot">·</span>
   </p>
 </div>
