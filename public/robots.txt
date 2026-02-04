@@ -2,3 +2,11 @@ User-agent: *
 Allow: /
 
 Sitemap: {{ "sitemap.xml" | absURL }}
+
+
+User-agent: *
+Allow: /
+
+# 也可以专门对 BlogFinder 示好（虽然通常不需要）
+User-agent: BlogFinder
+Allow: /
