@@ -51,6 +51,9 @@ outputs:
   home: ["HTML", "RSS", "ATOM"]
 
 params:
+  author:
+    name: "胡拉图"
+    email: "2983685624@qq.com"
   env: "production"
   title: "胡拉图的后花园"
   description: "一名不谈专业、只聊生活、热爱折腾的研究生."
