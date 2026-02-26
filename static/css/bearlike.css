@@ -11,7 +11,7 @@
   --line-height: 1.8; 
   --entry-content: var(--text);
   --serif: 'Bree Serif', serif;
-  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;  
+  --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #0b0c0f;
