@@ -117,7 +117,7 @@ menu:
       weight: 30
 
     - identifier: about
-      name: "About"
+      name: "Me"
       url: "/about/"
       weight: 1
 
